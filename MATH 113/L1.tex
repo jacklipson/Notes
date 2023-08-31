@@ -1,0 +1,46 @@
+\chapter{A Few Preliminaries}
+
+\section{Sets and Equivalence Relations}
+
+\begin{note}
+    $\R^*$ and $\C^*$ represent the set of all nonzero real and complex numbers. Zero is excluded from $\Z^+, \Q^+, \R^+$.
+\end{note}
+\begin{note}
+    When a set contains an element $b$ that's algebraically or arithmetically equivalent to another element(s), our set can be partitioned into subsets $\overline{b}$ which denote all entitites equivalent to $b$. e.g. $\frac{2}{3} = \frac{4}{6}$.
+\end{note}
+\begin{definition}[Parititon]
+    A \textit{partition} of a set is a decomposition of the set into subsests s.t. every element is in exactly one subset, or \textit{cell}.
+\end{definition}
+\begin{definition}[Equivalence Relation]
+    For a nonempty set $S$, $\sim$ is an equivalence relation between elements of $S$ if for all $a,b,c \in S$, $(S, \sim)$ satisfies:
+    \begin{enumerate}
+        \item (Reflexive) $a\sim a$.
+        \item (Symmetric) $a\sim b \implies b\sim a$.
+        \item (Transitive) $a\sim b \land b\sim c \implies a\sim c$.
+    \end{enumerate}
+    Non-equivalence relations usually use $\mathscr{R}$. 
+\end{definition}
+\begin{note}
+    All relations $\mathscr{R}$ are defined as $\{ (a,b) \text{ for a} \in A, b \in B \mid a \, \mathscr{R} \, b\} \subseteq A \times B$. For equivalence relations, $\sim \; \subseteq S \times S$.
+\end{note}
+\begin{remark}[Natural Parition]
+    $\sim$ yields a natural partition of $S\colon \overline{a} = \{x \in S \mid x \sim a\}$ for all $a \in S$.
+\end{remark}
+\begin{explanation}
+    For any $a \in S$, $a \in \overline{a}$. So each element of $S$ is in at least one cell. To show that $a$ is in exactly one cell, let $a \in \overline{b}$ as well. We must show $\overline{a} = \overline{b}$. $\implies:$ If $x \in \overline{a}$ then $x \sim a$. From our assumption $a \sim b$ so by (3), $x \sim b$ so $x \in \overline{b}$ thus, $\overline{a} \subseteq \overline{b}$. $\impliedby:$ If $x \in \overline{b}$, $x \sim b$. From our assumption, $a \sim b$ so, by (2), $b \sim a$ meaning $x \sim a$ via (3) implying $x \in \overline{a}$ s.t. $\overline{b} \subseteq \overline{a}$. This completes the proof.
+\end{explanation}
+\begin{definition}[Equivalence Class]
+    Each cell $\overline{a}$ in a natural partition given by an equivalence relation is called an equivalence class.
+\end{definition}
+\begin{definition}[Congruence Modulo n]
+    Let $h,k$ be distinct integers and $n \in \Z^+$. We say $h$ \textit{congruent} to $k$ modulo $n$, written $h \equiv k$ (mod $n$) if $n \mid h-k$ s.t. $h-k = ns$ for some $s \in \Z$.
+\end{definition}
+\begin{definition}[Residue Classes Modulo]
+    Equiva;ence calsses for congruence modulo $n$ are \textit{residue classes modulo} $n$.
+\end{definition}
+\begin{remark}
+    Each residue class modulo $n \in \Z^+$ contains an infinite number of elements.
+\end{remark}
+\begin{definition}[Irreducible]
+    An irreducible polynomial $h(x)$ is one that cannot be factored into polynomials in $\mathcal{P}(\R)$ all of lower degree than $h(x)$.
+\end{definition}

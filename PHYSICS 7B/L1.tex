@@ -1,0 +1,97 @@
+\setcounter{chapter}{16}
+
+\chapter{Temperature, Thermal Expansion, and the Ideal Gas Law}
+
+\section{Atomic Theory of Matter}
+
+\begin{definition}[Unified Atomic Mass Units ($u$)]
+    We define $^{12}C$ to have exactly 12.0000 \emph{unified atomic mass units} ($u$) such that $\qty{1}{u} = \qty{1.6605e-27}{kg}$.
+\end{definition}
+\begin{definition}[Elements, Compounds, Atoms, Molecules]
+    \emph{Elements} are substances that cannot be broken down into simpler substances by chemical means, \emph{compounds} are substances made up of elements that can be broken down, \emph{atoms} are the smallest pieces of an element, and \emph{molecules} are the smallest pieces of compounds made up of atoms.
+\end{definition}
+\begin{proposition}
+    To convert between Celsius and Fahrenheit, use:
+    \[T(\degree \text{C}) = \frac{5}{9}[T(\degree \text{F}) - 32] \quad T(\degree \text{F}) = \frac{9}{5}[T(\degree \text{C}) +32]\]
+\end{proposition}
+\begin{remark}
+    Different materials do not expand precisely linearly over a wide temerpature rage. Thus, we standardize with the \emph{constant-volume gas thermometer}. This thermometer consists of a hollow rigid bulb with a low-pressure gas connected by a thin tube to a mercury manometer. If the height of the mercury tube is adjusted to ensure the gas maintains a constant volume, the new height reached by the mercury is the temperature.
+\end{remark}
+\begin{definition}[Freezing/Boiling Point]
+    The \emph{freezing point} of a substance is defined as that temperature at which the solid and liquid phases coexist in equilibirum s.t. there is no net liquid or solid changing into the other one. The \emph{boiling point} is defined analogously for liquid and gas. These temperatures vary with pressure so pressure is specified usually at $\qty{1}{atm}$.
+\end{definition}
+\begin{definition}[Thermal Equilibrium]
+    Two objects are defined to be in \emph{thermal equilibrium} is, when placed in contact, no net energy flows from to the other, and their temperatures don't change.
+\end{definition}
+\begin{remark}
+    When two systems are in thermal equilibrium, their temperatures are (by definition) equal and no net energy is exchanged. 
+\end{remark}
+\begin{definition}[0th Law of Thermodynamics]
+    Specifically experiments indicate that \textbf{if two systems are in thermal equilibrium with a third system, then they are in thermal equilibrium with each other}.
+\end{definition}
+\begin{proposition}[Thermal Expansion]
+    The thermal expansion in length, area, and volume of a material at a fixed pressure due to change in temperature $\Delta T$ is approximately given by:
+    \[ \Delta l = \alpha l_0 \Delta T \quad \Delta A = \gamma A_0 \Delta T \quad \Delta V = \beta V_0 \Delta T \] where $\alpha, \gamma, \beta$ denote the material's\emph{coefficient of linear expansion} with unit (C$\degree)^{-1}$ and $l_0, A_0, V_0$ denote its initial length, area, and volume.
+\end{proposition}
+\begin{proof}
+    At a certain temperature, a thin rod of length $l_0$ at temperature $T_0$ is heated by $\Delta T$ to a temperature $T$. This causes it to expand by $\Delta l$ to a length $l$, or $l(T)$, that is dependent on the original length $l_0$, the temperature change $\Delta T$, and its coefficient of linear expansion $\alpha$. Thus, $\Delta l = \alpha l_0 \Delta T$ so $l = l_0(1+\alpha\Delta T)$. For a thin plate with area $A_0$, this becomes $A = A_0+ \Delta A = A_0(1 + \alpha\Delta T)^2 = A_0 + 2\alpha A_0\Delta T + \alpha^2A_0\Delta T^2$. Thermal expansion for volume is similarly $V = V_0 + \Delta V = V_0 (1 + \alpha \Delta T)^3 = V_0 + 3\alpha V_0\Delta T + 3\alpha^2V_0\Delta T^2 + \alpha^3V_0\Delta T^3$. 
+
+    Because $\alpha$ and (usually)$\Delta T$ are extremely small, we say $\Delta A \simeq 2\alpha A_0\Delta T$ and $\Delta V \simeq 3\alpha V_0\Delta T$ implying the coefficient for area $\gamma \simeq 2\alpha$ and the coefficient for volume $\beta \simeq 3\alpha$.
+\end{proof}
+\begin{note}
+    If water at $0\degree$C is heated, its volume \emph{decreases} until it reaches $4\degree$C when it behaves normally and expands as the temperature increases.
+
+    This implies that above $4\degree$C the surface water in a lake/river in contact with cold air sinks because it is denser bringing in warmer water from below causing convection to bring the whole body to the same temperature. As water cools below $4\degree$C, however, its volume expands so its density decreases meaning the the surface water turning to ice is less dense than the water below so a layer of ice forms on top. The ice acts as an insulator, allowing life to exist under ice. 
+\end{note}
+\begin{definition}[Thermal Stresses]
+    If 2 ends of a material are rigidly fixed, temperature change can cause compressive or tensile stresses called \emph{thermal stresses}.
+
+    If the beam tries to expand by $\Delta \ell$ while rigid braces exert a force to hold the beam in place, compressing OR expanding it, the force required is $\Delta \ell = \frac{1}{E}\frac{F}{A}\ell_0$ where $E$ is Young's modulus for the material. Substituting the thermal expansion equation gives the stress to be $\frac{F}{A} = \alpha E \Delta T$.
+\end{definition}
+\begin{definition}[State Variables]
+    Quantities detectable by instruments are called \emph{state variables}. For a gas in a container, they are pressure $P$, volume $V$, temperature $T$, and quantity of gas – mass $m$ or equivalently \emph{moles}.
+\end{definition}
+\begin{definition}[Mole]
+    One \emph{mole}, abbreviated mol, is defined to be the number of atoms in exactly $\qty{12}{g}$ of $^{12}$C. This number $N_A$ is called \emph{Avogadro's number} and equal to $6.022 \times 10^{23}$.
+\end{definition}
+\begin{definition}[Equilibrium States]
+    When the state variables of a system are not chaning in time and equal throughout the system.
+\end{definition}
+\begin{definition}[Absolute Zero]
+    Absolute zero of temperature is $-273.15\degree$C or 0 K on the Kelvin scale s.t. $T(K) = T(\degree C) + 273.15$.
+\end{definition}
+\begin{proposition}[Gas Laws]
+    For a fixed quantity of gas, the following 'laws' are valid (as long as the pressure and density are not too great and the gas is not too close to condensating):
+    \begin{enumerate}
+        \item (Boyle's Law) [At constant temperature], $P_1V_1 = P_2V_2$ and $P \propto \frac{1}{V}$.
+        \item (Charles's Law) [At constant pressure], $\frac{V_1}{T_1}=\frac{V_2}{T_2}$ s.t. $V \propto T$.
+        \item (Gay-Lussac's Law) [At constant volume], $\frac{P_1}{T_1}=\frac{P_2}{T_2}$ s.t. $P \propto T$.
+    \end{enumerate}
+    Together these imply $PV \propto T$ so $\frac{P_1V_1}{T_1}=\frac{P_2V_2}{T_2}$.
+\end{proposition}
+\begin{definition}[(Equation of State for an) Ideal Gas Law]
+    Of course, once mass is left unfixed, experiments show $PV \propto mT$. Specifically, $$PV = nRT$$ where $n$ is the number of moles of gas and $R$ is the universal gas constant found to be roughly $\qty{8.314}{\frac{J}{mol.K}} = \qty{.0821}{\frac{L.atm}{mol.K}} = 1.99 \frac{\text{calories}}{\text{mol K}}$.
+\end{definition}
+\begin{remark}[Important Remarks for Ideal Gas Law]
+    Always give $T$ in kelvins and $P$ as absolute, rather than gauge, pressure. The equation is less `ideal' for gases at high pressure/density or near the boiling/condensation point. Recall $\qty{1}{L} = \qty{1e{-3}}{m^3}$.
+\end{remark}
+\begin{definition}[Standard Temperature and Pressure]
+    Standard temperature and pressure, abbreviated STP, implies $T = 273.15 K ( = 0\degree \text{ C})$ and $P = \qty{1.00}{atm} = \qty{1.013e5}{N\m^2}=\qty{101.3}{kPa}$.
+\end{definition}
+\begin{note}
+    $\qty{1.00}{\text{mol of gas}}$ at STP has $V = \qty{22.4}{L}$.
+\end{note}
+\begin{remark}[Avogadro's Hypothesis]
+    Amedeo Avogadro proposed equal volumes of gas at the same pressure and temperature contain equal numbers of molecules. In other words, he proposed $R$ is the same for all gases. 
+\end{remark}
+\begin{definition}[Boltzmann constant]
+    Because $N_A$ is constant, we can write $PV = \frac{N}{N_A}RT$ where $N$ is the total number of molecules in a gas. Setting the \emph{Boltzmann constant} $k = R/N_A = \qty{1.38e{-23}}{J/K}$ gives $PV=NkT$.
+\end{definition}
+\begin{definition}[Ideal Gas Temperature Scale]
+    The \emph{ideal gas temperature scale} is based on the property of an ideal gas that pressure is  directly proportional to the absolute temperature. Real gases approach this ideal at very low density. This scale takes points $P=0$ at $T=0\;K$ and the \emph{triple point} of water when its solid, liquid, and gas states coexist in equilibrium at $P = \qty{4.58}{torr}$ and $T=\qty{0.01}{\degree C} = 372.16\;K$.
+\end{definition}
+\begin{definition}[Absolute/Kelvin Temperature]
+    The absolute temperature $T$ of a substance is determind by putting that substance in good thermal contact with a constant-volume gas thermometer s.t., at constant volume, $T = (\qty{273.16}{K})\lim\limits{P_{tp}\to0}(\frac{P}{P_{tp}})$.
+
+    Here, $P_{tp}$ denotes the pressure of the gas in the rigid bulb of the thermometer when placed in water at triple point and $P$ is the pressure in the thermometer when it's in contact with the substance determining $T$.
+\end{definition}

@@ -1,0 +1,11 @@
+\contentsline {chapter}{\numberline {0}Syllabus}{2}{chapter.0}%
+\contentsline {section}{\numberline {0.1}Important Info}{2}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}Contacts + Sections}{2}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {0.1.2}Materials}{2}{subsection.0.1.2}%
+\contentsline {subsection}{\numberline {0.1.3}Assignments}{2}{subsection.0.1.3}%
+\contentsline {chapter}{\numberline {17}Temperature, Thermal Expansion, and the Ideal Gas Law}{3}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Atomic Theory of Matter}{3}{section.17.1}%
+\contentsline {chapter}{\numberline {18}Kinetic Theory of Gases}{7}{chapter.18}%
+\contentsline {section}{\numberline {18.1}The Ideal Gas Law and the Molecular Interpreation of Temperature}{7}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Distribution of Molecular Speeds}{8}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Real Gases and Changes of Phase}{9}{section.18.3}%

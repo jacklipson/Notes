@@ -1,0 +1,73 @@
+\chapter{Newtonian Mechanics}
+
+\section{Inertial Frames and the Galilean Transformation}
+
+\begin{definition}[Interial Frames]
+    There is a special set of frames, the \emph{non-accelerating} \textbf{inertial frames}. This frame is not unique, but any other frame moving at a constant velocity relative to it is also inertial.
+\end{definition}
+\begin{remark}
+    Initial observers will usually be denoted $\mathscr{O}, \mathscr{O}'$ with Cartesian systems labeled $(x,y,z,t)$ and $(x',y',z',t')$.
+\end{remark}
+\begin{definition}[Event]
+    An \textbf{event} of interest is characterized by the position in space and time at which the measurement is made.
+\end{definition}
+\begin{example}
+    Take two intertial frames such that $\mathscr{O}, \mathscr{O'}$ are in total alignment except $\mathscr{O'}$ is moving at speed $V$ along their mutual $x,x'$ axes. Thus, $$x = x'+Vt', \quad y=y', \quad z=z', \quad t=t',$$ where we assume the 2 frames coincide at $t'=t=0$. Differentiating gives $$v_x = v_x'+V, \quad v_y = v_y', \quad v_z=v_z',$$ and once more $$a_x=a_x', \quad a_y=a_y', \quad a_z=a_z'.$$
+\end{example}
+\begin{definition}[Galilean Transformation]
+    The above equations translating between inertial frames are called a \textbf{Galilean transformation}. Because the acceleration of particle is the same across inertial frames, we say the acceleration is \textbf{Galilean invariant}.
+\end{definition}
+\begin{remark}[Principle of Relativity]
+    This statement that \emph{any} inertial observer has a valid perspective and all fundamental laws of physics will apply is called the \textbf{principle of relativity}.
+\end{remark}
+
+\section{Newton's Laws of Motion}
+
+\begin{definition}[Newton's 1st Law]
+    The \textbf{law of inertia} goes as follows: \emph{If there are no forces on an object, then if the object starts at rest it will stay at rest, or if it is initally set in motion, it will continue moving in the same direction in a straight line at constant speed.}
+\end{definition}
+\begin{definition}[Newton's 2nd Law]
+    \textbf{Newton's 2nd law} states simply that, to an inertial observer, $\vec{F} = \frac{d\vec{p}}{dt}$. where the momentum of a particle is $\vec{p} = m\vec{v}$. In other words, \emph{the time rate of change of a particle's momentum is equal to the net force on that particle}.
+\end{definition}
+\begin{definition}[Newton's 3rd Law]
+    \textbf{Newton's 3rd law} states that "action equals reaction." Or, that \emph{if one particle exerts a force on the second particle, the second particle exerts an equal but opposite force back on the first particle}.
+\end{definition}
+
+\section{One-Dimensional Motion: Drag Forces}
+
+\begin{definition}[Laminar Flow]
+    By definition, drag forces act in opposition to an object's vecloity through a fluid. For small objects moving sufficiently slowly, fluid flows around an object in what is called \textbf{laminar flow} giving rise to "viscous drag" where the drag foce is proportional to the \textbf{viscosity} of the fluid, a measure of how much fluid id pulled along with the object. The viscous drag force is \emph{linear} in velocity and thus has the form $F_drag = -bv$ where $b$ is constant.
+\end{definition}
+\begin{example}
+    Take a bacterium moving at velocity $v$ relative to a fluid s.t. a viscous drag force $F = -bv$ is being applied to where $b$ depends on the viscosity of the fluid and the size and shape of the bacterium. Once the bacterium reaches $v_0$ it stops swimming. What is the equation for its position?
+\end{example}
+\begin{explanation}
+    From Newton's 2nd Law, $F=\frac{dp}{dt} \implies -bv = m \frac{dv}{dt} \implies -\frac{b}{m}dt = \frac{dv}{v}$. Integrating from $t=0$ when the bacterium stops swimming gives $-\frac{b}{m}\int_0^t dt = \int_{v_0}^v \frac{dv}{v} \implies -\frac{bt}{m} = \ln(v) - \ln(v_0) = \ln(v/v_0) \implies v = v_0e^{-(b/m)t}$. Integrating again gives $x(t) = v_0 \int_0^t e^{-\frac{b}{m}t} = v_0 \frac{m}{b} (1-e^{-\frac{b}{m}t})$.
+\end{explanation}
+\begin{definition}[Inertial/Newtonian Drag]
+    For larger and more quickly moving objects, the fluid no longer flows smoothly around the object, but becomes turbulent, churning around and shedding eddies and vortices. The drag force is approximately proportional to the \emph{square} of the object's velocity through the fluid. This is called \textbf{inertial or Newtonian drag}.
+\end{definition}
+
+\section{Oscillation in One-Dimensional Motion}
+
+\begin{remark}[Hooke's Law Spring]
+    If the only force on a particle moving in one dimension is due to a \textbf{Hooke's-law spring}, the equation of motion is $m\ddot{x} + kx = 0$. Multiplying by the \emph{integrating factor} $\dot{x}$ gives 
+    \begin{align*}
+        m\dot{x}\ddot{x} + kx\dot{x} = 0, \\
+        m\dot{x}\frac{d\dot{x}}{dt} + kx\frac{dx}{dt} = 0, \\
+        \frac{d}{dt}(m\frac{\dot{x}^2}{2} + k\frac{x^2}{2}) = 0, \\
+        d(m\frac{\dot{x}^2}{2} + k\frac{x^2}{2}) = 0, \\
+        \frac{m}{2}d(\dot{x}^2) + kxd(x) = 0.
+    \end{align*}
+    We integrate this to get, with constant of ingtegration $E$,
+    \begin{align*}
+        \frac{1}{2}m\dot{x}^2 + \frac{1}{2}kx^2 = E, \\
+        \dot{x} = \sqrt{\frac{2E - kx^2}{m}}, && \text{rearranging...} \\
+        \int dt = m \int\frac{dx}{\sqrt{2E - kx^2}}, && \text{inverting \& integrating... } \\
+        t = m \int\frac{-\sqrt{2E/k}\sin\theta d\theta}{\sqrt{2E}\sin\theta} && \text{with } x = \sqrt{2E/k}\cos\theta \text{...} \\
+        t = -\theta\sqrt{m/k} + C.
+    \end{align*}
+    This implies, for $\omega = \sqrt{\frac{k}{m}}$, that $x(t) = \sqrt{\frac{2E}{k}}\cos(-\sqrt{\frac{k}{m}}(t-C))$. By $\cos(x) = \cos(-x)$, this becomes $\sqrt{\frac{2E}{k}}\cos(\omega t + \phii)$ where $\phii$ is a new constant.
+\end{remark}
+
+page 13. 

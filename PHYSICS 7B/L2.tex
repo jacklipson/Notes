@@ -1,0 +1,57 @@
+\chapter{Kinetic Theory of Gases}
+
+\section{The Ideal Gas Law and the Molecular Interpreation of Temperature}
+
+\begin{definition}[Kinetic Theory]
+    The analysis of matter in terms of atoms in continuous random motion is called \emph{kinetic theory}.
+\end{definition}
+\begin{proposition}[Postulates of Kinetic Theory]
+    Under these conditions describing an 'ideal gas', real gases follow the ideal gas law quite closely. 
+    \begin{enumerate}
+        \item There are a large number, $N$, of molecules, each of mass $m$, moving in random directions with a variety of speeds.
+        \item The molecules are, on average, far apart from one another. I.e. their average separation is much greater than their diameter.
+        \item The molecules obey the laws of classical mechanics and only interact when they collide s.t. the potential energy relating to attractive forces between them is much weaker than the kinetic energy.
+        \item Collisions with another molecule or the wall of the vessel are perfectly elastic and of very short duration relative to time between collisions.
+    \end{enumerate}
+\end{proposition}
+\begin{proposition}[Temperature to Average Kinetic Energy of Molecules]
+    The average translational kinetic energy of molecules in random motion in an ideal gas is directly proportional to the absolute temperature of the gas. In other words, $\overline{K} = \frac{1}{2}m\overline{v^2} = \frac{3}{2}kT$.
+\end{proposition}
+\begin{proof}
+    Take a box of length $\ell$ and ends of area $A$ filled with an ideal gas. Focus on a single molecule of mass $m$'s collision with one wall. Newton's 2nd and 3rd laws tell us a force $F = \frac{dp}{dt}$ is exerted on the molecule. Because collisions are elastic, its velocity $v_x$ is equal in magnitude so $\Delta p = 2mv_x$. If the molecule takes time $\Delta t$ to travel $2\ell$ to the other wall and back, $F = \frac{\Delta (mv)}{\Delta t} = \frac{2mv_x}{2\ell/v_x} = \frac{m{v_x}^2}{\ell}$. Recall that although the particle may collide with the tops and sides of the container, its $x$ component doesn't change and neither does its momentum.
+
+    We can average the force on a wall due to all the $N$ molecules in the box by $F = \frac{m}{\ell} (v_{x1}^2 + v_{x2}^2 + \cdots + v_{xN}^2)$. Averaging, $\overline{v_x^2} = \frac{v_{x1}^2 + v_{x2}^2 + \cdots + v_{xN}^2}{N}$ s.t. $F = \frac{m}{\ell} N \overline{v_x^2}$. Because $v^2 = v_x^2 + v_y^2 + v_z^2 \simeq 3v_x^2$, we let $F = \frac{m}{l}\frac{N\overline{v^2}}{3}$. Thus, the pressure on the wall is $P = \frac{F}{A} = \frac{1}{3} \frac{Nm\overline{v^2}}{A\ell} = \frac{1}{3}\frac{Nm\overline{v^2}}{V} \implies PV = \frac{2}{3}N(\frac{1}{2}m\overline{v^2})$. From the ideal gas law $PV = NkT$, such that $\frac{3}{2}kT = \frac{1}{2}(m\overline{v^2}) = \overline{KE}$. 
+\end{proof}
+\begin{definition}[Thermal Motion]
+    This definition explains the relationship between temperature as a measure of motion of molecules such that random motion of a gas is sometimes called \emph{thermal motion}.
+\end{definition}
+\begin{definition}[Root-Mean-Square Speed $v_{rms}$]
+    To calculate how fast moleciles molecules move on average in an ideal gas, we can derive the \emph{root-mean-square speed} $v_{rms} = \sqrt{\overline{v^2}} = \sqrt{\frac{3kT}{m}}$.
+\end{definition}
+\begin{remark}
+    It's noteworthy that the average speed $\overline{v} \neq v_{rms}$ necessarily. In fact, for an ideal gas, they differ by about 8\%.
+\end{remark}
+\begin{note}
+    $\overline{KE} = \frac{3}{2} kT$ tells us as $T \to 0$, $\overline{KE} \to 0$. However, modern quantum theory tells us this is not true and kinetic energy appraoches a small nonzero minimum.
+\end{note}
+
+\section{Distribution of Molecular Speeds}
+
+\begin{definition}[Maxwell Distribution of Speeds]
+    In 1859, James Maxwell worked out a formula for the most probable distribution of speeds in a gas with $N$ molecules, that is $$f(v) = 4\pi N(\frac{m}{2\pi kT})^{\frac{3}{2}}v^2e^{-\frac{1}{2}\frac{mv^2}{kT}},$$ where $f(v)dv$ represents the number of molecules that have speeds between $v$ and $v+dv$ such that $\int_0^\infty f(v)dv = N$.
+\end{definition}
+\begin{definition}[Activation Energy]
+    Two molecules may chemically react only if their kinetic energy is great enough to partially penetrate each other. This minimum energy is called \emph{activation energy}. The rate of a chemical reaction is proportional to the number of molecules with energy greater than $E_A$ such that rates increase rapidly with increased temperature.
+\end{definition}
+\begin{example}[Determining $\mean{v} \text{ and} \vec{v_p}$]
+    To find the average speed $\mean{v}$, we must integrate over the product of $v$ and the number $f(v)dv$ which have speed $v$ and divide by $N$ the number of molecules. Thus, $\mean{v} = \frac{\int_0^\infty vf(v)dv}{N} = 4\pi(\frac{m}{2\pi k T})^\frac{3}{2} \int_0^\infty v^3 e^{-\frac{1}{2}\frac{mv^2}{kT}}dv = 4\pi(\frac{m}{2\pi k T})^\frac{3}{2} (\frac{2k^2 T^2}{m}) = \sqrt{\frac{8}{\pi}\frac{kT}{m}}$.
+
+    To find the most probable speed, we need simply find when the slope is $0$ such that $\frac{df(v)}{dv} = 4\pi N(\frac{m}{2\pi k T})^\frac{3}{2}(2ve^{-\frac{mv^2}{2kT}} - \frac{2mv^3}{2kT}e^{-\frac{mv^2}{2kT}})=0$. Solving for $v$ gives $v_p = \sqrt{\frac{2kT}{m}}$.
+\end{example}
+\begin{note}
+    In summary, $$v_p \approx 1.41 \sqrt{\frac{kT}{m}}, \quad \mean{v} \approx 1.60 \sqrt{\frac{kT}{m}}, \quad v_{rms} \approx 1.73 \sqrt{\frac{kT}{m}}.$$
+\end{note}
+
+\section{Real Gases and Changes of Phase}
+
+\

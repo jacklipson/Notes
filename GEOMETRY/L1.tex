@@ -1,0 +1,47 @@
+\chapter{Graph Theory}
+
+\section{Definitions and Concepts}
+
+Using source: On the existence of triangulated spheres in 3-graphs and related Problems by Erdös and Brown.
+
+\begin{definition}
+    Define an \textit{r-graph} as $H^{(r)}$ as the pair of sets $V(H^{r})$ of \textit{vertices} and a class $E(H^{(r)})$ of \textit{r}-subsets of $V$. If we follow $H^{(r)}$ with $(n)$ or $(n;k)$, this denotes the \textit{r}-graph has exactly $n$ vertices and at least $k$ $r$-tuples.
+\end{definition}
+
+\begin{remark}
+    When $r=2$ we omit the superscript and refer to it simply as a \textit{graph}.
+\end{remark}
+
+\begin{definition}
+    The letter $G$ is reserved for all  $r$-graphs with the properties appended, i.e. $G^{(r)}, G^{(r)}(n), and G^{(r)}(n;k)$.
+\end{definition}
+\begin{note}
+    It is a well known property of graphs that any $G(n;n)$ contains a polygon. 
+\end{note}
+\begin{definition}
+    For any fixed family of $r$-graphs, let ex$(n;H)$ or ex$(n;H^{(r)})$ denote the largest integer $k$ for which there exists a $G^{(r)}(n;k)$ containing none of the members of $H$ as a sub-$r$-graph. 
+\end{definition}
+\begin{remark}
+    For $s$ less than $r$, the $s$-tuples of an $r$-graph will be \textit{any} set of $s$ vertices. The \textit{star} of an $s$-tuple $S$ in a $G^{(r)}$ is the $(r-s)$-graph which has vertices of $V(G^{(r)}) - V(S)$. 
+\end{remark}
+\begin{definition}
+    The \textit{valency} of an $s$-tuple is the number of $(r-s)$ tuples in its star.
+\end{definition}
+\begin{definition}
+    The \textit{product} of an $r$-graph $A^{(r)}$ and an $s$-graph $B^{(s)}$ will be an $(r+s)$-graph whose vertex set is $V(A^{(r)}\cup V(B^{(r))})$ and whose $(r+s)$-tuples are all unions of an $r$-tuple of A and a disjoint $s$-tuple of the second.
+\end{definition}
+\begin{definition}
+    In particular, a \textit{cone} over $A^{r}$ is a product of A with a disgoint $G^{(1)}(1;1)$.
+\end{definition}
+\begin{definition}
+    A \textit{double pyramid} is a product of a polygon (graph) with a disjoint $G^{(1)}(2;2)$.
+\end{definition}
+\begin{note}
+    It will be helpful to use geometrical language to interpret the triples of a 3-graph as the 2-simplexes of a simplical 2-complex (which contains all possible 1-simplexes). A wheel will be a cone over a polygon. An octahedron will be a double pyramid over a 4-gon. 
+\end{note}
+\begin{explanation}
+        A simplical complex is a set composed of 
+\end{explanation}
+\begin{note}
+    A simplex is a generalization of the simplest possible polytope in any given dimension. I.e. a point, line segment, triangle, tetrahedron, and 5-cell. A $k$-simplex has $k+1$ vertices. 
+\end{note}

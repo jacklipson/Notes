@@ -1,0 +1,8 @@
+\contentsline {chapter}{\numberline {0}CS vs EECS Requirements}{2}{chapter.0}%
+\contentsline {section}{\numberline {0.1}CS}{2}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}Lower Division Requirements}{2}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {0.1.2}Upper Division Requirements}{2}{subsection.0.1.2}%
+\contentsline {section}{\numberline {0.2}EECS}{3}{section.0.2}%
+\contentsline {subsection}{\numberline {0.2.1}Math \& Science Requirements}{3}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {0.2.2}Lower Division Requirements}{3}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {0.2.3}Upper Divison EECS Requirements}{3}{subsection.0.2.3}%
