@@ -60,6 +60,9 @@
 \begin{explanation}
     This is because ideal gases assume the potential energy originating from attractive forces between molecules to be negligible relative to their kinetic energy. This energy pulls molecules closer together so the volume decreases. At lower temperatures, these forces result in \emph{liquefaction} or \emph{condensation}.
 \end{explanation}
+
+\section{Vapor Pressure and Humidity}
+
 \begin{definition}[Critical Point/Temperature]
     At a certain \emph{critical temperature}, a gas will change to liquid phase if suffieicent pressure is applied. This is also called the \emph{critical point}.
 \end{definition}
@@ -71,4 +74,58 @@
 \end{remark}
 \begin{definition}[Sublimation]
     \emph{Sublimation} refers to the process wherein, at low pressures, a solid changes directly into the vapor phases \emph{without} passing through the liquid phase. 
+\end{definition}
+
+\section{Partial Pressure and Humidity}
+
+\begin{remark}[Cooling Process]
+    Moleculesi n a liquid roughly follow the Maxwell distribution. Molecules of high speeds in a liquid – i.e. $E_A$ – may leave the liquid temporarily but be pulled back by attractive forces. Only those of highest speed \emph{evaporate}, ultimately decreasing the average speed such that the absolute temperature is less. Kinetic theory, then, predicts evaporation is a \emph{cooling process}.
+\end{remark}
+\begin{definition}[Saturated Vapor Pressure]
+    At equilibrium, an equal number of molecules enter the vapor above a liquid and enter the liquid. At this point, the pressure of the vapor is said to be \emph{saturated}.
+\end{definition}
+\begin{remark}
+    The concentration of particular molecules in the gas phase above the liquid will not affect the saturated vapor pressure, but will lengthen the amount of time to reach equilibrium due to collisions.
+\end{remark}
+\begin{remark}
+    Increased temperature increases the saturated vapor pressure of a liquid until it equals the external pressure and \emph{boiling} occurs. Bubbles which indicate a change from liquid to the gas phase are crushed if vapor pressure inside the bubbles is less than the external pressure.
+\end{remark}
+\begin{definition}[Partial Pressure]
+    \emph{Partial pressure} is the pressure each gas would exert it it alone were present in a mixture. The \emph{relative humidity} is defined to be the ratio of the partial pressure of water vapor to the saturated vapor pressure of water at a given temperature. If the partial pressureo f water exceeds the saturated vapor pressure, the air is \emph{supersaturated}. This excess water may appear as dew or clouds.
+\end{definition}
+\begin{definition}[Dew Point]
+    The \emph{dew point} is when water is cooled s.t. the saturated vapor pressure of water equals its partial pressure.
+\end{definition}
+\begin{note}
+    The pressure $P$ of the amosphere as a function altitude $y$ above sea level is, where $P_0$ is $1.00$ atm: 
+    $$P = P_0 e^{-(\rho_0g/P_0)y} = P_0e^{-(1.25\times10^{-4}m^{-1})}$$ 
+\end{note}
+
+\section{van der Waals Equation of State}
+
+\begin{theorem}[van der Waals Equation of State]
+    Given gas-dependent constants $a$ and $b$, $$(P + \frac{a}{(V/n)^2})(\frac{V}{n} - b) = RT.$$
+\end{theorem}
+\begin{proof}
+    To make the ideal gas law more accurate, we now resolve (1) the finite size of molecules in comparison to one another and the container and (2) forces between molecules may be greater than the size of molecules.
+
+    Let the molecules in a gas behave like hard spheres of radius $r$ such that the volume molecules can move around in is less than the volume $V$ of the container because the distance between molecules never shrinks below $2r$. Where $b$ is the unavailable volume per mole of gas, replace $V$ in $PV=nRT$ by $(V-nb)$. This relation, $P(\frac{V}{n} - b) = RT$ is called the \emph{Clausius equation of state} and predicts ideal gases have less pressure than real gases. Next, molecules at the edge of the gas leaving towards a wall are slowed by a net attractive force pulling them back in, thus exerting less force and pressure on the wall. We say this pressure is proportionally reduced by the density squared, or $(n/V)^2$, for constant $a$ s.t. $P = \frac{RT}{(V/n)-b}-\frac{a}{(V/n)^2}$ or $$(P+\frac{a}{(V/n)^2})(\frac{V}{n}-b)=RT.$$ Note that at low densities, van der Waals reduces to the ideal gas law. 
+\end{proof}
+
+\section{Mean Free Path}
+
+\begin{definition}[Mean Free Path]
+    We define the \emph{mean free path}, $\ell_M$ to be the average distance a molecule travels between collisions such that $$\ell_M = \frac{1}{4\pi\sqrt{2}r^2(N/V)}.$$
+\end{definition}
+\begin{proof}
+    Suppose the molecules of a gas are hard spheres of radius $r$. Let the path of one molecule with mean speed $\mean{v}$ be a cylinder of radius $2r$ such that if another molecule's center lies in the cylinder a collision will occur. We can assume for now the other molecules are not moving and the concentration of molecules is $N/V$. Then, $V_cylinder * N/V$ is the number of collisions that will occur. Over a time $\Delta t$, the molecule travels $\mean{v}\Delta t$ so the number of collisions is expected to be $\pi(2r)^2\mean{v}\Delta t(N/V)$. Thus, the average distance between collisions is $$\ell_M = \frac{\mean{v}\Delta t}{\pi(2r)^2\mean{v}\Delta t(N/V)} = \frac{1}{4\pi r^2(N/V)}.$$ If the other molecules are moving, the number of collisions in $\Delta t$ actually depends on the \emph{relative} speed $v_rel \approx \sqrt{2}\mean{v}$ of the colliding molecules so $$\ell_M = \frac{1}{4\sqrt{2}\pi r^2(N/V)}$$. This of course loses meaning at low densities.
+\end{proof}
+
+\section{Diffusion}
+
+\begin{definition}[Diffusion]
+    In general, the \emph{diffusing} substance moves from a region where its concentration is high to a region where its concentration is low.
+\end{definition}
+\begin{definition}[Fick's Law]
+    Consider a tube of cross-sectional area $A$ containg molecules of increasingly smaller concentration left-to-right. Take a small middle section of tube of length $\Delta x$ with section 1 on the left and 2 on the right. 1 has more molecules causing greater pressure such that more will strike the boundary into the middle section than from 2. Let $J$ be the rate of diffusion in numbehr of molecules/moles/kg per second. This is proportional, with diffusion constant $D$ to the \emph{concentration gradient} or difference in concentration per unit distance $\frac{C_1-C_2}{\Delta x}$. Thus, $J = DA\frac{C_1-C_2}{\Delta x} = DA\frac{dC}{dx}$. This is \emph{Fick's Law}.
 \end{definition}

@@ -20,19 +20,14 @@
 \begin{remark}
     A binary operation on a set, typically finite, can be represented as follows:
     \[ 
-    \renewcommand\arraystretch{1.2}
-    \begin{array}{!{\thickvrule}r!{\thickvrule}c|c|c!{\thickvrule}}
-        \thickhrule
-        * & a & b & c \\
-        \thickhrule
-        a & b & c & b \\
-        \hline
-        b & a & c & b \\
-        \hline
-        c & c & b & a \\
-        \thickhrule
-    \end{array}
-\]
+        \renewcommand\arraystretch{1.2}
+        \begin{tabu}{c|[2pt]c|c|c}
+            * & a & b & c \\\tabucline[2pt]{-}
+            a & b & b & b \\\hline
+            b & a & c & b \\\hline
+            c & c & b & a
+        \end{tabu}
+    \]
 \end{remark}
 
 \section{Groups}
@@ -155,7 +150,49 @@
 \begin{proof}
     
 \end{proof}
+\begin{remark}[Subgroup Diagrams]
+    Lattice, or \emph{subgroup diagrams}, can be drawn such that lines run down from a group $G$ to a group $H$ if $H < G$. 
+\end{remark}
+\begin{example}
+    Take two group structures of order 4: $\Z_4$ and the Klein 4-group \emph{Vierergruppe} defined as follows:
 
-Cont. on Page 58 in 7th ed 
-
-Cont. on Page 55 for copying lattice diagrams
+    \begin{center}
+    $\Z_4:$
+    \renewcommand\arraystretch{1.2}
+    \begin{tabu}{c|[2pt]c|c|c|c}
+        + & 0 & 1 & 2 & 3 \\\tabucline[2pt]{-}
+        0 & 1 & 2 & 3 & 0 \\\hline
+        1 & 2 & 3 & 0 & 1 \\\hline
+        2 & 3 & 0 & 1 & 2 \\\hline
+        3 & 0 & 1 & 2 & 3
+    \end{tabu}
+    \quad $V:$
+    \begin{tabu}{c|[2pt]c|c|c|c}
+        + & 0 & 1 & 2 & 3 \\\tabucline[2pt]{-}
+        0 & 1 & 2 & 3 & 0 \\\hline
+        1 & 2 & 3 & 0 & 1 \\\hline
+        2 & 3 & 0 & 1 & 2 \\\hline
+        3 & 0 & 1 & 2 & 3
+    \end{tabu}
+\end{center}
+    We can map these as:
+    \centering
+    \begin{tikzpicture}[node distance=2cm]
+        \node(Z4) {$Z_4$};
+        \node(02) [below=.5cm of Z4] {$\{0,2\}$};
+        \node(0) [below=.5cm of 02] {$\{0\}$};
+        \draw (Z4) -- (02) -- (0);
+    \end{tikzpicture}
+    and
+    \begin{tikzpicture}[node distance=2cm]
+        \node(V) {$V$};
+        \node(ea) [below left =.5cm and .5cm of V] {$\{e,a\}$};
+        \node(eb) [below =.5cm of V] {$\{e,b\}$};
+        \node(ec) [below right =.5cm and .5cm of V] {$\{e,c\}$};
+        \node(e) [below =.5cm of eb] {$\{e\}$};
+        \draw (V) -- (ea) -- (e);
+        \draw (V) -- (eb) -- (e);
+        \draw (V) -- (ec) -- (e);
+    \end{tikzpicture}
+    .
+\end{example}
