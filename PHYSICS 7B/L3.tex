@@ -1,0 +1,131 @@
+\chapter{Heat and the First Law of Thermodynamics}
+
+\section{Heat as Energy Transfer}
+
+\begin{remark}
+    An 18-th century model pictured heatflow as movement of a fluid substance called \emph{caloric} which could never be detected. Today, heat, like work, represents a transfer of energy.
+\end{remark}
+\begin{definition}[Calorie]
+    A \emph{calorie} (cal) is defined as the amount of heat necessary to raise the temperature of 1 gram of water by 1 Celsius degree. The more often used \emph{kilocalorie} (kcal), or \emph{\textbf{C}alorie} is 1000 calories. In the UK, heat is measured through \emph{British thermal units} (Btu) defined as the heat needed to raise the temperature of 1 lb of water by 1 F$\degree$. Gas companies use the \emph{therm} defined to be \qty{1e5}{Btu}.
+\end{definition}
+\begin{note}[Mechanical Equivalent of Heat]
+    The mechanical equivalent oheat is known as \qty{4.186}{J} = \qty{1}{cal}. And, \qty{1}{Btu} = \qty{0.252}{kcal} = \qty{1056}{J}.
+\end{note}
+\begin{definition}[Heat]
+    \emph{Heat} is energy transfered from one object to another because of a difference in temperature.
+\end{definition}
+
+\begin{definition}[Internal/Thermal Energy]
+    The sum total of all the neergy of the molecules in an object is called its \emph{internal/thermal energy}. e.g. 2 objects of equal temperature have more internal temperature than just 1.
+
+    For monatomic (one atom/molecule) gas, the internal energy $$E_{int} = N(\frac{1}{2}\bar{v^2}) = \frac{3}{2}NkT=\frac{3}{2}nRT.$$ If the gas molecules contain more than one atom, the rotaional and vibrational energy of the molecules must also be taken into account.
+\end{definition}
+\begin{remark}
+    Internal energy of real gases, as opposed to ideal gases, also depends on pressure and volume (due to atomic potential energy). Similarly, the internal energy of liquids and solids includes electric potential energy associated with chemical bonds. 
+\end{remark}
+
+\section{Specific Heat}
+
+\begin{definition}[Specific Heat]
+    An amount of heat $Q$ put into an object of mass $m$ results, depending on its \emph{specific heat} $c$, in a temperature change of $\Delta T$ such that $$Q = mc\Delta T.$$
+\end{definition}
+\begin{definition}[Closed/Open/Isolated Systems]
+    A \emph{closed system} is one for which no mass enters or leaves, but energy may be exchanged with the environment. Mass may enter or leave in an \emph{open system}. If no energy AND no mass passes its boundaries, a system is \emph{isolated}.
+\end{definition}
+\begin{remark}[Energy Conservation for Heat Transfer]
+    Within an isolated system, we can write the energy conservation equation for heat transfer as $\Sigma Q = 0$.
+\end{remark}
+\begin{definition}[Calorimetry]
+    \emph{Calorimetry} is a technique which quantitatively measures heat exchange using a \emph{calorimeter} that must be well insulated.
+\end{definition}
+\begin{definition}[Bomb Calorimeter]
+    A \emph{bomb calorimeter} measures the thermal energy released when a substance burns to determine their Calorie content. In this calorimeter, a carefully weighed sample is placed with an excess of oxygen in the "bomb" that is then placed in the water of a calorimeter with a fine wire passing into the bomb that ignites the mixture.
+\end{definition}
+
+\section{Latent Heat}
+
+\begin{definition}[Change of Phase]
+    A certain amount of energy is required to change a material's phase.
+\end{definition}
+\begin{definition}[Heat of Fusion/Vaporization]
+    The heat required to change \qty{1.0}{kg} of a substance from the solid to liquid state is called the \emph{heat of fusion}, denoted by $L_F$. The heat required for the change from liquid to the vapor phase is called the \emph{heat of vaporization} $L_V$. These are also called the \emph{latent heats} of substances.
+
+    The heat involved in a change of phase is written as $Q = mL$ where $m$ is the mass of the substance.
+\end{definition}
+\begin{remark}
+    These latent heats also refer to the amount of heat \emph{released} by a substance when it changes from gas to liquid or liquid to solid.
+\end{remark}
+\begin{remark}
+    At the melting point, the latent heat of fusion does not increase the average kinetic energy (and thus the temperature) of the molecules in a solid, but instead overcomes the potential energy from the forces between molecules. This is the same for vaporization. However, vaporization requires a greater average distance between molecules such that the heat of vaporization is far greater than the heat of fusion for a given substance.
+\end{remark}
+
+\section{The First Law of Thermodynamics}
+
+\begin{definition}[The First Law of Thermodynamics]
+    Because heat is defined to be the transfer of energy due to a difference in temperature, let work be the transfer of energy NOT due to a temperature difference such that, as a general statement of the \emph{law of conservation of energy} $\Delta E_{int} = Q - W$.
+\end{definition}
+\begin{note}[Sign Conventions]
+    Because $Q$ is the net heat \emph{added} to the system while $W$ is the net work done \emph{by} the system, we say the following:
+    \begin{enumerate}
+        \item Heat added is +
+        \item Heat lost is -
+        \item Work on system is -
+        \item Work by system is +
+    \end{enumerate}
+\end{note}
+\begin{remark}
+    A full summary of the first law of thermodynamics would include kinetic energy $K$ and potential energy $U$ such that $$\Delta K + \Delta U + \Delta E_{int} = Q-W.$$
+\end{remark}
+
+\begin{definition}[Idealized Processes]
+    An idealized process carried out at:
+    \begin{enumerate}
+        \item constant temperature ($\Delta T = 0$) is called \emph{isothermal}.
+        \item constant heat ($Q = 0$) is called \emph{adiabatic}. (This is the case for well-insulated systems or very rapid processes.)
+        \item constant pressure ($\Delta P = 0$) is called \emph{isobaric}.
+        \item constant volume ($\Delta V = 0$) is called \emph{isovolumetric} (or isochoric).
+    \end{enumerate}
+\end{definition}
+\begin{definition}[Isotherms]
+    Curves on a PV diagram at different temperatures are called \emph{isotherms}.
+\end{definition}
+\begin{definition}[Quasistatically]
+    A process done slowly enough such that a series of equilibrium states are essentially maintained is called \emph{quasistatically}.
+\end{definition}
+\begin{definition}[Heat Reservoir]
+    A body whose mass is so large that, ideally, its temperature does not change significantly when heat is exchanged, is called a \emph{heat reservoir}.
+\end{definition}
+\begin{example}
+    Suppose there is a gas of pressure $P$ inside a cylindrical container of area $A$ and length $\ell$ fitted with a movable piston.
+
+    If our system is just the gas, as it exerts a force $F=PA$ on the piston, the work done by the gas is $dW = \vect{F}\cdot d\vect{\ell} = PAd\ell = PdV$ where $d\vect{l}$ is an infinitesimal displacement of the piston.
+
+    If the gas was \emph{compressed} so $d\vect{\ell}$ would point into the gas, its volume would decrease and $dV<0$. Thus, the work done by the gas would be negative s.t. positive work is being done \emph{on} the gas. FOr a finite change in volume from $V_A$ to $V_B$, the work $W$ done by the gas will be $W = \int dW = \int_{V_A}^{V_B}PdV$.
+
+    For an quasistatic isothermal expansion of an ideal gas, $P=nRT/V$ for constant $T$ tells us $W = nRT\ln\frac{V_B}{V_A}.$
+
+    For an isobaric process, $P$ is constant so $W = P\Delta V$. And lastly, for an isovolumetric process, $V_A = V_B$ so no work is done. 
+\end{example}
+\begin{definition}[Free Expansion]
+    \emph{Free expansion} is a type of adiabatic process when a gas is allowed to expand in volume without doing any work. Picture 2 well-insulated containers connected by a valve such taht one container has gas while the other is empty. When the valve is open, no heat flows or work is done because no objects are moved so $\Delta E_{int} = Q = W = 0$. $E_int$ only depends on $T$ so $\Delta T = 0$ as well.
+\end{definition}
+
+
+EDIT ALL OF THE EXAMPLE ABOVE TO MATCH THE CONCLUSION THAT THE PROCESS MATTERS. LIKE IN 19-7-4 THE GRAPH OF ALL 3.
+
+\section{Molar Specific Heats for Gases}
+
+\begin{remark}
+    Specific heats easily apply to solids and liquids. Gases depend much more on how the thermodynamic process is carried out however. Specific heats are given at constant volume $c_V$ and pressure $c_P$.
+\end{remark}
+\begin{definition}[Molar Specific Heats]
+    Molar specific heats $C_V$ and $C_P$ denote the heat required to raise 1 mol of gas by 1 C$\degree$ at constant volume and pressure respectively. Thus,
+    \begin{align*}
+        Q = nC_V\Delta T && \text{[volume constant]} \\
+        Q = nC_P\Delta T && \text{[pressure constant]}
+    \end{align*}
+    where $C_V = Mc_V$ and $C_P = Mc_P$ where $M$ is the molecular mass of the gas (g/mol).
+\end{definition}
+
+
+CONTINUE ON 19-8-1
