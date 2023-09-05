@@ -20,3 +20,7 @@
 \contentsline {section}{\numberline {19.3}Latent Heat}{14}{section.19.3}%
 \contentsline {section}{\numberline {19.4}The First Law of Thermodynamics}{15}{section.19.4}%
 \contentsline {section}{\numberline {19.5}Molar Specific Heats for Gases}{16}{section.19.5}%
+\contentsline {section}{\numberline {19.6}Adiabatic Expansion of a Gas}{18}{section.19.6}%
+\contentsline {section}{\numberline {19.7}Heat Transfer}{18}{section.19.7}%
+\contentsline {chapter}{\numberline {20}Second Law of Thermodynamics}{21}{chapter.20}%
+\contentsline {section}{\numberline {20.1}name}{21}{section.20.1}%

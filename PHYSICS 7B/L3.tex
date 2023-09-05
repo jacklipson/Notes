@@ -100,18 +100,15 @@
 
     If our system is just the gas, as it exerts a force $F=PA$ on the piston, the work done by the gas is $dW = \vect{F}\cdot d\vect{\ell} = PAd\ell = PdV$ where $d\vect{l}$ is an infinitesimal displacement of the piston.
 
-    If the gas was \emph{compressed} so $d\vect{\ell}$ would point into the gas, its volume would decrease and $dV<0$. Thus, the work done by the gas would be negative s.t. positive work is being done \emph{on} the gas. FOr a finite change in volume from $V_A$ to $V_B$, the work $W$ done by the gas will be $W = \int dW = \int_{V_A}^{V_B}PdV$.
+    If the gas was \emph{compressed} so $d\vect{\ell}$ would point into the gas, its volume would decrease and $dV<0$. Thus, the work done by the gas would be negative s.t. positive work is being done \emph{on} the gas. For a finite change in volume from $V_A$ to $V_B$, the work $W$ done by the gas will be $W = \int dW = \int_{V_A}^{V_B}PdV$.
 
-    For an quasistatic isothermal expansion of an ideal gas, $P=nRT/V$ for constant $T$ tells us $W = nRT\ln\frac{V_B}{V_A}.$
+    For an quasistatic isothermal expansion of an ideal gas, $P=nRT/V$ for constant $T$ tells us $W = nRT\ln\frac{V_B}{V_A}.$ This is the area under the curve between points $A$ and $B$ on a $PV$ diagram.
 
-    For an isobaric process, $P$ is constant so $W = P\Delta V$. And lastly, for an isovolumetric process, $V_A = V_B$ so no work is done. 
+    We can replicate this same change of state from A to B for an ideal gas first isovolumetrically then isobarically. For an ideal gas undergoing an isovolumetric process where we lower the pressure from $P_A \to P_B$, we simply reduce the temperature by letting heat flow out ($dV = 0 \implies W = 0$ so no work is done). For an ideal gas undergoing an isobaric process taking the volume from $V_A \to V_B$, $P$ is constant at $P_B$ so $W = P_B\Delta V = P_B(V_B-V_A) = \frac{nRT_B}{V_B}(V_B-V_A) = nRT_B(1-\frac{V_A}{V_B})$. Thus, the total work from $A$ to $B$ in this case was $\frac{nRT_B}{V_B}(V_B-V_A)$ which is quantitatively different from $nRT\ln\frac{V_B}{V_A}$.
 \end{example}
 \begin{definition}[Free Expansion]
-    \emph{Free expansion} is a type of adiabatic process when a gas is allowed to expand in volume without doing any work. Picture 2 well-insulated containers connected by a valve such taht one container has gas while the other is empty. When the valve is open, no heat flows or work is done because no objects are moved so $\Delta E_{int} = Q = W = 0$. $E_int$ only depends on $T$ so $\Delta T = 0$ as well.
+    \emph{Free expansion} is a type of adiabatic process when a gas is allowed to expand in volume without doing any work. Picture 2 well-insulated containers connected by a valve such taht one container has gas while the other is empty. When the valve is open, no heat flows or work is done because no objects are moved so $\Delta E_{int} = Q = W = 0$. $E_{int}$ only depends on $T$ so $\Delta T = 0$ as well.
 \end{definition}
-
-
-EDIT ALL OF THE EXAMPLE ABOVE TO MATCH THE CONCLUSION THAT THE PROCESS MATTERS. LIKE IN 19-7-4 THE GRAPH OF ALL 3.
 
 \section{Molar Specific Heats for Gases}
 
@@ -126,6 +123,76 @@ EDIT ALL OF THE EXAMPLE ABOVE TO MATCH THE CONCLUSION THAT THE PROCESS MATTERS. 
     \end{align*}
     where $C_V = Mc_V$ and $C_P = Mc_P$ where $M$ is the molecular mass of the gas (g/mol).
 \end{definition}
+\begin{remark}
+    Imagine an ideal gas is slowly heated by $\Delta T$, first at constant volume, then constant pressure. In the constant volume process, no work is done since $\Delta V = 0.$ Thus all the heat $Q_V$ added goes towards increasing internal energy such that $Q_V = \Delta E_{int}.$
+    
+    However, in the constant pressure process, work \emph{is} done so the added heat $Q_P$ increases the internal energy and does the work $W = P\Delta V_P$ so $\Delta E_{int} = Q_P - P\Delta V_P$. 
+    
+    Because $\Delta E_{int}$ is equal in both processes ($\Delta T_V = \Delta T_P$), $Q_P - Q_V = P\Delta V \implies nC_P\Delta T - nC_V\Delta T = P(\frac{nR\Delta T}{P})$ from the ideal gas law. This implies $C_P-C_V = R$ which is very accurate to what's obtained experimentally.
+\end{remark}
+\begin{remark}
+    Now, a process done at constant volume on a \emph{monatomic} gas does no work so $nC_V\Delta T = nC_V(T - 0) = Q_V = \Delta E_{int} = N(\frac{1}{2}m\mean{v^2}) = \frac{3}{2}nRT.$ So $C_V = \frac{3}{2}R.$  
+\end{remark}
+\begin{definition}[Degrees of Freedom]
+    Here, we denote \emph{degrees of freedom} to mean the number of independent way molecules can possess energy.
+\end{definition}
+\begin{example}
+    For instance, a diatomic molecule has 5 total degrees of freedom. 3 from translational energy (x,y,z) plus 2 from rotaional kinetic energy (not 3 because the axis along the line of the 2 molecules has such small inertia it is negligible).
+\end{example}
+\begin{definition}[Principle of Quipartition of Energy]
+    Energy is shared equally among the active degrees of freedom and each active degree of a molecule has on average an energy equal to $\frac{1}{2}kT.$
+\end{definition}
+\begin{note}
+    This makes sense as diatomic molecules have energy $\frac{5}{2}nRT$ about $5/3$ times monatomic molecules without degrees of freedom. Hence their $C_V$ being $5/3$ as much. Yet, at extreme low and high temperatures, this diverges such that at low temps, molecules only have translational kinetic energy ($3/2$). And at high temps, molecules also have vibration as 2 degree of freedom (as if from a spring) such that it has kinetic and potential energy ($7/2$). 
+\end{note}
+\begin{note}
+    For solids, we maintain this same spring idea such that molecules have potential and kinetic energy to do with vibration in the $x,y,z$ directions implying 6 degrees of freedom.
+\end{note}
 
+\section{Adiabatic Expansion of a Gas}
 
-CONTINUE ON 19-8-1
+\begin{remark}
+    Take the first law of thermodynamics in an adiabatic process  ($\Delta Q = 0$) for an ideal gas such that $dE_{int} = dQ-dW = -dW = -PdV$. For an ideal gas, $\Delta E_{int} = nC_V\Delta T$ tells us $nC_vdT = -PdV$. Taking the differential of the ideal gas law gives $PdV + VdP = nRdT$ so $nC_V(\frac{PdV+VdP}{nR}) + PdV = 0.$ Rearranging and $C_V+R = C_P$ gives $C_PPdV + C_VVdP = 0$ or $\frac{C_P}{C_V}PdV+VdP=0$. Defining $\gamma = \frac{C_P}{C_V}$ and integrating finally gives $\ln(P)+\gamma\ln(V) = \text{constant}$ which simplifies to $$PV^\gamma = \text{constant}.$$ It's important to note the ideal gas law holds for an adiabatic expansion however $PV$ is clearly not constant implying $T$ must be nonconstant.
+\end{remark}
+
+\section{Heat Transfer}
+
+\begin{definition}[Conduction]
+    Heat \emph{conduction} can be visualized via molecular collisions such that faster molecules at a heated end collide with slower-moving neighbors and transfer kinetic energy. In metals, collisions of free electrons are mainly responsible for conduction.
+\end{definition}
+\begin{remark}[Thermal Conductivity]
+    Take a uniform cylinder of cross-sectional area $A$ and length $\ell$ such that ends with temperatures $T_1$ and $T_2$ with heat flow $Q$ over a time interval $t$ gives $\frac{Q}{t} = kA\frac{T_1-T_2}{\ell}$ where $k$ is the \emph{thermal conductivity} constant characteristic of the material. The rate of heat flow ($J/s$) is directly proportional to $(T_1-T_2)/\ell$.
+\end{remark}
+\begin{definition}[Thermal Gradient]
+    When $k$ or $A$ cannot be considered constant, we instead take the limit of an infinitesimally thin slab of thickness $dx$ such that our equation becomes $\frac{dQ}{dt} = -kA\frac{dT}{dx}$ where $dT/dx$ is the \emph{temperaute gradient}. Here, the negative sign denotes that heat flow is in direction opposite to the temperature gradient.
+\end{definition}
+\begin{definition}[Conductors/Insulators]
+    Substances for which $k$ is very large conduct heat rapidly and are called good thermal \emph{conductors}. When $k$ is small, the substances are called good thermal \emph{insulators}.
+\end{definition}
+\begin{definition}[Thermal Resistance]
+    The insulating properties of bulding materials are usually specified by $R$-values or \emph{thermal resistance}, defined as $R = \frac{\ell}{k}$ for a thickness $\ell$ of a material. Larger $R$ values imply better insulation.
+\end{definition}
+\begin{definition}[Convection]
+    Though liquids and gases are poor conductors of heat, \emph{Convection} is the rapid process whereby heat flows via the bulk movement of molecules over larger distances.
+\end{definition}
+\begin{definition}[Forced/Natural Convection]
+    For example, \emph{Forced convection} occurs through a fan blowing air while \emph{natural convection} occurs through hot air rising. Hot air or water (in convection currents) rise from buoyancy because heat causes them to expand, decreasing their relative density. 
+\end{definition}
+\begin{definition}[Radiation]
+    Radiation is heat transferred over empty space through EM waves. IR wavelengths are mainly responsible for heating the Earth.
+\end{definition}
+\begin{definition}[Stefan-Boltzmann equation]
+    The rate at which energy leaves a radiating object is $\frac{Q}{t} = \epsilon\sigma AT^4$ where $\sigma$ is the \emph{Stefan-Boltzmann constant} with value \qty{5.67e-8}{W/m^2\cdot K^4}. The factor $\epsilon$, or the \emph{emissivity}, falls between 0 and 1 and is characteristic of the surface of the radiating material.
+\end{definition}
+\begin{remark}
+    A good absorber is \emph{also} a good emitter. Black and dark objects are good emitters with $\epsilon\approx1.$
+\end{remark}
+\begin{example}
+    Take an object of emissivity $\epsilon$ and area $A$ at temperature $T_1$ surrounded by an environment at temperature $T_2$. Because both objects radiate energy to each other so the object absorbs energy proportional to $T^4_2$, the \emph{net} rate of radiant heat flow from the object is given by $\frac{Q}{t} = \epsilon\sigma A(T_1^4-T_2^4).$
+\end{example}
+\begin{definition}[Solar Constant]
+    About \qty{1350}{J} of energy from the Sun strike Earth's atmospher per second per square meter at right angles to the Sun's rays. This number \qty{1350}{W/m^2} is called the solar constant. The atmosphere may absorb as much as 70\% of this energy such that an object of emissivity $\epsilon$ with area $A$ facing the Sun absorbs at a rate about $\frac{Q}{t} = (\qty{1000}{W/m^2})\epsilon A\cos(\theta)$ where $\theta$ is the angle between the Sun's rays and a line perpendicular to the area $A$. Seasons result from this "effective area" $\cos(\theta)$ capture.
+\end{definition}
+\begin{definition}[Thermography]
+    Diagnostic \emph{thermography} uses a thermograph to scan the body and measure the intensity of infrared radiation to detect areas of high metabolic activity.
+\end{definition}
