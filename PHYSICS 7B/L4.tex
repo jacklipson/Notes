@@ -4,3 +4,26 @@
 
 \begin{remark}
 \end{remark}
+\begin{align*}
+    P_1'V_1 &= P_2V_2 \quad \text{from ideal gas law} \\
+    P_1' &= \frac{P_2V_2}{V_1} \\
+    (P_1+\frac{a}{(V_1/n)^2})(V_1-nb) &= (P_2+\frac{a}{(V_2/n)^2})(V_2-nb) \quad \text{from VDWE} \\
+    (P_1+\frac{a}{(V_1/n)^2}) &= \frac{(P_2+\frac{a}{(V_2/n)^2})(V_2-nb)}{V_1-nb} \\
+    P_1 &= \frac{(P_2+\frac{a}{(V_2/n)^2})(V_2-nb)}{V_1-nb} - \frac{a}{(V_1/n)^2} \\
+    P_1 &= \frac{(P_2 + \frac{an^2}{V_2^2})(V_2-nb)}{V_1-nb} - \frac{an^2}{V_1^2} \\
+    P_1 &= \frac{P_2V_2 - P_2nb + \frac{an^2}{V_2} - \frac{an^3b}{V_2^2}}{V_1-nb} - \frac{an^2}{V_1^2} \\
+    P_1 &= \frac{P_2V_2}{V_1-nb} - \frac{P_2nb}{V_1-nb} + \frac{an^2}{V_2(V_1-nb)} - \frac{abn^3}{V_2^2(V_1-nb)} - \frac{an^2}{V_1^2} \\
+    P_1 - P_1' &=  \frac{P_2V_2}{V_1-nb} - \frac{P_2nb}{V_1-nb} + \frac{an^2}{V_2(V_1-nb)} - \frac{abn^3}{V_2^2(V_1-nb)} - \frac{an^2}{V_1^2} - \frac{P_2V_2}{V_1} \\
+    \frac{P_1 - P_1'}{P_1} &= \frac{\frac{P_2V_2}{V_1-nb} - \frac{P_2nb}{V_1-nb} + \frac{an^2}{V_2(V_1-nb)} - \frac{abn^3}{V_2^2(V_1-nb)} - \frac{an^2}{V_1^2} - \frac{P_2V_2}{V_1}}{\frac{P_2V_2}{V_1-nb} - \frac{P_2nb}{V_1-nb} + \frac{an^2}{V_2(V_1-nb)} - \frac{abn^3}{V_2^2(V_1-nb)} - \frac{an^2}{V_1^2}} \\
+    \frac{P_1 - P_1'}{P_1} &= \frac{\frac{V_1^2V_2^2(P_2V_2) - V_1^2V_2^2(P_2nb) + V_1^2V_2(an^2)-V_1^2(abn^3)-V_2^2(V_1-nb)(an^2)-V_1V_2^2(V_1-nb)(P_2V_2)}{V_1^2V_2^2(V_1-nb)}}{\frac{V_1^2V_2^2(P_2V_2) - V_1^2V_2^2(P_2nb) + V_1^2V_2(an^2)-V_1^2(abn^3)-V_2^2(V_1-nb)(an^2)}{V_1^2V_2^2(V_1-nb)}}
+\end{align*}
+This simplifies to:
+\begin{align*}
+    \frac{P_1-P_1'}{P_1} &= \frac{V_1^2V_2^2(P_2V_2) - V_1^2V_2^2(P_2nb) + V_1^2V_2(an^2)-V_1^2(abn^3)-V_2^2(V_1-nb)(an^2)-V_1V_2^2(V_1-nb)(P_2V_2)}{V_1^2V_2^2(P_2V_2) - V_1^2V_2^2(P_2nb) + V_1^2V_2(an^2)-V_1^2(abn^3)-V_2^2(V_1-nb)(an^2)} \\
+    \frac{P_1-P_1'}{P_1} &= 1 - \frac{V_1V_2^2(V_1-nb)(P_2V_2)}{V_1^2V_2^2(P_2V_2) - V_1^2V_2^2(P_2nb) + V_1^2V_2(an^2)-V_1^2(abn^3)-V_2^2(V_1-nb)(an^2)}
+\end{align*}
+Note that at this point all the units cancel so we have made no mistakes. This equation becomes:
+\begin{align*}
+    \frac{P_1'-P_1}{P_1} &= -1 - \frac{(bP_2V_1V_2^3)n - (P_2V_1^2V_2^3)}{ab(V_1^2-V_2^2)n^3 + (aV_1V_2(V_1-V_2))n^2 - (bP_2V_1^2V_2^2)n + P_2V_1^2V_2^3}
+\end{align*}
+Our final percentage is now a very ugly function of $n$ moles. Finally substituting in values gives an equation that we can easily plot on Desmos.
