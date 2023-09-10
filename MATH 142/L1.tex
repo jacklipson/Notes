@@ -116,7 +116,7 @@
     In $\E^2$, denote the unit disk $D$ and the unit circle $C$. $D$'s interior is $D-C$ while $C$'s interior is $\O$. 
 \end{example}
 \begin{definition}[Frontier]
-    The \textbf{frontier} of a set $A$ is the intersection of $\close{A}$ with $\close{X-A}$. This is equivalent to the points of $X$ neither in the interior of $X$ or $X-A$.
+    The \textbf{frontier} of a set $A$ is the intersection of $\close{A}$ with $\close{X-A}$. This is equivalent to the points of $X$ neither in the interior of $A$ nor $X-A$.
 \end{definition}
 \begin{example}
     In $\E^2$, the unit disc $D$, its interior $\interior{D}$, and the unit circle $C$ all have the same frontier $C$.
@@ -132,5 +132,5 @@
     Let $\beta$ be a nonempty collection of subsets of a set $X$. If the intersection of any finite number of members of $\beta$ is always in $\beta$, and if $\bigcup\beta=X$, then $\beta$ is a base for a topology on $X$.
 \end{theorem}
 \begin{proof}
-    Take the collection of all unions of members of $\beta$ as open sets and check the topology requirements.
+    Let the collection of all possible unions of members of $\beta$ be open sets. This then immediately satisfies our new definition for a topological space.
 \end{proof}
