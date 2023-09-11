@@ -107,7 +107,7 @@
     A set is closed if and only if it is equal to its closure.
 \end{corollary}
 \begin{definition}[Dense]
-    A set whose closure is the whole space is said to be \textbf{dense} in the space.
+    A set whose closure is the whole space is said to be \textbf{dense} in the space. A dense set meets every nonempty open subset of the space.
 \end{definition}
 \begin{definition}[Interior]
     The \textbf{interior} $\interior{A}$ of a set $A$ is the union of all open sets contained in $A$. A point $x$ lies in the interior of $A$ if and only if $A$ is a neighbourhood of $x$. Also, an open set is its own interior.
@@ -116,7 +116,7 @@
     In $\E^2$, denote the unit disk $D$ and the unit circle $C$. $D$'s interior is $D-C$ while $C$'s interior is $\O$. 
 \end{example}
 \begin{definition}[Frontier]
-    The \textbf{frontier} of a set $A$ is the intersection of $\close{A}$ with $\close{X-A}$. This is equivalent to the points of $X$ neither in the interior of $A$ nor $X-A$.
+    The \textbf{frontier} of a set $A$ is the intersection of $\close{A}$ with $\close{X-A}$. This is equivalent to the points of $X$ neither in the interior of $A$ nor the interior of $X-A$.
 \end{definition}
 \begin{example}
     In $\E^2$, the unit disc $D$, its interior $\interior{D}$, and the unit circle $C$ all have the same frontier $C$.
@@ -134,3 +134,6 @@
 \begin{proof}
     Let the collection of all possible unions of members of $\beta$ be open sets. This then immediately satisfies our new definition for a topological space.
 \end{proof}
+\begin{remark}
+    A space whose topology has a countable base is called a \textbf{second countable space}. A space which contains a countable dense subset is said to be \textbf{separable}.
+\end{remark}

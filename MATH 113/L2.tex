@@ -304,17 +304,27 @@
               postaction={%
                 decoration={%
                   markings, mark=at position 0.5 with {\arrow{Triangle}},
-                },
-                decorate,
-              },
-            }
-            every node/.style={
-                draw, circle, fill = black, inner sep = 0pt, minimum width = 2.5 pt,
-            }
+                }, decorate, }, }
         ]
-        \node (0) {0};
-        \node (2) at (0, -2cm) {2};
+        \node [draw, fill=white, circle, inner sep = 1pt] (0) {0};
+        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 0] (2) {2};
+        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 2] (4) {4};
+
+        \node [draw, fill=white, circle, inner sep = 1pt] [right = 2cm of 0] (3) {3};
+        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 3] (5) {5};
+        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 5] (1) {1};
+
+        \draw [mid arrow] (0) to (2);
+        \draw [mid arrow] (2) to (4);
+        \draw [mid arrow] (4) to [bend left = 45] (0);
+
+        \draw [mid arrow] (3) to (5);
+        \draw [mid arrow] (5) to (1);
+        \draw [mid arrow] (1) to [bend right = 45] (3);
+
+        \draw [dashed] (0) -- (3) -- (5) -- (2) -- (4) -- (1);
         % \colorlet{my colour}{black}%
+        % \colorlet{my label}{red}
         % \foreach \i [count=\j, count=\r from 0, evaluate=\j as \k using {90+36-\j*36}] in {1,...,10}{
         %     \node [circle, fill, inner sep=0pt, minimum width=2.5pt, label={\k:$\ifnum\i=1e\else r_\r\fi$}] (r\j) at (90+36-\j*36:3/2) {};
         %   }
