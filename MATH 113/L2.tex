@@ -323,15 +323,7 @@
         \draw [mid arrow] (1) to [bend right = 45] (3);
 
         \draw [dashed] (0) -- (3) -- (5) -- (2) -- (4) -- (1);
-        % \colorlet{my colour}{black}%
-        % \colorlet{my label}{red}
-        % \foreach \i [count=\j, count=\r from 0, evaluate=\j as \k using {90+36-\j*36}] in {1,...,10}{
-        %     \node [circle, fill, inner sep=0pt, minimum width=2.5pt, label={\k:$\ifnum\i=1e\else r_\r\fi$}] (r\j) at (90+36-\j*36:3/2) {};
-        %   }
-        % \foreach \i [evaluate={\j=int(mod(\i,10)+1);}] in {1,...,10}{
-        %     \ifodd\j \colorlet{my colour}{blue}\def\tempa{$d_1$}\else \colorlet{my colour}{purple}\def\tempa{$d_2$}\fi
-        %     \draw [my colour, mid arrow] (r\i) to [bend left] node [my label] {\tempa} (r\j);
-        %     \draw [my colour, mid arrow] (r\j) to [bend left] node [my label] {\tempa} (r\i);
-        %   }
     \end{tikzpicture}
+    with solid (2) and dashed (3). Dashed lines have no arrowhead because 3 is its own inverse.
 \end{example}
+

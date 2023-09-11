@@ -1,3 +1,90 @@
-\chapter{Isomorphic Binary Structures}
+\chapter{Permutations, Cosets, and Direct Products}
 
-\section{}
+\section{Groups of Permutations}
+
+\begin{definition}[Permutation of a set]
+    A \emph{permutation of a set} $A$ is a function $\phi\colon A \to A$ that is both one to one and onto.
+\end{definition}
+\begin{remark}[Permutation Multiplication]
+    Function composition $\circ$ is a binary operation on the collection of all permutations of a set $A$. We call this operation \emph{permutation multiplication}.
+\end{remark}
+\begin{remark}
+    Let $\sigma, \tau$ be permutations of a set $A$ so $\sigma, \tau$ are both one-to-one function mapping $A$ onto $A$. then, $\sigma\circ\tau$, or simply $\sigma\tau$ is a permutation as long as it is one-to-one.
+
+    For any $a_1,a_2 \in A$, if $(\sigma\tau)(a_1)=(\sigma\tau)(a_2)$ gives $(\sigma(\tau(a_1)))=(\sigma()\tau(a_1))$. Because $\sigma$ is injective, $\tau(a_1)=\tau(a_2)$. Because $\tau$ is injective, $a_1=a_2$ so $\sigma\tau$ is injective.
+
+    For any $a \in A$, there exists some $b in A$ so $\sigma(b) = a$ because $\sigma$ is onto $A$. Because $\tau$ is onto $A$, there exists some $c \in A$ so $\tau(c) = b$. Thus, $a = (\sigma\tau)(c)$ so $\sigma\tau$ is onto $A$.
+\end{remark}
+\begin{example}
+    Given a set $A = \{1,2,3,4,5\}$, we can write a permutation $\sigma$ as 
+    \[\sigma =
+    \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 \\
+        4 & 2 & 5 & 3 & 1
+    \end{pmatrix}.\] so $\sigma(1) = 4$, etc.
+\end{example}
+\begin{theorem}
+    Let $A$ be a nonempty set, and $S_A$ be the collection of all permutations of $A$. Then, $S_A$ is a group under permutation multiplication.
+\end{theorem}
+\begin{proof}
+    Because the composition of two permutations of $A$ results in a permutation, we have closure under $\circ$. For any functions $f,g,h$, $((f\circ g)\circ h)(x) = (f(g))\circ(h)(x) = f(g(h))(x) = f(g\circ h)(x)$ so $\mathscr{G}_1$ is easily satisfied. The permutation $\imath$ defined as $\imath(a)=a$ for all $a \in A$ is the identity ($\mathscr{G}_2$). Last, for any permutation $\sigma$, $\sigma^{-1}$ reverse the direction of the mapping $\sigma$ such that $\sigma^{-1}(a)$ is the element $a'$ of $A$ so $\sigma(a')=a$. This exists because $\sigma$ is bijective. For any $a \in A$, $\imath(a) = a = \sigma(a') = \sigma(\sigma^{-1}(a')) = (\sigma\sigma^{-1})(a)$ and $\imath(a') = a' = \sigma^{-1}(a) = \sigma^{-1}(\sigma(a')) = (\sigma^{-1}\sigma)(a')$ satisfying $\mathscr{G}_3.$
+\end{proof}
+\begin{remark}
+    To define an isomorphism $\phi\colon S_A \to S_B$, we let $f \colon A \to B$ have one-to-one function mapping $A$ onto $B$ so $A$ and $B$ have the same cardinality so for $\sigma \in S_A$, let $\phi(\sigma) = \bar{\sigma}\in S_B$ so that for all $a \in A$, $\bar{\sigma}(f(a)) = f(\sigma(a)).$ 
+\end{remark}
+\begin{definition}[Symmetric Group on $n$ Letters]
+    Let $A$ be the finite set $\{1,2,\dots,n\}$. The group of all permutations of $A$ is the \emph{symmetric group on $n$ letters} $S_n$. Note that $S_n$ has $n!$ elements.
+\end{definition}
+\begin{remark}
+    $S_3$ is also the 3rd dihedral group $D_3$ of \emph{symmetries of an equilateral triangle} where $\rho_i$ is rotations and $\mu_i$ is mirror images in bisectors of angles such that $D_3$ is made up of:
+    \[
+    \begin{Bmatrix}
+        \rho_0 = \begin{pmatrix} 1 & 2 & 3 \\ 1 & 2 & 3 \end{pmatrix}, &
+        \mu_0 = \begin{pmatrix} 1 & 2 & 3 \\ 1 & 3 & 2 \end{pmatrix}, \\
+        \rho_1 = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 3 & 1 \end{pmatrix}, &
+        \mu_1 = \begin{pmatrix} 1 & 2 & 3 \\ 3 & 2 & 1 \end{pmatrix}, \\
+        \rho_2 = \begin{pmatrix} 1 & 2 & 3 \\ 3 & 1 & 2 \end{pmatrix}, &
+        \mu_2 = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{pmatrix}.        
+    \end{Bmatrix}
+    \]
+\end{remark}
+\begin{definition}[$n$th Dihedral Group $D_n$]
+    The \emph{$n$th dihedral group $D_n$} is the group of symmetries of the regular $n$-gon.
+\end{definition}
+\begin{example}[Octic Group $D_4$]
+    Given a square: \begin{tikzpicture}
+        \draw (0cm,0cm) rectangle (1cm, 1cm);
+        \foreach \x/\y/\n in {-.1/-.1/1, 1.1/-.1/2, 1.1/1.1/3, -.12/1.1/4}{\node at (\x cm, \y cm) {\n};}\end{tikzpicture}
+    , $D_4$ is the set of:
+    \[
+        \begin{Bmatrix}
+            \rho_0 = \begin{pmatrix} 1 & 2 & 3 & 4\\ 1 & 2 & 3 & 4 \end{pmatrix}, &
+            \mu_0 = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 1 & 4 & 3 \end{pmatrix}, \\
+            \rho_1 = \begin{pmatrix} 1 & 2 & 3 & 4\\ 2 & 3 & 4 & 1 \end{pmatrix}, &
+            \mu_1 = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 4 & 3 & 2 & 1 \end{pmatrix}, \\
+            \rho_2 = \begin{pmatrix} 1 & 2 & 3 & 4\\ 3 & 4 & 1 & 2 \end{pmatrix}, &
+            \delta_0 = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 3 & 2 & 1 & 4 \end{pmatrix}, \\
+            \rho_3 = \begin{pmatrix} 1 & 2 & 3 & 4\\ 4 & 1 & 2 & 3 \end{pmatrix}, &
+            \delta_1 = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 1 & 4 & 3 & 2 \end{pmatrix}.
+        \end{Bmatrix}
+        \]
+    where $\rho_i, \mu_i, \delta_i$ represent rotations, mirror images in perpendicular bisectors of sides, and diagonal flips respectively.
+\end{example}
+\begin{definition}[Image of $H$ under $f$]
+    Let $f\colon A\to B$ be a function and $H$ be a subset of $A$. The \emph{image of $H$ under $f$} is the set $\{f(h) \mid h \in H\}$ and is denoted $f[H].$
+\end{definition}
+\begin{lemma}
+    Let $G, G'$ be groups and $\phi\colon G\to G'$ be a one-to-one function such that for all $x,y \in G$, $\phi(xy) = \phi(x)\phi(y).$ Thus $\phi[G]$ is a subgroup of $G'$ and $\phi$ provides an isomorphism of $G$ with $\phi[G]$.
+\end{lemma}
+\begin{proof}
+    8.15 proof
+\end{proof}
+
+
+% \section{Orbits, Cycles, and the Alternating Groups}
+
+% \section{Cosets and the Theorem of Lagrange}
+
+% \section{Direct Products and Finitely Generated Abelian Groups}
+
+% \section{Plane Isometries}

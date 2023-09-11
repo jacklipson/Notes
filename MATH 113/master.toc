@@ -7,3 +7,5 @@
 \contentsline {section}{\numberline {1.4}More on Groups and Subgroups}{7}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Cyclic Groups}{8}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Generating Sets and Cayley Digraphs}{11}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Permutations, Cosets, and Direct Products}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Groups of Permutations}{13}{section.2.1}%
