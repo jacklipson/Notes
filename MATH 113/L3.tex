@@ -77,8 +77,11 @@
     Let $G, G'$ be groups and $\phi\colon G\to G'$ be a one-to-one function such that for all $x,y \in G$, $\phi(xy) = \phi(x)\phi(y).$ Thus $\phi[G]$ is a subgroup of $G'$ and $\phi$ provides an isomorphism of $G$ with $\phi[G]$.
 \end{lemma}
 \begin{proof}
-    8.15 proof
+    We simply prove the subgroup requirements. For any $x', y' \in \phi[G]$, there exist $x,y \in G$ so $\phi(x)=x'$ and $\phi(y)=y'$. By hypothesis, $\phi(xy) = \phi(x)\phi(y)$ so $x'y' \in \phi[G]$ so $\phi[G]$ is closed under the operation of $G'$. Next, say $e'$ is the identity of $G'$. Then, $e'\phi(e) = \phi(e) = \phi(ee) = \phi(e)\phi(e)$. Cancellation in $G'$ shows $e'=\phi(e)$ so $e' \in \phi[G]$. Last, for any $x' \in \phi[G]$, $e'=\phi(e)=\phi(xx^{-1})=\phi(x)\phi(x^{-1})=x'\phi(x^{-1})$ implying $x'^{-1} = \phi(x^{-1}) \in \phi[G]$. Thus $\phi[G]$ is a subgroup of $G'$. We already showed $\phi$ is onto and therefore an isomorphism of $G$ with $\phi[G]$.
 \end{proof}
+\begin{theorem}[Cayley's Theorem]
+    
+\end{theorem}
 
 
 % \section{Orbits, Cycles, and the Alternating Groups}

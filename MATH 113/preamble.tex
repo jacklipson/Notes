@@ -237,26 +237,4 @@
 
 % maybe useful:
 
-% [
-%     mid arrow/.style={%
-%       postaction={%
-%         decoration={%
-%           markings, mark=at position 0.5 with {\arrow{Triangle}},
-%         },
-%         decorate,
-%       },
-%     },
-%     my label/.style={%
-%       auto, midway, font=\footnotesize, inner sep=1.5pt
-%     },
-%     looseness=.5
-% ]
-% \colorlet{my colour}{black}%
-% \foreach \i [count=\j, count=\r from 0, evaluate=\j as \k using {90+36-\j*36}] in {1,...,10}{
-%     \node [circle, fill, inner sep=0pt, minimum width=2.5pt, label={\k:$\ifnum\i=1e\else r_\r\fi$}] (r\j) at (90+36-\j*36:3/2) {};
-%   }
-% \foreach \i [evaluate={\j=int(mod(\i,10)+1);}] in {1,...,10}{
-%     \ifodd\j \colorlet{my colour}{blue}\def\tempa{$d_1$}\else \colorlet{my colour}{purple}\def\tempa{$d_2$}\fi
-%     \draw [my colour, mid arrow] (r\i) to [bend left] node [my label] {\tempa} (r\j);
-%     \draw [my colour, mid arrow] (r\j) to [bend left] node [my label] {\tempa} (r\i);
-%   }
+% https://tex.stackexchange.com/questions/306940/cayley-graph-attempt
