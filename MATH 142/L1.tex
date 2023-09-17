@@ -1,6 +1,6 @@
-\chapter{Introduction}
+\chapter{Continuity}
 
-\section{Basic Definitions/Concepts}
+\section{Open and closed sets}
 
 \begin{definition}[Topological Space]
     A set $X$ \textbf{topological space} is a topological space if for each $x$ of $X$, there is a nonempty collection of subsets of $X$, called neighbourhoods of $x$, which satisfy the following axioms:
@@ -126,7 +126,7 @@
 \begin{definition}[Base/Basis]
     Given a topology on a set $X$, a collection $\beta$ of open sets is called a \textbf{base/basis} for the topology if every open set is a union of members of $\beta$. Elements of $\beta$ are called \emph{basic open sets}.
 
-    Equivalently, given any point $x \in X$ and a neighbourhood $N$ of $x$, there is always an element $B$ of $\beta$ so $x\in B\subseteq\beta$.
+    Equivalently, given any point $x \in X$ and a neighbourhood $N$ of $x$, there is always an element $B$ of $\beta$ so $x\in B\subseteq N$.
 \end{definition}
 \begin{theorem}
     Let $\beta$ be a nonempty collection of subsets of a set $X$. If the intersection of any finite number of members of $\beta$ is always in $\beta$, and if $\bigcup\beta=X$, then $\beta$ is a base for a topology on $X$.
@@ -137,3 +137,107 @@
 \begin{remark}
     A space whose topology has a countable base is called a \textbf{second countable space}. A space which contains a countable dense subset is said to be \textbf{separable}.
 \end{remark}
+
+\section{Continuous functions}
+
+\begin{note}
+    Let $X$ and $Y$ be topological spaces.
+\end{note}
+\begin{remark}[Old Idea of Continuity]
+    A function $f\colon X\to Y$ is continuous if for each point $x$ of $X$ and each neighbourhood $N$ of $f(x)$ in $Y$ the set $f^{-1}(N)$ is a neighbourhood of $x$ in $X$.
+\end{remark}
+\begin{theorem}[Continuity]
+    A function from $X$ to $Y$ is continuous if and only if the inverse image of each open set of $Y$ is open in $X$.
+\end{theorem}
+\begin{proof}
+    $\impliedby\colon$ Suppose $f$ is continuous. If $O$ is an open subset of $Y$ then $O$ is a neighbourhood of each of its points and therefore $f^{-1}(O)$ must be a neighbourhood of each of its points in $X$. So $f^{-1}(O)$ is open in $X$. 
+
+    $\implies\colon$ Suppose the inverse image of each open set of $Y$ is open in $X$. For any $x$ in $X$, let the open subset $O$ of $Y$ contain $f(x)$. Because $O$ is open, it is a neighbourhood of all of its points. Thus the inverse image of $O$ is open in $X$
+\end{proof}
+\begin{definition}[Map]
+    A continuous function is often called a \textbf{map} for short.
+\end{definition}
+\begin{theorem}
+    The composition of two maps is a map.
+\end{theorem}
+\begin{proof}
+    Suppose $f\colon X\to Y, g\colon Y\to Z$ are continuous. Say $O$ is an open set in $Z$. Then, $g^-1(O)$ is open in $Y$. Thus, $f^{-1}(g^{-1}(O))$ is open in $X$. So $g\circ f$ is continuous.
+\end{proof}
+\begin{theorem}
+    Suppose $f\colon X\to Y$ is continuous, and let $A \subseteq X$ have the subspace topology. Then the restriction $f\vert_A\colon A\to Y$ is continuous.
+\end{theorem}
+\begin{proof}
+    Let $O$ be an open set in $Y$. $f$ is continuous so $f^{-1}\cap(O)$ is open in $X$. By subspace topology, $f\vert_A^{-1}(O) = A\cap f^{-1}(O)$ is open in the subspace toplogy on $A$. Thus $f\vert_A$ is continuous.
+\end{proof}
+\begin{definition}[Identity Map $1_X$]
+    The map from $X$ to $X$ which sends each point $x$ to itself is called the \textbf{idenity map of $X$}, and written $1_X$. If we restrict $1_X$ to a subspace $A$ of $X$, we obtain the \textbf{inclusion map} $i\colon A\to X$.
+\end{definition}
+\begin{theorem}
+    The following are equivalent:
+    \begin{enumerate}[(a)]
+        \item $f\colon X\to Y$ is a map.
+        \item If $\beta$ is a base for the topology of $Y$, the inverse image of every member of $\beta$ is open in $X$.
+        \item $f(\bar{A}) \subseteq \close{f(A)}$ for any subset $A$ of $X$.
+        \item $\close{f^{-1}(B)} \subseteq f^{-1}(\close{B})$ for any subset $B$ of $Y$.
+        \item The inverse image of each closed set in $Y$ is closed in $X$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    We will use (a) $\implies$ (b) $\implies$ (c) $\implies$ (d) $\implies$ (e) $\implies$ (a).
+    \begin{itemize}
+        \item For $(a) \implies (b)$, if $f$ is a map, it is continuous so the inverse image of every open set in $Y$ is open in $X$. Each member of $\beta$ is open so in $Y$ so their inverse image is open in $X$. 
+        \item For $(b) \implies (c)$, if $A$ is a subset of $X$, every point of $f(A)$ lies inside $\close{f(A)}$ so we must show if $x \in \close{A} - A$ and $f(x) \notin f(A)$, then $f(x)$ is a limit point of $f(A)$. For $x$ to be a limit point of $f(A)$, every neighbourhood of $f(x)$ must contain a point of $f(A) - \{x\}$. If $N$ is a neighbourhood of $f(x)$ in $Y$, we can find a basic open set $B$ in $\beta$ so $f(x) \in B \subseteq N$. From (b), we know $f^{-1}(B)$ is open in $X$ and therefore a neighbourhood of $x$. Because $x$ is a limit point of $A$, $f^{-1}(B)$ must contain a point of $A$. Thus, $B$, and $N$, must contain a point of $f(A)$ implying $f(x)$ is a limit point of $f(A)$.
+        \item For $(c) \implies (d)$, assume $f(\close{A}) \subseteq \close{f(A)}$ for any subset $A$ of $X$. Let $x \in \close{f^{-1}(B)}$. If $x \in f^{-1}(B)$, then $x \in f^{-1}(\close{B})$. Otherwise, $x \in \close{f^{-1}(B)} - f^{-1}(B)$. From our assumption, $f(x) \in f(\close{f^{-1}(B)}) \subseteq \close{f(f^{-1}(B))} \subseteq B \subseteq \close{B}$. Thus, $x \in f^{-1}(\close{B})$.
+        \item For $(d) \implies (e)$, if $B$ is a closed subset of $Y$ then $\close{B} = B$. (d) then implies $\close{f^{-1}(B)} \subseteq f^{-1}(\close{B}) = f^{-1}(B)$ so $f^{-1}(B)$. Clearly, $f^{-1}(B) \subseteq \close{f^{-1}(B)}$ so $f^{-1}(B) = \close{f^{-1}(B)}$ so $f^{-1}(B)$ is closed in $X$.
+        \item For $(e) \implies (a)$, suppose the inverse image of each closed set in $Y$ is closed in $X$. Then, for any open set $B$ in $Y$, $Y-B$ is closed so, by our assumption, $A\coloneq f^{-1}(Y-B)$ must be closed such that $X-A$ is open. If $y \in B$, $y \notin A$ because this would imply $f(y) \in Y-B$ so $y \in X-A$. Thus, the inverse of any $B$, namely $X - f^{-1}(Y-b)$ is open suggesting $f\colon X\to Y$ is continuous and therefore a map.
+    \end{itemize}
+\end{proof}
+\begin{example}
+    Let $C$ denote the unit circle in the complex plane, taken with the subspace topology and give the interval $[0, 1)$ the induced topology from the real line. Define $f\colon[0,1)\to C$ by $f(x) = e^{2\pi ix}$. Let the set of all open segments of the circle be a base for the topology on $C$. If $S$ is in the base and $1 \notin S$, then $f^{-1}(S)$ is an open interval $(a,b)$ where $0<a<b<1$. Thus, $f^{-1}(S)$ is open in $[0,1)$. If some segment $S'$ does contain $1$, $f^-1{S'}$ has the form $[0,a)\cup(b,1)$ where $0<a<b<1$. This is the intersection of the open set $(-1,a)\cup(b,1)$ of the real line with $[0,1)$ and thus $S'$ is open also. Part $(b)$ from the last theorem shows $f$ is then continuous. 
+    
+    Despite $f$ being bijective, its inverse is NOT continuous. To show this, we need only make an open set $O$ of $[0,1)$ so $(f^{-1})^{-1}(O) = f(O)$ is not open in $C$. For instance, take $O$ to be the interval $[0, \frac{1}{2})$ which is open in $[0,1)$. But its image under the exponential map consists of complex numbers $z$ in $C$ for which $0 \leq arg(z) < \pi$. This is not open in $C$.
+\end{example}
+\begin{definition}[Homeomorphism]
+    A \textbf{homeomorphism} $h\colon X\to Y$ is a function which is continuous, one-one, onto, and has a continuous inverse. 
+\end{definition}
+\begin{example}
+    EXAMPLE ON PAGE 34 HERE!!!!!!!!! all the way until lemma 2.10
+\end{example}
+\begin{lemma}
+    Any homeomorphism from the boundary of a disc to itself can be extended to a homeomorphism of the whole disc.
+\end{lemma}
+\begin{proof}
+    Let $A$ be a disc and hoose a homeomorphism $h \colon A \to D$. Given a 
+\end{proof}
+
+FOR EXAMPLE AFTER TFAE THEOREM, DRAW FIGURE 2.1 FROM PAGE 33.
+
+TAKES NOTE ON EXAMPLE ON PAGE 34. (linked above where it should go)
+
+
+
+
+\subsection*{Page 35, Problem 17}
+
+Let $X$ denote the set of all real numbers with the finite-complement topology. Define $f\colon \E\to X$ by $f(x) = x$.
+
+\begin{proof}
+    For any open set $A \subseteq X$, $X-A$ must be $X$ or finite. 
+    \begin{itemize}
+        \item If $X-A =X$, $A = \O$ so $f^{-1}(A) = \O$ which is open in $\E^1$.
+        \item Let $B \coloneq X-A$. If $B = \O$, $A=X$ so $f^{-1}(A) = \E^1$ which is open in itself. (I'm not sure if I need this...)
+        \item If $B$ is a nonempty, finite subset of $X$, then for all $x_i \in E^1 - f^{-1}(B)$, let $d_i \coloneq \frac{1}{2}\min(\{\left| b_i - x\right| \colon b_i \in B\})$. Let $N \coloneq B_d(x_i)$ be an open neighbourhood of $x$ so $N\cap B = \O$. Thus, $x$ is not a limit point of $f^{-1}(B)$. This is valid for all $x \in E^1 - f^{-1}(B)$ so $E^1 - f^{-1}(B)$ has no limit points of $f^{-1}(B)$ so $f^{-1}(B)$ must contain all its limit points implying it is closed and $f^{-1}(A) = E^1 - f^{-1}(B)$ is open whenver $A$ is open. Thus, $f$ is continuous.
+    \end{itemize}
+
+    Let $A = (0,1)$ so $A$ is open in $E^1$. So, $(f^{-1})^{-1}(A) = f(A) = \{x \in \R \colon 0 < x < 1\}$. But, $X - f(A)$ is infinite and not equal to $X$ so $f(A)$ is not open. Thus $f^{-1}$ is not continuous so f is not a homeomorphism.
+\end{proof}
+
+\subsection*{Page 41, Problem 28}
+
+Let $A,B$ be disjoint closed subsets of a metric space.
+
+\begin{proof}
+    Let $d(x,y)$ be the distance metric on some topological space $X$. If $A$ and $B$ are both closed, $A = \close{A}, B = \close{B}$. So if $A \cap B = \O$, then $\close{A}\cap\close{B}=\O$. (Not sure if this is needed, just want to emphasize they are far away from each other.)
+    
+    For each $a_i \in A$, let $d_i \coloneq \frac{1}{2}\min(\{d(b,a_i) \mid b \in B\})$. (I'm not confident about whether I can assume the neighbourhoods are open in the next part because they're balls on a metric space or not). Let $N_i \coloneq B_i(a_i)$ be an open neighbourhood of $a_i$. And $U_i = N_i \cap A$. Clearly, $a_i \in U_i$ so $U_i \neq \O$. Let $U = \bigcup_{i=1}^{\infty}N_i$ (or just up until some $k$ if $A$ is finite) so $U\cap B = \O$ and $U \subseteq A$. Do the same for $B$ for a final union $V \subseteq B$. $U, V$ are both unions of open sets so they are each open in $X$, $U \subseteq A$ and $V \subseteq B$, and $U \cap V = \O$.
+\end{proof}

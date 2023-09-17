@@ -1,29 +1,54 @@
 \chapter{Second Law of Thermodynamics}
 
-\section{name}
+\section{Introduction}
 
-\begin{remark}
+\begin{definition}[Second Law of Thermodynamics - Clausius Statement]
+    Heat can flow spontaneously from a hot object to a cold object; heat will not flow spontaneously from a cold object to a hot object.
+\end{definition}
+\begin{remark}Energy could be conserved in a broken cup putting itself back together as it rises, but this is not observed to happen.
 \end{remark}
-\begin{align*}
-    P_1'V_1 &= P_2V_2 \quad \text{from ideal gas law} \\
-    P_1' &= \frac{P_2V_2}{V_1} \\
-    (P_1+\frac{a}{(V_1/n)^2})(V_1-nb) &= (P_2+\frac{a}{(V_2/n)^2})(V_2-nb) \quad \text{from VDWE} \\
-    (P_1+\frac{a}{(V_1/n)^2}) &= \frac{(P_2+\frac{a}{(V_2/n)^2})(V_2-nb)}{V_1-nb} \\
-    P_1 &= \frac{(P_2+\frac{a}{(V_2/n)^2})(V_2-nb)}{V_1-nb} - \frac{a}{(V_1/n)^2} \\
-    P_1 &= \frac{(P_2 + \frac{an^2}{V_2^2})(V_2-nb)}{V_1-nb} - \frac{an^2}{V_1^2} \\
-    P_1 &= \frac{P_2V_2 - P_2nb + \frac{an^2}{V_2} - \frac{an^3b}{V_2^2}}{V_1-nb} - \frac{an^2}{V_1^2} \\
-    P_1 &= \frac{P_2V_2}{V_1-nb} - \frac{P_2nb}{V_1-nb} + \frac{an^2}{V_2(V_1-nb)} - \frac{abn^3}{V_2^2(V_1-nb)} - \frac{an^2}{V_1^2} \\
-    P_1 - P_1' &=  \frac{P_2V_2}{V_1-nb} - \frac{P_2nb}{V_1-nb} + \frac{an^2}{V_2(V_1-nb)} - \frac{abn^3}{V_2^2(V_1-nb)} - \frac{an^2}{V_1^2} - \frac{P_2V_2}{V_1} \\
-    \frac{P_1 - P_1'}{P_1} &= \frac{\frac{P_2V_2}{V_1-nb} - \frac{P_2nb}{V_1-nb} + \frac{an^2}{V_2(V_1-nb)} - \frac{abn^3}{V_2^2(V_1-nb)} - \frac{an^2}{V_1^2} - \frac{P_2V_2}{V_1}}{\frac{P_2V_2}{V_1-nb} - \frac{P_2nb}{V_1-nb} + \frac{an^2}{V_2(V_1-nb)} - \frac{abn^3}{V_2^2(V_1-nb)} - \frac{an^2}{V_1^2}} \\
-    \frac{P_1 - P_1'}{P_1} &= \frac{\frac{V_1^2V_2^2(P_2V_2) - V_1^2V_2^2(P_2nb) + V_1^2V_2(an^2)-V_1^2(abn^3)-V_2^2(V_1-nb)(an^2)-V_1V_2^2(V_1-nb)(P_2V_2)}{V_1^2V_2^2(V_1-nb)}}{\frac{V_1^2V_2^2(P_2V_2) - V_1^2V_2^2(P_2nb) + V_1^2V_2(an^2)-V_1^2(abn^3)-V_2^2(V_1-nb)(an^2)}{V_1^2V_2^2(V_1-nb)}}
-\end{align*}
-This simplifies to:
-\begin{align*}
-    \frac{P_1-P_1'}{P_1} &= \frac{V_1^2V_2^2(P_2V_2) - V_1^2V_2^2(P_2nb) + V_1^2V_2(an^2)-V_1^2(abn^3)-V_2^2(V_1-nb)(an^2)-V_1V_2^2(V_1-nb)(P_2V_2)}{V_1^2V_2^2(P_2V_2) - V_1^2V_2^2(P_2nb) + V_1^2V_2(an^2)-V_1^2(abn^3)-V_2^2(V_1-nb)(an^2)} \\
-    \frac{P_1-P_1'}{P_1} &= 1 - \frac{V_1V_2^2(V_1-nb)(P_2V_2)}{V_1^2V_2^2(P_2V_2) - V_1^2V_2^2(P_2nb) + V_1^2V_2(an^2)-V_1^2(abn^3)-V_2^2(V_1-nb)(an^2)}
-\end{align*}
-Note that at this point all the units cancel so we have made no mistakes. This equation becomes:
-\begin{align*}
-    \frac{P_1'-P_1}{P_1} &= -1 - \frac{(bP_2V_1V_2^3)n - (P_2V_1^2V_2^3)}{ab(V_1^2-V_2^2)n^3 + (aV_1V_2(V_1-V_2))n^2 - (bP_2V_1^2V_2^2)n + P_2V_1^2V_2^3}
-\end{align*}
-Our final percentage is now a very ugly function of $n$ moles. Finally substituting in values gives an equation that we can easily plot on Desmos.
+
+\section{Heat Engines}
+
+\begin{definition}[Heat Engine]
+    A \emph{heat engine} is any device that changes thermal energy into mechanical work. 
+\end{definition}
+\begin{note}
+    Sign convention \emph{only} for heat engines: $Q_H, Q_L, W > 0.$ where $Q_H$ heat is input at a high temperature $T_H$ into a system that then transforms it partly into work $W$ and partly as exhausted as heat $Q_L$ at a lower temperature $T_L$. By conservation of energy, $Q_H = W + Q_L$.
+\end{note}
+\begin{remark}
+    Mechanical energy can only be obtained from thermal energy when heat is allowed to flow from a high to low temperature. If the temperature were constant throughout, pressure on the intake and outtake would be equal such that the work done by and on the gas would be equal so net work would be done.
+\end{remark}
+\begin{definition}[Operating Temperatures]
+    The high and low temperatures, $T_H, T_L$ are the \emph{operating temperatures} of the engine.
+\end{definition}
+\begin{definition}[Working Substance]
+    The material, usually steam, that is heated and cooled is the \emph{working substance}.
+\end{definition}
+\begin{definition}[Efficiency $e$ of any Heat Engine]
+    The efficiency, $e$, of any heat engine can be defined as the ratio of work done, $W$ to the heat input at the high termperature, $Q_H$, over a complete cycle: $e \coloneq \frac{W}{Q_H}$. Equivalently, This is $e = \frac{Q_H-Q_L}{Q_H} = 1 - \frac{Q_H}{Q_H}.$
+\end{definition}
+\begin{definition}[Carnot Engine]
+    An ideal engine, or \emph{Carnot engine}, consists of 4 processes done in a cycle, 2 adiabatic and 2 isothermal done reversibly.
+
+    The isothermal processes, where heats $Q_H$ and $Q_L$ are transferred assume constant temperatures $T_H$ and $T_L$ such that the system is in contact with idealized \emph{heat reservoirs} which are large enough to not fluctuate in temperature.
+\end{definition}
+\begin{definition}[Reversible Processes]
+    Processes done \emph{reversibly} are considered to be carried out infinitely slowly so that the process is a series of equilibrium states so the whole process could be reversed with no change in the magnitude of work done or heat exchanged.
+\end{definition}
+\begin{remark}
+    \emph{Real processes} are always \emph{irreversible}.
+\end{remark}
+\begin{remark}
+    Suppose a Carnot engine uses an ideal gas. In the first isothermal process $ab$, $W_ab = nRT_H\ln\frac{V_b}{V_a}$. This is isothermal so $E_{int}$ does not change and thus the heat, $Q_H$ added equals the work done by the gas. So $$Q_H = nRT_H \ln\frac{V_b}{V_a}.$$ Similarly, the heat lost in the isothermal process $cd$ is $$Q_L = nRT_L \ln\frac{V_c}{V_d}.$$ The paths $bc, da$ are adiabatic so $P_bV_b^{\gamma} = P_cV_c^{\gamma}$ and $P_dV_d^{\gamma} = P_aV_a^{\gamma}$ where $\gamma = \frac{C_P}{C_V}.$ From the ideal gas law, $\frac{P_bV_b}{T_H} = \frac{P_cV_c}{T_L}$ and $\frac{P_dV_d}{T_L} = \frac{P_aV_a}{T_H}.$ Together, this tells us $T_HV_b^{\gamma - 1} = T_LV_c^{\gamma - 1}$ and $T_LV_d^{\gamma - 1} = T_HV_a^{\gamma - 1}$. This implies $(\frac{V_b}{V_a})^{\gamma - 1} = (\frac{V_c}{V_d})^{\gamma - 1}$ so $\frac{V_b}{V_a}=\frac{V_c}{V_d}$. Substituting this into our original equations show $$\frac{Q_L}{Q_H} = \frac{T_L}{T_H} \quad\quad \text{[Carnot Cycle]}$$ so $$e_{ideal} = 1 - \frac{Q_L}{Q_H} = 1 - \frac{T_L}{T_H}.$$ 
+\end{remark}
+\begin{theorem}[Carnot's Theorem]
+    For any ideal reversible engine with fixed input and exhaust temperatures $T_H$ and $T_L$, the fundamental upper limit to the efficiency of any heat engine is $e = 1-\frac{T_L}{T_H}$. In other words,
+        \quote{\emph{All reversible engines operating between the same two constant temperatures $T_H$ and $T_L$ have the same efficiency. Any irreversible engine operating between the same two fixed temperatures will have an efficiency less than this.}}
+\end{theorem}
+\begin{note}
+    Real engines that are well designed reach 60 to 80\% of the Carnot efficiency.
+\end{note}
+\begin{definition}[Second Law of Thermodynamics - Kelvin-Planck Statement]
+    No device is possible whose sole effect is to transform a given amount of heat completely into work.
+\end{definition}

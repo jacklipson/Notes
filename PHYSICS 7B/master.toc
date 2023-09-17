@@ -23,4 +23,5 @@
 \contentsline {section}{\numberline {19.6}Adiabatic Expansion of a Gas}{18}{section.19.6}%
 \contentsline {section}{\numberline {19.7}Heat Transfer}{18}{section.19.7}%
 \contentsline {chapter}{\numberline {20}Second Law of Thermodynamics}{21}{chapter.20}%
-\contentsline {section}{\numberline {20.1}name}{21}{section.20.1}%
+\contentsline {section}{\numberline {20.1}Introduction}{21}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Heat Engines}{21}{section.20.2}%
