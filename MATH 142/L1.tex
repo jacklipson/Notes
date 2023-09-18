@@ -213,31 +213,3 @@
 FOR EXAMPLE AFTER TFAE THEOREM, DRAW FIGURE 2.1 FROM PAGE 33.
 
 TAKES NOTE ON EXAMPLE ON PAGE 34. (linked above where it should go)
-
-
-
-
-\subsection*{Page 35, Problem 17}
-
-Let $X$ denote the set of all real numbers with the finite-complement topology. Define $f\colon \E\to X$ by $f(x) = x$.
-
-\begin{proof}
-    For any open set $A \subseteq X$, $X-A$ must be $X$ or finite. 
-    \begin{itemize}
-        \item If $X-A =X$, $A = \O$ so $f^{-1}(A) = \O$ which is open in $\E^1$.
-        \item Let $B \coloneq X-A$. If $B = \O$, $A=X$ so $f^{-1}(A) = \E^1$ which is open in itself. (I'm not sure if I need this...)
-        \item If $B$ is a nonempty, finite subset of $X$, then for all $x_i \in E^1 - f^{-1}(B)$, let $d_i \coloneq \frac{1}{2}\min(\{\left| b_i - x\right| \colon b_i \in B\})$. Let $N \coloneq B_d(x_i)$ be an open neighbourhood of $x$ so $N\cap B = \O$. Thus, $x$ is not a limit point of $f^{-1}(B)$. This is valid for all $x \in E^1 - f^{-1}(B)$ so $E^1 - f^{-1}(B)$ has no limit points of $f^{-1}(B)$ so $f^{-1}(B)$ must contain all its limit points implying it is closed and $f^{-1}(A) = E^1 - f^{-1}(B)$ is open whenver $A$ is open. Thus, $f$ is continuous.
-    \end{itemize}
-
-    Let $A = (0,1)$ so $A$ is open in $E^1$. So, $(f^{-1})^{-1}(A) = f(A) = \{x \in \R \colon 0 < x < 1\}$. But, $X - f(A)$ is infinite and not equal to $X$ so $f(A)$ is not open. Thus $f^{-1}$ is not continuous so f is not a homeomorphism.
-\end{proof}
-
-\subsection*{Page 41, Problem 28}
-
-Let $A,B$ be disjoint closed subsets of a metric space.
-
-\begin{proof}
-    Let $d(x,y)$ be the distance metric on some topological space $X$. If $A$ and $B$ are both closed, $A = \close{A}, B = \close{B}$. So if $A \cap B = \O$, then $\close{A}\cap\close{B}=\O$. (Not sure if this is needed, just want to emphasize they are far away from each other.)
-    
-    For each $a_i \in A$, let $d_i \coloneq \frac{1}{2}\min(\{d(b,a_i) \mid b \in B\})$. (I'm not confident about whether I can assume the neighbourhoods are open in the next part because they're balls on a metric space or not). Let $N_i \coloneq B_i(a_i)$ be an open neighbourhood of $a_i$. And $U_i = N_i \cap A$. Clearly, $a_i \in U_i$ so $U_i \neq \O$. Let $U = \bigcup_{i=1}^{\infty}N_i$ (or just up until some $k$ if $A$ is finite) so $U\cap B = \O$ and $U \subseteq A$. Do the same for $B$ for a final union $V \subseteq B$. $U, V$ are both unions of open sets so they are each open in $X$, $U \subseteq A$ and $V \subseteq B$, and $U \cap V = \O$.
-\end{proof}

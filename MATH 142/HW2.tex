@@ -1,0 +1,36 @@
+\subsection*{Page 35, Problem 17}
+
+Let $X$ denote the set of all real numbers with the finite-complement topology. Define $f\colon \E^1 \to X$ by $f(x) = x$.
+
+\begin{proof}
+    For any open set $A \subseteq X$, $B \coloneq X-A$ must be $X$ or finite. 
+    \begin{itemize}
+        \item Say $B = X$. Then $A = \O$ so $f^{-1}(A) = \O$ which is open.
+        \item Say $B = \O$. Then $A = X$ so $f^{-1}(A) = \E^1$ which is open.
+        \item Say $B$ is a nonempty, finite subset of $X$. For all $x_i \in \E^1 - f^{-1}(B)$, let $d_i = \frac{1}{2}\min(\{\left| x_i - b \right| \colon b \in B\})$. Let $N = B_{d_i}(x_i)$ be a(n open) neighbourhood of $x_i$ so $N\cap B = \O$. So $x_i$ is not a limit point of $f^{-1}(B)$. This is true for all elements of $\E^1 - f^{-1}(B)$ so $\E^1 - f^{-1}(B)$ has no limit points of $f^{-1}(B)$ so $f^{-1}(B)$ must contain all its limit points implying it is closed and $f^{-1}(A) = \E^1 - f^{-1}(B)$ is open whenver $A$ is open. Thus, $f$ is continuous.
+    \end{itemize}
+
+    Say $A = (0,1) \subset \E^1$. So $A$ is open in $\E^1$. So $(f^{-1})^{-1}(A) = f(A) = \{x \in \R \colon 0 < x < 1\}$. But, $X - f(A)$ is infinite and not equal to $X$ so $f(A)$ is not open. Thus $f^{-1}$ is not continuous so f is not a homeomorphism.
+\end{proof}
+
+\subsection*{Page 36, Problem 21}
+
+Take the unit ball in $\E^n$ as the set $B = \{x = (x_1, \ldots, x_n) \mid x_1^2 + \ldots + x_n^2 \leq 1\}$ and the cube in $\E^n$ as the set $C = \{x = (x_1, \ldots, x_n) \mid \left| x_i \right| \leq 1, 1 \leq i \leq n\}$.
+
+\begin{proof}
+    Define the function  $h\colon\E^n\to\E^n$ from the unit ball to the unit cube as follows. If $x \in B = (0, \ldots, 0)$, then $h(x) = (0,\ldots, 0)$. Otherwise, take the line segment determined by $x$ and the origin. Extend the segment along the same path from $x$ to the boundary of the cube. Call this length from the origin to the cube boundary $a$. Map $h(x)$ to the same line segment, on the same side of the origin as $x$, such that $h(x)$ is $d(x,0) * a$ along the path. Essentially, the ratio of $x$'s distance to the origin and the ball's boundary's distance to the origin should equal the ratio $h(x)$'s distance to the origin and the cube's boundary's distance to the origin.
+
+    Thus, $h$ is clearly well-defined, one-one, onto, and has an inverse. 
+
+    $h$ is continuous because it is the composition of continuous maps. Specifically, when $x \neq 0$, it is the composition of the identity map $(x)$ and scalar multiplication $(a)$ and norms, all of which are immediately continuous in $\E^n$ upon inspection. (A very similar case can be done for $h^{-1}$ which is defined as mapping $h^{-1}(y)$ to $d(y,0)/a$ along the same line segment.) For the case when $x = 0$ which was ruled out in our homeomorphism definition, we can note that any nonzero point will only be scaled by anywhere from, in the case of ball $\to$ cube, 1 to $\sqrt{n}$ times implying that the inverse image of any open subset of the cube containing 0 will still contain the origin and be open because it will be a neighbourhood of all the same, just scaled down points.
+\end{proof}
+
+\subsection*{Page 41, Problem 28}
+
+Let $A,B$ be disjoint closed subsets of a metric space.
+
+\begin{proof}
+    Let $d(x,y)$ be the distance metric on some topological space $X$ between points $x, y \in X$. If $A$ and $B$ are both closed, $A = \close{A}, B = \close{B}$. So if $A \cap B = \O$, then $\close{A}\cap\close{B}=\O$.
+    
+    For some $a_i \in A$, say $d_i = \frac{1}{2}\min(\{d(b,a_i) \mid b \in B\})$. Let $N_i = B_i(a_i)$ be a neighbourhood of $a_i$. Because $N_i$ is a neighbourhood, there must be some $O_i \subseteq N_i$ containing $a_i$. Let $U_i = O_i \cap A$. Clearly, $a_i \in O_i$ so $U_i \neq \O$. Let $U = \bigcup_{i=1}^{\infty}O_i$ (or just up until some $k$ if $A$ is finite). $U \subseteq A$ so $U\cap B = \O$. Do the same for $B$ for a final union $V \subseteq B$. $U, V$ are both unions of open sets so they are each open in $X$, $U \subseteq A$ and $V \subseteq B$, and $U \cap V = \O$.
+\end{proof}

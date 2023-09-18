@@ -52,3 +52,40 @@
 \begin{definition}[Second Law of Thermodynamics - Kelvin-Planck Statement]
     No device is possible whose sole effect is to transform a given amount of heat completely into work.
 \end{definition}
+\begin{definition}[Otto Cycle]
+    The operation of an automobile internal combustion engine can be approximated by a reversible cycle called the \emph{Otto Cycle} wherein the input and exhaust tempeartures are \emph{not} constant. Paths $ab, cd$ are adiabatic while $bc, da$ are isovolumetric. 
+\end{definition}
+\begin{remark}
+    For an ideal gas as working substance, the efficiency of an Otto cycle engine is: $$e = 1 - (\frac{V_a}{V_b})^{1-\gamma},$$ where $V_a/V_b$ is the \emph{compression ratio}.
+\end{remark}
+\begin{explanation}
+    Because the exchange takes place at constant volume, $$Q_H = nC_V(T_c-T_b) \text{\quad and \quad} Q_L = nC_V(T_d-T_a).$$
+    Thus, $$e = 1- \frac{Q_L}{Q_H} = 1- \left[\frac{T_d-T_a}{T_c-T_b}\right].$$ From the adibatic processes, $P_aV_a^\gamma = P_bV_b^\gamma$ and $P_cV_c^\gamma = P_dV_d^\gamma.$ From ideal gas law then, $T_aV_a^{\gamma - 1} = T_bV_b^{\gamma - 1}$ and $T_cV_c^{\gamma - 1} = T_dV_d^{\gamma - 1}$. This gives efficiency $$e = 1 - \left[\frac{(V_b/V_a)^{\gamma - 1}(T_c-T_b)}{T_c-T_b}\right] = 1 - (\frac{V_b}{V_a})^{\gamma -1} = 1 - (\frac{V_a}{V_b})^{1-\gamma}.$$
+\end{explanation}
+
+\section{Refrigerators, Air Conditioners, and Heat Pumps}
+
+\begin{definition}[Perfect Refrigerator]
+    A \emph{perfect refrigerator} is one in which no work is required to take heat from the low-temperature region to the high-temperature region. This is impossible
+\end{definition}
+\begin{remark}
+    Refrigerators, air conditioners, and heat pumps do the reverse of a heat engine, transferring heat \emph{out} of a cool environment int oa warm environment. Each does work $W$ to remove heat $Q_L$ from \emph{inside} and exhaust heat $Q_H$ \emph{outside}. This is usually done by an electric motor which compresses a fluid.
+\end{remark}
+\begin{definition}[The Coefficient of Performance (COP)]
+    The \emph{coefficient of performance (COP)} of a refrigerator is defined as the ratio between the heat $Q_L$ removed and the work $W$ done so COP $=\frac{Q_L}{W} = \frac{Q_L}{Q_H-Q_L}$. For an ideal refrigerator, $\text{COP}_{\text{ideal}} = \frac{T_H}{T_H-T_L}.$
+\end{definition}
+\begin{definition}[Heat Pump]
+    A \emph{heat pump} does work $W$ to take heat $Q_L$ from outside to deliver heat $Q_H$ inside. Thus its COP is $\frac{Q_H}{W}$. Typical heat pumps have COP $\approx$ 2.5 to 3.
+\end{definition}
+\begin{remark}[SEER Rating]
+    Cooling devices typically have SEER (Seasonal Energy Efficiency Ratio) ratings defined as $\frac{(\text{heat removed in Btu})}{(\text{electrical input in watt-hours})}$.
+\end{remark}
+\begin{definition}[Entropy]
+    When an amount of heat $Q$ is added to a system by a reversible process at constant temperature (K), the change in entropy $S$ of the system is given by $$\Delta = \frac{Q}{T}.$$ If the temperature is not constant, $dS = \frac{dQ}{T}$ so $$\Delta S = \int_a^b dS = \int_a^b \frac{dQ}{dT} \quad [\text{reversible process}].$$  
+\end{definition}
+\begin{definition}[State Variable]
+    Entropy depends only on the states $a$ and $b$ of the system. Thus, it is a state variable.
+\end{definition}
+\begin{remark}[Important Remark]
+    The change in entropy is path-independent.
+\end{remark}

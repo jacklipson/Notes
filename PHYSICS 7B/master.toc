@@ -25,3 +25,4 @@
 \contentsline {chapter}{\numberline {20}Second Law of Thermodynamics}{21}{chapter.20}%
 \contentsline {section}{\numberline {20.1}Introduction}{21}{section.20.1}%
 \contentsline {section}{\numberline {20.2}Heat Engines}{21}{section.20.2}%
+\contentsline {section}{\numberline {20.3}Refrigerators, Air Conditioners, and Heat Pumps}{23}{section.20.3}%
