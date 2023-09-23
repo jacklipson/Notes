@@ -155,14 +155,80 @@
     \]
     Clearly, $\sigma = \mu_1\mu_2\cdots\mu_r$. Because the orbits $B_1, B_2, \ldots, B_r$ are disjoint equivalence-classes, the cycles $\mu_1, \mu_2, \ldots, \mu_r$ are disjoint also.
 \end{proof}
+\begin{example}
+    Take the disjoint cycles $\sigma = (1,3,5,2)$ and $\tau = (2,5,6)$. To find $\sigma\tau$ ($\tau$ first), begin with 1 so $\sigma\tau = (1,\ldots)$. $\tau$ doesn't map 1 but $\sigma$ maps it to 3 so we get $(1,3,\ldots)$. Following this cycle, 3 isn't mapped anywhere by $\tau$ but is mapped to 5 so $(1,3,5,\ldots)$. 5 is mapped to 6 but 6 isn't mapped anywhere so it stays fixed as $(1,3,5,6,\ldots)$. Beginning a new cycle, 2 is mapped to 5 then back to 2 so it becomes (1,3,5,6)(2). Finally, 4 isn't mapped anywhere by either so it stays as 4. Thus, $(1,3,5,2)(2,5,6)=(1,3,5,6)(2)(4)=(1,3,5,6)$.
+\end{example}
 \begin{definition}[Transposition]
     A cycle of length 2 is a \emph{transposition}.
 \end{definition}
 \begin{corollary}
-    Any permutation of a finite set of at least 2 elements is a product of transpositions.
+    Any permutation of a finite set of at least 2 elements is a product of transpositions. The identity, for $S_n$ with $n\geq 2$ is $(1,2)(1,2)$.
 \end{corollary}
+\begin{theorem}
+    No permutation in $S_n$ can be expressed both as a product of an even and odd number of transpositions.
+\end{theorem}
+\begin{proof}(Linear Algebra)
+    Recall $S_A \sim S_B$ if $A,B$ have the same cardinality. Permutations work with $n$ rows of the $n\times n$ $I_n$ which has determinant 1. Interchanging any two rows changes the sign of the determinant. If $C$ is a matrix obtained by some permutation $\sigma$ of $I_n$ and $C$ could be obtained by an even and odd number of transpositions of rows, then its determinant would be both 1 and -1. 
+\end{proof}
+\begin{proof}(Orbits)
+    Let $\sigma \in S_n$ and $\tau = (i,j)$ be a transposition in $S_n$. 
+    
+    \textbf{Case I:} Suppose the orbits of $\sigma$ and $\tau\sigma$ differ by 1. Suppose $i,j$ are in different orbits of $\sigma$. Writing $\sigma$ as a product of disjoint cycles with the first containing $j$ and the second containing $i$, e.g. $(b, j, \times, \times, \times)(a, i, \times, \times)$ implies that $\tau\sigma = (i,j)\sigma = (i,j)(b, j, \times, \times, \times)(a, i, \times, \times)$ after calculating is $(a,j,\times,\times,\times,b,i,\times,\times)$. This is because $a$ feeds into $i$ now $j$ feeds into $\times,\times,\times$ and $b$ feeds into $j$ now $i$ into $\times, \times$. This is now a single orbit.
+    
+    \textbf{Case II:} Suppose instead that $i,j$ are in the same orbit of $\sigma$ so $\sigma$ can be written as the product of disjoint cycles so the first cycle is of form $(a,i,\times,\times,\times,b,j,\times,\times)$. $\tau\sigma=(i,j)\sigma$ gives $(a,j,\times,\times)(b,i,\times,\times,\times)$. This single orbit has been split into two.
+    
+    These cases show the number of orbits of $\tau\sigma$ differs from the number of orbits of $\sigma$ by 1. The identity permutation $\imath$ has exactly $n$ orbits becasue each element is the only member of its orbit. So the orbits of a permutation $\sigma \in S_n$ must differ from $n$ by an even or odd number. Each new transposition multiplied with the identity trying to create $\sigma$ must then change that product's orbits by 1. So, there cannot be 2 sequences of different size because that would imply $\sigma$ has different numbers of orbits.
+\end{proof}
+\begin{definition}{Even/Odd Permutation}
+    A permutation of a finite set is known as \emph{even or odd} depending on whether it can be written the product of an even or odd number of transpositions.
+\end{definition}
+\begin{example}
+    The identity permutation $\imath \in S_n$ is even because it is $(1,2)(1,2)$.  
+\end{example}
+\begin{theorem}
+    If $n \geq 2$, the collection of even permutations of $\{1,2,3,\ldots,n\}$ forms a subgroup of order $n!/2$ of the symmetric group $S_n$. Note the set of odd permutations is of the same size.
+\end{theorem}
+\begin{proof}
+    Take the set of even and odd ($A_n$ and $B_n$) permutations in $S_n$ Let $\tau$ be any fixed transposition in $S_n$. Because $n \geq 2$, we might as well suppose $\tau = (1,2)$. Take the function $\lambda_\tau\colon A_n\to B_n$ defined as $\lambda_\tau(\sigma) =\tau\sigma$ for $\sigma \in A_n$. $\sigma$ is even so $(1,2)\sigma$ can be expressed as an odd number of transpositions so $\tau\sigma \in B_n$. Because $S_n$ is a group, for any $\sigma, \mu \in A_n$, $\lambda_\tau(\sigma)=\lambda_\tau(\mu)$ implies $\sigma = \mu$ so $\lambda_\tau$ is injective. Note also that $\tau = \tau^{-1}$ so if $\rho \in B_n$, then $\tau^{-1}\rho \in A_n$ and $\lambda_\tau(\tau^{-1(\rho)}) = \tau(\tau^{-1}(\rho)) = \rho$ implying $\lambda_\tau$ is onto $B_n$. So $B_n$ and $A_n$ are of the same size because they are finite. The fact the set of even permutations is a subgroup is trivial.
+\end{proof}
+\begin{definition}[Alternating Group $A_n$ on $n$ Letters]
+    The subgroup $S_n$ consisting of the even permutations of $n$ letters if the \emph{altering group $A_n$ on $n$ letters}.
+\end{definition}
 
-% \section{Cosets and the Theorem of Lagrange}
+\section{Cosets and the Theorem of Lagrange}
+
+\begin{theorem}
+    Let $H$ be a subgroup of $G$. Let the relation $\sim_L$ be defined on $G$ by $$a \sim_L b \quad\text{if and only if}\quad a^{-1}b\in H.$$ Let $\sim_R$ be defined on $G$ by $$a \sim_R b \quad\text{if and only if}\quad ab^{-1}\in H.$$ Then $\sim_L, \sim_R$ are both equivalence relations on $G$.
+\end{theorem}
+\begin{proof}(Just $\sim_L$) For any $a \in G$, $a^{-1}(a) = e \in H$ so $\sim_L$ is reflexive. For any $a, b\in G$, suppose $a^{-1}b \in H$. Because this is a subgroup, $(a^{-1}b)^-1 \in H$ so that $b^{-1}a \in H$ and thus $b \sim_L a$ so $\sim_L$ is symmetric. Lastly, if $a\sim_L b, b \sim_L c$ for some $a,b,c \in G$, then $a^{-1}b, b^{-1}c \in H$. By closure $a^{-1}bb^{-1}c = a^{-1}c \in H$ so $a \sim_L c$ implying $\sim_L$ is transitive. Thus, $\sim_L$ is an equivalence relation.
+\end{proof}
+\begin{definition}[Left/Right Cosets]
+    Let $H$ be a subgroup of group $G$. The subset $aH = \{ah \mid h \in H\}$ of $G$ is the \emph{left coset} of $H$ containing $a$ while the subset $Ha = \{ha \mid h \in H\}$ is the \emph{right coset} of $H$ containing $a$.
+\end{definition}
+\begin{example}
+    Take the subgroup $3\Z$ of $\Z$. Using additive notation, the left coset of $3\Z$ containing $m$ is $m + 3\Z$. When $m=0$, $3\Z = \{\cdots, -3, 0, 3, \cdots\}$ so $3\Z$ is itself such a left coset. Similarly, $1 + 3\Z, 2+3\Z$ are left cosets. Together, these partition $\Z$. Because $\Z$ is abelian, left coset $m+3\Z$ is the same as right coset $3\Z + m$.
+\end{example}
+\begin{lemma}
+    Take the one-one map $\phi\colon H \to gH$ so $\phi(h) = gh$ for each $h \in H$. This is onto $gH$ by definition. Next, suppose $\phi(h_1)=\phi(h_2)$ for some $h_1, h_2 \in H$. Thus, $gh_1 = gh_2$ so by cancellation in $G$, $h_1 = h_2$ implying $\phi$ is bijective. If $H$ is of finite order, then $\phi$ and a similar function for right cosets have equal numbers of elements to $H$.
+\end{lemma}
+\begin{theorem}[Theorem of Lagrange]
+    Let $H$ be a subgroup of a finite group $G$. Then the order of $H$ is a divisor of the order of $G$.
+\end{theorem}
+\begin{proof}
+    Let $n$ be the order of $G$ and $H$ have order $m$. Every coset (left or right) of a subgroup $H$ of a group $G$ has the same number of elements as $H$, namely $m$. Let $G$ be partitioned into $r$ left cosets of $H$ so $n=rm$ implying $m$ is a divisor of $n$.
+\end{proof}
+\begin{corollary}
+    Every group of prime order is cyclic.
+\end{corollary}
+\begin{proof}
+    Let $G$ be of prime order $P$ and $a \in G, a \neq e$. Thus, \csgroup{a} of $G$ has at least 2 elements. But by Lagrange's Theorem, the order $m \geq 2$ of $a$ must divide the prime $p$ implying $m = p$ so \csgroup{a} $= G$ so $G$ is cyclic.
+\end{proof}
+\begin{definition}
+    Let $H$ be a subgroup of a group $G$. The number of left cosets of $H$ in $G$ is the \emph{index ($G:H$) of $H$ in $G$}. The index may be infinite or finite.
+\end{definition}
+\begin{theorem}
+    Suppose $H$ and $K$ are subgroups of a group $G$ so $K\leq H \leq G$ and suppose $(H:K)$ and $(G:H)$ are both finite. Then $(G:K) = (G:H)(H:K)$ is finite.
+\end{theorem}
 
 % \section{Direct Products and Finitely Generated Abelian Groups}
 

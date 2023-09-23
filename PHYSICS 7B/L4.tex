@@ -26,7 +26,7 @@
     The material, usually steam, that is heated and cooled is the \emph{working substance}.
 \end{definition}
 \begin{definition}[Efficiency $e$ of any Heat Engine]
-    The efficiency, $e$, of any heat engine can be defined as the ratio of work done, $W$ to the heat input at the high termperature, $Q_H$, over a complete cycle: $e \coloneq \frac{W}{Q_H}$. Equivalently, This is $e = \frac{Q_H-Q_L}{Q_H} = 1 - \frac{Q_H}{Q_H}.$
+    The efficiency, $e$, of any heat engine can be defined as the ratio of work done, $W$ to the heat input at the high termperature, $Q_H$, over a complete cycle: $e \coloneq \frac{W}{Q_H}$. Equivalently, This is $e = \frac{Q_H-Q_L}{Q_H} = 1 - \frac{Q_L}{Q_H}.$
 \end{definition}
 \begin{definition}[Carnot Engine]
     An ideal engine, or \emph{Carnot engine}, consists of 4 processes done in a cycle, 2 adiabatic and 2 isothermal done reversibly.
@@ -40,7 +40,7 @@
     \emph{Real processes} are always \emph{irreversible}.
 \end{remark}
 \begin{remark}
-    Suppose a Carnot engine uses an ideal gas. In the first isothermal process $ab$, $W_ab = nRT_H\ln\frac{V_b}{V_a}$. This is isothermal so $E_{int}$ does not change and thus the heat, $Q_H$ added equals the work done by the gas. So $$Q_H = nRT_H \ln\frac{V_b}{V_a}.$$ Similarly, the heat lost in the isothermal process $cd$ is $$Q_L = nRT_L \ln\frac{V_c}{V_d}.$$ The paths $bc, da$ are adiabatic so $P_bV_b^{\gamma} = P_cV_c^{\gamma}$ and $P_dV_d^{\gamma} = P_aV_a^{\gamma}$ where $\gamma = \frac{C_P}{C_V}.$ From the ideal gas law, $\frac{P_bV_b}{T_H} = \frac{P_cV_c}{T_L}$ and $\frac{P_dV_d}{T_L} = \frac{P_aV_a}{T_H}.$ Together, this tells us $T_HV_b^{\gamma - 1} = T_LV_c^{\gamma - 1}$ and $T_LV_d^{\gamma - 1} = T_HV_a^{\gamma - 1}$. This implies $(\frac{V_b}{V_a})^{\gamma - 1} = (\frac{V_c}{V_d})^{\gamma - 1}$ so $\frac{V_b}{V_a}=\frac{V_c}{V_d}$. Substituting this into our original equations show $$\frac{Q_L}{Q_H} = \frac{T_L}{T_H} \quad\quad \text{[Carnot Cycle]}$$ so $$e_{ideal} = 1 - \frac{Q_L}{Q_H} = 1 - \frac{T_L}{T_H}.$$ 
+    Suppose a Carnot engine uses an ideal gas. In the first isothermal process $ab$, $W_{ab} = nRT_H\ln\frac{V_b}{V_a}$. This is isothermal so $E_{int}$ does not change and thus the heat, $Q_H$ added equals the work done by the gas. So $$Q_H = nRT_H \ln\frac{V_b}{V_a}.$$ Similarly, the heat lost in the isothermal process $cd$ is $$Q_L = nRT_L \ln\frac{V_c}{V_d}.$$ The paths $bc, da$ are adiabatic so $P_bV_b^{\gamma} = P_cV_c^{\gamma}$ and $P_dV_d^{\gamma} = P_aV_a^{\gamma}$ where $\gamma = \frac{C_P}{C_V}.$ From the ideal gas law, $\frac{P_bV_b}{T_H} = \frac{P_cV_c}{T_L}$ and $\frac{P_dV_d}{T_L} = \frac{P_aV_a}{T_H}.$ Together, this tells us $T_HV_b^{\gamma - 1} = T_LV_c^{\gamma - 1}$ and $T_LV_d^{\gamma - 1} = T_HV_a^{\gamma - 1}$. This implies $(\frac{V_b}{V_a})^{\gamma - 1} = (\frac{V_c}{V_d})^{\gamma - 1}$ so $\frac{V_b}{V_a}=\frac{V_c}{V_d}$. Substituting this into our original equations show $$\frac{Q_L}{Q_H} = \frac{T_L}{T_H} \quad\quad \text{[Carnot Cycle]}$$ so $$e_{ideal} = 1 - \frac{Q_L}{Q_H} = 1 - \frac{T_L}{T_H}.$$ 
 \end{remark}
 \begin{theorem}[Carnot's Theorem]
     For any ideal reversible engine with fixed input and exhaust temperatures $T_H$ and $T_L$, the fundamental upper limit to the efficiency of any heat engine is $e = 1-\frac{T_L}{T_H}$. In other words,
@@ -81,7 +81,7 @@
     Cooling devices typically have SEER (Seasonal Energy Efficiency Ratio) ratings defined as $\frac{(\text{heat removed in Btu})}{(\text{electrical input in watt-hours})}$.
 \end{remark}
 \begin{definition}[Entropy]
-    When an amount of heat $Q$ is added to a system by a reversible process at constant temperature (K), the change in entropy $S$ of the system is given by $$\Delta = \frac{Q}{T}.$$ If the temperature is not constant, $dS = \frac{dQ}{T}$ so $$\Delta S = \int_a^b dS = \int_a^b \frac{dQ}{dT} \quad [\text{reversible process}].$$  
+    When an amount of heat $Q$ is added to a system by a reversible process at constant temperature (K), the change in entropy $S$ of the system is given by $$\Delta S= \frac{Q}{T}.$$ If the temperature is not constant, $dS = \frac{dQ}{T}$ so $$\Delta S = \int_a^b dS = \int_a^b \frac{dQ}{dT} \quad [\text{reversible process}].$$  
 \end{definition}
 \begin{definition}[State Variable]
     Entropy depends only on the states $a$ and $b$ of the system. Thus, it is a state variable.
@@ -89,3 +89,70 @@
 \begin{remark}[Important Remark]
     The change in entropy is path-independent.
 \end{remark}
+\begin{remark}
+    Any reversible cycle can be approximated as a series of Carnot cycles. More cycles leads to better approxumations. For each cycle, we can write $\Sigma\frac{Q}{T}=0$ so that over the limit of infinitely many Carnot cycles, we get, as an integral around a closed path: $$\oint\frac{dQ}{T}=0 \quad \text{[reversible paths]}.$$ Thus entropy for an irreversible can be calculated for a reversible process between the same two states.
+\end{remark}
+\begin{note}
+    One form of the \emph{third law of thermodynamics} states that as $T \to 0$, $S \to 0$.
+\end{note}
+
+\section{Entropy and the Second Law of Thermodynamics}
+
+\begin{remark}
+    Given an isolated system of two objects at temperatures $T_H$ and $T_L$, the objects eventually come to some intermediate tempearture $T_M$ so that the heat $Q_H$ lost equals $-Q$ and the heat $Q_L$ gained by the colder object equal $Q$ so the total change is $\Delta S = \Delta S_H + \Delta S_L = -\frac{Q}{T_{HM}} + \frac{Q}{T_{LM}}$ where $T_{HM}, T_{LM}$ are the intermediate temperatures. $T_{HM} > T_{LM}$ at all times so $\Delta S > 0$. So the \emph{total change} is positive. (While a reversible (ideal, impossible) process has $\Delta S = 0$.)
+\end{remark}
+\begin{definition}[General Statement - Second Law of Thermodynamics]
+    The entropy of an isolated system never increases. It either stays constant (reversible) or increases (irreversible processes).
+
+    The total entropy of any system plus that of its environment increases as a result of any natural process: $\Delta S = \Delta S_{sys} + \Delta S_{env} > 0.$
+    
+    We can also say natural processes tend to move toward a state of greater disorder. Hence, entropy is called \emph{time's arrow}.
+\end{definition}
+
+\section{Order to Disorder}
+
+\begin{note}
+    The entropy of a system can be considered a measure of the disorder of the system. 
+\end{note}
+\begin{example}
+    A stone falling is ordered macroscopically because each molecule is moving at the same velocity in the same direction. However, its fall turns into thermal energy which is more random and disordered.
+\end{example}
+
+\section{Unavailability of Energy; Heat Death}
+
+\begin{remark}
+    An important aspect of the 2nd Law of Thermodynamics is that in any natural processes, some energy becomes unavailable to do useful work. As time goes on, energy is never lost, but is instead \emph{degraded}.
+\end{remark}
+\begin{definition}[Heat Death]
+    The \emph{heat death} of the universe is the prediction that all energy of the universe will degrade to thermal energy. 
+\end{definition}
+
+\section{Statistical Interpretation of Entropy}
+
+\begin{definition}[Micro/Macrostate]
+    The \emph{microstate} of a system describes the position and velocity of every particle (or molecule) while the \emph{macrostate} of a system describes the properties of a system like temperature, pressure, number of moles, etc.
+\end{definition}
+\begin{remark}
+    A basic assumption behind the statistical approach is that each microstate is equally probable. And a great number of microstates can equal the same macrostate.
+\end{remark}
+\begin{remark}
+    The most probable state is the one with the greatest entropy or greatest disorder and randomness. In other words, it corresponds to the most \emph{microstates}.
+\end{remark}
+\begin{definition}[Thermodynamic Probability]
+    In consistency with the Clausius statement that $dS = dQ/dT$, we can say the entropy of a system in a (macro)state is $S = k\ln{\mathscr{W}}$ where $\mathscr{W}$ is the number of corresponding microstates, or the \emph{thermodynamic probaility}, of the occurence of some state.
+\end{definition}
+\begin{definition}[Third Law of Thermodynamics]
+    It is not possible to reach absolute zero in any finite number of processes.
+\end{definition}
+\begin{remark}
+    From $\frac{Q_L}{Q_H} = \frac{T_L}{T_H}$, we can assign the value of the triple point of water $T_{tp} = 273.16 K$ to the thermodynamic scale such taht $T = (273.16K) * (\frac{Q}{Q_{tp}})$ where $Q, Q_{tp}$ are the magnitudes of the heats exchanged by a Carnot engine with such reservoirs. Thus, the thermodynamic scale is identical to the ideal gas scale as long as the ideal gas is valid.
+\end{remark}
+\begin{note}
+    Because $T_L$ of an engine is thus never 0, a 100\% efficiency engine such that $e = 1 - \frac{T_L}{T_H} = 1$ is not possible.
+\end{note}
+\begin{note}
+    Mechanical energy is transformed to electric energy with a turbine and generator.
+\end{note}
+\begin{definition}[Thermal Pollution]
+    The heat $Q_L$ output from every heat engine is referred to as \emph{thermal pollution} because the environment must absorb it.
+\end{definition}

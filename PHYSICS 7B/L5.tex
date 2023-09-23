@@ -1,0 +1,147 @@
+\chapter{Electric Charge and Electric Field}
+
+\section{Static Electricity, Electric Charge and Conservation}
+
+\begin{definition}[Law of Conservation of Electric Charge]
+    The net amount of electric charge produced in any process is 0.
+\end{definition}
+\begin{definition}[Free/Conduction Electrons]
+    In a good (metal) conductor, some \emph{free/conduction electrons} are bound very loosely and can move about freely inside.
+
+    When a positively charged object is brought close, these electrons move quickly toward it. And swiftly away from a negatively charged object.
+
+    There are fewer free electrons in a semiconductor, and almost none in an insulator.
+\end{definition}
+
+\section{Induced Charge}
+
+\begin{definition}[Charging by Conduction]
+    Take a positively charged object A and neutral object B. If A touches B, electrons from B will pass to A such that when A leaves, B will have a net positive charge. This is \emph{charging by conduction.}
+\end{definition}
+\begin{definition}[Charging by Induction]
+    If a positively charged object simply approaches a neutral metal rod but doesn't touch it, a charge is \emph{induced} at either end.
+\end{definition}
+\begin{definition}[Grounded]
+    Because the Earth is so large and can conduct, it easily accepts and gives up electrons causing any object connected to it to be \emph{grounded}.
+\end{definition}
+\begin{definition}[Electroscope]
+    An \emph{electroscope} is a device used to detect charge. A knob on the electroscope charges 1 or 2 gold leaves which are insulated with glass. The leaves separate when a positive object is brought close as electrons in the leaves go to the charge making the leaves positive so they repel each other.
+    
+    If instead, the  knob is charged by touching/conduction, the whole apparatus acquires a net charge which separates the leaves.
+
+    Note the electroscope doesn't tell you the sign of the charge unless you charged it first by conduction.
+
+    Modern sensitive electroscopes are called electrometers.
+\end{definition}
+
+\section{Coulomb's Law}
+
+\begin{definition}[Coulomb's Law]
+    The force between 2 charged particles is
+    $$F = -k\frac{Q_1Q_2}{r^2} \quad \text{where}$$ $$k = \qty{8.988e9}{N m^2 / C^2} \quad \text{and C is the coulomb}.$$
+
+    In vector form, with unit vector $\hat{r_{21}}$, we can write this as $$\vec{F_{12}} = k\frac{Q_1Q_2}{r^2_{21}}\hat{r_{21}}.$$
+\end{definition}
+\begin{definition}[Elementary Charge]
+    The smallest charge observed in nature, the elementary charge, is denoted as $e$ and equal to $\qty{1.6022e-19}{C}.$
+
+    Note this is positive so the charge on the electron is $-e$.
+\end{definition}
+\begin{definition}[Quantized]
+    Charge cannot be created or destroyed or split into partial charges (except for quarks) so electric charge is \emph{quantized} such that it exists only in discrete amounts like $1e, 2e, 3e, \text{etc}.$
+\end{definition}
+\begin{remark}[Permittivity of Free Space]
+    The constant $k$ in Coulomb's Law is actually often written in terms of the \emph{permittivity of free space} where $k = \frac{1}{4\pi\epsilon_0}$ and $\epsilon_0 = \qty{8.85e-12}{C^2/N m^2}.$
+\end{remark}
+\begin{remark}
+    These laws only apply for objects whose size are much smaller than the distance between them. Ideally, like point charges. For finite-sized objects, charge may not be distributed uniformly and $r$ values may not be clear.
+\end{remark}
+\begin{definition}[Electrostatic/Coulomb Force]
+    The \emph{electrostatic} or \emph{Coulomb force} is when one leectrically charged particle exerts a force on a second one. When charges are all at rest, this is the study of \emph{electrostatics}.
+\end{definition}
+\begin{definition}[Principle of Superposition]
+    With several charges, the net force is the vector sum of the forces due to each charge. This sum relies on the pricniple of superposition and is based on experiment.
+\end{definition}
+
+\section{Electric Field}
+
+\begin{definition}[Electric Field]
+    The electric field $\vec{E}$ defined at any point in space is defined as $\vec{E} = \frac{\vec{F}}{q}$ as $q \to 0$. Here $q$ is a test charge whose impact on the rest of the field is negligible.
+
+    $E$ ahs magnitude $k\frac{Q}{r^2}$.
+\end{definition}
+\begin{note}
+    The superposition principle also applies to electric fields.
+\end{note}
+\begin{remark}
+    We can split a charge distribution into infinitesimal charges $dQ$ which will act on a tiny point charge at a distance $r$ such that $dE = \frac{1}{4\pi\epsilon_0}\frac{dQ}{r^2}$ which shows that $\vec{E} = \int d\vec{E}.$
+\end{remark}
+\begin{example}
+    A thin ring of radius $a$ holds a uniform total charge of $+Q$. Its center is $x$ away from a point $P$. Thus, any point charge $dQ$ along the ring is $\sqrt{a^2+x^2}$ away from point $P$. Clearly, any electric field force perpendicular to the line of symmetry through the center of the ring will cancel out due to the ring's symmetry. So, the net force, and net field then, is only along and away from the line of symmetry. Thus, $dE = k\frac{dQ}{a^2+x^2} \cos(\theta) = k\frac{dQ}{a^2+x^2}\frac{x}{\sqrt{a^2+x^2}}$. Suppose a segment $d\ell$ of the ring has point charge $dQ$ with distribution $\lambda$. Thus $E = \int dE = \frac{\lambda}{4\pi\epsilon_0}\frac{x}{(x^2+a^2)^\frac{3}{2}}\int_0^{2\pi a} d\ell = \frac{1}{4\pi\epsilon_0}\frac{\lambda x(2\pi a)}{(x^2+a^2)^{\frac{3}{2}}}$. This comes out to just $$\frac{1}{4\pi\epsilon}\frac{Qx}{(x^2+a^2)^\frac{3}{2}}.$$
+
+    This makes sense as $x \gg a$, the field comes out to just the formula for if the ring were a point charge.
+\end{example}
+\begin{example}
+    Take a very long straight wire of uniformly distributed positive charge with charge per length $\lambda$. Take a point $P$ a distance $x$ from its midpoint. Clearly, $dE = \frac{1}{4\pi\epsilon_0}\frac{dQ}{r^2}  = \frac{1}{4\pi\epsilon_0}\frac{\lambda dy}{x^2+y^2}$ where the wire lies along the $y$ axis. Again, the y-component of the field will cancel from both sides so only $\cos(\theta)$ will be summed giving $E = E_x = \int dE \cos(\theta) = \frac{\lambda}{4\pi\epsilon_0} \int \frac{\cos\theta dy}{x^2+y^2}$. Note that we can write $y = x \tan\theta$ so $dy = xd\theta/\cos^2\theta$ giving $\frac{1}{x^2+y^2}=\frac{cos^2\theta}{x^2}$ so $$E = \frac{\lambda}{4\pi\epsilon_0x}\int_{-\pi/2}^{\pi/2}\cos\theta d\theta = \frac{1}{2\pi\epsilon_0}\frac{\lambda}{x}$$.
+\end{example}
+\begin{example}
+    Take a thin circular disk of radius $R$ with a uniformly distributed charge per unit area $\sigma$. Take a point $P$ $z$ above the disk's center. Everything not in the z-axis cancels out so $dE = \frac{1}{4\pi\epsilon_0}\frac{zdQ}{(z^2+r^2)^{\frac{3}{2}}}$ for each ring of radius $r$ from the 1st example. Clearly, the ring has area $(dr)(2\pi r)$ so $dQ = \sigma 2\pi r dr$ giving $dE = \frac{z\sigma r dr}{2\epsilon_0(z^2+r^2)^{\frac{3}{2}}}$. Now, integrating over all the rings from $0$ to $R$ gives $$E = \frac{z\sigma}{2\epsilon_0} \int_0^R \frac{rdr}{(z^2+r^2)^{\frac{3}{2}}} = \frac{\sigma}{2\epsilon_0}\left[1 - \frac{z}{(z^2+R^2)^\frac{1}{2}}\right].$$
+
+    As $z \ll R$, $E = \frac{\sigma}{2\epsilon_0}$ which approximates a point over an infinite plane of charge.
+\end{example}
+
+\section{Field Lines}
+
+\begin{definition}[Lines of Force]
+    Electric field lines or \emph{lines of force} are drawn to indicate the direction of force due to a given field on a positive test charge.
+
+    Lines starting on a positive charge terminate radially at negative charges.
+\end{definition}
+\begin{remark}
+    The closer together lines are, the stronger the electric field is in that region. In fact, fields lines can be drawn so the number of lines crossing unit area perpendicular to $\vec{E}$ is proportional to the magnitude of the electric field.
+\end{remark}
+\begin{definition}[Electric Dipole]
+    An electric field created by 2 equal charges of opposite sign is an \emph{electric dipole}.
+\end{definition}
+\begin{remark}
+    In the central reguon between two closely spaced, oppositely charged, parallel plates, the electric field has the same magnitude at all points $E = \frac{\sigma}{\epsilon_0} = \frac{Q}{\epsilon_0A}$.
+\end{remark}
+\begin{note}
+    We can equivalently make gravitational field diagrams.
+\end{note}
+
+\section{Electric Fields and Conductors}
+
+\begin{remark}
+    The electric field inside a conductor is 0 in the static situation.
+
+    Any net charge on a conductor distributes itself on the surface.
+\end{remark}
+\begin{remark}
+    Imagein a neutral spherical metal shell with a positive charge fixed inside. There will be an induced charge on the inside of the shell surface. Electric fields from the positive charge will thus end at the shell inside. An induced charge will emerge at the surface of the shell given off new field lines radially. No field exists within the conducting shell itself.
+\end{remark}
+\begin{remark}
+    The electric field is always perpendicular to the surface outside of a conductor.
+
+    However, the electric field outside a nonconductor does not necessarily make an angle of 90$\degree$ to the surface.
+\end{remark}
+\begin{remark}
+    Obviously, the force on a particle due to a field is $\vec{F} = q\vec{E}$.
+\end{remark}
+
+\section{Electric Dipoles}
+
+\begin{definition}[Dipole Moment]
+    Given an electric dipole formed by 2 equal charges $Q$ of opposite sign separated by a distance $\ell$, the quantity $p = Q\ell$ is called the \emph{dipole moment}. $\vec{p}$ can be considered as a vector pointing from the negative to positive charge.
+\end{definition}
+\begin{definition}[Polar Molecules]
+    Molecules with dipole moments are called \emph{polar molecules}.
+\end{definition}
+\begin{remark}
+    If a dipole of moment $p = Q\ell$ is placed in a uniform electric field $\vec{E}$ will result in a torque $\tau = QE\frac{\ell}{2}\sin\theta + QE\frac{\ell}{2}\sin\theta = pE\sin\theta$. That is, $$\vec{\tau} = \vec{p} \times \vec{E}$$ will be exerted until the dipole is parralel to the field.
+
+    Thus, the work done on the dipole by the electric field to change the angle from $\theta_1$ to $\theta_2$ is $W = \int_{\theta_1}^{\theta_2}\tau d\theta$. In this case, $\tau = -pE\sin\theta$ because its direction is opposite to the direction of increasing $\theta$. This gives $W = pE(\cos\theta_2 - cos\theta_1).$ If $U = 0$ when $\vec{p} \perp \vec{E}$, $U = -W = -pE\cos\theta = -\vec{p}\cdot\vec{E}.$
+\end{remark}
+\begin{definition}[Hydrogen Bond]
+    When $H^+$ is involved, the weak bond it can make with a nearby negative charge is relatively strong and referred to as a \emph{hydrogen bond}.
+\end{definition}
