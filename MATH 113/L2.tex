@@ -1,329 +1,235 @@
-\chapter{Introduction to Groups}
+\chapter{Permutations, Cosets, and Direct Products}
 
-\section{Binary Operations}
-    
-\begin{definition}[Binary Operation]
-    A \textit{binary operation} \textbf{*} on a set $S$ is a rule that assigns to each ordered pair $(a,b)$ of elements of $S$ another element of $S$ generally denoted $a*b$ or formally $*(a,b)$. To be \emph{well-defined}, $*$ must assign a value to every possible $a*b$.
+\section{Groups of Permutations}
+
+\begin{definition}[Permutation of a set]
+    A \emph{permutation of a set} $A$ is a function $\phi\colon A \to A$ that is both one to one and onto.
 \end{definition}
-\begin{definition}[Closure under $*$]
-    A set $S$ is \emph{closed under $*$} if for all $a,b \in S$, $a*b \in S$. If a subset $H$ of $S$ is also closed under $*$, this is referred to as the \emph{induced operation} $*$ on $H$.
-\end{definition}
-\begin{definition}[Commutative Operation]
-    A binary operation $*$ on a set $S$ is \textit{commutative} iff $a*b = b*a$ for all $a,b \in S$.
-\end{definition}
-\begin{definition}[Associative operation]
-    A binary operation $*$ on a set $S$ is \textit{associative} iff $(a*b)*c = a*(b*c)$ for all $a,b,c \in S$.
-\end{definition}
-\begin{note}
-    Associativty of function compostion follows.
-\end{note}
+\begin{remark}[Permutation Multiplication]
+    Function composition $\circ$ is a binary operation on the collection of all permutations of a set $A$. We call this operation \emph{permutation multiplication}.
+\end{remark}
 \begin{remark}
-    A binary operation on a set, typically finite, can be represented as follows:
-    \[ 
-        \renewcommand\arraystretch{1.2}
-        \begin{tabu}{c|[2pt]c|c|c}
-            * & a & b & c \\\tabucline[2pt]{-}
-            a & b & b & b \\\hline
-            b & a & c & b \\\hline
-            c & c & b & a
-        \end{tabu}
+    Let $\sigma, \tau$ be permutations of a set $A$ so $\sigma, \tau$ are both one-to-one function mapping $A$ onto $A$. then, $\sigma\circ\tau$, or simply $\sigma\tau$ is a permutation as long as it is one-to-one.
+
+    For any $a_1,a_2 \in A$, if $(\sigma\tau)(a_1)=(\sigma\tau)(a_2)$ gives $(\sigma(\tau(a_1)))=(\sigma()\tau(a_1))$. Because $\sigma$ is injective, $\tau(a_1)=\tau(a_2)$. Because $\tau$ is injective, $a_1=a_2$ so $\sigma\tau$ is injective.
+
+    For any $a \in A$, there exists some $b in A$ so $\sigma(b) = a$ because $\sigma$ is onto $A$. Because $\tau$ is onto $A$, there exists some $c \in A$ so $\tau(c) = b$. Thus, $a = (\sigma\tau)(c)$ so $\sigma\tau$ is onto $A$.
+\end{remark}
+\begin{example}
+    Given a set $A = \{1,2,3,4,5\}$, we can write a permutation $\sigma$ as 
+    \[\sigma =
+    \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 \\
+        4 & 2 & 5 & 3 & 1
+    \end{pmatrix}.\] so $\sigma(1) = 4$, etc.
+\end{example}
+\begin{theorem}
+    Let $A$ be a nonempty set, and $S_A$ be the collection of all permutations of $A$. Then, $S_A$ is a group under permutation multiplication.
+\end{theorem}
+\begin{proof}
+    Because the composition of two permutations of $A$ results in a permutation, we have closure under $\circ$. For any functions $f,g,h$, $((f\circ g)\circ h)(x) = (f(g))\circ(h)(x) = f(g(h))(x) = f(g\circ h)(x)$ so $\mathscr{G}_1$ is easily satisfied. The permutation $\imath$ defined as $\imath(a)=a$ for all $a \in A$ is the identity ($\mathscr{G}_2$). Last, for any permutation $\sigma$, $\sigma^{-1}$ reverse the direction of the mapping $\sigma$ such that $\sigma^{-1}(a)$ is the element $a'$ of $A$ so $\sigma(a')=a$. This exists because $\sigma$ is bijective. For any $a \in A$, $\imath(a) = a = \sigma(a') = \sigma(\sigma^{-1}(a')) = (\sigma\sigma^{-1})(a)$ and $\imath(a') = a' = \sigma^{-1}(a) = \sigma^{-1}(\sigma(a')) = (\sigma^{-1}\sigma)(a')$ satisfying $\mathscr{G}_3.$
+\end{proof}
+\begin{remark}
+    To define an isomorphism $\phi\colon S_A \to S_B$, we let $f \colon A \to B$ have one-to-one function mapping $A$ onto $B$ so $A$ and $B$ have the same cardinality so for $\sigma \in S_A$, let $\phi(\sigma) = \bar{\sigma}\in S_B$ so that for all $a \in A$, $\bar{\sigma}(f(a)) = f(\sigma(a)).$ 
+\end{remark}
+\begin{definition}[Symmetric Group on $n$ Letters]
+    Let $A$ be the finite set $\{1,2,\dots,n\}$. The group of all permutations of $A$ is the \emph{symmetric group on $n$ letters} $S_n$. Note that $S_n$ has $n!$ elements.
+\end{definition}
+\begin{remark}
+    $S_3$ is also the 3rd dihedral group $D_3$ of \emph{symmetries of an equilateral triangle} where $\rho_i$ is rotations and $\mu_i$ is mirror images in bisectors of angles such that $D_3$ is made up of:
+    \[
+    \begin{Bmatrix}
+        \rho_0 = \begin{pmatrix} 1 & 2 & 3 \\ 1 & 2 & 3 \end{pmatrix}, &
+        \mu_0 = \begin{pmatrix} 1 & 2 & 3 \\ 1 & 3 & 2 \end{pmatrix}, \\
+        \rho_1 = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 3 & 1 \end{pmatrix}, &
+        \mu_1 = \begin{pmatrix} 1 & 2 & 3 \\ 3 & 2 & 1 \end{pmatrix}, \\
+        \rho_2 = \begin{pmatrix} 1 & 2 & 3 \\ 3 & 1 & 2 \end{pmatrix}, &
+        \mu_2 = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{pmatrix}.        
+    \end{Bmatrix}
     \]
 \end{remark}
-
-\section{Groups}
-
-\begin{definition}[Group]
-    A group $\langle G, * \rangle$ is a set $G$ combined with a binary operation $*$ on $G$ which satisfies the following axioms:
-    \begin{enumerate}[label = ($\mathscr{G}_{\arabic*}$)]
-        \item $*$ is associative.
-        \item There exists a \textbf{unique} \emph{identity} element \textit{e} on $G$ s.t. $e*x = x*e$ for all $x \in G$. 
-        \item For each $a \in G$, there exists an $a' \in G$ s.t. $a'*a = a*a'=e$. This $a'$ is called the \textit{inverse} of $a$ with respect to the operation $*$.
-        \item \textit{(optional if part of binary operation definition)} $G$ is closed under $*$.
-    \end{enumerate}
+\begin{definition}[$n$th Dihedral Group $D_n$]
+    The \emph{$n$th dihedral group $D_n$} is the group of symmetries of the regular $n$-gon.
 \end{definition}
-\begin{theorem}[Left/Right Cancellation]
-    If $G$ is a group with binary operation $*$, then the \emph{left and right} cancellation laws hold s.t. $a*b=a*c \implies b=c$ and $b*a=c*a \implies b=c$ for all $a,b,c \in G$.
+\begin{example}[Octic Group $D_4$]
+    Given a square: \begin{tikzpicture}
+        \draw (0cm,0cm) rectangle (1cm, 1cm);
+        \foreach \x/\y/\n in {-.1/-.1/1, 1.1/-.1/2, 1.1/1.1/3, -.12/1.1/4}{\node at (\x cm, \y cm) {\n};}\end{tikzpicture}
+    , $D_4$ is the set of:
+    \[
+        \begin{Bmatrix}
+            \rho_0 = \begin{pmatrix} 1 & 2 & 3 & 4\\ 1 & 2 & 3 & 4 \end{pmatrix}, &
+            \mu_0 = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 1 & 4 & 3 \end{pmatrix}, \\
+            \rho_1 = \begin{pmatrix} 1 & 2 & 3 & 4\\ 2 & 3 & 4 & 1 \end{pmatrix}, &
+            \mu_1 = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 4 & 3 & 2 & 1 \end{pmatrix}, \\
+            \rho_2 = \begin{pmatrix} 1 & 2 & 3 & 4\\ 3 & 4 & 1 & 2 \end{pmatrix}, &
+            \delta_0 = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 3 & 2 & 1 & 4 \end{pmatrix}, \\
+            \rho_3 = \begin{pmatrix} 1 & 2 & 3 & 4\\ 4 & 1 & 2 & 3 \end{pmatrix}, &
+            \delta_1 = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 1 & 4 & 3 & 2 \end{pmatrix}.
+        \end{Bmatrix}
+        \]
+    where $\rho_i, \mu_i, \delta_i$ represent rotations, mirror images in perpendicular bisectors of sides, and diagonal flips respectively.
+\end{example}
+\begin{definition}[Image of $H$ under $f$]
+    Let $f\colon A\to B$ be a function and $H$ be a subset of $A$. The \emph{image of $H$ under $f$} is the set $\{f(h) \mid h \in H\}$ and is denoted $f[H].$
+\end{definition}
+\begin{lemma}
+    Let $G, G'$ be groups and $\phi\colon G\to G'$ be a one-to-one function such that for all $x,y \in G$, $\phi(xy) = \phi(x)\phi(y).$ Thus $\phi[G]$ is a subgroup of $G'$ and $\phi$ provides an isomorphism of $G$ with $\phi[G]$.
+\end{lemma}
+\begin{proof}
+    We simply prove the subgroup requirements. For any $x', y' \in \phi[G]$, there exist $x,y \in G$ so $\phi(x)=x'$ and $\phi(y)=y'$. By hypothesis, $\phi(xy) = \phi(x)\phi(y)$ so $x'y' \in \phi[G]$ so $\phi[G]$ is closed under the operation of $G'$. Next, say $e'$ is the identity of $G'$. Then, $e'\phi(e) = \phi(e) = \phi(ee) = \phi(e)\phi(e)$. Cancellation in $G'$ shows $e'=\phi(e)$ so $e' \in \phi[G]$. Last, for any $x' \in \phi[G]$, $e'=\phi(e)=\phi(xx^{-1})=\phi(x)\phi(x^{-1})=x'\phi(x^{-1})$ implying $x'^{-1} = \phi(x^{-1}) \in \phi[G]$. Thus $\phi[G]$ is a subgroup of $G'$. We already showed $\phi$ is onto and therefore an isomorphism of $G$ with $\phi[G]$.
+\end{proof}
+\begin{theorem}[Cayley's Theorem]
+    Every group is isomorphic to a group of permutations.
 \end{theorem}
 \begin{proof}
-    The right cancellation proof is identical to that below.
-    \begin{align*}
-        a*b &= a*c & \text{$\because$ by supposition}\\
-        a'*(a*b) &= a'*(a*c) & \text{$\because$ inverse axiom}.\\
-        (a'*a)*b &= (a'*a)*c & \text{$\because$ associativity axiom} \\
-        e*b &= e*c & \text{$\because$ inverse axiom} \\
-        b &= c & \text{$\qed$ identity axiom}
-    \end{align*}
+    Let $G$ be a group. We want to show $G$ is isomorphic to a subgroup of $S_G$. By the previous lemma, we need only define a universal one-to-one function $\phi\colon G\to S_G$ with the homomorphism property. For any $x,g \in G$, let's define left multiplication by x via $\lambda_x\colon G\to G$ as $\lambda_x(g)=xg$. For all $c \in G$, $\lambda_x(x^-1c)=x(x^-1c)=c$ so clearly $\lambda_x$ maps $G$ onto $G$. Also, for any $a,b \in G$, $\lambda_x(a)=\lambda_x(b) \implies xa=xb \implies a=b$ through left cancellation. Thus, $\lambda_x$ is one-to-one, onto, and a permutation of $G$. Now, we define $\phi\colon G\to S_G$ as $\phi(x)=\lambda_x$ for all $x\in G$.
+
+    To satisfy our lemma, we now only show $\phi$ is one-to-one and has the homomorphism property. Let $e$ be the identity on $G$ so that $\phi(x)=\phi(y)$ implies $\lambda_x=\lambda_y$ so $\lambda_x(e)=\lambda_y(e)\implies xe=ye \implies x=y$. Last, for any $x,y,g\in G$, $\lambda_{xy}(g) = (xy)g = x(yg) = \lambda_x(\lambda_y(g)) = \lambda_x\lambda_y(g)$ so $\phi(xy)=\phi(x)\phi(y)$ satisfying the homomorphism property.
 \end{proof}
-\begin{theorem}
-    Trivially, in a group $G$, $(ab)' = b'a'$ for all $a,b \in G$.
-\end{theorem}
-\begin{remark}
-    Note that the solutions $x,y$ to $a*x=b$ and $y*a=b$ have unique solutions in $G$ for any $a,b \in G$. Similarly, $e$ is unique.
-\end{remark}
-\begin{note}[Idempotent for $*$]
-    An element $x$ of $S$ is \emph{idempotent for $*$} if $x*x=x$. This is always in the identity element.
-\end{note}
-\begin{definition}[Abelian Group]
-    A group $G$ is \textit{abelian} if its binary operation is commutative. 
+\begin{definition}[Left/Right Regular Representation]
+    The map $\phi\colon G \to S_G$ defined as above is the \emph{left regular represention} of $G$ and the map $\mu\colon G \to S_G$ defined by $\mu(x)=\rho_{x^{-1}}$ where $\rho_x(g)=gx$ for all $x,g\in G$ is the \emph{right regular representation} of $G$.
 \end{definition}
-\begin{definition}[Roots of Unity]
-    Call the elements of the set $U_n \coloneq \{ z \in \C \mid z^n = 1\}$ the $n^{th}$ roots of unity, usually listed as 1 = $\zeta^0, \zeta^1, \zeta^2, \ldots, \zeta^{n-1}$.
+
+\section{Orbits, Cycles, and the Alternating Groups}
+
+\begin{definition}[Orbit of $a$ under $\sigma \in S_A$]
+    Let $A$ be a set and $\sigma \in S_A$. For a fixed $a \in A$, the set $\mathcal{O}_{a.\sigma}=\{\sigma^n(a)\mid n\in\Z\}$ is the \emph{orbit of $a$ under $\sigma$.}
 \end{definition}
 \begin{remark}
-    Let the unit circle $U \coloneq \{z \in \C \mid |z| = 1\}$. Clearly, for any $z_1, z_2 \in U$, $|z_1z_2| = |z_1||z_2| = 1$ such that $z_1z_2 \in U$ implying U is closed under $\cdot$. Note then that $\langle U, \cdot \rangle \simeq \langle R_{2\pi}, +_{2\pi} \rangle$. Similarly, $\langle U_n, \cdot \rangle \simeq \langle \Z_n, +_n \rangle \text{ for } n \in \Z^+$.
+    Let $\sigma$ be a permutation of a set $A$. The equivalence classes in $A$ are determined by the following equivalence class:
+    \begin{center}
+        For $a,b \in A$, let $a\sim b$ if and only if $b = \sigma^n(a)$ for some $n \in \Z$.
+    \end{center}
+    These are called the \emph{orbits of $\sigma$}.
 \end{remark}
-\begin{definition}[Addition Modulo n]
-    We respecitvely write $\Z_n$ and $\R_c$ to denote $[0, 1, \ldots, n-1]$ and $[0, c]$. Addition modulo $n/c$ is written $+_n$ or ${+_c}$.
-\end{definition}
-
-\section{Isomorphic Binary Structures}
-
-\begin{definition}[Binary Algebraic Structures]
-    For two \emph{binary algebraic structures} $\langle S, * \rangle$ and $\langle S', *' \rangle$ to be structurally alike, we would need a one-to-one correspondence between the elements $x \in S$ and $x' \in S'$ s.t. if $x \leftrightarrow x'$ and $y \leftrightarrow y'$ then $x*y \leftrightarrow x'*'y'$.
-\end{definition}
-\begin{remark}[Homomorphism Property]
-    This last condition is called the \emph{homorphism property}. If the function $\phi$ is NOT one-to-one, it is a homormorphism only. 
-\end{remark}
-\begin{definition}[Isomorphism]
-    An \emph{isomorphism} of $S$ with $S'$ is a one-to-one function $\phi$ mapping $S$ onto $S'$ such that $\phi(x*y) = \phi(x) *' \phi(y)$ for all $x,y \in S$. 
-
-    If such a map exists, $S$ and $S'$ are called \emph{isomorphic binary structures} denoted $S \simeq S'$.
-\end{definition}
-\begin{note}[Show Binary Algebraic Structures are Isomorphic]
-    \leavevmode
-    \begin{enumerate}[label=(Step \arabic*), leftmargin=*]
-        \item Define the function $\phi$ which defines $\phi(s)$ for all $s \in S$ and gives the isomorphism from $S \to S'$.
-        \item Show $\phi$ is one-to-one.
-        \item Show $\phi$ is onto.
-        \item Show $\phi(x*y) = \phi(x)*'\phi(y)$ for all $x,y \in S$.
-    \end{enumerate}
-\end{note}
-\begin{example}
-    Take the isomorphism $\phi\colon\R\to\R^+\colon x\longmapsto e^x$ from $\langle \R, +\rangle$ to $\langle \R^+, \cdot \rangle$. Clearly, $\forall x \in \R, \phi(x) \in \R^+$ and $\phi$ is bijective. Last, for $x,y \in \R$, $\phi(x + y) = e^{x*y} = e^xe^y = \phi(x)\cdot\phi(y)$.
-\end{example}
-\begin{definition}[Structural Property]
-    A structural property is any property of a binary structure that is invariant to any isomorphic structure. These, like cardinality, are used to show no such isomorphism exists between structures.
-\end{definition}
-\begin{example}
-    Although $\langle \Q, + \rangle$ and $\langle \Z, + \rangle$ both have cardinality $\aleph_0$ and have many one-to-one functions between them, the equation $x+x = c$ has a solution $x \in Q$ for all $c \in \Q$, but this is not true for $\Z$ if, say, $c=3$. This structural propery distinguishes these binary structures and thus they are not isomorphic under the usual addition.
-\end{example}
-\begin{theorem}
-    Suppose $\langle S, * \rangle$ has an identity element $e$ for $*$. If $\phi \colon S \to S'$ is an isomorphism to $\langle S', *' \rangle$ then $\phi(e)$ is an identity element for $*'$ on $S'$.
-\end{theorem}
-\begin{proof}
-    Because an isomorphism exists from $S \to S'$, for any element $s' \in S'$, there exists exactly one element $s \in S$ s.t. $\phi(s) = s'$. By the definition of an isomorphism $s' = \phi(s) = \phi(s * e) = \phi(s) *' \phi(e) = s' *' \phi(e)$ for an arbitary element $s'$ of $S$. This implies $\phi(e)$ is the identity element for $S'$.
-\end{proof}
-
-\section{More on Groups and Subgroups}
-
-\begin{definition}[Semigroup]
-    A semigroup is an algebraic structure combining a set with an associative binary oxperation.
-\end{definition}
-\begin{definition}[Monoid]
-    A monoid is a semigroup that has an identity element corresponding to its binary operation. 
-\end{definition}
-\begin{definition}[Subgroup]
-    If a subset $H$ of a group $G$ is closed under the binary operation of $G$ and is itself a group, $H$ is a \emph{subgroup} of $G$. This is denoted $H \leq G$. $H < G \implies H \neq G$.
-\end{definition}
-\begin{example}
-    \ \group{\Z}{+} < \group{\R}{+}, but \group{\Q}{\cdot} is \emph{not} a subgroup of \group{\R}{-}.
-\end{example}
-\begin{definition}[Proper and trivial subgroups]
-    If $G$ is a group, the subgroup consisting of $G$ itself is the \emph{improper subgroup} of $G$. All other subgroups are \emph{proper subgroups}. The subgroup $\{e\}$ is the \emph{trivial subgroup} of $G$ and all other subgroups are nontrivial.
-\end{definition}
-\begin{theorem}
-    A subset $H$ of a group $G$ is a subgroup of $G$ if and only if:
+\begin{explanation}
+    $\sim$ is an equivalence relation because it is:
     \begin{enumerate}
-        \item $H$ is closed under the binary operation of $G$.
-        \item the identity $e$ of $G$ is in $H$.
-        \item for all $a \in H$, $a^{-1} \in H$ also.
+        \item \textbf{reflexive:} $a\sim a$ clearly because $a=\imath(a)=\sigma^0(a)$.
+        \item \textbf{symmetric:} If $a \sim b$, then $b = \sigma^n(a)$ for some $n \in \Z$ so $a = \sigma^{-n}(b)$ and $-n \in \Z$ so $b\sim a$.
+        \item \textbf{transitive:} If $a \sim b, b \sim c$, then $b = \sigma^n(a)$ and $c = \sigma^m(b)$ for some $n,m \in \Z$. This implies $c = \sigma^m(\sigma^n(a)) = \sigma^{n+m}(a)$ so $a \sim c$.
     \end{enumerate}
-\end{theorem}
-\begin{proof}
-    $\implies:$ Let $H$ be a subgroup of $G$. By definition, $H$ is closed under $G$'s binary operation (1). $H$ must have an identity element because it is a group. Because $a*x=a$ and $y*a=a$ have unique solutions, $H$'s identity element must be the same in $H$ group as $G$ group (2). (3) is trivial because $H$ is a group.
-
-    $\impliedby:$ Let (1), (2), (3) be true. Then $H$ has a unique identity element on its binary operation ($\mathscr{G}_2$), each element of $H$ has a unique inverse in $H$ ($\mathscr{G}_3$), and $H$ is closed under the binary operation of $G$ (\emph{optional} $\mathscr{G}_4$). To satisfy ($\mathscr{G}_1$), the binary operation on $H$ must be associative s.t., for all $a,b,c \in H$, $(ab)c = a(bc)$. But this is clearly holds in $G$ so ($\mathscr{G}_1$) is satisfied and $H$ is a subgroup of $G$.
-\end{proof}
-
-\section{Cyclic Groups}
-
-\begin{theorem}
-    Let $G$ be a group and $a \in G$. Then $$H = \{a^n \mid n \in \Z\}$$ is a subgroup of $G$ and the \emph{smallest} subgroup of $G$ that contains $a$.
-\end{theorem}
-\begin{proof}
-    Let's first check $H$ is indeed a subgroup of $G$. (1) For any $r,s \in \Z$, $a^r*a^s = \overbrace{(a*\cdots*a)}^{\text{$a$ $r$ times}}*\overbrace{(a*\cdots*a)}^{\text{$a$ $s$ times}}=a^{r+s} \in H$ so we have closure. (2) Let $e \coloneq a^0 \in H$ so for all $r \in \Z$, $a^r*a^0=a^r$. (3) For all $r \in \Z$, $a^r \in H$ so $\exists a^{-r} \in H$ such that $a^r*a^{-r} = a^0 = e$. Thus, $H \leq G$.
-
-    Next, to show it's the smallest possible subgroup, just take the set $\{a\}$. To have closure, we must add $a^n$ $\forall n\in Z^+$. To have inverses, we must have $a^{-n}$ so our set becomes $\{a^n \mid n \in Z\setminus\{0\}\}$. To have an identity, we must have $a^0$ and this completes the proof.
-\end{proof}
-\begin{definition}[Cyclic Subgroup of G]
-    For any $a \in G$, define \csgroup{a} to be the set $\{a^n \mid n \in \Z\}$. This is called the \emph{cyclic subgroup of $G$ generated by $a$}. An element $a$ of a group $G$ \emph{generates} $G$ and is a \emph{generator for} $G$ if \csgroup{a} $= G$.
-\end{definition}
-\begin{definition}[Cyclic Group]
-    A group is \emph{cyclic} if there is some element $a$ in $G$ that generates $G$.
-\end{definition}
+\end{explanation}
 \begin{example}
-    $\langle 1 \rangle = \langle 3 \rangle = \Z_4$ so $Z_4$ is cyclic and both 1 and 3 are generators.
+    The orbits of $\imath$ are the singleton subsets of $A$.
 \end{example}
 \begin{example}
-    The group \group{$\Z$}{+} is a cyclic group generated ONLY by 1 and -1.
-\end{example}
-\begin{remark}[Subgroup Diagrams]
-    Lattice, or \emph{subgroup diagrams}, can be drawn such that lines run down from a group $G$ to a group $H$ if $H < G$. 
-\end{remark}
-\begin{example}
-    Take two group structures of order 4: $\Z_4$ and the Klein 4-group \emph{Vierergruppe} defined as follows:
-
+    Given the permutation $\sigma$ of a finite set $A$ defined as:
+    \[\sigma = \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ 3 & 8 & 6 & 7 & 4 & 1 & 5 & 2
+    \end{pmatrix},\]
+    the complete list of orbits of $\sigma$ are $$\{1,3,6\}, \; \{2,8\}, \; \text{and }\{4,5,7\},$$ which we can map in the following way:
     \begin{center}
-    $\Z_4:$
-    \renewcommand\arraystretch{1.2}
-    \begin{tabu}{c|[2pt]c|c|c|c}
-        + & 0 & 1 & 2 & 3 \\\tabucline[2pt]{-}
-        0 & 0 & 1 & 2 & 3 \\\hline
-        1 & 1 & 2 & 3 & 0 \\\hline
-        2 & 2 & 3 & 0 & 1 \\\hline
-        3 & 3 & 0 & 1 & 2
-    \end{tabu}
-    \quad $V:$
-    \begin{tabu}{c|[2pt]c|c|c|c}
-        $*$ & e & a & b & c \\\tabucline[2pt]{-}
-        e & e & a & b & c \\\hline
-        a & a & e & c & b \\\hline
-        b & b & c & e & a \\\hline
-        c & c & b & a & e
-    \end{tabu}
-\end{center}
-    We can map these as:
-    \centering
-    \begin{tikzpicture}[node distance=2cm]
-        \node(Z4) {$Z_4$};
-        \node(02) [below=.5cm of Z4] {$\{0,2\}$};
-        \node(0) [below=.5cm of 02] {$\{0\}$};
-        \draw (Z4) -- (02) -- (0);
-    \end{tikzpicture}
-    and
-    \begin{tikzpicture}[node distance=2cm]
-        \node(V) {$V$};
-        \node(ea) [below left =.5cm and .5cm of V] {$\{e,a\}$};
-        \node(eb) [below =.5cm of V] {$\{e,b\}$};
-        \node(ec) [below right =.5cm and .5cm of V] {$\{e,c\}$};
-        \node(e) [below =.5cm of eb] {$\{e\}$};
-        \draw (V) -- (ea) -- (e);
-        \draw (V) -- (eb) -- (e);
-        \draw (V) -- (ec) -- (e);
-    \end{tikzpicture}
-    .
-\end{example}
-\begin{definition}[Order]
-    If the cyclic subgroup \csgroup{a} of $G$ is finite, we say the \emph{order} of $a$ is the order | \csgroup{a} |.  Otherwise, $a$ is of \emph{infinite order}.
-\end{definition}
-\begin{theorem}
-    Every cyclic group is abelian.
-\end{theorem}
-\begin{theorem}[Division Algortihm for $\Z$]
-    If $m\in\Z^+$ and $n\in\Z$, then there exist unique integers $q,r$ such that $$n=mq+r \quad\text{and}\quad 0\leq r<m.$$
-\end{theorem}
-\begin{proof}
-    From the archimedean property, there is a unique $q$ such that $qm\leq n < (q+1)m$. Then, $0 \leq r = n - mq < m$ is unique. We regard $q$ and $r$ as the quotient and nonnegative remainder respectively when $n$ is divided by $m$.
-\end{proof}
-\begin{theorem}
-    A subgroup of a cyclic group is cyclic.
-\end{theorem}
-\begin{proof}
-    Take a cyclic group $G$ with subgroup $H$. If $H$ = \csgroup{e}, then $H$ is cyclic and the proof is complete.
+        \begin{tikzpicture}
+            \node [circle, draw, minimum size = 2cm, postaction={decorate}, decoration={markings, mark=between positions .083 and 1.000 step 0.333 with {\arrow{>}}}] (1) at (0,0) {};
+            \node [circle, draw, minimum size = 2cm, postaction={decorate}, decoration={markings, mark=between positions .500 and 1.000 step 0.500 with {\arrow{>}}}] (2) at (3cm, 0) {};
+            \node [circle, draw, minimum size = 2cm, postaction={decorate}, decoration={markings, mark=between positions .083 and 1.000 step 0.333 with {\arrow{>}}}] (3) at (6cm, 0) {};
 
-    Otherwise, $H \neq$ \csgroup{e} so there exists $b \in H, b \neq e$. Because $G$ is cyclic, there must exist $a \in G$ such that $a$ generates $G$, i.e. for all $n \in \Z^+$, $a^n$ spans every value of $G$ including every element of $H$. Let $c \coloneq a^m$ where $m$ is the least positive integer such that $c \in H$. Now, for all $b \in H$, take $n$ such that $b = a^n$. From division algorithm, there exist integers $q,r$ such that $n = mq+r$ so $a^n = a^{mq+r} = (a^m)^qa^r$ which implies, because $a^{m} \in H$ and $H$ is a group so $a^{-m} \in H$, $a^n(a^m)^{-q}=a^r$. $H$ is a group so this implies $a^r \in H$. Because $0 \leq r < m$ and $m$ is the least positive integer such that $a^m \in H$, $r=0$ such that $n = mq$ for all $b=a^n = (a^m)^q \in H$. \csgroup{c} $= H$ so $H$ is cyclic.
-\end{proof}
-\begin{definition}[Greatest Common Divsior]
-    The positive generator $d$ of the cyclic group $H = \{nr+ms \mid n,m \in \Z\}$ under addition is called the \emph{greatest common divisor} of $r$ and $s$, written $d = \gcd(r,s)$.
-\end{definition}
-\begin{definition}
-    Two integers are \emph{relatively prime} if their gcd is 1.
-\end{definition}
-\begin{theorem}
-    Let $G$ be a cyclic group with generator $a$. If the order of $G$ is infinite, then $G$ is isomorphic to \group{\Z}{+}. If $G$ has finite order $n$, then $G$ is instead isomorphic to \group{\Z_n}{+_n}.
-\end{theorem}
-\begin{proof}
-    Take the following two cases.
-    \textbf{Case 1:} For all positive integers $m$, $a^m \neq e$. Suppose $a^h = a^k$ and $h>k$. Thus, $a^ha^{-k} = a^{h-k} = e$ which contradicts our assumption. Therfore, each element of $G$ can be uniquely expressed as $a^m$ for a unique $m \in \Z$. The map $\phi: G \to \Z$ defined as $\phi(a^i) = i$ is then well-defined and bijective on $\Z$. Last, $\phi(a^ia^j) = \phi(a^{i+j}) = i+j = \phi(a^i)+\phi(a^j)$ so the homomorphism property is satisfied and $\phi$ is an isomorphism to \group{\Z}{+}.
-    
-    \textbf{Case 2:} $a^m = e$ for some $m \in \Z^+$.  Let $n$ be the smallest positive integer so $a^n =e$. If $s \in \Z$ and $s=q+r$ for $0\leq r<n$, then $a^s = a^{nq+r} = (a^n)^qa^r = a^r.$ Like in case 1, if $0<k<h<n$ and $a^h = a^k$, then $a^{h-k} =e$ and $0<h-k<n$ contradicting our assumption that $n$ is the smallest positive integer possible. Hence, $a^0, a^1, a^2, \ldots, a^{n-1}$ are all distinct and comprise all elements of $G$. We can then make the map $\psi:G\to\Z_n$ defined by $\psi(a^i)=i$ for $i=0,1,\ldots,n-1$ is well-defined and bijective on $Z_n$. Also, because $a^n =e$, $a^ia^j=a^k$ whenever $k=i+_nj$. Therefore, $psi(a^ia^j)=i+_nj=\psi(a^i)+_n\psi(a^j)$ satisfying the homomorphism property so $\phi$ is an isomorphism to \group{\Z_n}{+_n}.
-\end{proof}
-\begin{theorem}
-    Let $G$ be a cyclic group generated by $a$ with $n$ elements. Let $b \in G$ and $b = a^s$. Then, $b$ generates a cyclic subgroup $H$ of $G$ containing $n/d$ elements where $d$ is the greatest common divisor of $n$ and $s$. Also, \csgroup{a^s} $=$ \csgroup{a^n} $\iff \gcd(s,n) = \gcd(t,n)$. 
-\end{theorem}
-\begin{proof}
-    We already know $b$ generates a cyclic subgroup $H$ of $G$. And that because it is finite, it has only as many elements as the smallest power $m$ of $b$ so $b^m=e$. This and $b=a^s$ implies $(a^s)^m=e$ if and only if $n$ divides $ms$ because $a^n = e$ because $G$ is of finite order $n$. Let $d = \gcd(n,s)$ such that we want to find the smallest $m$ so $\frac{ms}{n}=\frac{m(s/d)}{(n/d)}$ is an integer. This implies $(n/d)$ divides $m$ so the smallest $m$ we can pick \emph{is} $n/d$. Thus, $H$ has order $n/d$. 
-    
-    We know $G$ is isomorphic to \group{\Z_n}{+_n} so taking cyclic subgroup \csgroup{d} of $\Z_n$ where $d$ divides $n$ implies \csgroup{d} has $n/d$ elements and contains all positive integers $m$ less than $n$ such that $\gcd(m,n)=d$. Thus, there is only one subgroup of $\Z_n$ of order $n/d$. It immediately follows that \csgroup{a^s} = \csgroup{a^t} if and only if $\gcd(s,n) = \gcd(t,n)$.
-\end{proof}
-\begin{corollary}
-    If $a$ is a generator of a finite cyclic group $G$ of order $n$, then the other generators of $G$ are the elements of the form $a^r$, where $r$ is relatively prime to $n$. 
-\end{corollary}
-\begin{example}
-    For instance, we can derive the subgroup diagram for $Z_{18}$ as:
-    \begin{center}
-        \begin{tikzpicture}[node distance = 2cm]
-            \node(1) {\csgroup{1}};
-            \node(Z) [right = 0cm of 1] {$= Z_{18}$};
-            \node(2) [below left =.5cm and 1cm of 1] {\csgroup{2}};
-            \node(3) [below right = .5cm and 1cm of 1] {\csgroup{3}};
-            \node(6) [below right =.5cm and 1cm of 2] {\csgroup{6}};
-            \node(9) [below right =.5cm and 1cm of 3] {\csgroup{9}};
-            \node(0) [below right = .5cm and 1cm of 6] {\csgroup{0}};
-            \draw (1) -- (2) -- (6) -- (0) -- (9) -- (3) -- (1);
-            \draw (6) -- (3);
+            \foreach \n/\circ/\rad\direc in {1/1/-.083/right, 3/1/.250/above, 6/1/.583/left, 2/2/.250/above, 8/2/.750/below, 4/3/.250/above, 7/3/.583/left, 5/3/.916/right}
+            {
+                \node[draw, thick, fill, inner sep = .3mm, circle, label = \direc:\n] at (\circ.\rad*360) {};
+            }
         \end{tikzpicture}
     \end{center}
 \end{example}
-
-\section{Generating Sets and Cayley Digraphs}
-
-\begin{example}
-    The Klein 4-group $V = \{e,a,b,c\}$ is generated by $\{a,b\}$ since $ab =c$. It is similarly generated by $\{a,c\},\{b,c,\},$ and $\{a,b,c\}$.
-\end{example}
+\begin{definition}
+    A permutation $\sigma \in S_n$ is a \emph{cycle} if it has at most one orbit containing more than one element. The \emph{length} of a cycle is the number of elements in its largest orbit.  
+\end{definition}
+\begin{remark}
+    We can use \emph{cyclic notation} to simply denote $\mu = (1,3,6)$.
+\end{remark}
+\begin{remark}
+    Cycles are \emph{disjoint}. That is, no interger appears in the notations of 2 different cycles. Note that multiplication of disjoint cycles \emph{is} commutative.
+\end{remark}
 \begin{theorem}
-    The intersection of some subgroups $H_i$ of a group $G$ for $i \in I$ is again a subgroup of $G$ where $I$ is the set of indices.
+    Every permutation $\sigma$ of a finte set is a product of disjoint cycles.
 \end{theorem}
 \begin{proof}
-    First, closure. For any $a,b \in \bigcap_{i\in I}H_i$, because each $H_i$ has closure, $a,b \in H_i \implies ab \in H_i$ so $ab \in \bigcap_{i\in I}H_i$. Similarly, because the identity element of $G$ is in $H_i$ for all $i \in I$, $e \in \bigcap_{i\in I}H_i$. Last, for all $a \in H_i$, because $H_i$ is a group, $a^{-1} \in H_i$. Thus, for any $a \in \bigcap_{i \in I}H_i$, $a \in H_i$ for all $i$ so $a^{-1} \in H_i$ for all $i$ so $a^{-1} \in \bigcap_{i \in I}H_i$. 
+    Let $B_1, B_2, \ldots, B_r$ be the orbits of $\sigma$ and define the cycle $\mu_i$ as: 
+    \[
+        \mu_i(x) = \begin{cases*}
+        \sigma(x) \quad x \in B_i \\
+        x \quad \text{otherwise.}
+        \end{cases*}
+    \]
+    Clearly, $\sigma = \mu_1\mu_2\cdots\mu_r$. Because the orbits $B_1, B_2, \ldots, B_r$ are disjoint equivalence-classes, the cycles $\mu_1, \mu_2, \ldots, \mu_r$ are disjoint also.
 \end{proof}
-\begin{definition}[Subgroup generated by $\{a_i\mid i\in I\}$]
-    Let $G$ be a group and $a_i \in G$ for $i \in I$. The smallest subgroup of $G$ containing $\{a_i\mid i\in I\}$ is the \emph{subgroup generated by $\{a_i\mid i\in I\}$}. If this subgroup is all of $G$ then the set \emph{generates} $G$ and the $a_i$ are the \emph{generators of} $G$. If there is a finite set that generates $G$, we say $G$ is \emph{finitely generated}.
+\begin{example}
+    Take the disjoint cycles $\sigma = (1,3,5,2)$ and $\tau = (2,5,6)$. To find $\sigma\tau$ ($\tau$ first), begin with 1 so $\sigma\tau = (1,\ldots)$. $\tau$ doesn't map 1 but $\sigma$ maps it to 3 so we get $(1,3,\ldots)$. Following this cycle, 3 isn't mapped anywhere by $\tau$ but is mapped to 5 so $(1,3,5,\ldots)$. 5 is mapped to 6 but 6 isn't mapped anywhere so it stays fixed as $(1,3,5,6,\ldots)$. Beginning a new cycle, 2 is mapped to 5 then back to 2 so it becomes (1,3,5,6)(2). Finally, 4 isn't mapped anywhere by either so it stays as 4. Thus, $(1,3,5,2)(2,5,6)=(1,3,5,6)(2)(4)=(1,3,5,6)$.
+\end{example}
+\begin{definition}[Transposition]
+    A cycle of length 2 is a \emph{transposition}.
 \end{definition}
-\begin{definition}[Digraph]
-    A directed graph, abbreviated as \emph{digraph}, consists of a fininite number of points, or \emph{vertices} and some \emph{arcs} denoted by an arrowhead joining them together.
-\end{definition}
-\begin{definition}[Cayley Digraphs]
-    Cayley digraphs draw arcs of different types between each element of $G$ demonstrating what each element is generated by. Of course, if $x\to y$ means $xa=y$ then $ya^{-1}=x$. Traveling opposite to arrow direction implies this second equality.
+\begin{corollary}
+    Any permutation of a finite set of at least 2 elements is a product of transpositions. The identity, for $S_n$ with $n\geq 2$ is $(1,2)(1,2)$.
+\end{corollary}
+\begin{theorem}
+    No permutation in $S_n$ can be expressed both as a product of an even and odd number of transpositions.
+\end{theorem}
+\begin{proof}(Linear Algebra)
+    Recall $S_A \sim S_B$ if $A,B$ have the same cardinality. Permutations work with $n$ rows of the $n\times n$ $I_n$ which has determinant 1. Interchanging any two rows changes the sign of the determinant. If $C$ is a matrix obtained by some permutation $\sigma$ of $I_n$ and $C$ could be obtained by an even and odd number of transpositions of rows, then its determinant would be both 1 and -1. 
+\end{proof}
+\begin{proof}(Orbits)
+    Let $\sigma \in S_n$ and $\tau = (i,j)$ be a transposition in $S_n$. 
+    
+    \textbf{Case I:} Suppose the orbits of $\sigma$ and $\tau\sigma$ differ by 1. Suppose $i,j$ are in different orbits of $\sigma$. Writing $\sigma$ as a product of disjoint cycles with the first containing $j$ and the second containing $i$, e.g. $(b, j, \times, \times, \times)(a, i, \times, \times)$ implies that $\tau\sigma = (i,j)\sigma = (i,j)(b, j, \times, \times, \times)(a, i, \times, \times)$ after calculating is $(a,j,\times,\times,\times,b,i,\times,\times)$. This is because $a$ feeds into $i$ now $j$ feeds into $\times,\times,\times$ and $b$ feeds into $j$ now $i$ into $\times, \times$. This is now a single orbit.
+    
+    \textbf{Case II:} Suppose instead that $i,j$ are in the same orbit of $\sigma$ so $\sigma$ can be written as the product of disjoint cycles so the first cycle is of form $(a,i,\times,\times,\times,b,j,\times,\times)$. $\tau\sigma=(i,j)\sigma$ gives $(a,j,\times,\times)(b,i,\times,\times,\times)$. This single orbit has been split into two.
+    
+    These cases show the number of orbits of $\tau\sigma$ differs from the number of orbits of $\sigma$ by 1. The identity permutation $\imath$ has exactly $n$ orbits becasue each element is the only member of its orbit. So the orbits of a permutation $\sigma \in S_n$ must differ from $n$ by an even or odd number. Each new transposition multiplied with the identity trying to create $\sigma$ must then change that product's orbits by 1. So, there cannot be 2 sequences of different size because that would imply $\sigma$ has different numbers of orbits.
+\end{proof}
+\begin{definition}{Even/Odd Permutation}
+    A permutation of a finite set is known as \emph{even or odd} depending on whether it can be written the product of an even or odd number of transpositions.
 \end{definition}
 \begin{example}
-    For instance, we can create the digraph for $Z_6$ with generator set $S = \{2,3\}$ as:
-    \begin{tikzpicture}
-        [
-            mid arrow/.style={%
-              postaction={%
-                decoration={%
-                  markings, mark=at position 0.5 with {\arrow{Triangle}},
-                }, decorate, }, }
-        ]
-        \node [draw, fill=white, circle, inner sep = 1pt] (0) {0};
-        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 0] (2) {2};
-        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 2] (4) {4};
-
-        \node [draw, fill=white, circle, inner sep = 1pt] [right = 2cm of 0] (3) {3};
-        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 3] (5) {5};
-        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 5] (1) {1};
-
-        \draw [mid arrow] (0) to (2);
-        \draw [mid arrow] (2) to (4);
-        \draw [mid arrow] (4) to [bend left = 45] (0);
-
-        \draw [mid arrow] (3) to (5);
-        \draw [mid arrow] (5) to (1);
-        \draw [mid arrow] (1) to [bend right = 45] (3);
-
-        \draw [dashed] (0) -- (3) -- (5) -- (2) -- (4) -- (1);
-    \end{tikzpicture}
-    with solid (2) and dashed (3) lines. Dashed lines have no arrowhead because 3 is its own inverse.
+    The identity permutation $\imath \in S_n$ is even because it is $(1,2)(1,2)$.  
 \end{example}
+\begin{theorem}
+    If $n \geq 2$, the collection of even permutations of $\{1,2,3,\ldots,n\}$ forms a subgroup of order $n!/2$ of the symmetric group $S_n$. Note the set of odd permutations is of the same size.
+\end{theorem}
+\begin{proof}
+    Take the set of even and odd ($A_n$ and $B_n$) permutations in $S_n$ Let $\tau$ be any fixed transposition in $S_n$. Because $n \geq 2$, we might as well suppose $\tau = (1,2)$. Take the function $\lambda_\tau\colon A_n\to B_n$ defined as $\lambda_\tau(\sigma) =\tau\sigma$ for $\sigma \in A_n$. $\sigma$ is even so $(1,2)\sigma$ can be expressed as an odd number of transpositions so $\tau\sigma \in B_n$. Because $S_n$ is a group, for any $\sigma, \mu \in A_n$, $\lambda_\tau(\sigma)=\lambda_\tau(\mu)$ implies $\sigma = \mu$ so $\lambda_\tau$ is injective. Note also that $\tau = \tau^{-1}$ so if $\rho \in B_n$, then $\tau^{-1}\rho \in A_n$ and $\lambda_\tau(\tau^{-1(\rho)}) = \tau(\tau^{-1}(\rho)) = \rho$ implying $\lambda_\tau$ is onto $B_n$. So $B_n$ and $A_n$ are of the same size because they are finite. The fact the set of even permutations is a subgroup is trivial.
+\end{proof}
+\begin{definition}[Alternating Group $A_n$ on $n$ Letters]
+    The subgroup $S_n$ consisting of the even permutations of $n$ letters if the \emph{altering group $A_n$ on $n$ letters}.
+\end{definition}
 
+\section{Cosets and the Theorem of Lagrange}
+
+\begin{theorem}
+    Let $H$ be a subgroup of $G$. Let the relation $\sim_L$ be defined on $G$ by $$a \sim_L b \quad\text{if and only if}\quad a^{-1}b\in H.$$ Let $\sim_R$ be defined on $G$ by $$a \sim_R b \quad\text{if and only if}\quad ab^{-1}\in H.$$ Then $\sim_L, \sim_R$ are both equivalence relations on $G$.
+\end{theorem}
+\begin{proof}(Just $\sim_L$) For any $a \in G$, $a^{-1}(a) = e \in H$ so $\sim_L$ is reflexive. For any $a, b\in G$, suppose $a^{-1}b \in H$. Because this is a subgroup, $(a^{-1}b)^-1 \in H$ so that $b^{-1}a \in H$ and thus $b \sim_L a$ so $\sim_L$ is symmetric. Lastly, if $a\sim_L b, b \sim_L c$ for some $a,b,c \in G$, then $a^{-1}b, b^{-1}c \in H$. By closure $a^{-1}bb^{-1}c = a^{-1}c \in H$ so $a \sim_L c$ implying $\sim_L$ is transitive. Thus, $\sim_L$ is an equivalence relation.
+\end{proof}
+\begin{definition}[Left/Right Cosets]
+    Let $H$ be a subgroup of group $G$. The subset $aH = \{ah \mid h \in H\}$ of $G$ is the \emph{left coset} of $H$ containing $a$ while the subset $Ha = \{ha \mid h \in H\}$ is the \emph{right coset} of $H$ containing $a$.
+\end{definition}
+\begin{example}
+    Take the subgroup $3\Z$ of $\Z$. Using additive notation, the left coset of $3\Z$ containing $m$ is $m + 3\Z$. When $m=0$, $3\Z = \{\cdots, -3, 0, 3, \cdots\}$ so $3\Z$ is itself such a left coset. Similarly, $1 + 3\Z, 2+3\Z$ are left cosets. Together, these partition $\Z$. Because $\Z$ is abelian, left coset $m+3\Z$ is the same as right coset $3\Z + m$.
+\end{example}
+\begin{lemma}
+    Take the one-one map $\phi\colon H \to gH$ so $\phi(h) = gh$ for each $h \in H$. This is onto $gH$ by definition. Next, suppose $\phi(h_1)=\phi(h_2)$ for some $h_1, h_2 \in H$. Thus, $gh_1 = gh_2$ so by cancellation in $G$, $h_1 = h_2$ implying $\phi$ is bijective. If $H$ is of finite order, then $\phi$ and a similar function for right cosets have equal numbers of elements to $H$.
+\end{lemma}
+\begin{theorem}[Theorem of Lagrange]
+    Let $H$ be a subgroup of a finite group $G$. Then the order of $H$ is a divisor of the order of $G$.
+\end{theorem}
+\begin{proof}
+    Let $n$ be the order of $G$ and $H$ have order $m$. Every coset (left or right) of a subgroup $H$ of a group $G$ has the same number of elements as $H$, namely $m$. Let $G$ be partitioned into $r$ left cosets of $H$ so $n=rm$ implying $m$ is a divisor of $n$.
+\end{proof}
+\begin{corollary}
+    Every group of prime order is cyclic.
+\end{corollary}
+\begin{proof}
+    Let $G$ be of prime order $P$ and $a \in G, a \neq e$. Thus, \csgroup{a} of $G$ has at least 2 elements. But by Lagrange's Theorem, the order $m \geq 2$ of $a$ must divide the prime $p$ implying $m = p$ so \csgroup{a} $= G$ so $G$ is cyclic.
+\end{proof}
+\begin{definition}
+    Let $H$ be a subgroup of a group $G$. The number of left cosets of $H$ in $G$ is the \emph{index ($G:H$) of $H$ in $G$}. The index may be infinite or finite.
+\end{definition}
+\begin{theorem}
+    Suppose $H$ and $K$ are subgroups of a group $G$ so $K\leq H \leq G$ and suppose $(H:K)$ and $(G:H)$ are both finite. Then $(G:K) = (G:H)(H:K)$ is finite.
+\end{theorem}
+
+% \section{Direct Products and Finitely Generated Abelian Groups}
+
+% \section{Plane Isometries}

@@ -1,13 +1,12 @@
-\contentsline {chapter}{\numberline {0}A Few Preliminaries}{2}{chapter.0}%
+\contentsline {chapter}{\numberline {0}Introduction to Groups}{2}{chapter.0}%
 \contentsline {section}{\numberline {0.1}Sets and Equivalence Relations}{2}{section.0.1}%
-\contentsline {chapter}{\numberline {1}Introduction to Groups}{4}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Binary Operations}{4}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Groups}{4}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Isomorphic Binary Structures}{6}{section.1.3}%
-\contentsline {section}{\numberline {1.4}More on Groups and Subgroups}{7}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Cyclic Groups}{8}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Generating Sets and Cayley Digraphs}{11}{section.1.6}%
-\contentsline {chapter}{\numberline {2}Permutations, Cosets, and Direct Products}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Groups of Permutations}{13}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Orbits, Cycles, and the Alternating Groups}{16}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Cosets and the Theorem of Lagrange}{19}{section.2.3}%
+\contentsline {section}{\numberline {0.2}Binary Operations}{3}{section.0.2}%
+\contentsline {section}{\numberline {0.3}Groups}{4}{section.0.3}%
+\contentsline {section}{\numberline {0.4}Isomorphic Binary Structures}{5}{section.0.4}%
+\contentsline {section}{\numberline {0.5}More on Groups and Subgroups}{6}{section.0.5}%
+\contentsline {section}{\numberline {0.6}Cyclic Groups}{7}{section.0.6}%
+\contentsline {section}{\numberline {0.7}Generating Sets and Cayley Digraphs}{10}{section.0.7}%
+\contentsline {chapter}{\numberline {1}Permutations, Cosets, and Direct Products}{12}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Groups of Permutations}{12}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Orbits, Cycles, and the Alternating Groups}{15}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Cosets and the Theorem of Lagrange}{18}{section.1.3}%

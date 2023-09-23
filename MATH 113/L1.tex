@@ -1,4 +1,4 @@
-\chapter{A Few Preliminaries}
+\chapter{Introduction to Groups}
 
 \section{Sets and Equivalence Relations}
 
@@ -44,3 +44,331 @@
 \begin{definition}[Irreducible]
     An irreducible polynomial $h(x)$ is one that cannot be factored into polynomials in $\mathcal{P}(\R)$ all of lower degree than $h(x)$.
 \end{definition}
+
+\section{Binary Operations}
+    
+\begin{definition}[Binary Operation]
+    A \textit{binary operation} \textbf{*} on a set $S$ is a rule that assigns to each ordered pair $(a,b)$ of elements of $S$ another element of $S$ generally denoted $a*b$ or formally $*(a,b)$. To be \emph{well-defined}, $*$ must assign a value to every possible $a*b$.
+\end{definition}
+\begin{definition}[Closure under $*$]
+    A set $S$ is \emph{closed under $*$} if for all $a,b \in S$, $a*b \in S$. If a subset $H$ of $S$ is also closed under $*$, this is referred to as the \emph{induced operation} $*$ on $H$.
+\end{definition}
+\begin{definition}[Commutative Operation]
+    A binary operation $*$ on a set $S$ is \textit{commutative} iff $a*b = b*a$ for all $a,b \in S$.
+\end{definition}
+\begin{definition}[Associative operation]
+    A binary operation $*$ on a set $S$ is \textit{associative} iff $(a*b)*c = a*(b*c)$ for all $a,b,c \in S$.
+\end{definition}
+\begin{note}
+    Associativty of function compostion follows.
+\end{note}
+\begin{remark}
+    A binary operation on a set, typically finite, can be represented as follows:
+    \[ 
+        \renewcommand\arraystretch{1.2}
+        \begin{tabu}{c|[2pt]c|c|c}
+            * & a & b & c \\\tabucline[2pt]{-}
+            a & b & b & b \\\hline
+            b & a & c & b \\\hline
+            c & c & b & a
+        \end{tabu}
+    \]
+\end{remark}
+
+\section{Groups}
+
+\begin{definition}[Group]
+    A group $\langle G, * \rangle$ is a set $G$ combined with a binary operation $*$ on $G$ which satisfies the following axioms:
+    \begin{enumerate}[label = ($\mathscr{G}_{\arabic*}$)]
+        \item $*$ is associative.
+        \item There exists a \textbf{unique} \emph{identity} element \textit{e} on $G$ s.t. $e*x = x*e$ for all $x \in G$. 
+        \item For each $a \in G$, there exists an $a' \in G$ s.t. $a'*a = a*a'=e$. This $a'$ is called the \textit{inverse} of $a$ with respect to the operation $*$.
+        \item \textit{(optional if part of binary operation definition)} $G$ is closed under $*$.
+    \end{enumerate}
+\end{definition}
+\begin{theorem}[Left/Right Cancellation]
+    If $G$ is a group with binary operation $*$, then the \emph{left and right} cancellation laws hold s.t. $a*b=a*c \implies b=c$ and $b*a=c*a \implies b=c$ for all $a,b,c \in G$.
+\end{theorem}
+\begin{proof}
+    The right cancellation proof is identical to that below.
+    \begin{align*}
+        a*b &= a*c & \text{$\because$ by supposition}\\
+        a'*(a*b) &= a'*(a*c) & \text{$\because$ inverse axiom}.\\
+        (a'*a)*b &= (a'*a)*c & \text{$\because$ associativity axiom} \\
+        e*b &= e*c & \text{$\because$ inverse axiom} \\
+        b &= c & \text{$\qed$ identity axiom}
+    \end{align*}
+\end{proof}
+\begin{theorem}
+    Trivially, in a group $G$, $(ab)' = b'a'$ for all $a,b \in G$.
+\end{theorem}
+\begin{remark}
+    Note that the solutions $x,y$ to $a*x=b$ and $y*a=b$ have unique solutions in $G$ for any $a,b \in G$. Similarly, $e$ is unique.
+\end{remark}
+\begin{note}[Idempotent for $*$]
+    An element $x$ of $S$ is \emph{idempotent for $*$} if $x*x=x$. This is always in the identity element.
+\end{note}
+\begin{definition}[Abelian Group]
+    A group $G$ is \textit{abelian} if its binary operation is commutative. 
+\end{definition}
+\begin{definition}[Roots of Unity]
+    Call the elements of the set $U_n \coloneq \{ z \in \C \mid z^n = 1\}$ the $n^{th}$ roots of unity, usually listed as 1 = $\zeta^0, \zeta^1, \zeta^2, \ldots, \zeta^{n-1}$.
+\end{definition}
+\begin{remark}
+    Let the unit circle $U \coloneq \{z \in \C \mid |z| = 1\}$. Clearly, for any $z_1, z_2 \in U$, $|z_1z_2| = |z_1||z_2| = 1$ such that $z_1z_2 \in U$ implying U is closed under $\cdot$. Note then that $\langle U, \cdot \rangle \simeq \langle R_{2\pi}, +_{2\pi} \rangle$. Similarly, $\langle U_n, \cdot \rangle \simeq \langle \Z_n, +_n \rangle \text{ for } n \in \Z^+$.
+\end{remark}
+\begin{definition}[Addition Modulo n]
+    We respecitvely write $\Z_n$ and $\R_c$ to denote $[0, 1, \ldots, n-1]$ and $[0, c]$. Addition modulo $n/c$ is written $+_n$ or ${+_c}$.
+\end{definition}
+
+\section{Isomorphic Binary Structures}
+
+\begin{definition}[Binary Algebraic Structures]
+    For two \emph{binary algebraic structures} $\langle S, * \rangle$ and $\langle S', *' \rangle$ to be structurally alike, we would need a one-to-one correspondence between the elements $x \in S$ and $x' \in S'$ s.t. if $x \leftrightarrow x'$ and $y \leftrightarrow y'$ then $x*y \leftrightarrow x'*'y'$.
+\end{definition}
+\begin{remark}[Homomorphism Property]
+    This last condition is called the \emph{homorphism property}. If the function $\phi$ is NOT one-to-one, it is a homormorphism only. 
+\end{remark}
+\begin{definition}[Isomorphism]
+    An \emph{isomorphism} of $S$ with $S'$ is a one-to-one function $\phi$ mapping $S$ onto $S'$ such that $\phi(x*y) = \phi(x) *' \phi(y)$ for all $x,y \in S$. 
+
+    If such a map exists, $S$ and $S'$ are called \emph{isomorphic binary structures} denoted $S \simeq S'$.
+\end{definition}
+\begin{note}[Show Binary Algebraic Structures are Isomorphic]
+    \leavevmode
+    \begin{enumerate}[label=(Step \arabic*), leftmargin=*]
+        \item Define the function $\phi$ which defines $\phi(s)$ for all $s \in S$ and gives the isomorphism from $S \to S'$.
+        \item Show $\phi$ is one-to-one.
+        \item Show $\phi$ is onto.
+        \item Show $\phi(x*y) = \phi(x)*'\phi(y)$ for all $x,y \in S$.
+    \end{enumerate}
+\end{note}
+\begin{example}
+    Take the isomorphism $\phi\colon\R\to\R^+\colon x\longmapsto e^x$ from $\langle \R, +\rangle$ to $\langle \R^+, \cdot \rangle$. Clearly, $\forall x \in \R, \phi(x) \in \R^+$ and $\phi$ is bijective. Last, for $x,y \in \R$, $\phi(x + y) = e^{x*y} = e^xe^y = \phi(x)\cdot\phi(y)$.
+\end{example}
+\begin{definition}[Structural Property]
+    A structural property is any property of a binary structure that is invariant to any isomorphic structure. These, like cardinality, are used to show no such isomorphism exists between structures.
+\end{definition}
+\begin{example}
+    Although $\langle \Q, + \rangle$ and $\langle \Z, + \rangle$ both have cardinality $\aleph_0$ and have many one-to-one functions between them, the equation $x+x = c$ has a solution $x \in Q$ for all $c \in \Q$, but this is not true for $\Z$ if, say, $c=3$. This structural propery distinguishes these binary structures and thus they are not isomorphic under the usual addition.
+\end{example}
+\begin{theorem}
+    Suppose $\langle S, * \rangle$ has an identity element $e$ for $*$. If $\phi \colon S \to S'$ is an isomorphism to $\langle S', *' \rangle$ then $\phi(e)$ is an identity element for $*'$ on $S'$.
+\end{theorem}
+\begin{proof}
+    Because an isomorphism exists from $S \to S'$, for any element $s' \in S'$, there exists exactly one element $s \in S$ s.t. $\phi(s) = s'$. By the definition of an isomorphism $s' = \phi(s) = \phi(s * e) = \phi(s) *' \phi(e) = s' *' \phi(e)$ for an arbitary element $s'$ of $S$. This implies $\phi(e)$ is the identity element for $S'$.
+\end{proof}
+
+\section{More on Groups and Subgroups}
+
+\begin{definition}[Semigroup]
+    A semigroup is an algebraic structure combining a set with an associative binary oxperation.
+\end{definition}
+\begin{definition}[Monoid]
+    A monoid is a semigroup that has an identity element corresponding to its binary operation. 
+\end{definition}
+\begin{definition}[Subgroup]
+    If a subset $H$ of a group $G$ is closed under the binary operation of $G$ and is itself a group, $H$ is a \emph{subgroup} of $G$. This is denoted $H \leq G$. $H < G \implies H \neq G$.
+\end{definition}
+\begin{example}
+    \ \group{\Z}{+} < \group{\R}{+}, but \group{\Q}{\cdot} is \emph{not} a subgroup of \group{\R}{-}.
+\end{example}
+\begin{definition}[Proper and trivial subgroups]
+    If $G$ is a group, the subgroup consisting of $G$ itself is the \emph{improper subgroup} of $G$. All other subgroups are \emph{proper subgroups}. The subgroup $\{e\}$ is the \emph{trivial subgroup} of $G$ and all other subgroups are nontrivial.
+\end{definition}
+\begin{theorem}
+    A subset $H$ of a group $G$ is a subgroup of $G$ if and only if:
+    \begin{enumerate}
+        \item $H$ is closed under the binary operation of $G$.
+        \item the identity $e$ of $G$ is in $H$.
+        \item for all $a \in H$, $a^{-1} \in H$ also.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    $\implies:$ Let $H$ be a subgroup of $G$. By definition, $H$ is closed under $G$'s binary operation (1). $H$ must have an identity element because it is a group. Because $a*x=a$ and $y*a=a$ have unique solutions, $H$'s identity element must be the same in $H$ group as $G$ group (2). (3) is trivial because $H$ is a group.
+
+    $\impliedby:$ Let (1), (2), (3) be true. Then $H$ has a unique identity element on its binary operation ($\mathscr{G}_2$), each element of $H$ has a unique inverse in $H$ ($\mathscr{G}_3$), and $H$ is closed under the binary operation of $G$ (\emph{optional} $\mathscr{G}_4$). To satisfy ($\mathscr{G}_1$), the binary operation on $H$ must be associative s.t., for all $a,b,c \in H$, $(ab)c = a(bc)$. But this is clearly holds in $G$ so ($\mathscr{G}_1$) is satisfied and $H$ is a subgroup of $G$.
+\end{proof}
+
+\section{Cyclic Groups}
+
+\begin{theorem}
+    Let $G$ be a group and $a \in G$. Then $$H = \{a^n \mid n \in \Z\}$$ is a subgroup of $G$ and the \emph{smallest} subgroup of $G$ that contains $a$.
+\end{theorem}
+\begin{proof}
+    Let's first check $H$ is indeed a subgroup of $G$. (1) For any $r,s \in \Z$, $a^r*a^s = \overbrace{(a*\cdots*a)}^{\text{$a$ $r$ times}}*\overbrace{(a*\cdots*a)}^{\text{$a$ $s$ times}}=a^{r+s} \in H$ so we have closure. (2) Let $e \coloneq a^0 \in H$ so for all $r \in \Z$, $a^r*a^0=a^r$. (3) For all $r \in \Z$, $a^r \in H$ so $\exists a^{-r} \in H$ such that $a^r*a^{-r} = a^0 = e$. Thus, $H \leq G$.
+
+    Next, to show it's the smallest possible subgroup, just take the set $\{a\}$. To have closure, we must add $a^n$ $\forall n\in Z^+$. To have inverses, we must have $a^{-n}$ so our set becomes $\{a^n \mid n \in Z\setminus\{0\}\}$. To have an identity, we must have $a^0$ and this completes the proof.
+\end{proof}
+\begin{definition}[Cyclic Subgroup of G]
+    For any $a \in G$, define \csgroup{a} to be the set $\{a^n \mid n \in \Z\}$. This is called the \emph{cyclic subgroup of $G$ generated by $a$}. An element $a$ of a group $G$ \emph{generates} $G$ and is a \emph{generator for} $G$ if \csgroup{a} $= G$.
+\end{definition}
+\begin{definition}[Cyclic Group]
+    A group is \emph{cyclic} if there is some element $a$ in $G$ that generates $G$.
+\end{definition}
+\begin{example}
+    $\langle 1 \rangle = \langle 3 \rangle = \Z_4$ so $Z_4$ is cyclic and both 1 and 3 are generators.
+\end{example}
+\begin{example}
+    The group \group{$\Z$}{+} is a cyclic group generated ONLY by 1 and -1.
+\end{example}
+\begin{remark}[Subgroup Diagrams]
+    Lattice, or \emph{subgroup diagrams}, can be drawn such that lines run down from a group $G$ to a group $H$ if $H < G$. 
+\end{remark}
+\begin{example}
+    Take two group structures of order 4: $\Z_4$ and the Klein 4-group \emph{Vierergruppe} defined as follows:
+
+    \begin{center}
+    $\Z_4:$
+    \renewcommand\arraystretch{1.2}
+    \begin{tabu}{c|[2pt]c|c|c|c}
+        + & 0 & 1 & 2 & 3 \\\tabucline[2pt]{-}
+        0 & 0 & 1 & 2 & 3 \\\hline
+        1 & 1 & 2 & 3 & 0 \\\hline
+        2 & 2 & 3 & 0 & 1 \\\hline
+        3 & 3 & 0 & 1 & 2
+    \end{tabu}
+    \quad $V:$
+    \begin{tabu}{c|[2pt]c|c|c|c}
+        $*$ & e & a & b & c \\\tabucline[2pt]{-}
+        e & e & a & b & c \\\hline
+        a & a & e & c & b \\\hline
+        b & b & c & e & a \\\hline
+        c & c & b & a & e
+    \end{tabu}
+\end{center}
+    We can map these as:
+    \centering
+    \begin{tikzpicture}[node distance=2cm]
+        \node(Z4) {$Z_4$};
+        \node(02) [below=.5cm of Z4] {$\{0,2\}$};
+        \node(0) [below=.5cm of 02] {$\{0\}$};
+        \draw (Z4) -- (02) -- (0);
+    \end{tikzpicture}
+    and
+    \begin{tikzpicture}[node distance=2cm]
+        \node(V) {$V$};
+        \node(ea) [below left =.5cm and .5cm of V] {$\{e,a\}$};
+        \node(eb) [below =.5cm of V] {$\{e,b\}$};
+        \node(ec) [below right =.5cm and .5cm of V] {$\{e,c\}$};
+        \node(e) [below =.5cm of eb] {$\{e\}$};
+        \draw (V) -- (ea) -- (e);
+        \draw (V) -- (eb) -- (e);
+        \draw (V) -- (ec) -- (e);
+    \end{tikzpicture}
+    .
+\end{example}
+\begin{definition}[Order]
+    If the cyclic subgroup \csgroup{a} of $G$ is finite, we say the \emph{order} of $a$ is the order | \csgroup{a} |.  Otherwise, $a$ is of \emph{infinite order}.
+\end{definition}
+\begin{theorem}
+    Every cyclic group is abelian.
+\end{theorem}
+\begin{theorem}[Division Algortihm for $\Z$]
+    If $m\in\Z^+$ and $n\in\Z$, then there exist unique integers $q,r$ such that $$n=mq+r \quad\text{and}\quad 0\leq r<m.$$
+\end{theorem}
+\begin{proof}
+    From the archimedean property, there is a unique $q$ such that $qm\leq n < (q+1)m$. Then, $0 \leq r = n - mq < m$ is unique. We regard $q$ and $r$ as the quotient and nonnegative remainder respectively when $n$ is divided by $m$.
+\end{proof}
+\begin{theorem}
+    A subgroup of a cyclic group is cyclic.
+\end{theorem}
+\begin{proof}
+    Take a cyclic group $G$ with subgroup $H$. If $H$ = \csgroup{e}, then $H$ is cyclic and the proof is complete.
+
+    Otherwise, $H \neq$ \csgroup{e} so there exists $b \in H, b \neq e$. Because $G$ is cyclic, there must exist $a \in G$ such that $a$ generates $G$, i.e. for all $n \in \Z^+$, $a^n$ spans every value of $G$ including every element of $H$. Let $c \coloneq a^m$ where $m$ is the least positive integer such that $c \in H$. Now, for all $b \in H$, take $n$ such that $b = a^n$. From division algorithm, there exist integers $q,r$ such that $n = mq+r$ so $a^n = a^{mq+r} = (a^m)^qa^r$ which implies, because $a^{m} \in H$ and $H$ is a group so $a^{-m} \in H$, $a^n(a^m)^{-q}=a^r$. $H$ is a group so this implies $a^r \in H$. Because $0 \leq r < m$ and $m$ is the least positive integer such that $a^m \in H$, $r=0$ such that $n = mq$ for all $b=a^n = (a^m)^q \in H$. \csgroup{c} $= H$ so $H$ is cyclic.
+\end{proof}
+\begin{definition}[Greatest Common Divsior]
+    The positive generator $d$ of the cyclic group $H = \{nr+ms \mid n,m \in \Z\}$ under addition is called the \emph{greatest common divisor} of $r$ and $s$, written $d = \gcd(r,s)$.
+\end{definition}
+\begin{definition}
+    Two integers are \emph{relatively prime} if their gcd is 1.
+\end{definition}
+\begin{theorem}
+    Let $G$ be a cyclic group with generator $a$. If the order of $G$ is infinite, then $G$ is isomorphic to \group{\Z}{+}. If $G$ has finite order $n$, then $G$ is instead isomorphic to \group{\Z_n}{+_n}.
+\end{theorem}
+\begin{proof}
+    Take the following two cases.
+    \textbf{Case 1:} For all positive integers $m$, $a^m \neq e$. Suppose $a^h = a^k$ and $h>k$. Thus, $a^ha^{-k} = a^{h-k} = e$ which contradicts our assumption. Therfore, each element of $G$ can be uniquely expressed as $a^m$ for a unique $m \in \Z$. The map $\phi: G \to \Z$ defined as $\phi(a^i) = i$ is then well-defined and bijective on $\Z$. Last, $\phi(a^ia^j) = \phi(a^{i+j}) = i+j = \phi(a^i)+\phi(a^j)$ so the homomorphism property is satisfied and $\phi$ is an isomorphism to \group{\Z}{+}.
+    
+    \textbf{Case 2:} $a^m = e$ for some $m \in \Z^+$.  Let $n$ be the smallest positive integer so $a^n =e$. If $s \in \Z$ and $s=q+r$ for $0\leq r<n$, then $a^s = a^{nq+r} = (a^n)^qa^r = a^r.$ Like in case 1, if $0<k<h<n$ and $a^h = a^k$, then $a^{h-k} =e$ and $0<h-k<n$ contradicting our assumption that $n$ is the smallest positive integer possible. Hence, $a^0, a^1, a^2, \ldots, a^{n-1}$ are all distinct and comprise all elements of $G$. We can then make the map $\psi:G\to\Z_n$ defined by $\psi(a^i)=i$ for $i=0,1,\ldots,n-1$ is well-defined and bijective on $Z_n$. Also, because $a^n =e$, $a^ia^j=a^k$ whenever $k=i+_nj$. Therefore, $psi(a^ia^j)=i+_nj=\psi(a^i)+_n\psi(a^j)$ satisfying the homomorphism property so $\phi$ is an isomorphism to \group{\Z_n}{+_n}.
+\end{proof}
+\begin{theorem}
+    Let $G$ be a cyclic group generated by $a$ with $n$ elements. Let $b \in G$ and $b = a^s$. Then, $b$ generates a cyclic subgroup $H$ of $G$ containing $n/d$ elements where $d$ is the greatest common divisor of $n$ and $s$. Also, \csgroup{a^s} $=$ \csgroup{a^n} $\iff \gcd(s,n) = \gcd(t,n)$. 
+\end{theorem}
+\begin{proof}
+    We already know $b$ generates a cyclic subgroup $H$ of $G$. And that because it is finite, it has only as many elements as the smallest power $m$ of $b$ so $b^m=e$. This and $b=a^s$ implies $(a^s)^m=e$ if and only if $n$ divides $ms$ because $a^n = e$ because $G$ is of finite order $n$. Let $d = \gcd(n,s)$ such that we want to find the smallest $m$ so $\frac{ms}{n}=\frac{m(s/d)}{(n/d)}$ is an integer. This implies $(n/d)$ divides $m$ so the smallest $m$ we can pick \emph{is} $n/d$. Thus, $H$ has order $n/d$. 
+    
+    We know $G$ is isomorphic to \group{\Z_n}{+_n} so taking cyclic subgroup \csgroup{d} of $\Z_n$ where $d$ divides $n$ implies \csgroup{d} has $n/d$ elements and contains all positive integers $m$ less than $n$ such that $\gcd(m,n)=d$. Thus, there is only one subgroup of $\Z_n$ of order $n/d$. It immediately follows that \csgroup{a^s} = \csgroup{a^t} if and only if $\gcd(s,n) = \gcd(t,n)$.
+\end{proof}
+\begin{corollary}
+    If $a$ is a generator of a finite cyclic group $G$ of order $n$, then the other generators of $G$ are the elements of the form $a^r$, where $r$ is relatively prime to $n$. 
+\end{corollary}
+\begin{example}
+    For instance, we can derive the subgroup diagram for $Z_{18}$ as:
+    \begin{center}
+        \begin{tikzpicture}[node distance = 2cm]
+            \node(1) {\csgroup{1}};
+            \node(Z) [right = 0cm of 1] {$= Z_{18}$};
+            \node(2) [below left =.5cm and 1cm of 1] {\csgroup{2}};
+            \node(3) [below right = .5cm and 1cm of 1] {\csgroup{3}};
+            \node(6) [below right =.5cm and 1cm of 2] {\csgroup{6}};
+            \node(9) [below right =.5cm and 1cm of 3] {\csgroup{9}};
+            \node(0) [below right = .5cm and 1cm of 6] {\csgroup{0}};
+            \draw (1) -- (2) -- (6) -- (0) -- (9) -- (3) -- (1);
+            \draw (6) -- (3);
+        \end{tikzpicture}
+    \end{center}
+\end{example}
+
+\section{Generating Sets and Cayley Digraphs}
+
+\begin{example}
+    The Klein 4-group $V = \{e,a,b,c\}$ is generated by $\{a,b\}$ since $ab =c$. It is similarly generated by $\{a,c\},\{b,c,\},$ and $\{a,b,c\}$.
+\end{example}
+\begin{theorem}
+    The intersection of some subgroups $H_i$ of a group $G$ for $i \in I$ is again a subgroup of $G$ where $I$ is the set of indices.
+\end{theorem}
+\begin{proof}
+    First, closure. For any $a,b \in \bigcap_{i\in I}H_i$, because each $H_i$ has closure, $a,b \in H_i \implies ab \in H_i$ so $ab \in \bigcap_{i\in I}H_i$. Similarly, because the identity element of $G$ is in $H_i$ for all $i \in I$, $e \in \bigcap_{i\in I}H_i$. Last, for all $a \in H_i$, because $H_i$ is a group, $a^{-1} \in H_i$. Thus, for any $a \in \bigcap_{i \in I}H_i$, $a \in H_i$ for all $i$ so $a^{-1} \in H_i$ for all $i$ so $a^{-1} \in \bigcap_{i \in I}H_i$. 
+\end{proof}
+\begin{definition}[Subgroup generated by $\{a_i\mid i\in I\}$]
+    Let $G$ be a group and $a_i \in G$ for $i \in I$. The smallest subgroup of $G$ containing $\{a_i\mid i\in I\}$ is the \emph{subgroup generated by $\{a_i\mid i\in I\}$}. If this subgroup is all of $G$ then the set \emph{generates} $G$ and the $a_i$ are the \emph{generators of} $G$. If there is a finite set that generates $G$, we say $G$ is \emph{finitely generated}.
+\end{definition}
+\begin{definition}[Digraph]
+    A directed graph, abbreviated as \emph{digraph}, consists of a fininite number of points, or \emph{vertices} and some \emph{arcs} denoted by an arrowhead joining them together.
+\end{definition}
+\begin{definition}[Cayley Digraphs]
+    Cayley digraphs draw arcs of different types between each element of $G$ demonstrating what each element is generated by. Of course, if $x\to y$ means $xa=y$ then $ya^{-1}=x$. Traveling opposite to arrow direction implies this second equality.
+\end{definition}
+\begin{example}
+    For instance, we can create the digraph for $Z_6$ with generator set $S = \{2,3\}$ as:
+    \begin{tikzpicture}
+        [
+            mid arrow/.style={%
+              postaction={%
+                decoration={%
+                  markings, mark=at position 0.5 with {\arrow{Triangle}},
+                }, decorate, }, }
+        ]
+        \node [draw, fill=white, circle, inner sep = 1pt] (0) {0};
+        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 0] (2) {2};
+        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 2] (4) {4};
+
+        \node [draw, fill=white, circle, inner sep = 1pt] [right = 2cm of 0] (3) {3};
+        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 3] (5) {5};
+        \node [draw, fill=white, circle, inner sep = 1pt] [below = 1cm of 5] (1) {1};
+
+        \draw [mid arrow] (0) to (2);
+        \draw [mid arrow] (2) to (4);
+        \draw [mid arrow] (4) to [bend left = 45] (0);
+
+        \draw [mid arrow] (3) to (5);
+        \draw [mid arrow] (5) to (1);
+        \draw [mid arrow] (1) to [bend right = 45] (3);
+
+        \draw [dashed] (0) -- (3) -- (5) -- (2) -- (4) -- (1);
+    \end{tikzpicture}
+    with solid (2) and dashed (3) lines. Dashed lines have no arrowhead because 3 is its own inverse.
+\end{example}
+
