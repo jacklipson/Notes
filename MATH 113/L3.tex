@@ -1,0 +1,66 @@
+\chapter{Homormorphisms and Factor Groups}
+
+\section{Homomorphisms}
+
+\begin{definition}[Homomorphism]
+    A map $\phi$ of a group $G$ into a group $G'$ is a \emph{homomorphism} if the homomorphism property that $\phi(ab)=\phi(a)\phi(b)$ for all $a,b \in G$ holds.
+\end{definition}
+\begin{remark}[Trivial Homomorphism]
+    There is at least always the homomorphism $\phi\colon G\to G'$ defined as $\phi(g) = e'$ for all $g \in G$ is called the \emph{trivial homomorphism}.
+\end{remark}
+\begin{example}
+    Let $S_n$ be the symmetric group on $n$ letters and let $\phi\colon S_n\to\Z_n$ be defined by: \vspace{-10pt}\[\phi(\sigma)=\begin{cases*}0\quad\sigma\text{ even permutation} \\ 1\quad\sigma \text{ odd permutation.}\end{cases*}\] Clearly, $\sigma$ is a homormorphism.
+\end{example}
+\begin{example}[Evaluation Homomorphism]
+    Let $F$ be the additive group of all functions mapping $R$ into $R$ and $R$ be the additive group of all reals and $c \in \R$. Then, $\phi_c\colon F\to\R$ is the \emph{evaluation homomorphism} defined as $\phi_c(f) = f(c)$ for $f \in F$.
+\end{example}
+\begin{example}
+    The \emph{projection map} $\pi_i\colon G\to G_i$ where $G = G_1\times G_2\times\cdots\times G_i\times\cdots\times G_n$ and $\pi_i(g_1,g_2,\cdots,g_i,\cdots,g_n)=g_i$ for each $i = 1,2,\cdots,n$. 
+\end{example}
+\begin{definition}[Image, Range, Preimage]
+    Let $\phi$ be a mapping on a set $X$ into a set $Y$ and $A \subseteq X, B \subseteq Y$. The \emph{image $\phi[A]$ of $A$ in $Y$ under $\phi$} is $\{\phi(a)\mid a \in A\}$.
+
+    The set $\phi[X]$ is the \emph{range of $\phi$}.
+
+    The \emph{inverse image $\phi^{-1}[B]$ of $B$ in $X$} is $\{x\in X \mid \phi(x) \in B\}$.
+\end{definition}
+\begin{theorem}
+    Let $\phi$ be a homomorphism of a group $G$ into a group $G'$. Then,
+    \begin{enumerate}
+        \item If $e$ is the identity element in $G$, $\phi(e)$ is the identity element $e' \in G'$.
+        \item If $a \in G$, then $\phi(a^{-1}) = \phi(a)^{-1}$.
+        \item If $H$ is a subgroup of $G$, then $\phi[H]$ is a subgroup of $G'$.
+        \item If $K'$ is a subgroup of $G'$, then $\phi^{-1}[K']$ is a subgroup of $G$.
+    \end{enumerate}
+\end{theorem}
+\begin{definition}[Kernel]
+    Let $\phi\colon G \to G'$ be a homomorphism of groups. The subgroup $\phi^{-1}[\{e'\}]=\{x\in G\mid \phi(x) = e'\}$ is the \emph{kernel of $\phi$}, denoted by $\Ker(\phi)$.
+\end{definition}
+\begin{theorem}
+    Let $\phi\colon G\to G'$ be a group homomorphism and $H = \Ker(\phi)$. For $a \in G$, the set $$\phi^{-1}[\{\phi(a)\}]=\{x\in G\mid\phi(x)=\phi(a)\}$$ is the left coset $aH$ and right coset $aH$ of $H$. Thus, the partitions of $G$ into left cosets and right cosets are the same.
+\end{theorem}
+\begin{proof}
+    We want to show $\{x \in G \mid \phi(x) = \phi(a)\} = aH$, i.e. they are subsets of one another.
+    
+    $\subseteq\colon$If $\phi(x) = \phi(a)$, then $e' = \phi(a)^{-1}\phi(x) = \phi(a^{-1})\phi(x) = \phi(a^{-1}x)$ so $a^{-1}x \in H = \Ker(\phi).$ Thus, $a^{-1}x = h$ for some $h \in H$ so $x = ah \in aH$ so $\{x \in G \mid \phi(x) = \phi(a) = aH\}.$
+
+    $\supseteq\colon$ Say $y \in aH$ so $y = ah$ for some $h \in H$. Thus, $\phi(y) = \phi(ay) = \phi(a)\phi(h) = \phi(a)e'=\phi(a)$ so $y \in \{x \in G \mid \phi(x) = \phi(a)\}.$
+\end{proof}
+\begin{corollary}
+    A group homomorphism $\phi\colon G\to G'$ is injective $\iff \Ker(\phi) = \{e\}.$
+\end{corollary}
+\begin{proof}
+    $\implies\colon$If $\Ker(\phi) = \{e\}$, then the elements mapped to $\phi(a)$ are exactly the elements of the left coset $a\{e\} = \{e\}$ showing that $\phi$ is injective.
+    $\impliedby\colon$If $\phi$ is injective, then simply $e$ can be the only element mapped to $e'$. 
+\end{proof}
+\begin{note}[Show $\phi\colon G\to G'$ Is an Isomorphism]
+    \leavevmode
+    \begin{enumerate}[label=(Step \arabic*), leftmargin=*]
+        \item Show $\phi$ homormorphism.
+        \item Show $\Ker(\phi) = \{e\}.$
+        \item Show $\phi$ is surjective.
+    \end{enumerate}
+\end{note}
+
+\section{Factor Groups}
+
