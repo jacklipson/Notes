@@ -1,3 +1,31 @@
 \chapter{Gauss's Law}
 
-\section{uhh}
+\section{Electric Flux}
+
+\begin{definition}[Electric Flux]
+    \emph{Electric flux} is defined as the electric field passing through a given area.
+\end{definition}
+\begin{remark}
+    For a uniform electric field $\vec{E}$ passing through an area $AA$, the electric flux is defined as $\Phi_E = \vec{E}\cdot\vec{A}=EA\cos\theta.$
+\end{remark}
+\begin{remark}
+    The total, or net, flux through a closed surface is given by $\Phi_E = \oint\vec{E}\cdot d\vec{A}.$ A closed surface is one which fully encloses a volume.
+\end{remark}
+\begin{remark}
+    We define \emph{arbitrarily} that the direction of $d\vec{A}$ is \emph{outward} from the enclosed volume. Thus, the flux entering the enclosed volume is negative and flux leaving is positive.
+\end{remark}
+\begin{definition}[Gauss's Law]
+    $\oint\vec{E}\cdot d\vec{A} = \frac{Q_{encl}}{\epsilon_0}$ where $\epsilon_0$ is the permittivity of free space from Coulomb's Law. 
+\end{definition}
+\begin{note}
+    This is valid for any such surface.
+\end{note}
+\begin{remark}
+    We can derive Coulomb's Law from this. Take an imaginary sphere around a point charge, $+Q$, such that $\frac{+Q}{\epsilon_0} = \oint\vec{E}\cdot d\vec{A} = \oint EdA = E(4\pi r^2)$ so $E = \frac{Q}{4\pi\epsilon_0r^2}.$
+\end{remark}
+\begin{example}
+    Take a thin spherical shell of radius $r_0$ which possesses a total net charge $Q$. Suppose our imaginary gaussian surface is a sphere of radius $r$, $r >r_0$ concentric with our charged shell such that $\oint\vec{E}\cdot d\vec{A} = E(4\pi r^2) = \frac{Q}{\epsilon_0}$ so $E = \frac{1}{4\pi\epsilon_0}\frac{Q}{r^2} \quad [r>r_0]$. Now looking inside the shell with an imaginary sphere of radius $r < r_0$, the electric field is again symmetric and perpendicular to the walls of the shell but with no enclosed charge so $\oint \vec{E}\cdot d\vec{A} = E(4\pi r^2) = 0 \implies E = 0$.
+\end{example}
+\begin{note}
+    For a large plane nonconductor, $E = \sigma/2\epsilon_0$ while for a conductor, it's $E = \sigma/\epsilon_0$ because a field goes out both ends of a nonconductor but out only the surface of a conductor.
+\end{note}

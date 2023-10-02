@@ -1,0 +1,55 @@
+\chapter{Electric Potential}
+
+\section{Electric Potential Energy}
+
+\begin{definition}[(Electric) Potential]
+  \emph{Electric potential}, or simply potential, is the electric potential energy per unit charge. It is denoted by the symbol $V$. THus, a tiny positive test charge $q$ in an electric field will have poential energy $U_a$ at some arbitrary point $a$ (relative to 0 potential energy) such that $V_a = \frac{U_a}{q}.$
+\end{definition}
+\begin{remark}[Potential Difference]
+    Note that only differences in potential energy are measurable and hence physically meaningful. We call this quantity the \emph{potential difference} so $V_{ba} = \Delta V = V_b - V_a = \frac{U_b - U_a}{q} = -\frac{W_{ba}}{q}.$
+\end{remark}
+\begin{note}{Volts and Voltage}
+    Electric potential is measured in \emph{volts}, or \qty{1}{J/C}. The potential difference is the \emph{voltage}.
+\end{note}
+
+\section{Electric Potential and Electric Field}
+
+\begin{remark}
+    Recall the difference in potential energy is given by $U_b - U_a = -\int_a^b \vec{F}\cdot d \vec{\ell}$ where $d\vec{\ell}$ is an infitesimal displacement. Because $\vec{E} = \vec{F}/q$, we can rewrite this as $V_ba = V_b-V_a = -\int_a^b\vec{E}\cdot d\vec{\ell}.$
+\end{remark}
+\begin{example}
+    Take a charged conducting sphere of radius $r_0$. At a distance $r>r_0$ from the center, $E = k\frac{Q}{r^2}$ and points radially outward so $V_b - V_a$ for points $r_a$ and $r_b$ away from the center, with $d\ell = dr$ give $-\int_{r_a}^{r_b}\vec{E}\cdot d\vec{\ell} = -Qk\int_{r_a}^{r_b}\frac{dr}{r^2} = Qk(\frac{1}{r_b}-\frac{1}{r_a}).$ If we assign the potential to be $0$ at $r=\infty$, then $V = kQ/r.$ At $r = r_0$, this just becomes $V = Qk/r_0.$ And for within the conductor, $E = 0$ so between any point on the surface and inside the conductor gives 0 change so $V = Qk/r_0.$
+\end{example}
+\begin{note}
+    This equation $V = kQ/r$ is known as the \emph{Coulomb potential} in regards to a point charge $Q$ and $V = 0$ at $r = \infty$.
+\end{note}
+\begin{definition}[Breakdown]
+    When high voltages are present, air ionizes due to the high electric fields and any free electrons in the air can be accelerated to knock electrons out of $O_2$ and $N_2$ so a \emph{breakdown} of air occurs.
+\end{definition}
+\begin{note}
+    When high voltages are present, a glow known as \emph{corona discharge} may be seen around sharp points. Lightning rods, with sharp tips, are intended to ionize the surrounding air. 
+\end{note}
+
+\section{Equipotential Lines and Surfaces}
+
+\begin{definition}[Equipotential Lines/Surfaces]
+    Electric potential can be represented by drawing \emph{equitpotential lines} or, in 3 dimension, \emph{equipotential surfaces}. That is, the potential difference between any two points on the surface is 0 so no work is required.
+\end{definition}
+\begin{note}
+    An equipotential surface must be \emph{perpendicular} to the electric field at any point. 
+\end{note}
+\begin{remark}[Gradient of $V$]
+    $dV = -\vec{E}\cdot d\vec{\ell} = -E_\ell d\ell$ so $E_\ell  = -\frac{dV}{d\ell}$ where $E_\ell$ is the component of the electric field in the direction of the infitiesimal displacement $d\vec{ell}.$ This quantity is also known as the \emph{gradient} of $V$ so $\vec{E} = -\vec{\nabla}V = -(\hat{\mathbf{i}}\frac{\partial}{\partial x} + \hat{\mathbf{j}}\frac{\partial}{\partial y} + \hat{\mathbf{k}}\frac{\partial}{\partial z})V$. If $\vec{E}$ is written as a function of $x, y,$ and $z,$ then we let $$E_x = -\frac{\partial V}{\partial x}, \quad E_y = -\frac{\partial V}{\partial y}, \quad E_z = -\frac{\partial V}{\partial z}.$$
+\end{remark}
+\begin{definition}[Electron volt eV]
+    One electron volt, or eV, is defined as the energy aquired by moving a particle carrying a charge $e^-$ througha  potential difference of 1 V. This gives $(\qty{1.6022e-19}{C})(\qty{1.00}{V}) = \qty{1.6022e-19}{J}.$
+\end{definition}
+\begin{definition}[Supply/Signal Voltage]
+    Batteries and wall sockets provide a steady \emph{supply voltage}. On the other hand, a \emph{signal voltage} carries information. 
+\end{definition}
+\begin{definition}[Quanitzation Error]
+    The difference between the original continuous analog signal and its digital approximation is called the \emph{quantization error}, or loss. Reducing this loss requires bit depth or resolution (the number of bits for the voltage of each sample) and sampling rate (the number of times per second the analog voltage is measured). This process is executed by a digital-to-analog converter, or DAC. External distortion is called \emph{noise}. Thermal noise refers to the random mnotion of electrons. 
+\end{definition}
+\begin{definition}[Oscilloscope]
+    An \emph{oscilloscope} is a device for amplifying, measuring, and visually displaying an electric signal as a function of time. For instance, an \emph{electrocardiogram} (ECG or EKG) records the potential changes for a person's heart.
+\end{definition}

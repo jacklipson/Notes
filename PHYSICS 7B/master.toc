@@ -39,4 +39,8 @@
 \contentsline {section}{\numberline {21.6}Electric Fields and Conductors}{33}{section.21.6}%
 \contentsline {section}{\numberline {21.7}Electric Dipoles}{33}{section.21.7}%
 \contentsline {chapter}{\numberline {22}Gauss's Law}{34}{chapter.22}%
-\contentsline {section}{\numberline {22.1}uhh}{34}{section.22.1}%
+\contentsline {section}{\numberline {22.1}Electric Flux}{34}{section.22.1}%
+\contentsline {chapter}{\numberline {23}Electric Potential}{36}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Electric Potential Energy}{36}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Electric Potential and Electric Field}{36}{section.23.2}%
+\contentsline {section}{\numberline {23.3}Equipotential Lines and Surfaces}{37}{section.23.3}%
