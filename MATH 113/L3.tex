@@ -61,6 +61,101 @@
         \item Show $\phi$ is surjective.
     \end{enumerate}
 \end{note}
+\begin{definition}[Normal Subgroup]
+    A subgroup $H$ of a group $H$ is normal if its left and right cosets coincide, that is, if $gH=Hg$ for all $g \in G$. Normal subgroups are denoted as $H \vartriangleleft G$.
+\end{definition}
+\begin{note}
+    All subgroups of abelian groups are normal.
+\end{note}
+\begin{corollary}
+    If $\phi\colon G\to G'$ is a group homomorphism, then $\Ker(\phi)$ is a normal subgroup of $G$. 
+\end{corollary}
 
 \section{Factor Groups}
 
+\begin{theorem}
+    Let $\phi\colon G\to G'$ be a group homomorphism with kernel $H$. Then the cosets of $H$ form a \emph{factor group} $G/H$ where $(aH)(bH) = (ab)H$. Also, the map $\mu\colon G/H\to\phi[G]$ defined by $\mu(aH) = \phi(a)$ is an isomorphism.
+
+    A factor group $G/H$ is also called the \emph{factor group of $G$ modulo $H$} and elements in the same coset are said to be \emph{congruent modulo $H$}.
+\end{theorem}
+\begin{example}
+    The isomorphism $\mu\colon\Z/5\Z\to\Z_5$ assigns to each coset of $5\Z$ its smallest nonnegative element, i.e. $\mu(5\Z)=0, \mu(1+5\Z)=1$, etc.
+\end{example}
+\begin{theorem}
+    Let $H$ be a subgroup of a group $G$. Then left coset multiplication is well defined by $(aH)(bH)=(ab)H$ if and only if $H$ is a normal subgroup of $G$.
+\end{theorem}
+\begin{proof}
+    $\implies\colon$Suppose $(aH)(bH)=(ab)H$ is a well-defined operation on left cosets. Then, we want to show $aH$ and $Ha$ are the same set. Let $x\in aH$. Picking representatives $x \in aH$ and $a^{-1} \in a^{-1}H$, we get $(xH)(a^{-1}H) = (xa^{-1})H$. This must be equal to $(aH)(a^{-1}H) = (eH) = H$ so $xa^{-1} = h \in H$ Thus, $x = ha \implies x \in Ha$ so $aH\subseteq Ha$. The symmetric proof is also true so $aH = Ha$.
+
+    $\impliedby\colon$ Suppose $H$ is a normal subgroup of $G$. Take $a,ah_1 \in aH, b,bh_2 \in bH$ so $h_1b \in Hb = bH$ so $h_1b=bh_3$ for some $h_1,h_2,h_3 \in H$. Thus, $$(ah_1)(bh_2)=a(h_1b)(h_2)=a(bh_3)h_2=(ab)(h_3h_2) \in (ab)H.$$ Going the other direction, if $x \in (ab)H \implies x = abh = (ae)(bh) \in (aH)(bH).$
+\end{proof}
+\begin{definition}[Factor/Quotient Group]
+    Let $H \vartriangleleft G$. Then the cosets of $H$ form a group $G/H$ under the binary operation $(aH)(bH)=(ab)H$. This group is called the \emph{factor, or quotient, group of $G$ by $H$}.
+\end{definition}
+\begin{example}
+    Because $\Z$ is an abelian group, $n\Z$ is a normal subgroup so $\Z/n\Z$ is isomorphic to $\Z_n$. 
+\end{example}
+\begin{theorem}
+    Let $H \vartriangleleft G$. Then $\gamma\colon G\to G/H$ given by $\gamma(x) = xH$ is a homomorphism with kernel $H$.
+\end{theorem}
+\begin{proof}
+    Let $x,y \in G$. Clearly, $\gamma(a)\gamma(b)=(aH)(bH)=(ab)H=\gamma(ab)$ so it is a homomorphism. Plus, if $\gamma(x) \in eH$, then $xH = eH$ so clearly $x \in H$. Thus, $\Ker(\gamma) = H.$ 
+\end{proof}
+\begin{theorem}[The Fundamental Homomorphism Theorem]
+    Let $\phi\colon G\to G'$ be a group homomorphism with kernel $H$. Then $\phi[G]$ is a group and $\mu\colon G/H\to \phi[G]$ given by $\mu(gH) = \phi(g)$ is an isomorphism. If $\gamma\colon G\to G/H$ is the homormorphism given by $\gamma(g) = gH$, then $\phi(g) = \mu\gamma(g)$ for each $g \in G$. $\mu$ is the \emph{natural, or canonical isomorphism}.
+\end{theorem}
+\begin{theorem}
+    The following are 3 equivalent conditions for a subgroup $H$ of a group $G$ to be a normal subgroup of $G$:
+    \begin{enumerate}
+        \item $ghg^{-1} \in H$ for all $g \in G, h \in G$.
+        \item $gHg^{-1} = H$ for all $g \in G$
+        \item $gH = Hg$ for all $g \in G$.
+    \end{enumerate}
+\end{theorem}
+\begin{definition}[(Inner) Automorphism]
+    An isomorphism $\phi\colon G\to G$ of a group $G$ with itself is a \emph{automorphism of $G$}. The automorphism $i_g\colon G\to G$ where $i_g(x) = gxg^{-1}$ for all $x \in G$ is the \emph{inner automorphism of $G$ by $g$}.
+\end{definition}
+\begin{definition}[Conjugate Subgroup]
+    Performing $i_g$ on $x$ is called the \emph{conjugation of $x$ by $g$}. A subgroup $K$ of $G$ is a \emph{conjugate subgroup} of $H$ if $K = i_g[H]$ for some $g \in G$.
+\end{definition}
+
+\section{Simple Groups}
+
+\begin{remark}
+    For a normal subgroup $N$ of $G$, the factor group $G/N$ collapses $N$ to a single element, namely the identity. 
+\end{remark}
+\begin{example}
+    The trivial subgroup $N = \{0\}$ of $\Z$ is obviously normal and has factor group isomorphic to $\Z$.
+\end{example}
+\begin{example}
+    We can show the falsity of the converse of Lagrange's Theorem. That is, $A_4$ has order 12 yet has no subgroup of order 6. 
+    
+    Suppose $H < A_4$ and $H$ was of order 6. It would follow that $H$ is a normal subgroup of $A_4$ so $A_4/H$ would only have 2 elements, $H$ and $\sigma H$ for some $\sigma \in A_4/H.$ Because it's a group of order 2, the square of this element but be the identity so $(\sigma H)(\sigma H) = H$. Thus, the square of every element in $A_4$ must be in $H$. However, this is 8 elements so $H$ cannot have order 6.
+\end{example}
+\begin{theorem}
+    Let $G = H \times K$ be the direct product of groups $H$ and $K$. Then $\bar{H} = \{(h,e)\mid h \in H\} \vartriangleleft G$. Also, $G/\bar{H} \simeq K$ and $G / \bar{K} \simeq H$ in natural ways.
+\end{theorem}
+\begin{proof}
+    Take the homomorphism $\pi_2\colon H\times K \to K$ where $\pi_2(h,k) = k.$ Because $\Ker(\pi_2) = \bar{H}$, $\bar{H} \vartriangleleft H \times K.$ Because $\pi_2$ is onto $K$, $(H\times K)/\bar{H}\simeq K.$
+\end{proof}
+\begin{theorem}
+    A factor group of a cyclic group is cyclic.
+\end{theorem}
+\begin{proof}
+    Let $G$ be a cyclic group generated by $a$ with normal subgroup $N$. To compute all powers of $aN$ means computing all powers of the representative $a$ which gives all elements in $G$ such that $aN$ gives all cosets of $N$ such that $G/N$ is cyclic.
+\end{proof}
+\begin{example}
+    To find the factor group of $\Z_4\times\Z_6/\langle(2,3)\rangle$, note that $\langle(2,3)\rangle$ has order 2 and $\Z_4\times\Z_3$ has order 24 implying the factor group has order 12 which is either of form, up to isomorphism, $\Z_4\times\Z_3$ or $\Z_2\times\Z_2\times\Z_3$. However, note that $(1,0) + \langle(2,3)\rangle$ is of order 4 in the factor group $(\Z_4\times\Z_6)/\langle(2,3)\rangle$ so the group must be isomorphic to $\Z_4\times\Z_3$ or equivalently $\Z_12$.
+\end{example}
+\begin{definition}[Simple Groups]
+    A group is \emph{simple} if it is nontrivial and has no proper nontrivial normal subgroups.
+\end{definition}
+\begin{remark}
+    The alternating group $A_n$ is simple for $n\geq 5.$
+\end{remark}
+\begin{theorem}
+    Let $\phi\colon G\to G'$ be a group homomorphism. If $N \vartriangleleft G$, then $\phi[N] \vartriangleleft \phi[G].$ Also, if $N'$ is a normal subgroup of $\phi[G]$, then $\phi^{-1}[N'] \vartriangleleft G$. Note that $\phi[N]$ may not be normal in $G'$.
+\end{theorem}
+\begin{theorem}
+    15.8
+\end{theorem}

@@ -44,3 +44,7 @@
 \contentsline {section}{\numberline {23.1}Electric Potential Energy}{36}{section.23.1}%
 \contentsline {section}{\numberline {23.2}Electric Potential and Electric Field}{36}{section.23.2}%
 \contentsline {section}{\numberline {23.3}Equipotential Lines and Surfaces}{37}{section.23.3}%
+\contentsline {chapter}{\numberline {24}Capacitance, Dielectrics, Electric Energy Storage}{39}{chapter.24}%
+\contentsline {section}{\numberline {24.1}Capacitors}{39}{section.24.1}%
+\contentsline {section}{\numberline {24.2}Capacitors in Series and Parallel}{40}{section.24.2}%
+\contentsline {section}{\numberline {24.3}Storage of Electric Energy}{40}{section.24.3}%

@@ -1,0 +1,64 @@
+\chapter{Capacitance, Dielectrics, Electric Energy Storage}
+
+\section{Capacitors}
+
+\begin{definition}[Capacitor]
+    A \emph{capacitor, or sometimes a condenser,} is a device that can store electric charge and normally consists of two conducting objects. They store charge for later use and block surges of charge to protect circuits.
+\end{definition}
+\begin{note}
+    Very tiny capcitors serve as memory for the bits of code in RAM.
+\end{note}
+\begin{remark}
+    A simple capacitor has a pair of parallel plates of area $A$ separated by a distance $d$.
+\end{remark}
+\begin{definition}[Capacitance]
+    The \emph{capacitance, or constant of proportionality, C,} of the capacitor is measured in \emph{farads (F)}. The amount of charge $Q$ acquired by each plate, equal and opposite charges on each, acquires a potential difference $V$ such that $Q = CV.$ $C$ is always postive.
+\end{definition}
+\begin{remark}
+    Suppose the 2 conductor plates of a capacitor are separated by a vacuum of air and that the area $A \gg d$ so that the $\vec{E}$ is uniform and we ignore fringing at the edges. This implies that $E = \frac{Q}{\epsilon_0A}.$ such that $V = \frac{Qd}{\epsilon_0A}$ so that $$C = \frac{Q}{V} = \epsilon_0\frac{A}{d}. \quad [\text{parallel-plate capacitor}]$$ 
+\end{remark}
+\begin{note}
+    Capacitors are superior to rechargable batteries because they can be recharged more than $10^5$ times with no degradation.
+\end{note}
+\begin{note}
+    The change in a capacitance results in an electric signal detected by a circuit.
+\end{note}
+\begin{example}
+    A cylindirical capacitor consists of a small cylinder, or wire, or radius $R_b$ surrounded by a coaxial cylindrical shell of inner radius $R_a$. Both wires are of length $\ell \gg R_a - R_b$. We charge the capacitor via a battery so the inner one has charge $+Q$, and the outer one $-Q$. The Electric field outside a long wire is directed radially outward and has magnitude $E = \frac{1}{2\pi\epsilon_0}\frac{\lambda}{R}$ where $\lambda$ is the charge per unit length $Q/\ell$. $V = V_b - V_a = -\int_a^b \vec{E}\cdot d\vec{\ell} = -\frac{Q}{2\pi\epsilon_0\ell}\int_{R_a}^{R_b}\frac{dR}{R} = \frac{Q}{2\pi\epsilon\ell}\ln\frac{R_a}{R_b}.$ Thus, $C = \frac{2\pi\epsilon_0\ell}{\ln(R_a/R_b)}.$ Note that if the space between cylinders shrinks then $ln(R_a/R_b) = ln(1 + \Delta/R_b) \approx \Delta R/R_b.$
+\end{example}
+
+\section{Capacitors in Series and Parallel}
+
+\begin{definition}[Capacitors in Parallel]
+    Capacitors which are not in sequence are in \emph{parallel}. Because a battery of Voltage $V$ is connected to points before and after them, the same potential difference exists across each of them. Each one acquires a charge given by $Q_i = C_iV$ so that $Q = \Sigma_iQ_i = \Sigma_iC_iV$. Thus, a single equivalent capacitor will have $C_{eq}V = \Sigma_iC_iV$ implies  $$C_{eq} = \Sigma_i C_i. \quad\text{[parallel]}$$Thus, connecting capacitors in parallel increases the capacitance.
+\end{definition}
+\begin{definition}[Capcitors in Series]
+    Capacitors can also be connected \emph{in series}, or end to end. Thus, a charge $+Q$ flows from the battery to one plate of $C_1$, $-Q$ flows to a plate of $C_n$. The regions in between each capacitor are neutral so the net charge must be neutral so a positive charge cascades down each capacitor so it is the same. However, the total voltage increases across each capacitor so $V=\Sigma_iV_i$ so $$C_{eq} = \Sigma_i\frac{1}{C_i}.\quad\text{[series]}$$
+\end{definition}
+
+\section{Storage of Electric Energy}
+
+\begin{remark}
+    A charged capacitor stores electric energy equal to the work done to charge it. The net effect of charging a capacitor is to remove charge from one plate and add it to the other. This takes time. And, the more charge already added makes it more difficult to move more charge because of the electric repulsion. The work needed to add a small amount of charge $dQ$ against a potential difference $V$ gives $dW = Vdq$. Because $V = q/C$, $W = \int_0^QVdq = \frac{1}{C}\int_0^Qqdq = \frac{1}{2}\frac{Q^2}{C}.$ We can rewrite this also as $$U = \frac{1}{2}\frac{Q^2}{C}=\frac{1}{2}CV^2=\frac{1}{2}QV.$$
+\end{remark}
+\begin{definition}[Energy density $u$]
+    Recall that the electric field $\vec{E}$ is nearly uniform between two plates and has potential difference $V=Ed$ such that $C = \frac{\epsilon_0A}{d}$. Thus $U = \frac{1}{2}\epsilon_0E^2Ad.$ This quantity $Ad$ is the volume between the plates. When we divide both sides by $Ad$, we get $u = \text{energy density} = \frac{\text{energy}}{\text{volume}}=\frac{1}{2}\epsilon_0E^2.$
+\end{definition}
+
+\begin{definition}[Dielectric]
+    In most capacitors, there is an insulating sheet of material called a \emph{dielectric} between the plates. This is useful because it does not break down as easily as air so higher voltages can be applied without charge passing the gap. Also, it allows the plates to be closer without touching increaseing capacitance. Lastly, it has been experimentally found that it can increase the capacitance by a factor $K$ so that $C = KC_0$ where $C_0$ is the capacitance of a gap of air, or vacuum. $K >1$ as we will see later.
+\end{definition}
+\begin{remark}
+    We can also say $C = K\epsilon_0\frac{A}{d}$.
+\end{remark}
+\begin{definition}[Permittivity]
+    We can define a new quantity $$\epsilon = K\epsilon_0$$ where $\epsilon$ is simply the \emph{permittivity of a material}. So, $C = \epsilon\frac{A}{d}$ and $u = \frac{1}{2}\epsilon E^2$.
+\end{definition}
+\begin{remark}
+    An electric field is also altered by a dielectric being inserted. The potential difference drops to $V = V_0/K$ such that $E_D = \frac{E_0}{K}$ and $E = E_D=\frac{V}{d}=\frac{V_0}{Kd}.$
+
+    The electric field is reduced because the dielectric has an induced charge opposite to each side of the capacitor. Thus, normal field lines may end on the dielectric meaning that the field within is less than in air. $E_D = E_0 - E_{ind} = \frac{E_0}{K}$ so $E_{ind}=E_0(1-\frac{1}{K}).$
+\end{remark}
+\begin{definition}[Free Charge]
+    Recall that $E_0 = \sigma/\epsilon_0$ where $\sigma = Q/A$. $Q$ is often the net charge on the conductor and called the \emph{free charge}. Similarly, we define $E_{ind} = \sigma_{ind}/\epsilon_0$ so $Q_{ind} = \sigma_{ind}A$ is often called the \emph{bound charge} because it is on the insulator and not free to move. We can conclude with $\sigma_{ind} = \sigma(1-\frac{1}{K})$ and $\Q_{ind} = Q(1-\frac{1}{K}).$
+\end{definition}
