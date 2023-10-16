@@ -1,0 +1,74 @@
+\chapter{Rings and Fields}
+
+\section{Rings and Fields}
+
+\begin{definition}[Ring]
+    A \emph{ring} $\langle R, +, \cdot\rangle$ is a set $R$ together with two binary operations $+$ and $\cdot$ which we call \emph{addition} and \emph{multiplication} defined on $R$ such that the following are satisfied: \begin{enumerate}[label = ($\mathscr{R}_{\arabic*}$)]
+        \item $\langle R, +\rangle$ is an abelian group.
+        \item Multiplication is associative.
+        \item For all $a, b, c \in R$, the \emph{left and right distributive laws} – $a\cdot(b+c)=(a\cdot b)+(a\cdot c)$ and $(a+b)\cdot c = (a\cdot c)+(b\cdot c)$ hold.
+    \end{enumerate}
+\end{definition}
+\begin{example}
+    $\Z, \Q, \R, \C$ are all rings with addition and multiplication. In fact, these axioms hold for any subset of the complex numbers that is a group under addition and closed under multiplication.
+\end{example}
+\begin{example}
+    For any ring $R$, the collection of all $n\times n $ matrices having elements of $R$ as entries, $M_n(R)$, is an abelian additive group. Note, in particular, that (matrix) multiplicaton is not commutative for these.
+\end{example}
+\begin{theorem}
+    If $R$ is a ring with additive identity 0, then for any $a,b \in R$, we have: \begin{enumerate}
+        \item $0a = a0 =0.$
+        \item $a(-b) = (-a)b = -(ab)$.
+        \item $(-a)(-b)=ab.$
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    (i) $a0+a0 = a(0+0) = a0 = 0+a0$ so $a0 = 0.$ (ii) $a(-b) + ab = a(0) = 0$ so $a(-b) = -(ab)$. The same goes for $(-a)b$. (iii) $-(a(-b))=-(-(ab))$ so $(-a)(-b)=ab.$
+\end{proof}
+\begin{definition}[Ring Homomorphism]
+    For rings $R$ and $R'$, a map $\phi\colon R\to R'$ is a homomorphism if both $\phi(a+b) = \phi(a)+\phi(b)$ and $\phi(ab) = \phi(a)\phi(b)$. $\phi$ is one-to-one if and only if its kernel ($\{a \in R\mid \phi(a) = 0'\}$) is just the subset $\{0\}$ of $R$. This gives rise to a factor group as well as a factor ring.
+\end{definition}
+\begin{definition}[Ring Isomorphism]
+    A ring isomorphism is a homomorphism $\phi\colon R\to R'$ that is bijective. Group isomorphisms do not necessarily extend to ring isomorphisms.
+\end{definition}
+\begin{definition}[Unity]
+  A ring with a multiplicative identity element, denoted by 1, is a \emph{ring with unity}. 1 is the "unity."
+\end{definition}
+\begin{definition}[Commutative Ring]
+    A ring in which multiplication is commutative is a \emph{commutative ring}.
+\end{definition}
+\begin{example}
+    For intergers $r, s$ where $\gcd(r,s) = 1$, the rings $\Z_{rs}$ and $\Z_r\times\Z_s$ are isomorphic. $\phi\colon Z_{rs}\to \Z_r \times \Z_s$ defined by $\phi(n\cdot1)=n\cdot(1,1)$ is an additive group isomorphism. Also, $\phi(nm)=(nm)\cdot(1,1)=[n\cdot(1,1)][m\cdot(1,1)]=\phi(n)\phi(m)$ so it is a ring isomorphism as well.
+\end{example}
+\begin{definition}[Multiplicative Inverse]
+    A \emph{multiplicative inverse} of an element $a$ in a ring $R$ with unity $1 \neq 0$ is an element $a^{-1} \in R$ so $aa^{-1}=a^{-1}a=1$.
+\end{definition}
+\begin{remark}
+    Only the ring $\{0\}$ has both the multiplicative and additive inverse as the same element.
+\end{remark}
+\begin{definition}[Unit, Division Rings]
+    Let $R$ be a ring with $1 \neq 0$. An element $u \in $ is a \emph{unit} of $R$ if it has a multiplicative inverse in $R$. If every nonzero element is a unit, then $R$ is a \emph{division ring} or \emph{skew field}. 
+\end{definition}
+\begin{definition}[Field]
+    A \emph{field} is a commutative division ring. A noncommutative division ring is a \emph{strictly skew field}.
+\end{definition}
+\begin{definition}[Subring and Subfield]
+    A \emph{subring} is a subset of a ring with under induced operations. A subfield is defined similarly. 
+\end{definition}
+\begin{note}
+    \emph{Unit} denotes an element with a multiplicative inverse and \emph{unity} denotes the actual multiplicative identity element 1.
+\end{note}
+
+% \section{Integral Domains}
+
+% \section{Fermat's and Euler's Theorems}
+
+% \section{The Field of Quotients of an Integral Domain}
+
+% \section{Rings of Polynomials}
+
+% \section{Factorization of Polynomials over a Field}
+
+% \section{Noncommutative Examples}
+
+% \section{Ordered Rings and Fields}

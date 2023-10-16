@@ -156,6 +156,87 @@
 \begin{theorem}
     Let $\phi\colon G\to G'$ be a group homomorphism. If $N \vartriangleleft G$, then $\phi[N] \vartriangleleft \phi[G].$ Also, if $N'$ is a normal subgroup of $\phi[G]$, then $\phi^{-1}[N'] \vartriangleleft G$. Note that $\phi[N]$ may not be normal in $G'$.
 \end{theorem}
+\begin{definition}[Maximal Normal Subgroup of a Group $G$]
+    A \emph{maximal normal subgroup of a group $G$} is a normal subgroup $M$ not equal to $G$ such taht there is no proper normal subgroup $N$ of $G$ properly containing $M$.
+\end{definition}
 \begin{theorem}
-    15.8
+    $M$ is a \emph{maximal normal subgroup} of $G$ if and only if $G/M$ is simple.
 \end{theorem}
+\begin{proof}
+    $\implies\colon$Let $M$ be a maximal normal subgroup of $G$. Take the canonical homomorphism $\gamma\colon G\to G/M$ Now, $\gamma^{-1}$ of any nontrivial proper normal subgroup of $G/M$ is a proper normal subgroup of $G$ properly containing $M$. But $M$ is maximal so this isn't possible. So $G/M$ is simple.
+
+    $\impliedby\colon$If $N$ is a normal subgroup of $G$ properly containing $M$, then $\gamma[N]$ is normal in $G/M$. If $N\neq G$, then $\gamma[N]\neq G/M$ and $\gamma[N]\neq\{M\}.$ If $G/M$ is simple, no such $\gamma[N]$ and thus no such $N$ can exist so $M$ is maximal.
+\end{proof}
+\begin{definition}[Center of $G$]
+    Every nonabelian group has a \emph{center $Z(G)$} such that $$Z(G) = \{z \in G \mid zg =g z \forall g \in G\}.$$ The center always contains the identity, but if it only contains this then it is trivial.
+\end{definition}
+\begin{definition}[Commutator]
+    To abelianze $G$, we will find all elements such that $ab=ba$, or that $aba^{-1}b^{-1}=e$. This element is a \emph{commutator of the group}.
+\end{definition}
+\begin{theorem}
+    Let $G$ be a group. The set of all commutators $aba^{-1}b^{-1}$ for $a,b \in G$ generates the \emph{commutator subgroup} $C$ of $G$. This is a normal subgroup of $G$. Furthermore, if $N$ is a normal subgroup of $G$, then $G/N$ is abelian if and only if $C \leq N$.
+\end{theorem}
+\begin{proof}
+    The commutators surely generate a subgroup $C$ from $e$, inverses, and closure. Now, for any $x \in C$, and any $g \in G$, $x = cdc^{-1}d^{-1}$ for some $c,d \in G$ such that $g^{-1}xg = (g^{-1}cdc^{-1})(e)(d^{-1}g)$. This becomes $(g^{-1}cdc^{-1})(gd^{-1}g^{-1})(d^{-1}g) = [(g^{-1}c)d(g^{-1}c)^{-1}d^{-1}][dg^{-1}d^{-1}g] \in C$ so $C \vartriangleleft G$. 
+    
+    Next, if $N \vartriangleleft G$, then $\implies\colon$If $G/N$ abelian, $(a^{-1}N)(b^{-1}N)=(b^{-1}N)(a^{-1}N)$ so $aba^{-1}b^{-1}N=N$ so $aba^{-1}b^{-1}\in N \implies C \leq N$. 
+    
+    $\impliedby\colon$If $C\leq N$, then $(aN)(bN) = abN = ab(b^{-1}a^{-1}ba)N = baN = (bN)(aN)$.
+\end{proof}
+
+\section{Group Action on a Set}
+
+\begin{definition}[Group Action]
+    Let $X$ be a set and $G$ a group. An \emph{action of $G$ on $X$} is a map $*\colon G\times X\to X$ such that: \begin{enumerate}
+        \item $ex = x$ for all $x \in X$
+        \item $(g_1g_2)(x) = g_1(g_2x)$ for all $x \in X$ and all $g_1, g_2 \in G$.
+    \end{enumerate}
+    In this case, we call $X$ a \emph{$G$-set}.
+\end{definition}
+\begin{theorem}
+    Let $X$ be a $G$-set. For each $g\in G$, the function $\sigma_g\colon X\to X$ defined by $\sigma_g(x)=gx$ for $x \in X$ is a permutation of $X$. Also, the map $\phi\colon G\to S_x$ defined by $\phi(g) = \sigma_g$ is a homomorphism with the property that $\phi(g)(x)=gx$.
+\end{theorem}
+\begin{proof}
+    To show $\sigma_g$ is a permutation of $X$, we must show it is bijective. (i) If $\sigma_g(x_1) = \sigma_g(x_2)$, then $gx_1=gx_2$ so $g^{-1}(gx_1)=g^{-1}(gx_2)$ so $(g^{-1}g)(x_1)=(g^{-1}g)(x_2)$ from the second condition of group actions so $e(x_1)=e(x_2)$ so $x_1=x_2$ from the first condition. Next, for any $x \in X$, $\sigma_g(g^{-1}x)=g(g^{-1})x=(gg^{-1})x=ex=x$ so $\sigma_g$ is onto and 1-1 making it a permutation.
+
+    Next, $\phi\colon G\to S_X$ defined by $\phi(g) = \sigma_g$ is a homomorphism because $\sigma(g_1g_2)(x) = (g_1g_2)x=g_1(g_2x)=g_1\sigma_{g_2}(x)=\sigma_{g_1}(\sigma_{g_2}(x))=(\sigma_{g_1}\circ\sigma_{g_2})(x) = (\sigma_{g_1}\sigma_{g_2})(x)=(\phi(g_1)\phi(g_2))(x)$.
+\end{proof}
+\begin{definition}[Acting Faithfully, Transitive]
+    Note that the subset of $G$ leaving each element of $X$ fixed is a normal subgroup $N$ of $G$. We say $G$ \emph{acts faithfully} on $X$ if $N = \{e\}$.
+
+    We say $G$ is transitive on a $G$-set $X$ if and only if the subgroup $\phi[G]$ of $S_X$ is transitive on $X$, that is, if for each $x_1, x_2 \in X$, there exists some $g \in G$ so that $gx_1 = x_2$.
+\end{definition}
+\begin{remark}
+    Every group is itself a $G-set$.
+\end{remark}
+\begin{theorem}
+    Let $X$ be a $G$-set. Then $G_x$ is a subgroup of $G$ for each $x \in X$.
+\end{theorem}
+\begin{note}
+    As notation, for $G$-set $X$ with $x \in X, g \in G$, we say $$X_g=\{x \in X\mid gx =x\}\quad\text{and}\quad G_x=\{g \in G\mid gx=x\}.$$
+\end{note}
+\begin{proof}
+    Let $x \in X$, $g_1, g_2 \in G_x$. So $g_1x=g_2x=x$ so $g_1x=x=g_2x$. Thus, $(g_1g_2)x=g_1(g_2x)=g_1x=x$ so $g_1, g_2 \in G_x$ and $G_x$ closed under the induced operation of $G$. Clearly, $e \in G_x$. And $g \in G_x$ implies $x = ex = (g^{-1}g)x = g^{-1}(gx) = g^{-1}x$ so $g^{-1} \in G_x$. Thus $G_x \leq G$.
+\end{proof}
+\begin{definition}[Isotropy Subgroup]
+    Let $X$ be a $G$-set and $x \in X$. The subgroup $G_x$ is the \emph{isotropy subgroup of $x$}.
+\end{definition}
+\begin{theorem}
+    Let $X$ be a $G$-set. For $x_1, x_2 \in X$, say $x_1\sim x_2$ if and only if there exists $g \in G$ so $gx_1 = x_2$. $\sim$ is an equivalence relation on $X$.
+\end{theorem}
+\begin{proof}
+    (i)For any $x \in X$, $ex = x$ so $x\sim x$. (ii) For any $x_1, x_2 \in X$, if $x_1 \sim x_2$, then $gx_1 = x_2$ so $g^{-1}x_2=g^{-1}(gx_1)=(g^{-1}g)(x_1)=ex_1=x_1$ so $x_2 \sim x_1$. (iii) Last, if $x_1\sim x_2, x_2 \sim x_3$, then $g_1x_1=x_2, g_2x_2=x_3$ for some $g_1, g_2 \in G$ so $(g_2g_1)(x_1) = g_2(g_1x_1) = g_2(x_2) = x_3$ so $x_1 \sim x_3$.
+\end{proof}
+\begin{definition}[Orbit of $x$]
+    Let $X$ be a $G$-set. Each cell in the partition of the equivalence relation is described as a \emph{orbit in $X$ under $G$.} For $x \in X$, the cell containing $x$ is the \emph{orbit of $x$}. This is $Gx$.  
+\end{definition}
+\begin{theorem}
+    Let $X$ be a $G$-set, $x \in X$. Then $\left|Gx\right| = (G\colon G_x)$. If $\left|G\right|$ is finite, then $|Gx|$ is a divisor of $|G|$.
+\end{theorem}
+\begin{proof}
+    Let's define the 1-1 map $\psi$ from $G_X$ onto the collection of left cosets of $G_x$ in $G$. Let $x_1 \in Gx$. Then, there exists $g_1 \in G$ so $g_1x = x_1$. Say $\psi(x_1)$ is the left coset $g_1G_x$ of $G_x$. To show this is well defined, if $g_1'x = x_1$, then $g_1x = g_1'x$ so $g_1^{-1}(g_1x)=g_1^{-1}(g_1'x)$ implying $x = g(g_1^{-1}g_1')x$ so $g_1^{-1}g_1' \in G_x$ so $g_1' \in g_1G_x$ and $g_1G_x = g_1'G_x$.
+
+    To show $\psi$ is one-one, $x_1,x_2 \in Gx$ gives $\psi(x_1)=\psi(x_2)$ so there exists $g_1, g_2 \in G$ so $x_1 = g_1x, x_2 = g_2x$ where $g_2 \in g_1Gx$ giving $g_2 = g_1g$ for some $g \in G_x$. Thus, $x_2 = g_2x = g_1(gx) = g_1x = x_1$. 
+
+    To show it's onto, for any left coset of $G_x$ $g_1G_x$ in $G$, if $g_1x=x_1$ then $g_1G_x = \psi(x_1)$. This map is bijective so $|Gx| = (G\colon G_x)$. If $|G|$ finite, then clearly, $|Gx|$ divides $|G|$.
+\end{proof}

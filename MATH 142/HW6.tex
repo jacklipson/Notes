@@ -1,0 +1,42 @@
+\subsection*{Page 78, Problem 16}
+\vspace{15pt}
+\begin{proof}
+    \vspace{-10pt}
+    Let $h\colon O(n)\to SO(n)\times\Z_2$ be defined as $M\mapsto\begin{cases}(M, 1) \quad\text{if }\det(M) = 1 \\ \left(\begin{pmatrix}
+        0 & 1 & 0 & \dots & 0 \\
+        1 & 0 & 0 & \dots & 0 \\
+        0 & 0 & 1 & \dots & 0 \\
+        \vdots & \vdots & & \ddots & \vdots \\
+        0 & 0 & \dots & 0 & 1
+      \end{pmatrix}M,-1\right) \quad \text{if }\det(M) = -1\end{cases}$
+    with inverse $h^{-1}\colon SO(n)\times\Z_2\to O(n)$ defined as $(M,x)\mapsto\begin{cases}M \quad\text{if }x = 1 \\ \begin{pmatrix}
+        0 & 1 & 0 & \dots & 0 \\
+        1 & 0 & 0 & \dots & 0 \\
+        0 & 0 & 1 & \dots & 0 \\
+        \vdots & \vdots & & \ddots & \vdots \\
+        0 & 0 & \dots & 0 & 1
+      \end{pmatrix}M \quad \text{if }x = -1.\end{cases}$
+    $\Z_2$ has the discrete topology so every subset is open in it. As for either function and either possibility mapping $M$, it will either be mapped via the identity in which case the subspace topology applies immediately. Or the first and second rows are being transposed. But, because any open set of matrices will already be open in $\E^1 \times\cdots\times\E^1$ $(n^2 \text{ times})$, after a single transposition, they will continue to be open in the shifted direct product. Thus, $h, h^{-1}$ are both continuous and well-defined so these 2 topological groups are homeomorphic.
+    
+    However, if $n$ is even, we can examine the center $Z(O(n))$ and find $\det(-I_n)=(-1)^{2k}=1$ for some $k \in \Z^+$ and $\det(I_n) = 1$ implying that both $\pm I_n \in SO(n)$. Despite $SO(n)$ and $\{\pm I_n\}$ both being normal in $O(n)$, their intersection is not equal to just $\{+I_n\}$ so there does not exist an injective function from their product space to $O(n)$ so they are not isomorphic when n is even.
+
+    But, when $n$ is odd, $-I_n \notin SO(n)$ so their intersection \emph{is} simply $\{+I_n\}$ implying such an injective function between the 2 spaces does exist. Moreover, the product map of $SO(n)$ and $\{\pm I_n\}$ produces a valid isomorphism so they are isomorphic when $n$ is odd.
+\end{proof}
+
+\subsection*{Page 85, Problem 27 (Worked with David LaRoche)}
+
+Take the torus as $S^1\times S^1$ determined by $(\theta, \phi)$ from $\theta, \phi \in [0, 1].$
+
+\begin{proof}
+    Define the action $h\colon\Z_2\times[S^1\times S^1]\to[S^1\times S^1]$ as the following homeomorphisms: $1(x)$ is the identity $e$ defined by $1(x) = x$ while $-1(x)$ is defined as $(-1)(\theta, \phi) = (\theta, -\phi)$. These are clearly just multiplication and therefore continuous and a well-defined group action. Thus, the orbit for any point $(\theta, \phi)$ will be $\{(\theta, \phi), (\theta, -\phi)\}$. This produces the orbit space: $\{\{(\theta, \phi), (\theta, -\phi)\}_{0\leq x \leq 1, 0 < y < 1}, \{(\theta, \phi)\}_{0 \leq x \leq 1, y \in \{0, 1\}}\},$ or in other words, just $S^1 \times [0,1]$. To visualize this, this action essentially maps one $S^1$ identically while drawing vertical lines across the other $S^1$ and identifying all pairs together except (-1,0) and (1,0) obviously to themselves. This produces the interval [0,1]. From another view, imagine flattening a circle of .5 radius centered at (.5,0) and slamming it flat. We can also think of the this action as deflating the torus by pushing in radially from the outside until just a cylinder is left. Therfore, our orbit space is $S^1 \times [0,1]$.
+\end{proof}
+
+\subsection*{Page 85, Problem 31}
+\vspace{10pt}
+\begin{proof}
+    Let $st(x) = \{g \in G \mid g(x)=x \in X\}$. For any point $x \in X$, clearly $e \in st(x)$. Next, if $g, g' \in st(x)$, then $gg'(x) = g(g'(x)) = gx = x$ so $gg' \in x$. Moreover, $g^{-1}(x) = g^{-1}(g(x)) = (g^{-1}g)x = ex = x$ so $g^{-1} \in st(x)$ whenever $g \in st(x)$. So $st(x) < G$.
+
+    Now say $f\colon G\to X$ is given by $f(g) = gx.$ Obviously $f$ continuous from defintion of group actions as using homeomorphisms. Because $X$ Hausdorff and finite points are compact, singletons in $X$ are closed. Thus, $f^{-1} = st(x)$ is closed in $X$.
+
+    Last, take any $x,y$ in a shared orbit $O$ so that $x = gy$ for some $g \in G$. For any $a \in st(x), (g^{-1}ag)y = g^{-1}ax=g^{-1}x=y$ implying that $g^{-1}ag \in st(y)$ so $g^{-1}st(x)g \subseteq st(y)$. Going nearly identically the other way, for any $b \in st(y),$ $(gbg^{-1})x = gby = gy = x$ so $gbg^{-1} \in st(x)$ and $b \subseteq g^{-1}st(x)g$. This is true for any such $b$ so $st(y) \subseteq g^{-1}st(x)g$ so $g^{-1}st(x)g=st(y)$. Thus, points in the same orbit have conjugate stabilizers. 
+\end{proof}
