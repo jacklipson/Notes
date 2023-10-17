@@ -59,7 +59,58 @@
     \emph{Unit} denotes an element with a multiplicative inverse and \emph{unity} denotes the actual multiplicative identity element 1.
 \end{note}
 
-% \section{Integral Domains}
+\section{Integral Domains}
+
+\begin{definition}[Divisors of 0]
+    If $a$ and $b$ are two nonzero elements of a ring $R$ so that $ab = 0$, then $a$ and $b$ are \emph{divisors of 0}.
+\end{definition}
+\begin{theorem}
+    In the ring $\Z_n$, the divisors of 0 are the nonzero elements that are \emph{not} relatively prime to $n$.
+\end{theorem}
+\begin{proof}
+    Let $m \in Z_n, m \neq 0$ and $d = gcd(m,n) \neq 1$. Thus, $m\left(\frac{n}{d}\right) = \left(\frac{m}{d}\right)n$ so $(\frac{m}{d})n$ is 0 in $\Z_n$ so $m(n/d)$ is 0 in $\Z_n$ also but neither $m, n/d = 0$ so $m$ is a divisor of 0.
+
+    On the other hand, if $m \in \Z_n, \gcd(m,n) = 1$ and $ms = 0$ for some $s \in Z_n$, then $n \mid ms$. But, $\gcd(m,n)=1$ so $ n\mid s$ but $s \in Z_n$ so $s = 0$ in $\Z_n$ meaning $m$ is not a divisor.
+\end{proof}
+\begin{corollary}
+    If $p$ is prime, then $\Z_p$ has no divisors of 0.
+\end{corollary}
+\begin{theorem}
+    The multiplicative cancellation laws hold in a ring $R$ if and only if $R$ has no divisors of 0.
+\end{theorem}
+\begin{proof}
+    Say $R$ is a ring with cancellation laws and $ab = 0$ for some $a,b \in R$. If $a \neq 0$, then $ab = a0$ implies $b = 0$ via cancellation, WLOG. Conversely, if $R$ has no divisors of 0 and $ab = ac, a \neq 0$ for any $a,b,c \in R$, then $0 = ab - ac = a(b-c)$. $a=0$ and $R$ has no divisors of 0 so $b = c$ and we can do cancellation. The same goes for right cancellation.
+\end{proof}
+\begin{definition}[Integral Domain]
+    A \emph{integral domain} $D$ is a commutative ring with unity $1 \neq 0$ that has \emph{NO} divisors of 0.
+\end{definition}
+\begin{theorem}
+    Every field $F$ is an integral domain.
+\end{theorem}
+\begin{proof}
+    For any $a, b \in F$, if $a \neq 0$ and $ab = 0$ then $b = 1b = (a^{-1}a)b = a^{-1}0 = 0.$ So no divisors of 0 in $F$ exist (from commutativtity for other direction).
+\end{proof}
+\begin{theorem}
+    Every finite integral domain is a field.
+\end{theorem}
+\begin{proof}
+    Take the finite domain $D$ with finite elements $0, 1, a_1, \ldots, a_n$. We must show that for any $a \in D, a \neq 0, \exists b \in D$ so $ab =1$. If all elements of $D$ are distinct and all nonzero (no divisors of 0), then we find $a1, aa_1, \ldots aa_n$ can contain no 0 elements but must all be distinct as if they weren't, by cancellation laws, $aa_i = aa_j \implies a_i = a_j$. Thus, this must be some permutation of $0, 1, a_1, \ldots, a_n$ so some $a_k$ must be the multiplicative inverse of 1.
+\end{proof}
+\begin{corollary}
+    If $p$ is prime, then $\Z_p$ is a field.
+\end{corollary}
+\begin{definition}[Characteristic of a Ring]
+    The \emph{characteristic of a ring} $R$ is the least positive integer $\min\{n \in \Z^+ \mid n\cdot a = 0 \text{ for all } a \in R\}.$ If none exists, the characteris of $R$ is 0.
+\end{definition}
+\begin{example}
+    The ring $\Z_n$ has characteristic $n$ while $\Z, \Q, \R, \C$ all have characteristic 0.
+\end{example}
+\begin{theorem}
+    Let $R$ be a unital ring. If $n \cdot 1 \neq 0$ for all $n \in \Z^+$, then $R$ has characteristic 0. But, if $n \cdot 1 = 0$ then the smallest such integer $n$ is the characteristic of $R$.
+\end{theorem}
+\begin{proof}
+    If $n \cdot 1 \neq 0$ for all $n \in \Z^+$, then surely we cannot have $n \cdot a = 0$ for all positive integers $n$ so $R$ has characteristic 0. Otherwise, if $n \cdot 1 = 0$ for some $n \in \Z^+$, then for any $a \in R$, $n \cdot a = a + \cdots + a = a(1 + \cdots + 1) = a(n \cdot 1) = a0 = 0.$
+\end{proof}
 
 % \section{Fermat's and Euler's Theorems}
 
@@ -67,8 +118,8 @@
 
 % \section{Rings of Polynomials}
 
+
 % \section{Factorization of Polynomials over a Field}
 
 % \section{Noncommutative Examples}
-
 % \section{Ordered Rings and Fields}
