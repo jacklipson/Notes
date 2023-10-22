@@ -1,0 +1,126 @@
+\chapter{Electric Current and Resistance}
+
+\section{Electric Cells and Batteries}
+
+\begin{note}
+    A potential difference is required to move charge in a conductor.
+\end{note}
+\begin{remark}
+    Batteries transform chemical energy into electrical energy.
+\end{remark}
+\begin{definition}[Electrodes/Electrolytes]
+    Two plates or rods made of dissimilar metals (one can be carbon) are \emph{electrodes}. Electrodes are typically immersed in a solution or paste, such as a dilute acid, called an \emph{electrolyte}.
+
+    The positive electrode is the \emph{anode} while the negative is the \emph{cathode}. A cell dies when an electrode is exhausted.
+\end{definition}
+\begin{definition}[Electric Cell/Battery]
+    A device of electrodes connected by an electrolyte is called an \emph{electric cell}. Several connected cells form a battery.
+\end{definition}
+\begin{definition}[Terminal]
+    The part of each electrode outside the solution is called the \emph{terminal}. Connections to wires and circuits are made here. Voltage depends on what the electrodes are nade of and their ability to be dissolved or give up electrons.
+\end{definition}
+\begin{remark}
+    When a positive terminal of one cell is connected to the negative of another, they are in \emph{series} and their voltages are simply added.
+\end{remark}
+
+\section{Electric Current}
+
+\begin{definition}[Electric Circuit]
+    An \emph{electric circuit} is a continuous conducting path between an electrical device and the terminals of a battery. Any flow of charge from one terminal to another is \emph{electric current}.
+\end{definition}
+\begin{remark}
+    The average current, or net amount of charge passing through the wire's full cross section at any point in time is $\bar{I} = \frac{\Delta Q}{\Delta t}$ while its instantaneous current is $I = \frac{dQ}{dt}.$ Current is measured in \emph{amperes} where \qty{1}{A} = \qty{1}{C/s}.
+\end{remark}
+\begin{definition}[Complete/Open Circuit]
+    A continuous conducting path is a \emph{complete circuit}. If a break, like a cut wire, exists in the circuit, no current flows and the circuit is \emph{open}.
+\end{definition}
+\begin{definition}[Ground]
+    In real circuits, wires are connected to a common conductor which provides continuity called the \emph{ground}.
+\end{definition}
+\begin{remark}[Conventional Current]
+    When we refer to current direction, we mean the direction \emph{positive charge} would flow. However, electron flow is negative positive flow. In fluids, both negatives and positives can move.
+\end{remark}
+
+\section{Ohm's Law}
+
+\begin{definition}[Electrical Resistance]
+    \emph{Electrical Resistance} is the proportionality factor between the voltage $V$ and the current $I$. Resistance uses units $\Omega$, or ohms, such that \qty{1.0}{\Omega} is equal to \qty{1.0}{V/A}.
+\end{definition}
+\begin{definition}[Ohm's Law]
+    Experiimentally, in metal conductors, $R$ is a constant independent of $V$ such that $V = IR$.
+\end{definition}
+\begin{definition}[Resistors]
+    \emph{Resistors} are components in electronic devices which are used to control the amount of current.
+\end{definition}
+\begin{definition}[Potential/Voltage Drop]
+    A \emph{potential/voltage drop} is a an electric potential decrease between two points in a circuit.
+\end{definition}
+\begin{definition}[Resistivity]
+    Experimentally, it's been found that a wire's resistance is directly proportional to its length $\ell$ and inversely proportional to its cross-sectional area $A$ such that $R = \rho\frac{\ell}{A}$ where $\rho$ is the constant of proportionality, or \emph{resistivity}, and depends on the material used. 
+\end{definition}
+\begin{remark}
+    The resistivity of a material generally incrases with temperature as atoms are moving more rapidly and interfere with the flow of electrons such that $\rho_T = \rho_0[1 + \alpha(T - T_0)]$ where $\rho_0$ is the resistivity at some reference temperature $T_0$ and $\alpha$ is the \emph{temperature coefficient of resistivity}
+\end{remark}
+
+\section{Electric Power}
+
+\begin{note}
+    Motors transform electric energy into mechanical energy. High resistance appliances turn electric energy into thermal energy through collisions.
+\end{note}
+\begin{definition}[Power]
+    The power $P$ is the rate of energy transformed $dU$ per time $dt$ however $dU = Vq$ so $P = \frac{dq}{dt}V = IV$. Power is measured in watts where \qty{1}{W} = \qty{1}{J/s}.
+\end{definition}
+\begin{definition}[Fuses/Circuit Breakers]
+    If current is large enough, wires will heat up and produce thermal energy at a rate equal to $I^2R$. Thicker wires have less resistance and can carry more current without becoming too hot. When a wire carries more current than is safe, it is "overloaded." \emph{Fuses} or \emph{circuit breakers} are installed to prevent this by opening the circuit at a certain value.
+\end{definition}
+\begin{definition}[Short Circuit]
+    A \emph{short circuit} implies 2 wires have touched that should not have because insulation has worn through.
+\end{definition}
+
+\section{Alternating Current}
+
+\begin{definition}[Direct Current (DC)]
+    \emph{Direct current} is when a battery is connected to a circuit and the current moves steadily one direction.
+\end{definition}
+\begin{definition}[Alternating Current (AC)]
+    On the other hand, electric generators adal. t power plants produce \emph{alternating current} which reverses direction many times per second and is commonly sinusoidal. Almost all electricty provided in the world is AC.
+\end{definition}
+\begin{definition}[Peak Voltage]
+    AC electric generator voltage is given as a function of time such that $V = V_0\sin(2\pi ft)=V_0\sin(\omega t)$ where $\omega = 2\pi f$ and $V$ oscillates between $\pm V_0$, also known as the \emph{peak voltage}. 
+    
+    This similarly gives $I = I_0\sin(\omega t)$ where $I_0$ is the \emph{peak current}. From here, we get $P = I^2 R = I_0^2R\sin^2(\omega t)$ such that the power is always positive and has average value $\frac{1}{2}$ so $\bar{P} = \frac{1}{2}I_0^2R. = \frac{1}{2}\frac{V_0^2}{R}.$
+
+    We can also get $$I_{rms} = \sqrt{\bar{I^2}} = \frac{I_0}{\sqrt{2}} \quad V_{rms} = \sqrt{\bar{V^2}} = \frac{V_0}{\sqrt{2}}.$$ These are sometimes called the \emph{effective values} and are useful because $$\bar{P} = I_{rms}V_{rms} = I^2_{rms}R = \frac{1}{2}\frac{V_0^2}{R} = \frac{V_{rms}^2}{R}.$$
+\end{definition}
+
+\section{Microscopic View of Electric Current}
+
+\begin{remark}
+    When a potential difference is applied to 2 ends of a wire of uniform cross section, the direction of the electric field $\vec{E}$ is parallel to the walls of the wire. (Because we are no longer dealing with the static case, $\vec{E}$ does no have to equal 0 so) charges are free to move and thus move under the action of the field.
+\end{remark}
+\begin{definition}[Current Density]
+    The wire carries a \emph{current density} which points hwerever a positive charge would move at that point (i.e. it is generally the same as $\vec{E}$). $\vec{j} = I/A$ if the current density is uniform. If not, the general relation is $I = \int \vec{j}\cdot d\vec{A}$ where $I$ is the current through the whole surface.
+\end{definition}
+\begin{definition}[Drift Speed]
+    Although electrons feel a force from the wire's electric field and begin to accelerate, they soon reach a steady average \emph{drift speed $v_d$}. Collisions with atoms keep them from accelerating further. 
+\end{definition}
+\begin{note}
+    For clarity, electrons flow from the negative to positive terminal.
+\end{note}
+\begin{remark}
+    If there are $n$ free electrons, each of charge $-e$ per unit volume, then the total charge that passes through an area $A$ in a time $\Delta t$ is $\Delta Q = (nV)(-e) = -(nAv_d\Delta t)(e).$ This implies the wire's current is $-neAv_d$ so the current density is $j = -nev_d$ implying the direction of positive current flow is opposite to the drift speed of the electrons. 
+
+    If there exists several types of ions including free electrons, each of density $n_i$ and charge $q_i$ and drift speed $v_{di}$ then the net current density at any point is $j = \Sigma_i n_iq_iv_{di}$ or $I = \Sigma_i n_iq_iv_{di}A$.
+\end{remark}
+\begin{remark}[Conductivity]
+    From $R = \rho\frac{\ell}{A},$ we can write $I = jA$ and $V = E\ell$ such that $E\ell = (jA)(\rho\frac{\ell}{A}) = j\rho\ell = \frac{1}{\rho}E = \sigma E$ where $\sigma = \frac{1}{p}$ is the \emph{conductivity} for a metal conductor. We can write the microscopic statement of Ohm's law, then, as $\vec{j}=\sigma\vec{E}=\frac{1}{\rho}\vec{E}.$
+\end{remark}
+
+\section{Superconductivity}
+
+\begin{definition}[Superconducting]
+    Metal and certain compounds of alloys which reach 0 resistivity at very low temperatures are called \emph{superconductors}. They become superconducting  at a certain \emph{transition temperature} or \emph{critical temperature} $T_C$ which is generally within a few degrees of absolute zero.
+\end{definition}
+\begin{remark}[Dipole Layer]
+    The potential difference across the cell membrane, or \emph{dipole layer}l results from neurons having a positive charge on the outer surface and negative on the inner surface. When a neuron is not transmitting, this is the \emph{resting potential} normally stated as $V_{inside} - V_{outside}.$ The voltage pulse is known as the \emph{action potential}.
+\end{remark}
