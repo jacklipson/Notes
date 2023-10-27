@@ -2,12 +2,12 @@
 \vspace{15pt}
 \begin{proof}
     \vspace{-10pt}
-    Say $f\colon C \to C$ is a map that is NOT homeomorphic to the identity where $C$ is the unit circle. Suppose also $f(x) \neq -x$ for all $x \in C$. Thus, no antipodal points exist (taking points as (x,y) with additive inverse (-x, -y)) so no straight line between the identity and $f(x)$ pass through the origin. Therefore, via example 2 on page 89, we can define the homotopy from $f$ to $i$ $F\colon C\times I \to C$ as $$F(x,t) = \frac{(1-t)f(x)+tx}{||(1-t)f(x)+tx||}.$$ Thus, $f(x) \underset{F}{\cong} i$ which is a contradiction so there exists some point $x \in C$ so $f(x) = -x.$
+    Say $f\colon C \to C$ is a map that is NOT homeomorphic to the identity where $C$ is the unit circle. Suppose also $f(x) \neq -x$ for all $x \in C$. Thus, no antipodal points exist (taking points as (x,y) with additive inverse (-x, -y)) so no straight line between the identity and $f(x)$ passes through the origin. Therefore, via example 2 on page 89, we can define the homotopy from $f$ to $i$ where $F\colon C\times I \to C$ as $$F(x,t) = \frac{(1-t)f(x)+tx}{||(1-t)f(x)+tx||}.$$ Thus, $f(x) \underset{F}{\cong} i$ which is a contradiction so there exists some point $x \in C$ so $f(x) = -x.$
 \end{proof}
 
 \subsection*{Page 95, Problem 13}
 \vspace{15pt}
 \begin{proof}
     \vspace{-10pt}
-    Say $f\colon C \to C$ is a map that is NOT homeomorphic to the identity where $C$ is the unit circle. Suppose also $f(x) \neq -x$ for all $x \in C$. Thus, no antipodal points exist (taking points as (x,y) with additive inverse (-x, -y)) so no straight line between the identity and $f(x)$ pass through the origin. Therefore, via example 2 on page 89, we can define the homotopy from $f$ to $i$ $F\colon C\times I \to C$ as $$F(x,t) = \frac{(1-t)f(x)+tx}{||(1-t)f(x)+tx||}.$$ Thus, $f(x) \underset{F}{\cong} i$ which is a contradiction so there exists some point $x \in C$ so $f(x) = -x.$
+    Diagrams and more detailed proof attached. For written explanation: $F$ shows that $\alpha, \beta$ are homotopies to themselves. From this, I use $F$ to construct two new homotopies from $\alpha, \beta$ to themselves called $P, Q$. These essentially squash $\beta, \alpha$ into $e$ respectively and drag $\alpha$ around the square. Multiplying these maps $PQ$ gives a homotopy from the concatanted loops $\alpha.\beta$ to the product in $G$ of $\alpha(t).\beta(t)$. We can reverse this product to get $QP$ for a homotopy from $\alpha.\beta$ to $\beta(t).\alpha(t)$ instead. Linking these together relative to $\{0,1\}$, $\langle \beta.\alpha \rangle = \langle \alpha.\beta \rangle$ which can be split up to show $\pi_1(G)$ is abelian for any 2 loops in $G$.
 \end{proof}

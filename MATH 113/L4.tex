@@ -112,12 +112,97 @@
     If $n \cdot 1 \neq 0$ for all $n \in \Z^+$, then surely we cannot have $n \cdot a = 0$ for all positive integers $n$ so $R$ has characteristic 0. Otherwise, if $n \cdot 1 = 0$ for some $n \in \Z^+$, then for any $a \in R$, $n \cdot a = a + \cdots + a = a(1 + \cdots + 1) = a(n \cdot 1) = a0 = 0.$
 \end{proof}
 
-% \section{Fermat's and Euler's Theorems}
+\section{Fermat's and Euler's Theorems}
 
-% \section{The Field of Quotients of an Integral Domain}
+\begin{remark}
+    For any field, the nonzero elements form a group under the field multiplication.
+\end{remark}
+\begin{theorem}{Fermat's Little Theorem}
+    If $a \in \Z$ and $p$ is a prime \emph{not} dividing $a$, then $p$ divides $a^{p-1}$ so $a^{p-1} \equiv 1 \text{(mod $p$)}$ for $a \neq 0 (\text{mod} p)$.
+\end{theorem}
+\begin{corollary}
+    If $a \in \Z$, then for any prime $p$, $a^p \equiv a \text{(mod $p$)}.$
+\end{corollary}
+\begin{example}
+    $8^{103} \div 13$ gives $(8^{12})^8(8^7) \equiv (1^8)(8^7) \equiv (-5)^7 \equiv (25)^3(-5) \equiv (-1)^3(-5) \equiv 5 \text{(mod 13)}.$
+\end{example}
+\begin{theorem}
+    The set $G_n$ of nonzero elements of $\Z_n$ that are not 0 divisors forms a group under multiplication modulon $n$.
+\end{theorem}
+\begin{proof}
+    For any $a, b \in G_n$, if $ab \notin G_n$ then there would exist some $c \neq 0$ in $\Z_n$ so $(ab)c = 0$. But, this implies $a(bc) = 0$. Because $b$ is not a 0 divisor, $bc \neq 0$ but then $a \notin G_n$. Contradiction, so $ab \in G_n$ so $G_n$ has closure. $1 \in G_n$ obviously and multiplication mod $n$ is associative.
+
+    To show the existence of an inverse, we can use a proof by counting. For any $a \in G_n$, given distinct elements of $G_n$: $1, a_1, \ldots, a_r$, the elements $a1, aa_1, \ldots, aa_r$ must also be distinct as $aa_i = aa_j \implies a(a_i - a_j) = 0$ but $a$ is not a divisor of 0 so $a_i = a_j$. Because of closure, these products must cover $G_n$ so there exists some $a_k$ so $aa_k = 1$.
+\end{proof}
+\begin{remark}[Euler's Totient/Phi Function $\phi(n)$]
+    $\phi(n)$ is equal to the number of positive intergers less than or equal to $n$ and relatively prime to $n$. Note $\phi(1) = 1$. This is equal to the number of nonzero elements of $\Z_n$ that are not divisors of 0.
+\end{remark}
+\begin{theorem}[Euler's Theorem]
+    If $a$ is an integer relatively prime to $n$, then $a^{\phi(n)}-1$ is divisible by $n$. I.e. $a^{\phi(n)} \equiv 1 (\text{mod } n)$.
+\end{theorem}
+\begin{proof}
+    If $a$ is coprime with $n$ then the coset $a + n\Z$ of $n\Z$ contaning $a$ contains an integer $b <n$ also coprime to $n$. Because multiplication mod $n$ of representatives is well-defined, $a^{\phi(n)} \equiv b^{\phi(n)} (\text{mod } n)$. $b$ can then be viewed as an element of $G_n$ of order $\phi(n)$ consisting of the $\phi(n)$ elements of $\Z_n$ coprime to $n$ so $b^{\phi(n)} \equiv 1 (\text{mod}  n).$
+\end{proof}
+\begin{theorem}
+    Let $m \in \Z^+, a \in \Z_m$ so $\gcd(a,m) = 1$. For each $b \in \Z_m$, the equation $ax = b$ has a unique solution in $\Z_m$.
+\end{theorem}
+\begin{proof}
+    $a$ is a unit in $\Z_m$ by the previous theorem so $s= a^{-1}b$ is a solution of this equation. multiplying both sides of $ax=b$ by $a^{-1}$ reveals this indeed is the only solution.
+\end{proof}
+\begin{theorem}
+    Let $m \in \Z^+$ and $a, b \in \Z_m$. Let $d = \gcd(a,m).$ The equation $ax = b$ has a solution in $\Z_m$ iff $d \mid b$. If so, the equation has exactly $d$ solutions in $\Z_m$.
+\end{theorem}
+\begin{proof}
+    Suppose $s \in Z_m$ is a solution to $ax = b$. Then $as - b = qm$ for some $q \in \Z$ so $b = as - qm$. $d$ divides $a, m$ so $d$ must also divide the LHS so a solution $s$ only exists if $d \mid b$.
+
+    Next, if $d \mid b$, let $a = a_1d, b=b_1d, m=m_1d$ so $as - b = qm$ can be rewritten as $d(a_1s - b_1) = dqm_1$ so $as-b$ is a multiple of $m$ if and only if $a_1s - b_1$ is also a multiple of $m_1$. This yelds the solutions $s \in \Z_m$ of $ax = b$ as precisely $s, s+m_1, s+2m_1, \ldots, s+(d-1)m_1.$ Thus, $d$ solutions to the equation exist in $\Z_m$.
+\end{proof}
+\begin{example}
+    Take the congruence $12x \equiv 27 (\text{mod } 18)$. The greatest common divisor of 12 and 18 is 6, but 6 is not a divisor of 27 so no such solutions exist.
+
+    For $15x \equiv 27 (\text{mod } 18)$, however, their gcd is 3 which divides 27 so this has 3 solutions, $3+ 18\Z,9+ 18\Z,15+ 18\Z.$
+\end{example}
+
+\section{The Field of Quotients of an Integral Domain}
+
+\begin{remark}
+    Let's think of the rationals as the formal quotient $(a,b)$ within $D \times D$ for integral domain $D = \Z.$
+\end{remark}
+\begin{definition}[Equivalent]
+    Let $S = \{(a,b) \mid a,b \in D, b \neq 0\}$ for an integral domain $D$. Two elements $(a,b)$ and $(c,d)$ in $S$ are \emph{equivalent}, denoted as $(a,b) \sim (c,d)$ if and only if $ad=bc.$
+\end{definition}
+\begin{lemma}
+    The relation $\sim$ on the set $S$ is an equivalence relation. (i) $ab = ba \implies (a,b) \sim (b,a).$ (ii) $(a,b) \sim (c,d) \implies ad = bc \implies cb = da \implies (c,d) \sim (b,a).$ (iii) $(a,b) \sim (c,d), (c,d) \sim (e,f) \implies ad = bc, cf = ed$ so $acf/e = bc$ so $af = be$ implying $(a,b) \sim (e,f).$ (Note division is simply shorthand for cancellation which is allowed because of integral domain).
+\end{lemma}
+\begin{note}
+    This chapter discusses the formation of field $F$ from $D \times D$. Proof shows addition and multiplication well defined and has field axioms and contains $D$.
+\end{note}
+\begin{lemma}
+    To show that $F$ contains $D$, we simply construct an isomorphism $i\colon D\to F$ as given by $i(a) = [(a,1)]$ with a subring of $F$.
+\end{lemma}
+\begin{proof}
+    For any $a,b \in D$, $i(a+b) = [(a+b, 1)] = [(a1+b1,1)] = [(a,1)] + [(b,1)] = i(a) + i(b).$ Also, $i(ab) = [(ab,1)] = [(a,1)][(b,1)] = i(a)i(b).$ Thus, $i$ is a ring homomorphism. Next, if $i(a) = i(b)$, then $[(a,1)] = [(b,1)] \implies (a,1) \sim (b,1) \implies a1 = 1b \implies a=b$ so $i$ is injective. Because it is of the same size as $D$, this is an isomorphism of $D$ with $i[D].$ So $i[D]$ is a subdomain of $F$.
+\end{proof}
+\begin{theorem}[Field of Quotients of $D$]
+    Any integral domain $D$ can be enlarged to or embedded in a field $F$ so each element of $F$ can be expressed as a quotient of two elements of $D$. Here, a field $F$ is a \emph{field of quotients of} $D$.
+\end{theorem}
+\begin{proof}
+    $[(a,b)] = [(a,1)][(1,b)] = [(a,1)]/[(b,1)] = i(a)/i(b).$
+\end{proof}
+\begin{theorem}
+    Let $F$ be a field of quotients of $D$ and $L$ be any field containing $D$. Then, there exists a map $\psi\colon F\to L$ which gives an isomorphism of $F$ with a subfield of $L$ so $\psi(a) = a$ for all $a \in D$.
+\end{theorem}
+\begin{proof}
+    Proof omitted.
+\end{proof}
+\begin{corollary}
+    Every field $L$ containing an integral domain $D$ contains a field of quotients of $D$.
+\end{corollary}
+\begin{corollary}
+    Any two fields of quotients of an integral domain $D$ are isomorphic.
+\end{corollary}
 
 % \section{Rings of Polynomials}
-
 
 % \section{Factorization of Polynomials over a Field}
 
