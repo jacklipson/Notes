@@ -56,3 +56,10 @@
 \contentsline {section}{\numberline {25.5}Alternating Current}{44}{section.25.5}%
 \contentsline {section}{\numberline {25.6}Microscopic View of Electric Current}{45}{section.25.6}%
 \contentsline {section}{\numberline {25.7}Superconductivity}{45}{section.25.7}%
+\contentsline {chapter}{\numberline {26}DC Circuits}{47}{chapter.26}%
+\contentsline {section}{\numberline {26.1}EMF and Terminal Voltage}{47}{section.26.1}%
+\contentsline {section}{\numberline {26.2}Resistors in Series/Parallel}{47}{section.26.2}%
+\contentsline {section}{\numberline {26.3}Kirchhoff's Rules}{48}{section.26.3}%
+\contentsline {section}{\numberline {26.4}Charging a Battery}{48}{section.26.4}%
+\contentsline {section}{\numberline {26.5}RC Circuits}{49}{section.26.5}%
+\contentsline {section}{\numberline {26.6}Ammeters and Voltmeters}{50}{section.26.6}%

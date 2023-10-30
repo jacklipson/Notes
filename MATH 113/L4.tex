@@ -202,7 +202,55 @@
     Any two fields of quotients of an integral domain $D$ are isomorphic.
 \end{corollary}
 
-% \section{Rings of Polynomials}
+\section{Rings of Polynomials}
+
+\begin{note}
+    We call $x$ an \emph{indeterminate} rather than a variable in the ring $\Z[x].$
+\end{note}
+\begin{definition}[Polynomial $f(x)$ with Coefficients in $R$]
+    Let $R$ be a ring. A \emph{polynomial} $f(x)$ with coefficients in $R$ is an infinite formal sum $\Sigma_{i=0}^\infty a_ix^i$ where $a_u \in R$ and $a_i=0$ for all but a finite number of values of $i$. The largest such value of $i$ is the \emph{degree} of $f(x)$ while $a_i$ are the coefficients.
+\end{definition}
+\begin{note}
+    An element of $R$ is a \emph{constant polynomial}.
+\end{note}
+\begin{theorem}
+    The set $R[x]$ of all polynomials in an indeterminate $x$ with coefficients in a ring $R$ is a ring under polynomial addition and multiplication. If $R$ is commutative, then so is $R[x]$ and $R$ has unity $1 \neq 0$ so $1$ is also a unity for $R[x].$
+\end{theorem}
+\begin{proof}
+    Clearly $\langle R[x], + \rangle$ is an abelian group. The associative law for multiplication and the distributive laws are clear as well.
+\end{proof}
+\begin{example}
+    In $\Z_2[x],$ $(x+1)^2 = (x+1)(x+1) = x^2 + (1+1)x + 1 = x^2 + 1$ while $(x+1) + (x+1) = 0x.$
+\end{example}
+\begin{example}
+    We can even form the ring $(R[x])[y]$, i.e. the ring of polynomials in $y$ with coefficents that are polynomials in $x$. This is naturally isomorphic to $(R[y])[x]$. Thus, we can denote the ring $R[x,y]$ as the ring of of polynomials in two indeterminates $x$ and $y$ with coefficients in $R$. In fact the ring $R[x_1, \ldots, x_n]$ of polynomials in $n$ indeterminates $x_i$ with coefficients in $R$ is similarly defined. 
+    
+    Given integral domain $D$, $D[x]$ is also an integral domain. If $F$ is a field, $F[x]$ is a field but \emph{not} a field as $x$ is not a unit in $F[x]$. However, we can do same goes for $F(x_1, \ldots, x_n)$ or the field of rational functions with $n$ indeterminates over field $F$.
+\end{example}
+\begin{theorem}[The Evaluation Homomorphisms for Field Theory]
+    Let $F$ be a subfield of a field $E$, $\alpha \in E,$ and $x$ be the indeterminate. Define the map $\phi_\alpha\colon F\to E$ as $\phi_\alpha(a_0+a_1x + \cdots + a_nx^n) = a_0 + a_1\alpha + \cdots + a_n\alpha^n$ is a homomorphism of $F[x]$ into $E$. Note that $\phi_\alpha(x) = \alpha$ so $\phi_\alpha$ maps $F$ isomorphically by the identity map such that $\phi_\alpha(a) = a$ for any $a \in F$. This map is the \emph{evaluation homomorphism at $\alpha$}.
+\end{theorem}
+\begin{proof}
+    This map is obviously well-defined. Next, for any $f(x) = a_0 + a_1x + \cdots + a_nx^n, g(x) = b_0 + b_1x + \cdots + b_mx^m,$ let $h(x) = f(x) + g(x) = c_0 + c_1x + \cdots + c_rx^r.$ Thus, $\phi_\alpha(f(x) + g(x)) = \phi_\alpha(h(x)) = c_0 + c_1\alpha + \cdots + c_r\alpha^r = a_0 + a_1x + \cdots + a_nx^n + b_0 + b_1x + \cdots + b_mx^m = \phi_\alpha(f(x)) + \phi_\alpha(g(x)).$ Multiplication works similarly by definition of polynomial multiplication $d_j = \Sigma_{i = 0}^j a_ib_{j-i}.$ Thus, $\phi_\alpha$ is a homomorphism.
+\end{proof}
+\begin{example}
+    Let $F = \Q, E = \R$ and apply the evaluation homomorphism $\phi_0\colon Q[x] \to \R$ such that each polynomial is mapped onto its constant term.
+\end{example}
+\begin{example}
+    Let $F = \Q, E = \C$, we can apply the evaluation homomorphism from $Q[x] \to \C$ at $i$ so $\phi(x^2 + 1) = 0$ so $x^2+1$ is in the kernel of $\phi_i.$
+\end{example}
+\begin{remark}
+    A more interesting example uses the same evaluation homomorphism from $\Q[x] \to \R$ but at $\pi$. Because $\pi$ is transcendental, no algebraic solution exists for $a_0 + a^1\pi + \cdots + a_n\pi^n = 0$ as this implies $a_i = 0$ so the kernel of $\phi_\pi$ is $\{0\}$ implying it is an injective map and thus ring isomorphic to $\Q[x].$
+\end{remark}
+\begin{definition}[Zero of $f(x)$]
+    Take subfield $F$ of field $E$, $\alpha \in E$ and let $f(x) = a_0 + a_1x + \cdots + a_nx^n \in F[x]$. Given evaluation homomorphism $\phi_\alpha\colon F[x] \to E$, we say $\alpha$ is a \emph{zero} of $f(x)$ if $f(\alpha) = 0.$
+\end{definition}
+\begin{theorem}
+    The polynomial $x^2 - 2$ has no zeroes in the rational numbers. Thus $\sqrt{2} \notin \Q.$
+\end{theorem}
+\begin{proof}
+    Take $m/n$ for $m, n \in \Z$ such that $(m/n)^2 = 2$ and we simplify so that $\gcd(m,n) = 1.$ Then, $m^2 = 2n^2$ but this implies 2 is a factor of $2n^2$ and therefore must be a factor of $m^2$ as well. But, if this is the case, $m^2$ is a multiple of 4 so $n^2$ must have a multiple of 2 as well. But this implies their greatest common divisor is not 1. Contradiction.
+\end{proof}
 
 % \section{Factorization of Polynomials over a Field}
 

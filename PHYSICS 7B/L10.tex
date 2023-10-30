@@ -1,0 +1,102 @@
+\chapter{DC Circuits}
+
+\section{EMF and Terminal Voltage}
+
+\begin{remark}[Electromotive Force (emf)]
+    To have current in an electric circuit, we need a device to transofrm one type of energy into electric. This is called a \emph{source of electromotive force} or \emph{emf}, denoted $\mathscr{E}$. The potential difference between the terminals of such a source, when no current flows to an external circuit, is called the emf.
+\end{remark}
+\begin{note}
+    Voltage dims over time because chemical reactions cannot supply charge fast enough to maintain the full emf.
+\end{note}
+\begin{definition}[Internal Resistance]
+    A battery itself has some \emph{internal resistance $r$}.
+\end{definition}
+\begin{definition}[Terminal Voltage]
+    We measure the \emph{terminal voltage} $V_{ab} = V_a - V_b$ between the two terminals of a battery. $V_ab = \mathscr{E}.$
+\end{definition}
+
+\section{Resistors in Series/Parallel}
+
+\begin{remark}[Resistors in Series]
+    When resistors are connected in \emph{series}, the voltage drops across each. However, due to conservation of charge, their current remains the same. Also, because of conservation of energy, the total voltage drop must equal the voltage of the battery. So, $V = \Sigma_iV_i \implies \frac{V}{I} = \Sigma_i\frac{V_i}{I}$ finally implying $$R_{eq} = \Sigma_iR_i \quad [\text{series}].$$
+\end{remark}
+\begin{remark}[Resistors in Parallel]
+    In parallel, however, the current diverges across each pathway although each path encounters the same potential difference. Thus, $\frac{V}{R_{eq}} = I = \Sigma_iI_i = \Sigma_i\frac{V}{R_i}$. Dividing by $V$ gives us $$R_{eq} = (\Sigma_i\frac{1}{R_i})^{-1} \quad [\text{parallel}].$$
+\end{remark}
+\begin{remark}
+    We can perform a sanity check with $R = \rho\frac{l}{A}$ such that adding resistors in series adds length increasing the resistance while adding them in in parallel increases the area of resistance current flows through, reducing the overall resistance.
+\end{remark}
+
+\section{Kirchhoff's Rules}
+
+\begin{remark}
+    To make the process of solving for currents systematic, Kirchhoff developed 2 laws and a series of steps.
+\end{remark}
+\begin{definition}[Kirchhoff's First Rule/Junction Rule]
+    Using the conservation of electric charge, \emph{at any junction point, the sum of all currents entering the junction must equal the sum of all currents leaving the junction}.
+\end{definition}
+\begin{definition}[Kirchhoff's Second Rule/Loop Rule]
+    Using the conservation of energy, \emph{the sum of the changes in potential around any closed loop of a circuit must be zero}.
+\end{definition}
+\begin{remark}[Kirchhoff's Process]
+    We can use the following steps to solve circuits, i.e. determine each current and direction along every pathway:
+    \begin{enumerate}[label=(Step \arabic*), leftmargin=*]
+        \item Label the current in each separate branch of the circuit using different subscripts and choose an arrow direction.
+        \item Apply Kirchhoff's junction rule to create sum of current equations.
+        \item Apply Kirchhoff's loop rule on voltages with careful reference to resistor and current and potential difference direction. Apply enough loops to solve for all unknowns.
+    \end{enumerate}
+\end{remark}
+
+\section{Charging a Battery}
+
+\begin{definition}[Battery Charger]
+    A \emph{battery charger} works precisely by connecting batteries in reverse forcing charge through one terminal back into a battery.
+\end{definition}
+\begin{note}
+    The negative (-) terminal is ground or "neutral" around 0 $V$ and the "hot" terminal is positive (+). Always connect the ground cable last and disconnect it first.
+\end{note}
+
+\section{RC Circuits}
+
+\begin{definition}[RC Circuits]
+    Circuits which include capacitors and resistors are called \emph{RC circuits}. Notably, its current varies over time. 
+\end{definition}
+\begin{remark}[Capacitor Charging]
+    After a switch $S$ is closed, current immediately flows through the circuit out from the negative terminal through the resistor $R$ and accumulate on the upper plate of the capacitor, increasing its potential difference, reducing the current due to opposing voltage. Eventually, the voltage across the capacitor will equal the emf of the battery $\mathscr{E}$ at which point no further current flows and there is no potential difference across the resistor. From $V_C = Q/C,$ $\mathscr{E} = IR + \frac{Q}{C} = R\frac{dQ}{dt} + \frac{1}{C}Q$. This gives $\frac{dQ}{C\mathscr{E} - Q} = \frac{dt}{RC}$ which we can integrate from $0 to Q$ and $0 to t$ such that $ln(1 - \frac{Q}{C\mathscr{E}}) = -\frac{t}{RC}$. Taking the exponential finally gives us $1 - \frac{Q}{C\mathscr{E}} = e^{-t/RC}$ so $$Q = C\mathscr{E}(1-e^{-t/RC}) = Q_0(1-e^{-t/RC})$$ where $Q_0 = C\mathscr{E}$ represents the maximum charge on the capacitor (and notably \emph{not} the $Q$ at $t=0$). Thus, the potential difference across the capacitor is also $$V_C = Q/C = \mathscr{E}(1-e^{-t/RC}).$$ Thus, it's evident that after a very long time, $V_C = \mathscr{E}.$
+
+    The quantity $RC$ is called the \emph{time constant $\tau$ of the circuit}. This represents the time required for the current to drop to $1/e \approx 0.37$ of its initial value. In fact, the current $I$ through the circuit at any time $t$ is finally equal to $$I = \frac{dQ}{dt} = \frac{\mathscr{E}}{R}e^{-t/RC} = \frac{\mathscr{E}}{R}e^{-t/\tau}.$$ where $I_0 = \mathscr{E}/R.$
+\end{remark}
+\begin{remark}[Capacitor Discharging]
+    When the switch $S$ is closed again, charge begins to flow through resistor $R$ from one side of the capacitor toward the other until fully discharged. At any instant, the voltage across the capacitor equals that across the resistor so $\frac{Q}{C} = IR = -\frac{dQ}{dt}$ so $dQ/Q = -dt/RC$ so integrating and exponentiating gives $$Q = Q_0e^{-t/RC} \quad V_C = Q/C \quad\text{gives} \quad V_C = V_0e^{-t/RC} \quad (V_0 = Q_0/C).$$ Thus, the charge decreases exponentially so $I = -\frac{dQ}{dt} = \frac{Q_0}{RC}e^{-t/RC} = I_0e^{-t/RC}.$
+\end{remark}
+\begin{definition}[Sawtooth Voltage]
+    In some instances, like with a gas-filled tube with electrical breakdown, the voltage stored on a capacitor is discharged very rapidly after charging slowly. This produces a \emph{sawtooth voltage}.
+\end{definition}
+\begin{note}
+    One danger is \emph{leakage current} wherein current travels an unintended path.
+\end{note}
+
+\section{Ammeters and Voltmeters}
+
+\begin{definition}[Ammeter/Voltmeter]
+    An \emph{ammeter} measures current while a \emph{voltmeter} measures potential difference between points. Either one can be analog displaying by position on a scale or digital.
+\end{definition}
+\begin{definition}[Galvanometer]
+    Analog reading is done by a \emph{galvanometer}. A galvanometer works via the force between a magnetic field and a current-carrying coil of wire. The deflection of the detecting needle is proportional to the current flowing through it.
+\end{definition}
+\begin{definition}[Full-scale Current Sensitivity]
+    The \emph{full-scale current sensitivity} of a galvanometer $I_m$ is the electric current needed to make the needle deflect full scale.
+\end{definition}
+\begin{definition}[Shunt Resistor]
+    An analog ammeter consists of a galvanometer in parallel with a resistor called a \emph{shunt resistor $R_{sh}$}. Here "shunt" implies "in parallel." The resistance of the galvanometer coil is $r$. $R_{sh}$ is normally very small so the ammeter has very small net resistance and most of the current passes through it rather than the galvanometer.
+    
+    Similarly, an analog voltmeter consists of a galvanometer and a resistor $R_{ser}$ connected in series. $R_{ser}$ is usually large to generate a high internal resistance.
+\end{definition}
+\begin{definition}[Other Meters]
+    A \emph{multimeter} can measure voltage, current, and resistance. It is thus sometimes called a VOM(Volt-Ohm-Meter).
+
+    An \emph{ohmmeter} measures resistance and must contain a battery of known voltage connected in series to a resistor $R_{ser}$ as well as an ammeter which has a shunt $R_{sh}$. Here, the needle deflection is inversely proportional to the resistance. This best not be used on very delicate devices because it sends a current through, itself.
+\end{definition}
+\begin{note}
+    Digital meters are used similarly but are constructed extremely differently. They use semiconductor devices.
+\end{note}

@@ -21,3 +21,4 @@
 \contentsline {section}{\numberline {4.2}Integral Domains}{31}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Fermat's and Euler's Theorems}{33}{section.4.3}%
 \contentsline {section}{\numberline {4.4}The Field of Quotients of an Integral Domain}{34}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Rings of Polynomials}{35}{section.4.5}%

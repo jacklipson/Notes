@@ -1,0 +1,39 @@
+\subsection*{Page 95, Problem 10}
+\vspace{15pt}
+\begin{proof}
+    \vspace{-10pt}
+    Let $\gamma, \sigma$ be two paths in space $X$ from point $p$ to point $q$. These each induce isomorphisms $\gamma_*\colon\pi_1(X,p)\to\pi_1(X,q)$ which maps $\langle\alpha\rangle\mapsto\langle\gamma^{-1}.\alpha.\gamma\rangle$ and similarly $\sigma_*\colon\pi_1(X,p)\to\pi_1(X,q)\colon\langle\alpha\rangle\mapsto\langle\sigma^{-1}.\alpha.\sigma\rangle.$
+
+    For any loop $\alpha \in \pi_1(X,q),$ the inner automorphism of $\pi_1(X,q)$ induced by $\langle\sigma^{-1}\gamma\rangle$ gives us $\langle\sigma^{-1}.\gamma\rangle\gamma_*(\langle\alpha\rangle)\langle\gamma^{-1}.\sigma\rangle = \langle\sigma^{-1}.\gamma\rangle\langle\gamma^{-1}.\alpha.\gamma.\rangle\langle\gamma^{-1}.\sigma\rangle.$ By group multiplication, this becomes $\langle\sigma^{-1}.\gamma.\gamma^{-1}.\alpha\gamma.\gamma^{-1}.\sigma\rangle.$ This loop is homotopically equivalent to, and thus has homotopy class exactly equal to $\langle\sigma^{-1}.\alpha.\sigma\rangle = \sigma_*(\langle\alpha\rangle).$
+\end{proof}
+
+\subsection*{Page 102, Problem 18}
+\vspace{15pt}
+\begin{proof}
+    \vspace{-10pt}
+    Let $\pi\colon X\to Y$ be a covering map. Let each point $y \in Y$ have a \emph{canonical} neighbourhood $V$ for which $\pi^{-1}(V)$ is equal to pairwise disjoint open sets $\{U_\alpha\}$ which map homeomorphically onto $V$ under $\pi$. Take any path $\alpha$ in $Y$.
+
+    First, $\alpha$ is a continuous map from compact $[0,1] \subset \R$. This implies its image in $Y$ is also compact. Take an open cover $\mathscr{F}$ of $\alpha$ made up of canonical neighbourhoods. (This is possible because there exists such a $V$ for each $y$). The preimage $\alpha^{-1}$ for each $F$ in the finite subcover of $\mathscr{F}$, say $\mathscr{F'}$, forms an open cover of $[0,1]$ which, again, is compact. By Lebesgue Lemma, there is some Lebesgue number $\delta > 0$ corresponding to this open cover and therefore some $m \in \N$ so $1/m < \delta.$ Take the partition $[0 = t_0 < t_1 = 1/m < t_2 = 2/m < \cdots < t_m = m/m = 1].$
+
+    Now, each image under $\alpha$ of a segment $[t_i < t_{i+1}]$ for $i \in [0,m-1]$ maps to a canonical neighbourhood $V_i$ of $Y.$ Because $\pi$ maps homeomorphically for each such $V_i$, $\pi^{-1}$ is continuous on these restrictions implying, exactly in the way stated on page 61, the composition $[0,1]\overset{\alpha}\to Y\overset{\pi^{-1}}\to X$ is a path which can begin at any preassigned point of $\pi^{-1}(\alpha(0))$. Moreover, this path is unique because it was constructed via homeomorphisms.
+\end{proof}
+
+\subsection*{Page 102, Problem 21}
+\vspace{15pt}
+\begin{proof}
+    \vspace{-10pt}
+    Take the homomorphisms $f_*\colon\pi_1(S^1,1)\to\pi_1(S^1,f(1))$ induced by the following maps:
+    \begin{enumerate}[label = \alph*)]
+        \item $f(e^{i\theta}) = e^{i(\theta+\pi)}, 0 \leq \theta \leq 2\pi.$
+        \item $f(e^{i\theta}) = e^{in\theta}, 0 \leq \theta \leq 2\pi, n \in \Z.$
+        \item $f(e^{i\theta}) = \begin{cases}e^{i\theta}, 0 \leq \theta \leq \pi \\ e^{i(2\pi - \theta)}, \pi \leq \theta \leq 2\pi.\end{cases}$
+    \end{enumerate}
+
+    Note that given any loop $\alpha,$ $f_*(\langle\alpha\rangle) = \langle f(\alpha)\rangle.$ We can describe each as:
+    
+    a) Because any loop $\alpha$ has basepoint 1, at $t = 0,1$, $\theta = 0, 2\pi$ so $\langle f(\alpha)\rangle$ has basepoint $\theta = \pi$ or -1. In fact, every loop is  moved to its antipodal point. If you imagine  looking upside down to transform $\alpha$, its evident $f_*$ is nearly the identity on $\pi_1(S^1).$ We can say $f_*(\langle\alpha\rangle) = \langle (-\alpha) \rangle.$
+
+    b) Here $f(1) = 1$ so the basepoint is shared. We extensively proved already that $\pi_1(S^1,1)$ is isomorphic to $\Z$. That is, the degree of each loop homotopy class refers to the number of winds (and direction if negative) around the circle. In this case, this map sends each point to $n$ times its angle. In that sense, it moves $n$ times as fast over the interval $[0,1]$ and therefore $f_*(\langle\alpha\rangle) = \langle n\alpha \rangle$ implying the fundamental group is instead isomorphic to $n\Z.$
+
+    c) Again, $f(1) = 1$. Clearly, the entire top half is mapped via the identity. However, the bottom half sends $\cos(\theta) + i\sin(\theta)$ to $\cos(-\theta) + i\sin(\theta) = \cos(\theta) - i\sin(\theta).$ Thus, the $x$ position remains the same yet the $y$ position is reflected across the $x$-axis. As a result, any loop in $S^1$ will be mapped to a loop in the form of a straight line extending from 1 as far left as the leftmost part of the original loop went. But, this straight line can now be easily homotoped to the identity by shrinking in towards the right. So, for any $\alpha \in \pi_1(S^1,1), f_*(\langle\alpha\rangle) = \langle e \rangle.$
+\end{proof}
