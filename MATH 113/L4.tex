@@ -252,7 +252,18 @@
     Take $m/n$ for $m, n \in \Z$ such that $(m/n)^2 = 2$ and we simplify so that $\gcd(m,n) = 1.$ Then, $m^2 = 2n^2$ but this implies 2 is a factor of $2n^2$ and therefore must be a factor of $m^2$ as well. But, if this is the case, $m^2$ is a multiple of 4 so $n^2$ must have a multiple of 2 as well. But this implies their greatest common divisor is not 1. Contradiction.
 \end{proof}
 
-% \section{Factorization of Polynomials over a Field}
+\section{Factorization of Polynomials over a Field}
+
+\begin{theorem}[Division Algorithm for $F\text{[}x\text{]}$]
+    Let $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_0$ and $g(x) = b_mx^m + b_{m-1}x^{m-1} + \cdots + b_0$ be two elements of $F[x]$ with nonzero $a_n, b_m \in F, m > 0.$ Then there exist unique polynomials $q(x), r(x)$ in $F[x]$ so $f(x) = g(x)q(x) + r(x)$ where either $r(x) = 0$ or its degree is less than the degree $m$ of $g(x)$.
+\end{theorem}
+\begin{proof}
+    Take the set $S = \{f(x) - g(x)s(x) \mid s(x) \in F[x]\}.$ If $0 \in S$ then there exists some $s(x)$ so $f(x)-g(x)s(x) = 0$ so $f(x) = g(x)s(x).$
+
+
+    COMPLETE PROOF!!!!
+
+\end{proof}
 
 % \section{Noncommutative Examples}
 % \section{Ordered Rings and Fields}
