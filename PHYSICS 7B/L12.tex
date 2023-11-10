@@ -1,0 +1,101 @@
+\chapter{Sources of a Magneetic Field}
+
+\section{Magnetic Field Due to a Straight Wire}
+
+\begin{definition}[Permeability of Free Space]
+    The proportionality constant of magentic field near to a long straight wire is $B = \frac{\mu_0}{2\pi}\frac{I}{r}$ where $\mu_0 = 4\pi\times10^{-7}\cdot\text{m/A}$ is the \emph{permeability of free space}.
+\end{definition}
+\begin{remark}
+    Given two wires carrying parallel currents $I_1, I_2$ in the same direction, the force exerted by one on the other is $F_2 = \frac{\mu_0}{2\pi}\frac{I_1I_2}{d}\ell_2$ where $d$ is the distance between the wires and $\ell_2$ is the length of the second wire. For parallel currents the force is attractive. For antiparallel currents, it is repulsive. 
+\end{remark}
+\begin{remark}{Operational Definitions}
+    Because $\mu_0$ is defined precisely as $4\pi\times10^{-7}\cdot\text{m/A}$, we can redefine one \emph{ampere} to be the current flowing in each of two long parallel wires exactly \qty{1}{m} apart which results in a force of exactly \qty{2e-7}{N} per meter length of each wire. From here, we can define a \emph{coulomb} via \qty{1}{C} = \qty{1}{A\cdot s}.
+
+    We use \emph{operational definitions} in this way for purposes of reproducibility and precise measurements.
+\end{remark}
+\begin{remark}[Ampèré's Law]
+    To generalize results from a long straight wire to current with a path of any size and shape, we simply sum the parallel magnetic field component of each infitesimal segment such that $\sigma B_\parallel\Delta\ell = \mu_0I_{encl}$ so, as infitesimal length vector $\Delta\ell\to0,$ we get $$\oint\vec{B}\cdot d\vec{\ell} = \mu_0I_{encl}. \quad [\text{Ampéré's Law}]$$
+\end{remark}
+\begin{example}
+    Applying this law in the case of our standard long straight wire carrying a current $I$. Given a circle of radius $r$ symmetric around the wire, all points experience the same field $\vec{B}$ and $B$ will be parallel to each segment so $\mu_0I = \oint Bd\ell = B(2\pi r)$ so $B = \frac{\mu_0I}{2\pi r}.$
+\end{example}
+\begin{note}
+    Note that this doesn't capture the exact total magnetic field, just from one source, unlike Gauss's Law.
+\end{note}
+
+\section{Mangetic Field of a Solenoid and Toroid}
+
+\begin{definition}[Solenoid]
+    A long coil of wire consisting of many loops, or simply turns, carrying a dc current is called a \emph{solenoid}. Between any two loops, the fields due to each loop tend to cancel. However, towards the center, the fields add up to give a large and uniform field, particularly for a long solenoid with closely packed loops. The field outside a solenoid is very small compared to the field inside, except near the ends. 
+\end{definition}
+\begin{remark}
+    Take a rectangular path overlayed one side of the solenoid with current into the page towards the bottom and out of the page at the top such that the magnetic field inside is uniformly to the right and negigible outside. Breaking this path loop into its 4 sides, we can ignore the side outside and the sides perpendicular to the field leaving just the side inside such that $\oint\vec{B}\cdot d\vec{\ell} = B\ell$ for side length inside $\ell$. Therefore, this loop captures the current of $n = N/\ell$ loops per unit length such that $$B = \mu_0nI \quad [\text{solenoid}].$$
+\end{remark}
+\begin{definition}[Toroid]
+    A \emph{toroid} is a solenoid bent into the shape of a circle. Applying this result for solenoids with Ampèré's Law gives $B(2\pi r) = \mu_0NI$ where $r$ is the radius from the center of the toroid to the center of the solenoid gives $B = \frac{\mu_0NI}{2\pi r}.$ For the net curent enclosed by a path outside the whole toroid, the net current enclosed is 0 so $B = 0$. Similarly, for a path taken at a radius smaller than the inner edge of the toroid, $I_{encl} = 0 \implies B = 0.$ 
+\end{definition}
+
+\section{Biot-Savart Law}
+
+\begin{remark}
+    The magnetic equivalent to Coulomb's Law, according to Biot and Savart, a current $I$ flowing in any path can be considered as many infitesimal current elements such that the magnetic field due to a current $d\vec{\ell}$ flowing anywhere in space is in fact equal to $$d\vec{B} = \frac{\mu_0I}{4\pi}\frac{d\vec{\ell}\times\hat{\mathbf{r}}}{r^2} \quad [\text{Biot-Savart Law}]$$ where $\hat{\mathbf{r}} = \vec{r}/r$ and $r$ is the unit vector of $\vec{r}$ from $d\vec{\ell}$ to the point measured. 
+\end{remark}
+\begin{note}
+    An important distinction between the Biot-Savart's and Ampèré's laws is that the vector $\vec{B}$ in Ampèré's considers the field not just due to the current enclosed while Biot-Savart does.
+\end{note}
+\begin{remark}[Magnetic Dipole Field]
+    A current-carrying coil has a magnetic dipole moment $\mu = NIA$ where $A$ is the area of the coil. The magnetic field \emph{produced} by a magnetic dipole has magnetic, along the dipole axis, of $B = \frac{\mu_0IR^2}{2(R^2+x^2)^\frac{3}{2}}$ where $\mu = IA = I\pi R^2$ for a single loop $N = 1$.
+\end{remark}
+\begin{note}
+    We cannot apply the Biot-Savart law to a moving charge because the current is not constant at each point. 
+\end{note}
+\begin{definition}[Ferromagnetic]
+    Materials are said to be \emph{ferromagnetic} if no electric current is needed to make a material magnetic.
+\end{definition}
+\begin{definition}[Domains]
+    Microscopic examination reveals that a piece of iron is made up of tiny regions, or \emph{domains} less than 1mm in length or width which behave like a tiny magnet with a north and south pole. In an unmagnetized piece of iron, these domains are arranged randomly and cancel. But, the domains are preferentially aligned in a magnet. Therefore, a metal can be made magnetic by placing it in a strong magnetic field which rotates the domains.
+\end{definition}
+\begin{remark}[Curie Temperature]
+    An iron magnet may remain magnetized for a long time, but dropping it on the floor or striking it with a hammer can jar domains and destroy magnetism, as can heating it. Above a certain \emph{Curie temperature}, the domains become too random and no magnet can be made.
+
+    \emph{Soft} iron loses its magnetism readily when current is turned on or off. However, \emph{hard} iron maintains its magnetism even with no external field.
+\end{remark}
+\begin{remark}[Electron Spin]
+    It is the magnetic field due to electron \emph{spin} that is believed to produce ferromagnetism. It is also thought all magnetic fields are caused by electric currents implying all magnetic field lines form closed loops, unlike electric ones.
+\end{remark}
+
+\section{Applications of Electromagnets}
+
+\begin{definition}[Electromagnet]
+    If a piece of iron is placed inside a solenoid, the magnetic field is increased greatly because the domains of the iron are aligned by the field produced by the current turning the iron into a magnetic. This resulting field is hte sum of the iron's field as well which can be hundreds or thousands of times larger. An iron-core solenoid is called a \emph{electromagnet}.
+
+    A large field requires a large current producing a lot of waste heat, but superconducting material kept below the transition temperature can produce very high magnetic fields with no electric power needed to maintain it. However, energy is required to refrigerate the coils at low temperatures.
+
+    The new field $\vec{B} = \vec{B}_0 + \vec{B}_M$ where $\vec{B}_M$ is the field due to the added magnetic material can replace the constant $\mu_0$ with a new \emph{magnetic permeability $\mu$} characteristic of the material inside the coil. Note this is separate from the magnetic dipole moment $\vec{\mu}$.
+\end{definition}
+\begin{remark}
+    A solenoid can also be modififed to have a moveable rod of iron partially inserted which, when current passes through, works as a switch. 
+\end{remark}
+\begin{definition}[Saturation]
+    At \emph{saturation}, nearly all the domains of a metal are aligned. If the current making it magnetic is now applied in the other direction, the metal's field will approach 0 and then saturation in the other direction. If the current is ever turned off, some domains will stay where they were.
+\end{definition}
+\begin{definition}[Hysteresis]
+    After first reaching saturation and then undergoing a reverse process, the field will never reach 0 net field and 0 field caused by the current in the coil again. Instead, it will loop around this point, following a \emph{hysteresis loop}. In such a cycle, much energy is transformed to thermal energy due to realigning domains. In fact, the energy dissipated is proportional to the area of this $B_0 v. B$ curve.
+\end{definition}
+\begin{definition}[Retentivity]
+    Materials which keep a magnetized iron core despite no current passing through coils have high \emph{retentivity}. For a permanent magnet, these have the highest retention.
+\end{definition}
+
+\section{Para/Diamagnetism}
+
+\begin{definition}[Para/Diamagnetic]
+    All materials are somewhat magnetic. They are either \emph{paramagnetic} or \emph{diagmagnetic} in which case $\mu > \mu_0$ or $\mu < \mu_0$ respectively. This ratio $K_m = \frac{\mu}{\mu_0}$ is called the \emph{relative permeability}. Moreover, $\chi_m = K_m-1$ is called \emph{magnetic susceptibility.}
+\end{definition}
+\begin{remark}
+    Paragmagnetism may occur in materials with a permanent magnetic dipole moment. 
+
+    Conversely, diamagnetic materials ahave no permanent magnetic dipole moment, only an induced one. All materials are somewhat diamagnetic.
+\end{remark}
+\begin{definition}[Magnetization Vector]
+    A useful quantity is the \emph{magnetization vector} $\vec{M} = \frac{\vec{\mu}}{V}$ where $\vec{\mu}$ is the magnetic dipole moment of the sample and $V$ is its volume. Curie's Law states $M = C\frac{B}{T}$ where $C$ is a constant. $M$ will approach some max as $B$ is increased or $T$ is decreased. This corresponds to complete alignment of all permanent magnetic dipoles.    
+\end{definition}

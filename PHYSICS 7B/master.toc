@@ -68,3 +68,9 @@
 \contentsline {section}{\numberline {27.2}Force on an Electric Current in a Magnetic Field}{51}{section.27.2}%
 \contentsline {section}{\numberline {27.3}Lorentz Equation}{52}{section.27.3}%
 \contentsline {section}{\numberline {27.4}Torque on Current Loop \& Magnetic Dipole}{52}{section.27.4}%
+\contentsline {chapter}{\numberline {28}Sources of a Magneetic Field}{55}{chapter.28}%
+\contentsline {section}{\numberline {28.1}Magnetic Field Due to a Straight Wire}{55}{section.28.1}%
+\contentsline {section}{\numberline {28.2}Mangetic Field of a Solenoid and Toroid}{56}{section.28.2}%
+\contentsline {section}{\numberline {28.3}Biot-Savart Law}{56}{section.28.3}%
+\contentsline {section}{\numberline {28.4}Applications of Electromagnets}{57}{section.28.4}%
+\contentsline {section}{\numberline {28.5}Para/Diamagnetism}{58}{section.28.5}%
