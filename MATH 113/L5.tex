@@ -1,0 +1,165 @@
+\chapter{Ideals and Factor Rings}
+
+\section{Homomorphisms and Factor Rings}
+
+\begin{theorem}
+    Let $\phi$ be a homomorphism of a ring $R$ into a ring $R'.$ These qualities follow: (a) If 0 is the additive identity in $R$, then $\phi(0) = 0'$ is the additive identity in $R'.$ (b) If $a \in R$, then $\phi(-a) = -\phi(a)$. (c) If $S$ is a subring of $R$, then $\phi[S]$ is a subgring of $R'$. (d) If $S'$ is a subring of $R'$ then $\phi^{-1}[S']$ is a subring of $R$. Finally, if $R$ has unity 1, then $\phi(1)$ is the unity for $\phi[R]$.
+\end{theorem}
+\begin{theorem}
+    For ring homomorphism $\phi\colon R\to R'$ with kernel $H$, if $a \in R$, then $\phi^{-1}[\phi(a)] = a + H = H + a$ where $a + H = H + a$ is the coset containing $a$ of the commutative additive group $\langle H, + \rangle.$
+\end{theorem}
+\begin{remark}
+    Ring homomorphism $\phi\colon R \to R'$ is injective iff $\Ker(\phi) = \{0\}.$
+\end{remark}
+\begin{theorem}
+    Given ring homomorphism $\phi\colon R \to R'$ with kernel $H$, the additive cosets of $H$ form a ring $R/H$ which have addition and multiplication defined with $$(a + H) + (b + H) = (a + b) + H, \quad (a + H)(b + H) = (ab) + H.$$ Also the map $\mu\colon R/H \to \phi[R]$ defined via $\mu(a+H) = \phi(a)$ is an isomorphism.
+\end{theorem}
+\begin{proof}
+    Addition of cosets is well-defined from group theory. For multiplication, given $h_1, h_2 \in H$, $a + h_1 \in a + H, b + h_2 \in b + H$ say $c = (a+h_1)(b+h_2) = ab + ah_2 + h1_b + h_1h_2$. $c$ will lie in $ab + H$ if $\phi(c) = \phi(ab)$ where $ab +H = \phi^{-1}[\phi(ab)]$. Because $\phi(h) = 0'$ for $h \in H$, we get $\phi(c) = \phi(ab) + \phi(ah_2) + \phi(h_1b) + \phi(h_1h_2) = \phi(ab),$ making multiplication well-defined.
+
+    We are left to show $R/H$ is a ring. This requires associative property for multiplication and the distributive laws which follow from the representatives of $R$. An earlier theorem then shows $\mu$ is well-defined and bijective onto $\phi[R]$ and satisfies the multiplicative property of a homomorphism. Multiplicatively, $\mu[(a+H)(b+H)] = \mu(ab+H) = \phi(a)\phi(b) = \mu(a+H)\mu(b+H).$ So $\mu$ is an isomorphism.
+\end{proof}
+\begin{theorem}
+    Given subring $H$ of ring $R$, multiplication of additive cosets of $H$ is well-defined ($(a+H)(b+H)=ab+H$) if and only if $ah \in H$ and $hb \in H$ for all $a,b \in R, h \in H$.
+\end{theorem}
+\begin{definition}[Ideal]
+    An additive subgroup $N$ of a ring $R$ for which $aN \subseteq N$ and $Nb \subseteq N$ for all $a,b \in R$ is an \emph{ideal}.
+\end{definition}
+\begin{example}
+    $n\Z$ is an ideal for the ring $\Z$.
+\end{example}
+\begin{corollary}
+    Let $N$ be an ideal of ring $R$. Then the additive cosets of $N$ form a ring $R/N$ with binary operations $(a+N) + (b+N) = (a+b) + N$ and $(a+N)(b+N) = ab+N$.
+\end{corollary}
+\begin{definition}[Factor Ring]
+    The ring $R/N$ is the \emph{factor ring}, or \emph{quotient ring of $R$ by $N$}.
+\end{definition}
+\begin{theorem}[Fundamental Homomorphsim Theorem]
+    Given ring homomorphism $\phi\colon R\to R'$ with kernel $N$, $\phi[R]$ is a ring and the map $\mu\colon R/N \to \phi[R]$ given by $\mu(x+N) = \phi(x)$ is an isomorphism. Moreover, if $\gamma\colon R\to R/N$ is the homomorphism given by $\gamma(x) = x+N$, then for all $x \in R$, $\phi(x) = \mu\gamma(x).$
+\end{theorem}
+\begin{proof}
+    This follows from previous theorems.
+\end{proof}
+\begin{example}
+    As an example, take ideal $n\Z$ of $\Z$ so we can take the factor ring $\Z/n\Z$. We therefore have the ring homomorphism $\phi\colon\Z\to\Z_n$ where $\phi(m)$ is the remainder of $m$ mod $n$ such that $\ker(\phi) = n\Z$. This implies $\mu\colon\Z/n\Z\to\Z_n$ where $\mu(m+n\Z)$ is the remainder of $m$ mod $n$ is well-defined and an isomorphism.
+\end{example}
+\begin{remark}
+    An ideal in ring theory is analogous to a normal subgroup in group theory. Both structures allow us to form a factor structure like $R/N$ which give rise to a certain homomorphism.
+
+    Similarly, $\phi[N]$ is an ideal of $\phi[R]$ though not necessarily of $R'$ and if $N'$ is an ideal of either $\phi[R]$ or $R'$ then $\phi^{-1}[N']$ is indeed an ideal of $R$.
+\end{remark}
+
+\section{Prime and Maximal Ideals}
+
+\begin{example}
+    Take the following examples:
+    \begin{enumerate}[label = (\alph*)]
+        \item The ring $\Z_p$ is a field for prime $p$ implying a factor ring ($\Z/p\Z$) of an integral domain may be a field. 
+        \item While $\Z\times\Z$ is not an integral doman as $(0,1)(1,0) = (0,0)$, $N = \{(0,n)\mid n\in\Z\}$ is an ideal of $\Z\times\Z$ where $(\Z\times\Z)/N$ is isomorphic to $\Z$. This implies a factor ring of a ring may be an integral domain even though the original ring isn't.
+        \item The subset $N = \{0,3\} \subset \Z_6$ is an ideal and has factor ring of 3 elements. Thus, even if $R$ is not an integral domain, $R/N$ can still be a field.
+        \item Finally, $\Z$ is an integral domain but $\Z/6\Z$ isn't so a factor ring isn't necessarily 'better.'
+    \end{enumerate}
+\end{example}
+\begin{remark}[Improper/Trivial Ideals]
+    Every nonzero ring has the \emph{improper ideal} $R$ itself and the trivial ideal $\{0\}$. These have factor rings isomorphic to $\{0\}$ and $R$ itself.
+\end{remark}
+\begin{theorem}
+    Given unital ring $R$, if its ideal $N$ contains a unit, then $N = R.$
+\end{theorem}
+\begin{proof}
+    With unit $u \in N,$ the condition $rN \subseteq N$ for all $r \in R$ so taking $r = u^{-1}$ implies $1 = u^{-1}u \in N$ meaning $rN \subseteq N$ for all $r \in R$ so $N=R$.
+\end{proof}
+\begin{corollary}
+    A field contains no proper nontrivial ideals.
+\end{corollary}
+\begin{definition}
+    A \emph{maximal ideal of a ring $R$} is an ideal $M$ different from $R$ such that there is no proper ideal $N$ of $R$ properly containing $M$.
+\end{definition}
+\begin{theorem}
+    Given unital commutative ring $R$, $M$ is a maximal ideal of $R$ if and only if $R/M$ is a field.
+\end{theorem}
+\begin{proof}
+    $\implies\colon$Suppose $M$ is a maximal ideal of $R$. If $R$ is commutative with unity, then $R/M$ is also a nonzero commutative ring with unity. Now, we must show every nonzero element is a unit. Since $M \neq R$ because $M$ maximal, say $(a+M) \in R/M$ with $a \notin M$ so $a+M$ is not the additive identity element of $R/M$. If $a+M$ has no multiplicative inverse, then the set $(R/M)(a+M)$ does not contain $1+M$. It's then clear, $R/M(a+M)$ is an ideal of $R/M$. It's nontrivial because $a \notin M$ and proper because it doesn't contain $1+M$. Thus, if $\gamma\colon R\to R/M$ is the canonical homomorphism, then $\gamma^{-1}[(R/M)(a+M)]$ is a proper ideal of $R$ properly containing $M$ making $M$ not the maximal ideal so $a+M$ must indeed have a multiplicative inverse in $R/M$, making $R/M$ a field.
+
+    $\impliedby\colon$Conversely, if $R/M$ is a field and $N$ is an ideal of $R$, then $M \subset N \subset R$ by canonical homomorphism $\gamma$ of $R$ onto $R/M.$ This implies $\gamma[N]$ is an ideal of $R/M$ not equal to $R/M$ but larger than than $\{0+M\}$. But this contradicts the earlier corollary that $R/M$ contains no proper nontrivial ideals so if $R/M$ is a field, then $M$ must be maximal.
+\end{proof}
+\begin{example}
+    Since $\Z/n\Z$ is isomorphic to $\Z_n$ and $\Z_n$ is a field iff $n$ is prime, the maximal ideals of $\Z$ are precisely the ideals $p\Z$ for prime $p$.
+\end{example}
+\begin{corollary}
+    A commutative unital ring if a field iff it has no proper nontrivial ideals.
+\end{corollary}
+\begin{proof}
+    The earlier corollary shows a field has no proper nontrivial ideals. Conversely, if a commutative ring $R$ with unity has no proper nontrivial ideals, then $\{0\}$ is a maximal ideal and $R/\{0\}$ isomorphic to $R$ must be a field.
+\end{proof}
+\begin{remark}
+    The factor ring $R/N$ will be an integral domain if and only if $(a+N)(b-N) = N$ implies $a+N = N$ or $b+N = N$, i.e. $R/N$ has no divisors of 0. This condition amounts to saying $ab \in N \implies a\in N \vee  b \in N.$
+\end{remark}
+\begin{definition}[Prime Ideal]
+    An ideal $N \neq R$ in a commutative ring $R$ is a \emph{prime ideal} if $ab \in N$ implies either $a\in N$ or $b \in N$ for $a,b \in R$. Note $\{0\}$ is a prime ideal in any integral domain.
+\end{definition}
+\begin{theorem}
+    Let $R$ be a commutative unital ring so $N \neq R$ is an ideal in $R$. Then $R/N$ is an integral domain if and only if $N$ is a prime ideal in $R.$
+\end{theorem}
+\begin{corollary}
+    Every maximal ideal in a commutative ring $R$ with unity is a prime ideal.
+\end{corollary}
+\begin{remark}
+    We can summarize the above with the following: for a commutative unital ring $R$: \begin{enumerate}
+        \item An ideal $M$ or $R$ is maximal iff $R/M$ is a field.
+        \item An ideal $N$ of $R$ is prime iff $R/N$ is an integral domain.
+        \item Every maximal ideal of $R$ is a prime ideal.
+    \end{enumerate}
+\end{remark}
+\begin{theorem}
+    If $R$ is a ring with unity 1, then there exists a homomorphism $\phi\colon\Z\to R$ given by $\phi(n) = n\cdot1$ for $n \in \Z$.
+\end{theorem}
+\begin{proof}
+    $\phi(n+m) = (n+m)\cdot1 = (n\cdot1)+(m\cdot1) = \phi(n)+\phi(m).$ Next, $\phi(nm) = (nm)\cdot1 = (n\cdot1)(m\cdot1)=\phi(n)\phi(m).$
+\end{proof}
+\begin{corollary}
+    If $R$ is a unital ring with characteristic $n>1$, then $R$ contains a subring isomorphic to $\Z_n.$ If $R$ has characteristic 0, then $R$ contains a subring isomorphic to $\Z$.
+\end{corollary}
+\begin{proof}
+    The homomorphism $\phi\colon\Z\to R$ given by $\phi(m) = m\cdot1$ for $m \in \Z$ has kernel of form $s\Z$ ideal in $\Z$ for some $s \in \Z$. If $R$ has characteristic $n>0$, then the kernel of $\phi$ is $n\Z$ with image $\phi[\Z]\leq R$ isomorphic to $\Z/n\Z\sim\Z_n$. If $R$ has characteristic 0, then $m\cdot1 \neq 0$ for all $m \neq 0$ so the kernel of $\phi$ is just $\{0\}$ implying the image of $\phi[\Z]\leq R$ is isomorphic to $\Z$.
+\end{proof}
+\begin{theorem}
+    A field $F$ is either of prime characteristic $p$ and contains a subfield isomorphic to $\Z_p$ or of characteristic 0 and contains a subfield isomorphic to $\Q.$
+\end{theorem}
+\begin{proof}
+    If the characteristic is $F$ is not 0, then the above corollary shows $F$ contains a subring isomorphic to $\Z_n$. hus, $n$ must be a prime $p$ or else $F$ must contain a subring isomorphic to $\Z$ in which case $F$ must contain a field of quotients which must be isomorphic to $\Q$.
+\end{proof}
+\begin{definition}[Prime Fields]
+    The fields $\Z_p, \Q$ are \emph{prime fields}.
+\end{definition}
+\begin{definition}[Principal Ideal]
+    If $R$ is a commutative unital ring and $a \in R$, the ideal $\{ra \mid r \in R\}$ of all multiples of $a$ is the \emph{principal ideal generated by $a$} denoted by $\langle a \rangle.$ An ideal $N$ of $R$ is a \emph{principal ideal} if $N = \langle a \rangle$ for some $a \in R$. 
+\end{definition}
+\begin{example}
+    Every ideal of the ring $\Z$ is of the form $n\Z$ generated by $N$ so every ideal of $\Z$ is a principal ideal.
+\end{example}
+\begin{example}
+    The ideal $\langle x \rangle$ in $F[x]$ consists of all polynomials in $F[x]$ with zero constant terms.
+\end{example}
+\begin{theorem}
+    If $F$ is a field, then every ideal in $F[x]$ is \emph{principal}.
+\end{theorem}
+\begin{proof}
+    For ideal $N$ of $F[x]$, if $N = \{0\}$, then $N = \langle 0 \rangle$. Otherwise, say $g(x)$ is a nonzero element of $N$ of minimal degree. If the degree of $g(x)$ is 0, then $g(x) \in F$ and is a unit so $N = F[x] = \langle 1 \rangle$ so $N$ is principal. If the degree of $g(x) \geq 1$, say $f(x) \in N$ such that $f(x) = g(x)q(x) + r(x)$ where the degree of $r(x)$ is either 0 or less than that of $g(x)$. Thus, $f(x), g(x) \in N$ imply $f(x) - g(x)q(x) = r(x) \in N$ by definition of an ideal such that $g(x)$ is a nonzero element of minimal degree in $N$ so $r(x) = 0$ and finally $f(x) = g(x)q(x)$ so $N=\langle g(x)\rangle.$
+\end{proof}
+\begin{theorem}
+    An ideal $\langle p(x) \rangle \neq \{0\}$ of $F[x]$ is maximal iff $p(x)$ is irreducible over $F.$
+\end{theorem}
+\begin{proof}
+    $\implies\colon$Suppose $\langle p(x) \rangle \neq \{0\}$ is a maximal ideal of $F[x].$ Then $\langle p(x)\rangle \neq F[x]$ so $p(x) \notin F$. Thus, if $p(x) = f(x)g(x)$, because $\langle p(x) \rangle$ is a maximal ideal and hence also a prime ideal, $(f(x)g(x)) \in \langle p(x) \rangle$ implies either $f(x)$ or $g(x) \in \langle p(x) \rangle$ so either $f(x)$ or $g(x)$ have $p(x)$ as a factor. But, the degrees of both $f(x),g(x)$ cannot be less than the degree of $p(x)$ implying $p(x)$ is irreducible over $F$.
+    
+    $\impliedby\colon$Conversely, if $p(x)$ is irreducible over $F$, suppose $N$ is an ideal such that $\langle p(x) \rangle \subseteq N \subseteq F[x].$ If $N$ is a principal ideal, then $N = \langle g(x)\rangle$ for some $g(x) \in N.$ Therefore, $p(x) \in N$ implies $p(x) = g(x)q(x)$ for some $q(x) \in F[x]$. But, $p(x)$ is irreducible so either $g(x), q(x)$ are of degree 0. If $g(x)$ is of degree 0, then it's a nonzero constant and consequently a unit in $F[x]$ so $\langle g(x) \rangle = N = F[x].$ If $q(x)$ is of degree 0, then $q(x) = c \in F$ so $g(x) = (1/c)p(x)$ is in $\langle p(x) \rangle$ meaning $N = \langle p(x) \rangle$ is maximal.
+\end{proof}
+\begin{example}
+    $x^3 + 3x^2 + 2$ is irreducible in $\Z_5[x]$ and therefore $\Z_5[x]/\langle x^3+3x+2 \rangle$ is a field. Similarly, $x^2 -2$ irreducible in $\Q[x]$ so $\Q[x]/\langle x^2-2\rangle$ is a field.
+\end{example}
+\begin{theorem}
+    Let $p(x)$ be an irreducible polynomial in $F[x]$. If $p(x)$ divides $r(x)s(x)$ for $r(x),s(x) \in F[x],$ then either $p(x)$ divides $r(x)$ or $s(x).$
+\end{theorem}
+
+%\section{Gröbner Bases for Ideals}

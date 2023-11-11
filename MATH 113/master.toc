@@ -23,3 +23,8 @@
 \contentsline {section}{\numberline {4.4}The Field of Quotients of an Integral Domain}{34}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Rings of Polynomials}{35}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Factorization of Polynomials over a Field}{37}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Ideals and Factor Rings}{40}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Homomorphisms and Factor Rings}{40}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Prime and Maximal Ideals}{42}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Extension Fields}{46}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction to Extension Fields}{46}{section.6.1}%

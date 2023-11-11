@@ -3,7 +3,7 @@
 \subsection*{Page 124, Problem 1 (Worked with David LaRoche)}
 \vspace{15pt}
 \begin{proof}
-    \vspace{-10pt}\;
+    \vspace{-10pt} (Professor Lott said this level of rigor was "ok")
     \begin{enumerate}[label = (\alph*)]
         \item To triangulate the cylinder, identify the edges of complex $K$ embedded in $\E^3$:
         \begin{center}
@@ -33,7 +33,7 @@
                 \draw[xshift = 5.0cm, dashed] (90:.925) -- (240:.65) -- (300:.65) -- cycle;
             \end{tikzpicture}
         \end{center}
-        This will leave a through-hole in the cylinder which is homeomorphic to the cylinder $S^1 \times [0,1].$
+        This will leave a through-hole in the complex which is homeomorphic to the cylinder $S^1 \times [0,1].$
 
         \item To triangulate the klein bottle, we can simply stitch together 3 such cylinders from above in a `4'-like shape using the following identification:
         \begin{center}
@@ -61,7 +61,7 @@
         \end{center}
         This was derived normally but confirmed precisely by Figure 6.14 in the book.
 
-    \item Now, to triangulate the double torus, we will use the piece-by-piece construction of two punctured pre-identification toruses stitched together via a cylinder, i.e. not exactly but nearly 2 connect sums:
+    \item Now, to triangulate the double torus, we will use the piece-by-piece construction of two punctured pre-identification toruses (each one basically made from a triangle of cylinders) stitched together via one cylinder. This resembles 2 connect sums:
         \begin{center}
             \begin{tikzpicture}
                 \tikzset{->-/.style={decoration={
@@ -122,7 +122,7 @@
                 \end{scope}
             \end{tikzpicture}
         \end{center}
-        Note that the identification arrows on the left torus are separate from the arrows on the right torus. Also, identification arrows from the cylinder's lined triangle onto the torus's missing triangle are left out. As are the ones for the resected and dotted left torus piece. Moreover, note that the left and right toruses will fold out AWAY from the cylinder. This triangulation preserves the hollow inside but a homeomorphism can be easily constructed to shrink this cylinder away leaving just the double torus (not that this is needed, but for visual clarity that it is indeed the double torus).
+        Note that the identification arrows on the left torus are separate from the arrows on the right torus. Also, identification arrows from the connecting cylinder onto the resected piece of each torus are left out of the diagram. Moreover, note that the left and right toruses will fold out AWAY from the cylinder. This triangulation preserves the hollow inside and both holes. A homeomorphism can also be constructed to shrink this cylinder and round the out the sides leaving just the double torus (not that this is needed, but for visual clarity that it's the correct surface).
     \end{enumerate}
 \end{proof}
 
@@ -130,7 +130,7 @@
 \vspace{15pt}
 \begin{proof}
     \vspace{-10pt}
-    Take the set $S = \{\langle f\rangle \mid f\colon |K| \to |L|\}$ for simplicial complexes $K, L$. $K, L$ are finite (per the definition) so suppose, without loss of generality, they have $m,n$ vertices respectively. Further recall that the image of $K$'s vertices under a simplicial map linearly determine the rest of the map. Since each vertex of $K$ must map to some vertex of $L$, there are at most $n^m$ possible maps.
+    Take the set $S = \{\langle f\rangle \mid f\colon |K| \to |L|\}$ for simplicial complexes $K, L$. $K, L$ are finite (per the definition) so suppose, without loss of generality, they have $m,n$ vertices respectively. Further recall that the image of $K$'s vertices under a simplicial map linearly determine the rest of the map. Since each vertex of $K$ must map to some vertex of $L$, there are at most $n^m$ possible simplicial maps.
 
     By the simplicial approximation theorem, any map $f\colon |K| \to |L|$ can be approximated by some simplicial approximation $s \colon |K^j| \to |L|$ for some $j \in \Z^+\cup\{0\}.$ Note $K^j$ has a finite number of vertices so the number of possible simplicial maps, as disccused above, is always finite, namely $n^{(\#\text{ of vertices of $K^j$})}$. This means there are a finite number of possible homotopy classes per $j$-th subdivision of $K$ (even with extensive double-counting). 
     

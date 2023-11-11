@@ -257,13 +257,56 @@
 \begin{theorem}[Division Algorithm for $F\text{[}x\text{]}$]
     Let $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_0$ and $g(x) = b_mx^m + b_{m-1}x^{m-1} + \cdots + b_0$ be two elements of $F[x]$ with nonzero $a_n, b_m \in F, m > 0.$ Then there exist unique polynomials $q(x), r(x)$ in $F[x]$ so $f(x) = g(x)q(x) + r(x)$ where either $r(x) = 0$ or its degree is less than the degree $m$ of $g(x)$.
 \end{theorem}
+\begin{theorem}[Factor Theorem]
+    An element $a \in F$ is a zero of $f(x) \in F[x]$ if and only if $x-a$ is a factor of $f(x)$ in $F[x].$
+\end{theorem}
 \begin{proof}
-    Take the set $S = \{f(x) - g(x)s(x) \mid s(x) \in F[x]\}.$ If $0 \in S$ then there exists some $s(x)$ so $f(x)-g(x)s(x) = 0$ so $f(x) = g(x)s(x).$
-
-
-    COMPLETE PROOF!!!!
-
+    $\implies\colon$Suppose that $f(a) = 0$ for some $a \in F$. Then, there exists a $q(x), r(x) \in F[x]$ so $f(x) = (x-a)q(x) + r(x)$ where $r(x) = 0$ or the degree of $r(x) < 1.$ hus, $r(x)$ must equal $c$ for $c \in F$ such that $f(x) = (x-a)q(x)+c$. Applying the evaluation homomorphism $\phi_a\colon F[x]\to F$, we get $0 = f(a) = 0q(a)+c$ implying $c=0$. Therefore, $x-a \mid f(x).$
+    
+    $\impliedby\colon$ If $x-a$ is a factor of $f(x) \in F[x]$, then clearly, $f(x) = (x-a)q(x)$ for $q(x) \in F[x]$ so $f(a) = (0)q(a) = 0$
 \end{proof}
+\begin{corollary}
+    A nonzero polynomial $f(x) \in F[x]$ of degree $n$ can have at most $n$ zeros in a field $F$.
+\end{corollary}
+\begin{corollary}
+    If $G$ is a finite subgroup of the multiplicative group $(F^*,\cdot)$ for a field $F$, then $G$ is cyclic.
+\end{corollary}
+\begin{proof}
+    If $G$ is a finite abelian group, it must be isomorphic to $\Z_{d_1}\times\cdots\times\Z_{d_r}$ where each $d_i$ is a power of a prime. Thinking of each $\Z_{d_i}$ as a multiplicative cyclic group, take $m = \text{lcm}(d_1,d_2\ldots,d_r)$ so $m \leq d_1d_2\cdots d_r$. Note that, for any $\alpha \in G, \alpha^m = 1$ so every element of $G$ is a zero of $x^m-1$. Because $G$ has $d_1d_2\cdots d_r$ elements yet $x^m-1$ has at most $m$ zeros, $m \geq d_1d_2\cdots d_r$ so $m = d_1d_2\cdots d_r$. Therefore, the primes involved in the prime powers are distinct implying the group $G$ is isomorphic to the cyclic group $Z_m$.
+\end{proof}
+\begin{definition}[Irreducible Polynomial in $F[x\text{]}$]
+    A nonconstant polynomial $f(x) \in F[x]$ is \emph{irreducible over $F$} if $f(x) = g(x)h(x)$ for $g, h \in F[x]$ both of lower degree than $f(x)$. Otherwise $f(x)$ is \emph{reducible over $F$}.
+\end{definition}
+\begin{example}
+    Note that $x^2-2$ has no zeros in $\Q$ and is therefore not irreducible over $\Q$ but clearly has roots in $\R$ over which it is reducible.
+\end{example}
+\begin{theorem}
+    Let $f(x) \in F[x]$ and let $f(x)$ have degree 2 or 3. Then, it is reducible over $F$ if and only if it has a zero in $F$.
+\end{theorem}
+\begin{proof}
+    If $f(x)$ is reducible and therefore $f(x) = g(x)h(x)$, we can say $g(x)$, WLOG, has degree 1. Thus, $g(x)$ is of the form $x-a$ so $g(a) = 0$ so $f(a) = 0$ implying $f(x)$ indeed must have3 a zero in $F$. Conversely, if $f(a) = 0$ for some $a \in F$, then $x-a \mid f(x)$ making $f(x)$ reducible.
+\end{proof}
+\begin{theorem}
+    If $f(x) \in \Z[x]$, then $f(x)$ factors into a product of two polynomial of lower degrees $r,s \in \Q[x]$ if and only if it has such a factorization with polynomials of the same degree $r,s \in \Z[x].$
+\end{theorem}
+\begin{corollary}
+    If $f(x) = x^n + a_{n-1}x^{n-1}+\cdots+a_0 \in \Z[x]$ with $a_0 \neq 0,$ and if $f(x)$ has a zero in $\Q$, then it has a zero $m$ in $\Z$ and $m$ must divide $a_0.$
+\end{corollary}
+\begin{theorem}[Einstein Criterion]
+    Let $p \in \Z$ be a prime. Suppose $f(x) = a_nx^n + \cdots + a_0 \in \Z[x]$ and $a_n \neq 0 (\text{mod } p)$, but $a_i = 0 (\text{mod } p)$ for all $i < n$, with $a_0 \neq 0 (\text{mod } p^2)$. Then $f(x)$ is irreducible over $\Q$.
+\end{theorem}
+\begin{proof}
+    We need only show $f(x)$ does not factor into polynomials of lower degree in $\Z[x]$. If $f(x) = (b_rx^r + \cdots + b_0)(c_sx^s + \cdots + c_0)$ is such a factorization with $b_r, c_s \neq 0$ and $r,s < n$, then $a_0 \neq 0 (\text{mod } p^2)$ implies $b_0, c_0$ are not both congruent to 0 mod $p$. Supposing $b_0 \neq 0 (\text{mod } p)$ but $c_0 = 0 (\text{mod } p)$. This then implies, because $a_n \neq 0 (\text{mod } p)$, that $b_r, c_s \neq 0 (\text{mod } p)$. Because $a_n = b_rc_s$, if $m$ is the smallest value of $K$ so $c_k \neq 0 (\text{mod } p)$, then $a_m = b_0 + b_1c_{m-1} + \cdots + \begin{cases} b_mc_0 & \text{if } r \geq m \\ b_rc_{m-r} & \text{if } r < m\end{cases}.$ The fact neither $b_0$ nor $c_m$ are congruent to 0 modulo $p$ while $c_{m-1},\cdots, c_0$ are all congruent to 0 modulo $p$ implies that $a_m \neq 0 (\text{mod } p)$ so $m = n$. Hence, $s = n$ so $s$ is not less than $n$ against our asssumption meaning this factorization was nontrivial. 
+\end{proof}
+\begin{corollary}[$p^{\text{th}}$ Cyclotomic Polynomial]
+    The polynomial $\Phi_p(x) = \frac{x^p-1}{x-1} = x^{p-1} + x^{p-2} + \cdots + x + 1$ is irreducible over $\Q$ for any prime $p$. $\Phi_p(x)$ is the \emph{$p^{\text{th}}$ cyclotomic polynomial}.
+\end{corollary}
+\begin{theorem}
+    Let $p(x)$ be an irreducible polynomial in $F[x]$ If $p(x)$ divides $r(x)s(x)$ for $r,s \in F[x]$, then either $p(x)$ divides $r(x)$ or $s(x)$
+\end{theorem}
+\begin{theorem}
+    If $F$ is a field, then every nonconstant polynomial $f(x) \in F[x]$ can be factored in $F[x]$ into a product of irreducible polynomials which are unique except for order and for unit (nonzero constant) factors in $F$.
+\end{theorem}
 
 % \section{Noncommutative Examples}
 % \section{Ordered Rings and Fields}
