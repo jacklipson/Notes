@@ -1,76 +1,78 @@
-\contentsline {chapter}{\numberline {0}Syllabus}{3}{chapter.0}%
-\contentsline {section}{\numberline {0.1}Important Info}{3}{section.0.1}%
-\contentsline {subsection}{\numberline {0.1.1}Contacts + Sections}{3}{subsection.0.1.1}%
-\contentsline {subsection}{\numberline {0.1.2}Materials}{3}{subsection.0.1.2}%
-\contentsline {subsection}{\numberline {0.1.3}Assignments}{3}{subsection.0.1.3}%
-\contentsline {chapter}{\numberline {17}Temperature, Thermal Expansion, and the Ideal Gas Law}{4}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Atomic Theory of Matter}{4}{section.17.1}%
-\contentsline {chapter}{\numberline {18}Kinetic Theory of Gases}{8}{chapter.18}%
-\contentsline {section}{\numberline {18.1}The Ideal Gas Law and the Molecular Interpreation of Temperature}{8}{section.18.1}%
-\contentsline {section}{\numberline {18.2}Distribution of Molecular Speeds}{9}{section.18.2}%
-\contentsline {section}{\numberline {18.3}Real Gases and Changes of Phase}{10}{section.18.3}%
-\contentsline {section}{\numberline {18.4}Vapor Pressure and Humidity}{10}{section.18.4}%
-\contentsline {section}{\numberline {18.5}Partial Pressure and Humidity}{11}{section.18.5}%
-\contentsline {section}{\numberline {18.6}van der Waals Equation of State}{11}{section.18.6}%
-\contentsline {section}{\numberline {18.7}Mean Free Path}{12}{section.18.7}%
-\contentsline {section}{\numberline {18.8}Diffusion}{12}{section.18.8}%
-\contentsline {chapter}{\numberline {19}Heat and the First Law of Thermodynamics}{14}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Heat as Energy Transfer}{14}{section.19.1}%
-\contentsline {section}{\numberline {19.2}Specific Heat}{15}{section.19.2}%
-\contentsline {section}{\numberline {19.3}Latent Heat}{15}{section.19.3}%
-\contentsline {section}{\numberline {19.4}The First Law of Thermodynamics}{16}{section.19.4}%
-\contentsline {section}{\numberline {19.5}Molar Specific Heats for Gases}{17}{section.19.5}%
-\contentsline {section}{\numberline {19.6}Adiabatic Expansion of a Gas}{19}{section.19.6}%
-\contentsline {section}{\numberline {19.7}Heat Transfer}{19}{section.19.7}%
-\contentsline {chapter}{\numberline {20}Second Law of Thermodynamics}{22}{chapter.20}%
-\contentsline {section}{\numberline {20.1}Introduction}{22}{section.20.1}%
-\contentsline {section}{\numberline {20.2}Heat Engines}{22}{section.20.2}%
-\contentsline {section}{\numberline {20.3}Refrigerators, Air Conditioners, and Heat Pumps}{24}{section.20.3}%
-\contentsline {section}{\numberline {20.4}Entropy and the Second Law of Thermodynamics}{26}{section.20.4}%
-\contentsline {section}{\numberline {20.5}Order to Disorder}{26}{section.20.5}%
-\contentsline {section}{\numberline {20.6}Unavailability of Energy; Heat Death}{26}{section.20.6}%
-\contentsline {section}{\numberline {20.7}Statistical Interpretation of Entropy}{27}{section.20.7}%
-\contentsline {chapter}{\numberline {21}Electric Charge and Electric Field}{29}{chapter.21}%
-\contentsline {section}{\numberline {21.1}Static Electricity, Electric Charge and Conservation}{29}{section.21.1}%
-\contentsline {section}{\numberline {21.2}Induced Charge}{29}{section.21.2}%
-\contentsline {section}{\numberline {21.3}Coulomb's Law}{30}{section.21.3}%
-\contentsline {section}{\numberline {21.4}Electric Field}{31}{section.21.4}%
-\contentsline {section}{\numberline {21.5}Field Lines}{32}{section.21.5}%
-\contentsline {section}{\numberline {21.6}Electric Fields and Conductors}{33}{section.21.6}%
-\contentsline {section}{\numberline {21.7}Electric Dipoles}{33}{section.21.7}%
-\contentsline {chapter}{\numberline {22}Gauss's Law}{34}{chapter.22}%
-\contentsline {section}{\numberline {22.1}Electric Flux}{34}{section.22.1}%
-\contentsline {chapter}{\numberline {23}Electric Potential}{36}{chapter.23}%
-\contentsline {section}{\numberline {23.1}Electric Potential Energy}{36}{section.23.1}%
-\contentsline {section}{\numberline {23.2}Electric Potential and Electric Field}{36}{section.23.2}%
-\contentsline {section}{\numberline {23.3}Equipotential Lines and Surfaces}{37}{section.23.3}%
-\contentsline {chapter}{\numberline {24}Capacitance, Dielectrics, Electric Energy Storage}{39}{chapter.24}%
-\contentsline {section}{\numberline {24.1}Capacitors}{39}{section.24.1}%
-\contentsline {section}{\numberline {24.2}Capacitors in Series and Parallel}{40}{section.24.2}%
-\contentsline {section}{\numberline {24.3}Storage of Electric Energy}{40}{section.24.3}%
-\contentsline {chapter}{\numberline {25}Electric Current and Resistance}{42}{chapter.25}%
-\contentsline {section}{\numberline {25.1}Electric Cells and Batteries}{42}{section.25.1}%
-\contentsline {section}{\numberline {25.2}Electric Current}{42}{section.25.2}%
-\contentsline {section}{\numberline {25.3}Ohm's Law}{43}{section.25.3}%
-\contentsline {section}{\numberline {25.4}Electric Power}{44}{section.25.4}%
-\contentsline {section}{\numberline {25.5}Alternating Current}{44}{section.25.5}%
-\contentsline {section}{\numberline {25.6}Microscopic View of Electric Current}{45}{section.25.6}%
-\contentsline {section}{\numberline {25.7}Superconductivity}{45}{section.25.7}%
-\contentsline {chapter}{\numberline {26}DC Circuits}{47}{chapter.26}%
-\contentsline {section}{\numberline {26.1}EMF and Terminal Voltage}{47}{section.26.1}%
-\contentsline {section}{\numberline {26.2}Resistors in Series/Parallel}{47}{section.26.2}%
-\contentsline {section}{\numberline {26.3}Kirchhoff's Rules}{48}{section.26.3}%
-\contentsline {section}{\numberline {26.4}Charging a Battery}{48}{section.26.4}%
-\contentsline {section}{\numberline {26.5}RC Circuits}{49}{section.26.5}%
-\contentsline {section}{\numberline {26.6}Ammeters and Voltmeters}{50}{section.26.6}%
-\contentsline {chapter}{\numberline {27}Magnetism}{51}{chapter.27}%
-\contentsline {section}{\numberline {27.1}Magnets and Magnetic Fields}{51}{section.27.1}%
-\contentsline {section}{\numberline {27.2}Force on an Electric Current in a Magnetic Field}{51}{section.27.2}%
-\contentsline {section}{\numberline {27.3}Lorentz Equation}{52}{section.27.3}%
-\contentsline {section}{\numberline {27.4}Torque on Current Loop \& Magnetic Dipole}{52}{section.27.4}%
-\contentsline {chapter}{\numberline {28}Sources of a Magneetic Field}{55}{chapter.28}%
-\contentsline {section}{\numberline {28.1}Magnetic Field Due to a Straight Wire}{55}{section.28.1}%
-\contentsline {section}{\numberline {28.2}Mangetic Field of a Solenoid and Toroid}{56}{section.28.2}%
-\contentsline {section}{\numberline {28.3}Biot-Savart Law}{56}{section.28.3}%
-\contentsline {section}{\numberline {28.4}Applications of Electromagnets}{57}{section.28.4}%
-\contentsline {section}{\numberline {28.5}Para/Diamagnetism}{58}{section.28.5}%
+\contentsline {chapter}{\numberline {0}Syllabus}{4}{chapter.0}%
+\contentsline {section}{\numberline {0.1}Important Info}{4}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}Contacts + Sections}{4}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {0.1.2}Materials}{4}{subsection.0.1.2}%
+\contentsline {subsection}{\numberline {0.1.3}Assignments}{4}{subsection.0.1.3}%
+\contentsline {chapter}{\numberline {17}Temperature, Thermal Expansion, and the Ideal Gas Law}{5}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Atomic Theory of Matter}{5}{section.17.1}%
+\contentsline {chapter}{\numberline {18}Kinetic Theory of Gases}{9}{chapter.18}%
+\contentsline {section}{\numberline {18.1}The Ideal Gas Law and the Molecular Interpreation of Temperature}{9}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Distribution of Molecular Speeds}{10}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Real Gases and Changes of Phase}{11}{section.18.3}%
+\contentsline {section}{\numberline {18.4}Vapor Pressure and Humidity}{11}{section.18.4}%
+\contentsline {section}{\numberline {18.5}Partial Pressure and Humidity}{12}{section.18.5}%
+\contentsline {section}{\numberline {18.6}van der Waals Equation of State}{12}{section.18.6}%
+\contentsline {section}{\numberline {18.7}Mean Free Path}{13}{section.18.7}%
+\contentsline {section}{\numberline {18.8}Diffusion}{13}{section.18.8}%
+\contentsline {chapter}{\numberline {19}Heat and the First Law of Thermodynamics}{15}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Heat as Energy Transfer}{15}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Specific Heat}{16}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Latent Heat}{16}{section.19.3}%
+\contentsline {section}{\numberline {19.4}The First Law of Thermodynamics}{17}{section.19.4}%
+\contentsline {section}{\numberline {19.5}Molar Specific Heats for Gases}{18}{section.19.5}%
+\contentsline {section}{\numberline {19.6}Adiabatic Expansion of a Gas}{20}{section.19.6}%
+\contentsline {section}{\numberline {19.7}Heat Transfer}{20}{section.19.7}%
+\contentsline {chapter}{\numberline {20}Second Law of Thermodynamics}{23}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Introduction}{23}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Heat Engines}{23}{section.20.2}%
+\contentsline {section}{\numberline {20.3}Refrigerators, Air Conditioners, and Heat Pumps}{25}{section.20.3}%
+\contentsline {section}{\numberline {20.4}Entropy and the Second Law of Thermodynamics}{27}{section.20.4}%
+\contentsline {section}{\numberline {20.5}Order to Disorder}{27}{section.20.5}%
+\contentsline {section}{\numberline {20.6}Unavailability of Energy; Heat Death}{27}{section.20.6}%
+\contentsline {section}{\numberline {20.7}Statistical Interpretation of Entropy}{28}{section.20.7}%
+\contentsline {chapter}{\numberline {21}Electric Charge and Electric Field}{30}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Static Electricity, Electric Charge and Conservation}{30}{section.21.1}%
+\contentsline {section}{\numberline {21.2}Induced Charge}{30}{section.21.2}%
+\contentsline {section}{\numberline {21.3}Coulomb's Law}{31}{section.21.3}%
+\contentsline {section}{\numberline {21.4}Electric Field}{32}{section.21.4}%
+\contentsline {section}{\numberline {21.5}Field Lines}{33}{section.21.5}%
+\contentsline {section}{\numberline {21.6}Electric Fields and Conductors}{34}{section.21.6}%
+\contentsline {section}{\numberline {21.7}Electric Dipoles}{34}{section.21.7}%
+\contentsline {chapter}{\numberline {22}Gauss's Law}{35}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Electric Flux}{35}{section.22.1}%
+\contentsline {chapter}{\numberline {23}Electric Potential}{37}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Electric Potential Energy}{37}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Electric Potential and Electric Field}{37}{section.23.2}%
+\contentsline {section}{\numberline {23.3}Equipotential Lines and Surfaces}{38}{section.23.3}%
+\contentsline {chapter}{\numberline {24}Capacitance, Dielectrics, Electric Energy Storage}{40}{chapter.24}%
+\contentsline {section}{\numberline {24.1}Capacitors}{40}{section.24.1}%
+\contentsline {section}{\numberline {24.2}Capacitors in Series and Parallel}{41}{section.24.2}%
+\contentsline {section}{\numberline {24.3}Storage of Electric Energy}{41}{section.24.3}%
+\contentsline {chapter}{\numberline {25}Electric Current and Resistance}{43}{chapter.25}%
+\contentsline {section}{\numberline {25.1}Electric Cells and Batteries}{43}{section.25.1}%
+\contentsline {section}{\numberline {25.2}Electric Current}{43}{section.25.2}%
+\contentsline {section}{\numberline {25.3}Ohm's Law}{44}{section.25.3}%
+\contentsline {section}{\numberline {25.4}Electric Power}{45}{section.25.4}%
+\contentsline {section}{\numberline {25.5}Alternating Current}{45}{section.25.5}%
+\contentsline {section}{\numberline {25.6}Microscopic View of Electric Current}{46}{section.25.6}%
+\contentsline {section}{\numberline {25.7}Superconductivity}{46}{section.25.7}%
+\contentsline {chapter}{\numberline {26}DC Circuits}{48}{chapter.26}%
+\contentsline {section}{\numberline {26.1}EMF and Terminal Voltage}{48}{section.26.1}%
+\contentsline {section}{\numberline {26.2}Resistors in Series/Parallel}{48}{section.26.2}%
+\contentsline {section}{\numberline {26.3}Kirchhoff's Rules}{49}{section.26.3}%
+\contentsline {section}{\numberline {26.4}Charging a Battery}{49}{section.26.4}%
+\contentsline {section}{\numberline {26.5}RC Circuits}{50}{section.26.5}%
+\contentsline {section}{\numberline {26.6}Ammeters and Voltmeters}{51}{section.26.6}%
+\contentsline {chapter}{\numberline {27}Magnetism}{52}{chapter.27}%
+\contentsline {section}{\numberline {27.1}Magnets and Magnetic Fields}{52}{section.27.1}%
+\contentsline {section}{\numberline {27.2}Force on an Electric Current in a Magnetic Field}{52}{section.27.2}%
+\contentsline {section}{\numberline {27.3}Lorentz Equation}{53}{section.27.3}%
+\contentsline {section}{\numberline {27.4}Torque on Current Loop \& Magnetic Dipole}{53}{section.27.4}%
+\contentsline {chapter}{\numberline {28}Sources of a Magneetic Field}{56}{chapter.28}%
+\contentsline {section}{\numberline {28.1}Magnetic Field Due to a Straight Wire}{56}{section.28.1}%
+\contentsline {section}{\numberline {28.2}Mangetic Field of a Solenoid and Toroid}{57}{section.28.2}%
+\contentsline {section}{\numberline {28.3}Biot-Savart Law}{57}{section.28.3}%
+\contentsline {section}{\numberline {28.4}Applications of Electromagnets}{58}{section.28.4}%
+\contentsline {section}{\numberline {28.5}Para/Diamagnetism}{59}{section.28.5}%
+\contentsline {chapter}{\numberline {29}Electromagnetic Introduction and Faraday's Law}{61}{chapter.29}%
+\contentsline {section}{\numberline {29.1}Induced EMF}{61}{section.29.1}%
