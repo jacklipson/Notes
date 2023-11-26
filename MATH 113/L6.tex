@@ -69,7 +69,153 @@
     The polynomial $p(x) = x^2+x+1$ in $\Z_2[x]$ is irreducible over $\Z_2$ since neither 0 nor 1 is a zero however we know there is an extension field $E$ containg a zero $\alpha$ of $x^2+x+1$. Specifically, $\Z_2(\alpha)$ has elements $0 + 0\alpha, 1 + 0\alpha, 0 + 1\alpha, 1 + 1\alpha$ giving us a new finite field of 4 elements. This gives us $(1+\alpha)^2 = \alpha$ because $\alpha^2 = \alpha + 1$. Thus, $\R[x]/\langle x^2 + 1 \rangle$ is isomorphic to the field $\C$ because we can view $\R[x] / \langle x^2 + 1 \rangle$ as an extension field of $\R = \R(\alpha)$. Because $\alpha^2 + 1 =0$ for some, we see $\alpha$ plays the role if $i \in \C$ and $a + b\alpha$ plays the role of $a + bi$ making $\R(\alpha) \sim \C$.
 \end{example}
 
+\section{Vector Spaces}
 
-% \section{Vector Spaces}
+\begin{definition}[Vector Space Over $F$]
+    Given a field $F$, a \emph{vector space over $F$} ior $F$-\emph{vector space} is an abelian group $V$ under addition together with scalar multiplication of each element of $F$ on the left such that, for all $a,b \in F$ and $\alpha, \beta \in V$, the following are satisfied:
+    \begin{enumerate}[label = ($\mathscr{V}_{\arabic*}$)]
+        \item $a\alpha \in V$.
+        \item $a(b\alpha) = (ab)\alpha$.
+        \item $(a+b)\alpha = (a\alpha) + (b\alpha)$.
+        \item $a(\alpha+\beta) = (a\alpha + a\beta)$.
+        \item $1\alpha = \alpha$.
+    \end{enumerate}
+    We call the elements of $V$ \emph{vectors} and the elements of $F$ \emph{scalars}. When only discussing one field $F$, we simply say \emph{vector space}.
+\end{definition}
+\begin{theorem}
+    If $V$ is a vector space over $F$, then $0\alpha = 0, a0 = 0,$ and $(-a)\alpha = a(-\alpha) = -(a\alpha)$ for all $a \in F, \alpha \in V$.
+\end{theorem}
+\begin{proof}
+    Proofs identical to before, i.e. $(0\alpha) = (0+0)\alpha = 0\alpha + 0\alpha$ and $a0 = a(0+0) = a0 + a0$ and $0 = a0 = a(\alpha + (-\alpha)) = a\alpha + a(-\alpha)$.
+\end{proof}
+\begin{definition}[Span]
+    Given $V$ vector space over $F$, the vectors in a subset $S = \{\alpha_i\mid i \in I\}$ of $V$ \emph{span} $V$ if for every $\beta \in V$, $\beta = a_1\alpha_{i_1} + \cdots + a_n\alpha_{i_n}$ for $a_j \in F$, $a_{i_j} \in S$. This is called a \emph{linear combination of $a{i_j}$}.
+\end{definition}
+\begin{definition}[Finite Dimensional]
+    A vector space $V$ over a field $F$ is \emph{finite dimensional} if there is a \emph{finite} subset of $V$ whose vectors span $V$.
+\end{definition}
+\begin{example}
+    $F[x]$ over $F$ is not finite dimensional because polynomials of arbitrarily large degree cannot be linear combinations of elements of any finite set of polynomials.
+\end{example}
+\begin{definition}[Linearly Independent]
+    We say a set of vectors in a subset $S = \{a_i \mid i \in I\}$ of a vector space $V$ over a field $F$ are \emph{linearly independent over $F$} if any linear combination of them is 0 iff each coefficient is 0. Otherwise, they are \emph{linearly dependent over $F$}.
+\end{definition}
+\begin{definition}[Basis]
+    For a vector space $V$ over a field $F$, the vectors in a subset $B = \{\beta_i \mid i \in I\}$ of $V$ form a \emph{basis for $V$ over $F$} if they span $V$ and are linearly independent.  
+\end{definition}
+\begin{theorem}
+    In a finite-dimensional vector space, every finite set of vectors spanning the space contains a subset that is a basis.
+\end{theorem}
+\begin{corollary}
+    A finite-dimensional vector space has a finite basis.
+\end{corollary}
+\begin{theorem}
+    For a finite set $S = \{\alpha_1, \cdots, \alpha_r\}$ of linearly independent vectors of a finite-dimensional vector space $V$ over a field $F$, $S$ can be extended to a basis for $V$ over $F$. 
+\end{theorem}
+\begin{corollary}
+    Any two bases of a finite-dimensional vector space $V$ over $F$ have the same number of elements.
+\end{corollary}
+\begin{definition}[Dimension of $V$ Over $F$]
+    If $V$ is a finite-dimensional vector space over a field $F$, the number of elements in a basis is the \emph{dimension of $V$ over $F$}.
+\end{definition}
+\begin{example}
+    Given an extension field $E$ of a field $F$ and $\alpha \in E$, if $\alpha$ is algebraic over $F$ and $\text{deg}(\alpha, F) = n$, then the dimension of $F(\alpha)$ as a vector space over $F$ is $n$.
+\end{example}
+\begin{theorem}
+    For an extension field $E$ of $F$ with $\alpha \in E$ algebraic over $F$, if $\text{deg}(\alpha, F) = n$, then $F(\alpha)$ is an n-dimensional vector space over $F$ with basis $\{1, \alpha, \cdots, \alpha^{n-1}\}$. Furthermore, every element $\beta$ of $F(\alpha)$ is algebraic over $F$ and $\text{deg}(\beta, F) \leq \text{deg}(\alpha, F)$.
+\end{theorem}
 
-% \section{Algebraic Extensions}
+\section{Algebraic Extensions}
+
+\begin{definition}[Algebraic Extension of $F$]
+    An extension field $E$ of a field $F$ is an \emph{algebraic extension of $F$} if every element in $E$ is algebraic over $F$.
+\end{definition}
+\begin{definition}[Finite Extension of Degree $n$ Over $F$]
+    If an extension field $E$ of a field $F$ is of finite dimension $n$ as a vector space over $F$, then $E$ is a \emph{finite extension of degree $n$ over $F$} denoted $[E:F]$.
+\end{definition}
+\begin{theorem}
+    A finite extension field $E$ of a field $F$ is an algebrqaic extension of $F$.
+\end{theorem}
+\begin{proof}
+    If $[E:F] = n$, then $1,\alpha, \ldots, \alpha^n$ cannot be linearly independent elements for $\alpha \in E$. Thus, there exists some nonzero solution to their linear combination implying $\alpha$ is algebraic over $F$ for any such $\alpha$.
+\end{proof}
+\begin{theorem}
+    If $E$ is a finite extension field of a field $F$ and $K$ is a finite extension field of $E$, then $K$ is a finite extension field of $F$. And, in fact, $$[K:F] = [K:E][E:F].$$
+\end{theorem}
+\begin{corollary}
+    If $F_i$ is a field and $F_{i+1}$ is a finite extension of $F_i$, then $F_r$ is a finite extension of $F_1$ for $i=1,\ldots,r$ and $[F_r:F_1]=[F_r:F_{r-1}]\cdots[F_2:F_1]$.
+\end{corollary}
+\begin{corollary}
+    If $E$ is an extension field of $F$ and $\alpha \in E$ is algebraic over $F$, and $\beta \in F(\alpha)$ then $\text{deg}(\beta, F)$ divides $\text{deg}(\alpha, F)$.
+\end{corollary}
+\begin{definition}[Adjoining to $F$]
+    We obtain the field $F(\alpha_1, \ldots, \alpha_n)$ from the field $F$ by adjoining to $F$ the elements $\alpha_i \in E$ for extension field $E$ of field $F$. This is the smallest field containing all $\alpha_i$ for $i = 1,\ldots, n$.
+\end{definition}
+\begin{example}
+    $\{1,\sqrt{2}\}$ is a basis for $\Q(\sqrt{2})$ over $\Q$. Note that $x^4-10x^2+1$ has root $\sqrt{2}+\sqrt{3}$. This is irreducible in $\Q[x]$ so $[\Q(\sqrt{2}+\sqrt{3}):\Q] = 4$ but $(\sqrt{2}+\sqrt{3}) \notin \Q(\sqrt{2})$ so $\sqrt{3} \notin \Q(\sqrt{2})$ so $\{1,\sqrt{3}\}$ is a basis for $\Q(\sqrt{2}, \sqrt{3})$ over $\Q(\sqrt{2})$. Thus, by the previous theoreom, $\{1,\sqrt{2},\sqrt{3},\sqrt{6}\}$ is a basis for $\Q(\sqrt{2},\sqrt{3})$ over $\Q$.
+\end{example}
+\begin{example}
+    $2^{1/2} \notin \Q(2^{1/3})$ because $\text{deg}(2^{1/2},\Q) =2$ and 2 is not a divisor of $3 = \text{deg}(2^{1/3},\Q)$.
+\end{example}
+\begin{theorem}
+    If $E$ is an algebraic extension of a field $F$, then there exists a finite number of elements $\alpha_1, \ldots \alpha_n \in E$ so $E = F(\alpha_1, \ldots, \alpha_n)$ if and only if $E$ is a finite-dimensional vector space over $F$ if and only if $E$ is a finite extension of $F$.
+\end{theorem}
+\begin{proof}
+    Suppose $E  =F(\alpha_1, \ldots \alpha_n)$. Thus, $E$ is an algebraic extension of $F$ and each $\alpha_i$ is algebraic over $F$ and thus over any extension field of $F$ in $E$ implying $F(\alpha_1)$ is algebraic over $F$ and in general $F(\alpha_1, \ldots, \alpha_j)$ is algebraic over $F(\alpha_1, \ldots, \alpha_{j-1})$. $F(\alpha_1, \ldots, F_n)$ shows $E$ is a finite extension of $F$. Conversely, if $E$ is a finite algebraic extension of $F$, then if $[E:F] = 1$, $E = F(1) = F$. If $E \neq F$, then $\alpha_1 \in E-F$ so $[F(\alpha_1):F] >1$. If $F(\alpha_1) = E$ we are done; otherwise, $\alpha_2 \in E-F(\alpha_1)$. Continuiing this process, because $[E:F]$ is finite, we must arrive at some $\alpha_n$ such that $F(\alpha_1, \ldots, \alpha_n) = E$.
+\end{proof}
+\begin{remark}
+    We have not yet shown that if $E$ is an extension field of a field $F$ and $\alpha, \beta \in E$ are algebraic over $F$, then so are $\alpha+\beta, \alpha\beta, \alpha - \beta, \alpha/\beta (\beta \neq 0)$.
+\end{remark}
+\begin{definition}[Algebraic Closure of $F$ in $E$]
+    For extension field $E$ of $F$, $\bar{F_E}  =\{\alpha \in E \mid \alpha \text{ is algebraic over }F\}$ is a subfield of $E$ and called the \emph{algebraic closure of $F$ in $E$}.
+\end{definition}
+\begin{proof}
+    Take $\alpha, \beta \in \bar{F_E}$. By the last theorem, $F(\alpha, \beta)$ is a finite extension of $F$ so every element $F(\alpha, \beta)$ is algebraic over $F$ and therefore $F(\alpha, \beta) \subseteq \bar{F_E}$ so $\bar{F_E}$ is a subfield of $E$ containing $\alpha + \beta$, etc.
+\end{proof}
+\begin{corollary}
+    The set of all algebraic numbers forms a field.
+\end{corollary}
+\begin{definition}[Algebraically Closed]
+    A field $F$ is \emph{algebraically closed} if every nonconstant polynomial in $F[x]$ has a zero in $F$.
+\end{definition}
+\begin{theorem}
+    A field $F$ is algebraically closed if and only if every nonconstant polynomial in $F[x]$ factors into linear factors in $F[x]$
+\end{theorem}
+\begin{proof}
+    If $F$ is algebraically closed, let $f(x)$ be a nonstnt polynomial in $F[x]$ with a zero $a \in F$. Therefore, $x-a$ is a factor so $f(x) = (x-a)g(x)$. If $g(x)$ is nonconstant, it also must have a zero $b \in F$ and we have $f(x) = (x-a)(x-b)h(x)$. We can continue this to get linear factors of $f(x)$.
+
+    Conversely, if every nonconstant polynomial of $F[x]$ has a factorization into linear factors, then if $ax-b$ is a linear factor of $f(x)$ then $b/a$ is a zer of $f(x)$ so $F$ is algebraically closed.
+\end{proof}
+\begin{corollary}
+    An algebraically closed field $F$ has no proper algebraic extensions, i.e. no algebraic extensions $E$ with $F<E$.
+\end{corollary}
+\begin{theorem}
+    Every field $F$ has an algrebaic closure.
+\end{theorem}
+\begin{theorem}[Fundamental Theorem of Algebra]
+    The field $\C$ is an algebraically closed field.    
+\end{theorem}
+\begin{proof}
+    Let the polynomial $f(z) \in \C[z]$ have no zero in $\C$ such that $1/f(z)$ gives a function that is analytic everywhere. Therefore, if $f \notin \C$, then $\lim\limits_{|z|\to\infty}|f(z)| = \infty$ so $\lim\limits_{|z|\to\infty}|1/f(z)| = 0$ implying $1/f$ must be bounded in the plane so by Liouville's theorem, $1/f$ is constant so $f$ is constant. Thus, any nonconstant polynomial in $\C[z]$ must have a zero in $\C$ so $\C$ is algebraically closed.
+\end{proof}
+\begin{definition}[Poset]
+    A \emph{partial ordering of a set $S$} is given by an equivalence relation defined for only certain ordered pairs of elements. A subset $T$ of a poset is a \emph{chain} if any two elements of $T$ are comparable.
+\end{definition}
+\begin{lemma}[Zorn's Lemma]
+    If $S$ is a partially ordered set such that every chain in $S$ has an upper bound in $S$, then $S$ has at least one maximal element.
+\end{lemma}
+\begin{remark}
+    This is equivalent to the axiom of choice.
+\end{remark}
+\begin{theorem}
+    Every field $F$ has an algebraic closure $\bar{F}$.
+\end{theorem}
+\begin{proof}
+    It can be shown in set theory that given any set, there exists a set with \emph{strictly more elements}. Take a set $A = \{\omega_{f,i}\mid f\in F[x];i = 0, \ldots, (\text{degree } f)\}$ that has an element for every possible zero of any $f(x) \in F[x]$ and $\Omega$ be a set with strictly more elements. We can assume $F \subset \Omega$ even if by $\Omega' = F \cup \Omega$. Thus, if $E$ is any extension field of $F$ and $\gamma \in E$ is a zero $f(x) \in F[x]$ for $\gamma \notin F$ and $\text{deg}(\gamma, F) = n$, then renaming $\gamma$ by $\omega$ for $\omega \in \Omega - F$ and renaming elements $a_0 + \ldots + a_{n-1}\gamma^{n-1}$ of $F(\gamma)$ by distinct elements of $\Omega$ and $a_i$ over $F$, we can consider $F(\gamma)$ as an algebraic extension field $F(\omega)$ of $F$ with $F(\omega) \subset \Omega$ and $f(\omega) = 0$. This set has enough elements to form $F(\omega)$ since $\Omega$ has enough elements to provide $n$ different zeros for each element of degree $n$ in any subset of $F[x]$.
+
+    All algebraic extension fields $E_j \subseteq \Omega$ of $F$ form a set $S$ that is partially ordered under subfield inclusion $\leq$. One element of which is $F$ itself.
+
+    Given a chain $T$ in $S$ and $W$ the union of all elements, we can make $W$ into a field. The field axioms follow since the operations were defined in terms of addition and multiplication in fields. If we can show $W$ is algebraic over $F$, then $W \in S$ will be an upper bound for $T$. But, if $\alpha \in W$, then $\alpha \in E_j$ for some $E_j \in T$ so $\alpha$ is algebraic over $F$. Hence $W$ is an algebraic extension of $F$ and an upper bound of $T$. 
+
+    Now, by Zorn's lemma, there is a maximal element $\bar{F}$ of $S$. Let $f(x) \in \bar{F}[x]$ where $f(x) \notin\bar{F}$. If $f(x)$ has no zero in $\bar{F}$, then because $\Omega$ has many more elements than $\bar{F}$, we can take $\omega \in \Omega - \bar{F}$ and form a field $\bar{F}(\omega) \subseteq \Omega$ with $\omega$ a zero of $f(x)$ as in the first part of this proof. Thus, we can take $\beta \in \bar{F}(\omega)$ so $\beta$ is a zero of the polynomial $g(x) = \alpha_0 + \cdots + \alpha_nx^n$ in $\bar{F}[x], \alpha_i \in \bar{F}$ implying $\alpha_i$ is algebraic over $F$. Thus, $F(\alpha_0, \ldots, \alpha_n)$ is a finite extension of $F$ and since $\beta$ is algebraic over $F(\alpha_0, \ldots, \alpha_n)$, $F(\alpha_0, \ldots, \alpha_n, \beta)$ must be a finite extension of it where $\beta$ is algebraic over $F$. Thus, $\bar{F}(\omega) \in S$, and $\bar{F} < \bar{F}(\omega)$ contradicting the choice of $\bar{F}$ as maximal so $f(x)$ must have some zero in $\bar{F}$ implying $\bar{F}$ is algebraically closed.
+\end{proof}

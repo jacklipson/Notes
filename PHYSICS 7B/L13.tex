@@ -2,5 +2,108 @@
 
 \section{Induced EMF}
 
-\begin{definition}
+\begin{remark}
+    Faraday performed an experiment where a battery connected to a wire of current wrapping around a ring-shaped iron core. A separate wire was coiled around the other side of the ring and connected to a galvonemeter.
+
+    Only the switching on and off of the battery produced a measurement, and in opposite directions respectively.
+\end{remark}
+\begin{definition}[Electromagnetic Induction]
+    He concluded, then, that although a constant magnetic field produces no current in a conductor, a \emph{changing} magnetic field does. The current produced is called an \emph{induced current} as if a source of emf existed in the second coil. Hence, we say \emph{a changing magnetic field induces an emf}. This phenomena is called \emph{electromagnetic induction}.
 \end{definition}
+
+\section{Farady's Law of Induction}
+
+\begin{remark}
+    Farady found the more rapid change in a magnetic field, the greater the induced emf. It also depended on the area $A$ of the circuit loop and angle made with the field $\vec{B}$. In fact, it's proportional to the rate of change of the magnetic flux $\Phi_B$ passing through the loop where $$\Phi_B = B_\perp A = \vec{B} \cdot \vec{A}. \quad \text{[$\vec{B}$ uniform]}$$ Or if the field isn't uniform then $$\Phi_B = \int\vec{B}\cdot d\vec{A}.$$ The unit of magnetic flux  is 1 \emph{weber}, or \qty{1}{Wb}=\qty{1}{T\cdot m^2}
+\end{remark}
+\begin{definition}[Faraday's Law of Induction]
+    Faraday found that the emf $\mathscr{E}$ induced in a circuit is equal to: $$\mathscr{E} = -N\frac{d\Phi_B}{dt}. \quad\text{[N loops]}$$
+\end{definition}
+\begin{remark}[Lenz's Law]
+    The minus sign in Faraday's Law reminds us that the current produced by an induced emf creates a magnetic field \emph{opposing} the original change in magnetic flux.
+\end{remark}
+\begin{remark}
+    Note that there are 2 distinct magnetic fields: (1) the changing magnetic field induces a current and (2) the induced current produces a second magnetic field opposite to the change in the first.
+\end{remark}
+\begin{note}
+    This is valid even if no current flows.
+\end{note}
+
+\section{EMF Induced in a Moving Conductor}
+
+\begin{remark}
+    Suppose a uniform magnetic field $\vec{B}$ is perpendicular to the area bounded by a $U$-shaped conductor and a movable rod resting on it. If the rod is made to move at a speed $v$ to the right, it will travel $dx = v dt$ in a time $dt$ increasing the area of the loop by $dA = \ell dx = \ell vdt$ such that $\mathscr{E} = \frac{d\Phi_B}{dt}=\frac{BdA}{dt}=\frac{B\ell vdt}{dt}=B\ell v$. (If the field is out of the page through the loop, the current will be clockwise to counter the increasing flux).
+
+    This is sometimes called \emph{motional emf}.
+
+    Note that the once the rod moves, because of the field, electrons would collect at the upper end of the rod leaving the lower end positive. But, because it is in contact, this produces a clockwise current flow into the $U$. The work to move one electron across the rod would be $W = (qvB)(\ell)$. The emf is the work done per unit charge so $\mathscr{E} = B\ell v$.
+\end{remark}
+\begin{definition}[Electric Generator/Dynamo]
+    An \emph{electric generator} transforms mechanical energy into electric energy.
+\end{definition}
+\begin{definition}[AC Generator]
+    An \emph{ac generator} consists of many loops of wire wound on an armature which can rotate in a magnetic field. The axle is moved by mechanical means which induces an emf in the rotating coil that outputs an ac electric current. 
+
+    Supposing the loop is made to rotate in a uniform magnetic field $\vec{B}$ with constant angular velocity $\omega$, then the induced emf is $\mathscr{E} = -\frac{d\Phi_B}{dt} = -\frac{d}{dt}\int\vec{B}\cdot d\vec{A} = -\frac{d}{dt}[BA\cos\theta] = -BA\frac{d}{dt}(\cos(\omega t)) = BA\omega\sin(\omega t).$ If the coil has $N$ loops, then $\mathscr{E} = \mathscr{E}_0\sin\omega t$ where $\mathscr{E}_0 = NBA\omega$ and $\mathscr{E}_{rms} = \frac{\mathscr{E}_0}{\sqrt{2}}$.
+\end{definition}
+\begin{definition}[DC Generator]
+    A \emph{dc generator} is much like an ac generator except the slip rings are replaced by split-ring commutators. Its output can be smoothed out by placing a capacitor in parallel with it.
+\end{definition}
+\begin{definition}[Alternators]
+    Today, cars use \emph{alternators} which the \emph{rotor}, or electromagnet, is fed by current from the battery and is made to rotate by a belt from the engine.
+
+    The magnetic field of the turning rotor passes through a surrounding set of stationary coils called the \emph{stator} inducing an alternating current which is the output.
+\end{definition}
+
+\section{Back EMF and Counter Torque}
+
+\begin{definition}[Back Emf]
+    As the armature of the motor turns in a dc motor, the magnetic flux through the coil changes and an emf is generated. This induced emf opposes the motion and thegreater the speed of the motor, the greater the back emf.
+\end{definition}
+\begin{definition}[Counter Torque]
+    Opposite to that of a motor, for a generator, the mechanical turning of the armature induces an emf in the loops. If the generator rotates but is not connected to an external circuit, the emf exists but there is no current. In this case, it takes little effort to turn. But, if it is connected to something that draws current, then a current flows in the coils of the armature  which exerts a \emph{counter torque} opposing the motion due to the external magnetic field.
+\end{definition}
+\begin{definition}[Eddy Currents]
+    Consider a rotating wheel counterclockwise with just a section inside a magnetic field pointing into the wheel. To counteract the decreasing flux for the area moving out of the field, a clockwise current is generated  and to counteract the increasing flux for the area just enetering, a counterclockwise field is generated. These are \emph{eddy currents}.
+\end{definition}
+\begin{definition}[Magnetic Damping]
+    These currents can be applied via \emph{magnetic damping} by turning on an electromagnet as a smooth breaking measure.
+\end{definition}
+
+\section{Transformers}
+
+\begin{definition}[Transformer]
+    A \emph{transformer} consists of two coils of wire known as \emph{primary} and \emph{secondary} coils. The two coils can be interwoven with insulated wire or linked by an iron core. They are designed so that nearly all the magnetic flux produced by the current in the primary coil also passes through the secondary coil. 
+    
+    An ac voltage applied to the primary coil will produce a changing magnetic field that will induce an ac voltage of the same frequency in the secondary coil. Though, the voltage will differ depending on the number of loops. 
+    
+    If there are $N_P$ loops of the primary coil around the core and $N_S$ loops around the secondary coil, then the voltage induced by in the secondary coil is $V_S = N_S\frac{d\Phi_B}{dt}$ and the  primary ac input voltage is $V_P = N_P\frac{d\Phi_B}{dt}$. Dividing these two equations gives us $$\frac{V_S}{V_P} = \frac{N_S}{N_P} \quad \text{[transformer equation]}.$$
+\end{definition}
+\begin{note}
+    DC voltages don't work in a transformer because there would be no changing magnetic flux.
+\end{note}
+\begin{definition}[Step-Up/Down Transformer]
+    If the secondary coil has more loops, it's a \emph{step-up transformer} and has a greater voltage. If it has less loops, it's a \emph{step-down transformer}.
+
+    However, the power input can be no greater than the power input so $I_PV_P = I_SV_S \implies \frac{I_S}{I_P} = \frac{N_P}{N_S}$.
+\end{definition}
+\begin{definition}[Ignition System]
+    A high voltage is produced by the switching on and off of a dc current which causes a voltage spike and spark.
+
+    A \emph{ballast} is a step-up transformer that can produce a high voltage.
+\end{definition}
+\begin{remark}
+    Rechargable batteries use charging by induction with the secondary coil inside a device and separated from the primary coil.
+\end{remark}
+\begin{remark}
+    The major conclusion of this chapter is that: \emph{a changing magnetic flux produces an electric field.}
+\end{remark}
+\begin{definition}[Faraday's Law – General Form]
+    The emf $\mathscr{E}$ induced in a circuit is equal tothe work done per unit charge by an electric field which equals the integral of $\vec{E}\cdot d\vec{\ell}$ around a closed path, i.e.
+    $$\mathscr{E} = \oint \vec{E} \cdot d \vec{\ell} = -\frac{d\Phi_B}{dt}. \quad \text{[Faraday's Law - general form]}$$
+\end{definition}
+\begin{note}
+    Electric field lines produced in the electrostatic case start and stop on electric charges hence the potential difference around a closed loop is 0 as the end and start points are same. 
+    
+    However, if the electric field is produced by a changing magnetic field, the forces due to changing magnetic fields must be nonconservative as the integral around a closed path is nonzero so no potential energy is definable.
+\end{note}
