@@ -82,3 +82,8 @@
 \contentsline {section}{\numberline {29.5}Transformers}{64}{section.29.5}%
 \contentsline {chapter}{\numberline {30}Inductance, Electromagnetic Oscillations, and AC Circuits}{66}{chapter.30}%
 \contentsline {section}{\numberline {30.1}Mutual Inductance}{66}{section.30.1}%
+\contentsline {section}{\numberline {30.2}Energy Stored in a Magnetic Field}{67}{section.30.2}%
+\contentsline {section}{\numberline {30.3}LR Circuits}{67}{section.30.3}%
+\contentsline {section}{\numberline {30.4}LC Circuits and EM Oscillations}{68}{section.30.4}%
+\contentsline {section}{\numberline {30.5}LRC Circuit}{68}{section.30.5}%
+\contentsline {section}{\numberline {30.6}AC Circuits and Resistance}{69}{section.30.6}%

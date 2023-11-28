@@ -3,5 +3,71 @@
 \section{Mutual Inductance}
 
 \begin{definition}[Mutual Inductance]
-    
+    Given two coils of wire, a changing current in the first one will induce an emf in the other which is proportional to the rate of change of magnetic flux $\Phi_{21}$ passing through it. If the second coil contains $N_2$ loops, then the \emph{mutual inductance} is $M_{21} = \frac{N_2\Phi_{21}}{I_1}$. and the emf induced in the second coil is $\mathscr{E}_2 = -N_2\frac{d\Phi_{21}}{dt}$ such that $\mathscr{E}_2 = -M_{21}\frac{dI_1}{dt}$.
 \end{definition}
+\begin{remark}
+    In the reverse situation, $\mathscr{E}_1 = -M_{12}\frac{dI_2}{dt}$. It turns out that $M_{12} = M_{21}$ so $M = M_{12} = M_{21}$. Thus, $M$ has unit \emph{henry} such that \qty{1}{H} = \qty{1}{V\cdot s/A} = \qty{1}{\Omega\cdot s}.
+\end{remark}
+\begin{note}
+    Mutual inductance, though useful, can also be a problem. However, it's usually small unless coils with many loops and/or iron cores are involved. Shielded cable (or coaxial) reduces this problem.
+\end{note}
+\begin{remark}
+    Inductance also applies to a single isolated coil of $N$ turns. When a changing current passes through a coil, or solenoid, a changing magnetic flux is produced inside the coil inducing an emf inside the same coil which opposes the change in flux (Lenz's law). 
+\end{remark}
+\begin{definition}[Self-Inductance]
+    The magnetic flux $\Phi_B$ passing through $N$ turns is proportional to the current $I$ in the coil so we define the \emph{self-inductance} $L$ as $L = \frac{N\Phi_B}{I}$. and the corresponding emf induced as $\mathscr{E} = -N\frac{d\Phi_B}{dt} = -L\frac{dI}{dt}$.
+\end{definition}
+\begin{definition}[Inductor]
+    An ac circuit always contains some inductance but often is rather small unless the circuit has many loops or turns. A coil with significant self-inductance is called an \emph{inductor}.
+\end{definition}
+\begin{definition}[Noninductive Winding]
+    Inductance can be minimized in precision resistors by winding insulated wire back on itself in the opposite direction so current produces little magnetic flux. This is \emph{noninductive winding}.
+\end{definition}
+\begin{remark}
+    Given that inductance controls a changing current, for a given $\mathscr{E}$, if the inducance is large, then the change in current will be small implying that if the current is ac, it will also be small. 
+
+    Therefore, inductance is kind of like "resistance" to impede the flow of alternative current, or reactance or impedance.
+\end{remark}
+
+\section{Energy Stored in a Magnetic Field}
+
+\begin{remark}
+    Given an inductor of inductance $L$ carrying a current $I$, energy is supplied at a rate $P = I\mathscr{E} = LI\frac{dI}{dt}$ such that the work $dW$ done in a time $dt$ is $dW = LIdI$ so the total work to increase the current from 0 to $I$ is, say, $U = W = \frac{1}{2}LI^2$. This is comparable to $U = \frac{1}{2}CV^2$ of a capacitor such that the nergy stored in the electric field between plates is here stored in the magnetic field of an inductor.
+\end{remark}
+\begin{remark}
+    Given a self-inductance $L$ of a long tightly wrapped solenoid containing $N$ turns of wire in its length $\ell$ and area $A$, the internal magnetic field is $B = \mu_0nI = \mu_0 N/\ell I$ so $\Phi_B = BA = \mu_0NIA/\ell$ so $L = \frac{N\Phi_B}{I} = \frac{\mu_0N^2A}{\ell}$.
+\end{remark}
+\begin{definition}[Energy Density]
+    Combining these two remarks, the inductance of an ideal solenoid (end effects ignored) is roughly $U = \frac{1}{2}LI^2 = \frac{1}{2}(\frac{\mu_0N^2A}{\ell})(\frac{B\ell}{\mu_0N})^2 = \frac{1}{2}\frac{B^2}{\mu_0}A\ell$ where this energy is residing in the volume $A\ell$ enclosed by the windings so the \emph{energy density} $u = \frac{1}{2}\frac{B^2}{\mu_0}$.
+\end{definition}
+
+\section{LR Circuits}
+
+\begin{remark}
+    When a battery of voltage $V_0$ is connected in series with an $LR$ circuit, at the instant the switch is connected and current flows, it is opposed by the induced emf from the inductor by the changing current. There is also a voltage $V = IR$ drop across the resistance in the inductor so the voltage drop across the inductance is reduced and the current increases less rapidly. The current thus rises gradually and approaches a steady value $I_0 = V_0/R$ where there is no more emf in the inductor so all the voltage drop is across the resistance.
+
+    We can show this analytically via the loop rule which says the emfs in the circuit are $V_0 - IR - L\frac{dI}{dt} = 0$ so $\int_{0}^I\frac{dI}{V_0-IR} = \int_0^t\frac{dt}{L}$ so eventually $I = \frac{V_0}{R}(1-e^{-t/\tau})$ where $\tau = \frac{L}{R}$ is the \emph{time constant} of the $LR$ circuit. If the battery is removed, we just get $I = I_0e^{-t/\tau}$ for initial current $I_0$.
+
+    This case is very similar to an $RC$ circuit however, here, the time constant is \emph{inversely} proportional to $R$.
+\end{remark}
+\begin{definition}[Surge Protector]
+    An inductor can act as a \emph{surge protector} for sensitive equipment which may be damaged by high and sudden change in currents by producing an oppposing emf.
+\end{definition}
+
+\section{LC Circuits and EM Oscillations}
+
+\begin{remark}
+    Take a circuit of just a capacitor with charge $Q_0$ and potential difference $V = Q/C$ connected, via a switch, to an inductor of inductance $L$. At $t=0$ when the switch closes, the capacitor discharges such that $-L\frac{dI}{dt} + \frac{Q}{C} = 0$ so $I = -dQ/dt$ as charge leaves the positive plate to produce a current $I$. Therefore, $\frac{d^2Q}{dt^2} + \frac{Q}{LC} = 0$ so $Q = Q_0\cos(\omega t + \phi)$ for $Q_0$ representing $Q$ at time $t=0$ gives $d^2Q/dt^2 + Q/LC = -\omega^2Q_0\cos(\omega t + \phi) + \frac{Q_0}{LC}\cos(\omega t + \phi) = 0$ so $(-\omega^2+\frac{1}{LC})\cos(\omega t + \phi) = 0$. This is true for all $t$ only if $(-\omega^2 + 1/LC) = 0$ so $$\omega = 2\pi f = \sqrt{\frac{1}{LC}}.$$ Also, we know $I = -\frac{dQ}{dt} = I_0\sin(\omega t + \phi)$ for $I_0 = \omega Q_0=Q_0/\sqrt{LC}$.
+
+    And from the point of energy, at any time $t$, the energy stored in the electric field of the capacitor is $U_E = \frac{1}{2}\frac{Q^2}{C} = \frac{Q_0^2}{2C}\cos^2(\omega t + \phi)$ and similar energy stored in the magnetic field $U_B = \frac{1}{2}LI^2 = \frac{L\omega^2Q_0^2}{2}\sin^2(\omega t + \phi) = \frac{Q_0^2}{2C}\sin^2(\omega t + \phi)$. Therefore, the total energy at any time is $U = U_E + U_B = \frac{1}{2}\frac{Q^2}{C} + \frac{1}{2}LI^2 = \frac{Q_0^2}{2C}$ is constant and conserved.
+
+    This $LC$ circuit is an \emph{LC oscillator} or \emph{electromagnetic oscillation} with the charge $Q$ oscillating back and forth from one plate of the capacitor to another. 
+\end{remark}
+
+\section{LRC Circuit}
+
+\begin{remark}
+    Take the previous example with the addition that the circuit has some resistance $R$. Given an initial $Q_0$ charge in the capacitor and no battery, if the switch is closed at $t = 0$, then $-L\frac{dI}{dt} - IR + \frac{Q}{C} = 0$. Since $I = -\frac{dQ}{dt}$, this becomes $L\frac{d^2Q}{dt^2} + R\frac{dQ}{dt} + \frac{1}{C}Q = 0$ which is a second-order DE which experiences the same underdamping,critical damping, and overdamping as a harmonic oscillator.
+\end{remark}
+
+\section{AC Circuits and Resistance}
